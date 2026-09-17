@@ -28,13 +28,23 @@ Extract **farm-companion-chrome-2.10.0.zip**, open **chrome://extensions** (or *
 
 For source builds, `npm run build` generates the directly loadable **dist-extension/** directory and **dist/farm-companion-chrome.zip**. Use either the native extension or the userscript, with the other disabled. Website, userscript and extension saves are separate; farm JSON and action-journal exports move them between interfaces.
 
+## Deploy to Vercel
+
+Import [PagziTechInc/farm-companion](https://github.com/PagziTechInc/farm-companion) into Vercel, keep the root directory at the repository root, select Node.js **24.x**, and deploy **main**. The included `vercel.json` sets **Other** as the framework, installs dependencies, runs `npm run build`, and serves only `dist/`. No environment variables or API keys are required. Connect the GitHub repository to deploy subsequent pushes automatically.
+
+Website, planner worker, userscript and extension download are included. The existing VPS continues running the collection watcher; Vercel reads its public outputs from `farm.pagzi.tech`. Keep that hostname pointing to the VPS while using your Vercel URL or a different custom domain. Moving `farm.pagzi.tech` itself requires a separate collector hostname and an endpoint update first.
+
+Browser saves belong to each origin. Export your farm and action journal from the old site before moving to a new domain; import them there, and reconcile pending actions before submitting more transactions.
+
+See [Vercel configuration](https://vercel.com/docs/project-configuration/vercel-json) for the hosting settings. The existing VPS deployment remains available.
+
 ## Share the public platform
 
 ```sh
 npm run check
 ```
 
-Upload **only `dist/`** to any static HTTPS host. It includes the website, downloadable native-extension ZIP, installable `yield-farm-companion.user.js`, metadata and optional host security headers. The calculator needs no backend; the hosted reveal watcher runs separately on the companion VPS. Builds never embed the owner's local portfolio, and fail if either previously configured wallet address appears in any browser bundle. Do not publish the workspace or `portfolio/` directory as site content.
+Upload **only `dist/`** to any static HTTPS host. It includes the website, downloadable native-extension ZIP, installable `yield-farm-companion.user.js`, metadata and optional host security headers. The calculator needs no backend; the hosted reveal watcher runs separately on the companion VPS. Builds never embed the owner's local portfolio, and can reject locally configured private wallet identifiers in browser bundles. Do not publish the workspace or `portfolio/` directory as site content.
 
 **farm-companion-website-2.10.0.zip** is the website package for static hosting. **farm-companion-chrome-2.10.0.zip** is the native extension package for **Load unpacked**.
 

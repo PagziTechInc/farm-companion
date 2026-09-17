@@ -27,3 +27,6 @@ portfolio/*
 !portfolio/holdings.example.json
 !portfolio/plot.example.json
 !portfolio/scenarios.json
+
+# Vercel local project linkage and build cache
+.vercel/

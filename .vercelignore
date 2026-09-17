@@ -1,0 +1,20 @@
+# Keep local data and generated outputs out of CLI uploads.
+.git/
+.vercel/
+.local-deploy/
+.codebase-memory/
+node_modules/
+dist/
+dist-extension/
+dist-collector/
+artifacts/
+test-results/
+playwright-report/
+__pycache__/
+portfolio/
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
