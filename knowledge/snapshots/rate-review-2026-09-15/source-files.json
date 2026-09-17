@@ -1,0 +1,14 @@
+[
+  {
+    "path": "knowledge/snapshots/verified-contracts-2026-09-11/source/emissions/src/HarvestEmissions.sol",
+    "sha256": "713552614fe36b5e24384c36b7222f2b974faeb106836435f37616fdfe25b651"
+  },
+  {
+    "path": "knowledge/snapshots/verified-contracts-2026-09-11/source/nft/src/YieldFarmNFT.sol",
+    "sha256": "83998f3ce459b6ec00b66d4ff2d9f38b31a92bfb55f2b3b4a1d56c6c253fc1d4"
+  },
+  {
+    "path": "knowledge/snapshots/verified-contracts-2026-09-11/source/weather/src/WeatherOracle.sol",
+    "sha256": "b56c3a78c885faf14a1ac7759dd9f4bbe2bbd2262a34d70b83d80b4d97f807e0"
+  }
+]

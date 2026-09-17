@@ -1,0 +1,227 @@
+[
+  {
+    "file": "townhall-script-6.js",
+    "pattern": "weatherOf",
+    "snippet": "s account, address operator) view returns (bool)\",\"function setApprovalForAll(address operator, bool approved)\",\"function uri(uint256 id) view returns (string)\"]),E=(0,i.parseAbi)([\"function currentEpoch() view returns (uint256)\",\"function weatherOf(uint256 epoch) view returns (uint8)\",\"function multiplierNow() view returns (uint256)\",\"function floodActive() view returns (bool)\",\"function moonActive() view returns (bool)\",\"function nextBoundary() view returns (uint256)\",\"function epochStart(uint256 epoch) view returns (uint256)\",\"function moonCount() view returns (uint256)\",\"function moons(uint256 i) view returns (uint256)\",\"function commitHash() view returns (bytes32)\",\"event WeatherScheduled(uint256 indexed epoch, uint8 weather)"
+  },
+  {
+    "file": "townhall-script-6.js",
+    "pattern": "WeatherScheduled",
+    "snippet": "ry() view returns (uint256)\",\"function epochStart(uint256 epoch) view returns (uint256)\",\"function moonCount() view returns (uint256)\",\"function moons(uint256 i) view returns (uint256)\",\"function commitHash() view returns (bytes32)\",\"event WeatherScheduled(uint256 indexed epoch, uint8 weather)\"]),S=t=>{let e=Math.abs(t);if(e<1e3)return Math.trunc(t).toLocaleString(\"en-US\").replace(/[\\u202f\\u2009]/g,\"\u00a0\");let[n,i]=e<1e6?[t/1e3,\"k\"]:e<1e9?[t/1e6,\"M\"]:[t/1e9,\"B\"];return(Math.trunc(10*n)/10).toLocaleString(\"en-US\",{maximumFractionDigits:1}).replace(/[\\u202f\\u2009]/g,\"\u00a0\")+i},M={WrongPrice:\"Mabel just re-priced her bags. Open the shed again.\",BagClosed:\"Mabel is out of bags today. Plant from your sack.\"};t.s([\"APPROVE_CAP\",0,100000n*10n*"
+  },
+  {
+    "file": "townhall-script-6.js",
+    "pattern": "commitHash",
+    "snippet": "() view returns (bool)\",\"function nextBoundary() view returns (uint256)\",\"function epochStart(uint256 epoch) view returns (uint256)\",\"function moonCount() view returns (uint256)\",\"function moons(uint256 i) view returns (uint256)\",\"function commitHash() view returns (bytes32)\",\"event WeatherScheduled(uint256 indexed epoch, uint8 weather)\"]),S=t=>{let e=Math.abs(t);if(e<1e3)return Math.trunc(t).toLocaleString(\"en-US\").replace(/[\\u202f\\u2009]/g,\"\u00a0\");let[n,i]=e<1e6?[t/1e3,\"k\"]:e<1e9?[t/1e6,\"M\"]:[t/1e9,\"B\"];return(Math.trunc(10*n)/10).toLocaleString(\"en-US\",{maximumFractionDigits:1}).replace(/[\\u202f\\u2009]/g,\"\u00a0\")+i},M={WrongPrice:\"Mabel just re-priced her bags. Open the shed again.\",BagClosed:\"Mabel is out of bags today. Plant from yo"
+  },
+  {
+    "file": "townhall-script-12.js",
+    "pattern": "first 12",
+    "snippet": "className:\"text-xs uppercase tracking-widest text-ink-muted\",children:\"The weather\"}),(0,t.jsx)(\"div\",{className:\"font-pixel mt-2 text-amber-300\",children:\"SEALED\"}),(0,t.jsx)(\"div\",{className:\"mt-1 text-sm text-amber-100/70\",children:\"The first 12 weeks are committed by hash before mint. Nobody can re-roll them, us included.\"}),(0,t.jsx)(\"div\",{className:\"mt-2 text-xs text-ink-muted\",children:\"the vane turns at Genesis \u00b7 Mon Sep 21\"})]});if(e.preGenesis)return(0,t.jsxs)(\"div\",{className:\"border border-hedge bg-loam p-4\",children:[(0,t.jsx)(\"div\",{className:\"text-xs uppercase tracking-widest text-ink-muted\",children:\"The weather \u00b7 pre-season\"}),(0,t.jsxs)(\"div\",{className:\"font-pixel mt-2 text-amber-300\",children:[\"WEEK 1 IS \",e.n"
+  },
+  {
+    "file": "townhall-script-12.js",
+    "pattern": "weatherOf",
+    "snippet": "extBoundary\"},{address:i.addresses.weather,abi:i.weatherAbi,functionName:\"epochStart\",args:[0n]}]}),o=e?.[0].result,{data:l,isError:u,refetch:c}=(0,s.useReadContracts)({contracts:[{address:i.addresses.weather,abi:i.weatherAbi,functionName:\"weatherOf\",args:[o??0n]}],query:{enabled:!i.PRELAUNCH&&void 0!==o}}),h=void 0!==e&&e.every(e=>\"success\"===e.status)&&l?.[0].status===\"success\",d=t||u||void 0!==e&&e.some(e=>\"failure\"===e.status)||l?.[0].status===\"failure\",f=Number(l?.[0].result??0),p=h?Number(e[4].result??0n):0,m=()=>{a(),c()};return(0,r.useEffect)(()=>{if(!p)return;let e=1e3*p-(0,n.nowMs)()+1500;if(e<=0||e>0x80000000-1)return;let t=setTimeout(m,e);return()=>clearTimeout(t)},[p]),{ready:h,failed:d,refetch:m,epoch:o,name:h?i.WEAT"
+  },
+  {
+    "file": "home.html",
+    "pattern": "Sealed",
+    "snippet": "/a><a class=\"inline-flex min-h-[44px] items-center hover:text-amber-300\" href=\"/county/\">The County</a><a class=\"inline-flex min-h-[44px] items-center hover:text-amber-300\" href=\"/swap/\">Swap</a><span class=\"py-3 text-ink-muted sm:ml-auto\">Sealed weather. Frozen tiers. Every purchase burns.</span></div></div></footer></div><script src=\"/_next/static/chunks/3ptd233sj6t0y.js\" id=\"_R_\" async=\"\"></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,\"1:\\\"$Sreact.fragment\\\"\\n2:I[44636,[\\\"/_next/static/chunks/1bpn6osrwh2e3.js\\\",\\\"/_next/static/chunks/2wr43wabj_-hj.js\\\",\\\"/_next/static/chunks/1p-aczc7tpi-9.js\\\",\\\"/_next/static/chunks/14jzgko6_btc6.js\\\",\\\"/_next/static/chunks/40g7prjkx48wy.js\\\","
+  },
+  {
+    "file": "home.html",
+    "pattern": "Sealed",
+    "snippet": "\\\"$Lb\\\",null,{\\\"href\\\":\\\"/swap/\\\",\\\"prefetch\\\":false,\\\"className\\\":\\\"inline-flex min-h-[44px] items-center hover:text-amber-300\\\",\\\"children\\\":\\\"Swap\\\"}],[\\\"$\\\",\\\"span\\\",null,{\\\"className\\\":\\\"py-3 text-ink-muted sm:ml-auto\\\",\\\"children\\\":\\\"Sealed weather. Frozen tiers. Every purchase burns.\\\"}]]}]\\n10:[\\\"$\\\",\\\"$L17\\\",null,{}]\\n11:[\\\"$\\\",\\\"$1\\\",\\\"c\\\",{\\\"children\\\":[[\\\"$\\\",\\\"div\\\",null,{\\\"className\\\":\\\"space-y-16 pb-8\\\",\\\"children\\\":[[\\\"$\\\",\\\"$L18\\\",null,{}],[\\\"$\\\",\\\"section\\\",null,{\\\"className\\\":\\\"grid gap-8 pt-4 md:grid-cols-[3fr_2fr] md:items-center\\\",\\\"children\\\":[[\\\"$\\\",\\\"div\\\",null,{\\\"children\\\":[[\\\"$\\\",\\\"h1\\\",null,{\\\"className\\\":\\\"font-pixel text-shadow-pixel text-3xl leading-relaxed text-amber-300 sm:text-4xl\\\",\\\"children\\\":"
+  },
+  {
+    "file": "home-script-17.js",
+    "pattern": "Sealed",
+    "snippet": ";if(M(t)){var r=Ha(t);if(!0===r)return Ja(e).get(t);if(r)return r[e.id]}},set:function(t,e){return u(this,t,e)}}:{add:function(t){return u(this,t,!0)}}),o}},ru=ne.enforce,nu=Object,ou=Array.isArray,iu=nu.isExtensible,au=nu.isFrozen,uu=nu.isSealed,su=nu.freeze,cu=nu.seal,fu=!i.ActiveXObject&&\"ActiveXObject\"in i,lu=function(t){return function(){return t(this,arguments.length?arguments[0]:void 0)}},hu=To(\"WeakMap\",lu,eu),pu=hu.prototype,vu=b(pu.set);if(Vt)if(fu){tu=eu.getConstructor(lu,\"WeakMap\",!0),Oo.enable();var du=b(pu.delete),gu=b(pu.has),yu=b(pu.get);Mo(pu,{delete:function(t){if(M(t)&&!iu(t)){var e=ru(this);return e.frozen||(e.frozen=new tu),du(this,t)||e.frozen.delete(t)}return du(this,t)},has:function(t){if(M(t)&&!iu(t)){var "
+  },
+  {
+    "file": "townhall.html",
+    "pattern": "Founding Week",
+    "snippet": "0 tabular-nums\">\u00d7<!-- -->2</div><div><div class=\"font-pixel text-[11px] tracking-wider text-amber-200\">FOUNDING WEEK BOOST \u00b7 SEP 21 TO 28</div><div class=\"mt-1 text-sm leading-snug text-amber-100/80\">First Soil doubles every harvest in the Founding Week<!-- -->. Then the soil pays \u00d71.5 until Oct 19. Plant on day one and you get all of it.</div></div></div><p class=\"mt-3 max-w-prose text-sm leading-relaxed text-amber-100/70\">Week 1 is set on-chain and public. Fetching it from the chain.</p><div class=\"font-pixel mt-4 text-[11px] text-green-400\">\u25b6 MINT SEP 15 \u00b7 1 PM ET \u00b7 THE VANE TURNS SEP 21</div></div><div id=\"schedule\" class=\"scroll-mt-24 border border-furrow bg-loam p-5\"><h2 class=\"font-pixel text-sm text-amber-300\">SCHEDULE</h2"
+  },
+  {
+    "file": "townhall.html",
+    "pattern": "first 12",
+    "snippet": "croll-mt-24 border border-furrow bg-loam p-5\"><h2 class=\"font-pixel text-sm text-amber-300\">SCHEDULE</h2><p class=\"mt-1 text-xs text-ink-muted\">Every week is locked in at least 24 hours before it starts, sometimes earlier, never later. The first 12 weeks were committed by hash before mint.</p><ul class=\"mt-3 divide-y divide-furrow/50\"><li class=\"flex items-center gap-3 py-2.5\"><svg width=\"24\" height=\"24\" viewBox=\"0 0 8 8\" shape-rendering=\"crispEdges\" aria-hidden=\"true\" class=\"shrink-0\"><rect x=\"2\" y=\"1\" width=\"4\" height=\"1\" fill=\"#a1a1aa\"></rect><rect x=\"2\" y=\"2\" width=\"1\" height=\"2\" fill=\"#a1a1aa\"></rect><rect x=\"5\" y=\"2\" width=\"1\" height=\"2\" fill=\"#a1a1aa\"></rect><rect x=\"1\" y=\"4\" width=\"6\" height=\"3\" fill=\"#71717a\"></rect><rect"
+  },
+  {
+    "file": "townhall.html",
+    "pattern": "24 hours",
+    "snippet": " \u00b7 THE VANE TURNS SEP 21</div></div><div id=\"schedule\" class=\"scroll-mt-24 border border-furrow bg-loam p-5\"><h2 class=\"font-pixel text-sm text-amber-300\">SCHEDULE</h2><p class=\"mt-1 text-xs text-ink-muted\">Every week is locked in at least 24 hours before it starts, sometimes earlier, never later. The first 12 weeks were committed by hash before mint.</p><ul class=\"mt-3 divide-y divide-furrow/50\"><li class=\"flex items-center gap-3 py-2.5\"><svg width=\"24\" height=\"24\" viewBox=\"0 0 8 8\" shape-rendering=\"crispEdges\" aria-hidden=\"true\" class=\"shrink-0\"><rect x=\"2\" y=\"1\" width=\"4\" height=\"1\" fill=\"#a1a1aa\"></rect><rect x=\"2\" y=\"2\" width=\"1\" height=\"2\" fill=\"#a1a1aa\"></rect><rect x=\"5\" y=\"2\" width=\"1\" height=\"2\" fill=\"#a1a1aa\"></rect><re"
+  },
+  {
+    "file": "townhall.html",
+    "pattern": "Sealed",
+    "snippet": "x=\"5\" y=\"2\" width=\"1\" height=\"2\" fill=\"#a1a1aa\"></rect><rect x=\"1\" y=\"4\" width=\"6\" height=\"3\" fill=\"#71717a\"></rect><rect x=\"3\" y=\"5\" width=\"2\" height=\"1\" fill=\"#27272a\"></rect></svg><div class=\"flex-1\"><span class=\"text-sm text-ink-muted\">Sealed</span><span class=\"ml-2 text-[11px] text-ink-faint\"></span></div><span class=\"text-[11px] uppercase tracking-widest text-ink-faint\"></span></li><li class=\"flex items-center gap-3 py-2.5\"><svg width=\"24\" height=\"24\" viewBox=\"0 0 8 8\" shape-rendering=\"crispEdges\" aria-hidden=\"true\" class=\"shrink-0\"><rect x=\"2\" y=\"1\" width=\"4\" height=\"1\" fill=\"#a1a1aa\"></rect><rect x=\"2\" y=\"2\" width=\"1\" height=\"2\" fill=\"#a1a1aa\"></rect><rect x=\"5\" y=\"2\" width=\"1\" height=\"2\" fill=\"#a1a1aa\"></rect><rect x=\"1\" "
+  },
+  {
+    "file": "townhall.html",
+    "pattern": "Sealed",
+    "snippet": "x=\"5\" y=\"2\" width=\"1\" height=\"2\" fill=\"#a1a1aa\"></rect><rect x=\"1\" y=\"4\" width=\"6\" height=\"3\" fill=\"#71717a\"></rect><rect x=\"3\" y=\"5\" width=\"2\" height=\"1\" fill=\"#27272a\"></rect></svg><div class=\"flex-1\"><span class=\"text-sm text-ink-muted\">Sealed</span><span class=\"ml-2 text-[11px] text-ink-faint\"></span></div><span class=\"text-[11px] uppercase tracking-widest text-ink-faint\"></span></li><li class=\"flex items-center gap-3 py-2.5\"><svg width=\"24\" height=\"24\" viewBox=\"0 0 8 8\" shape-rendering=\"crispEdges\" aria-hidden=\"true\" class=\"shrink-0\"><rect x=\"2\" y=\"1\" width=\"4\" height=\"1\" fill=\"#a1a1aa\"></rect><rect x=\"2\" y=\"2\" width=\"1\" height=\"2\" fill=\"#a1a1aa\"></rect><rect x=\"5\" y=\"2\" width=\"1\" height=\"2\" fill=\"#a1a1aa\"></rect><rect x=\"1\" "
+  },
+  {
+    "file": "townhall.html",
+    "pattern": "Sealed",
+    "snippet": "x=\"5\" y=\"2\" width=\"1\" height=\"2\" fill=\"#a1a1aa\"></rect><rect x=\"1\" y=\"4\" width=\"6\" height=\"3\" fill=\"#71717a\"></rect><rect x=\"3\" y=\"5\" width=\"2\" height=\"1\" fill=\"#27272a\"></rect></svg><div class=\"flex-1\"><span class=\"text-sm text-ink-muted\">Sealed</span><span class=\"ml-2 text-[11px] text-ink-faint\"></span></div><span class=\"text-[11px] uppercase tracking-widest text-ink-faint\"></span></li></ul></div></section><section><h2 class=\"font-pixel text-sm text-amber-300\">THE FIVE WEEKLY WEATHERS</h2><p class=\"mt-1 text-xs text-ink-muted\">One per week, Monday to Monday. It multiplies every harvest on the farm.</p><div class=\"mt-3 grid grid-cols-3 gap-1.5 sm:grid-cols-5 sm:gap-3\"><div class=\"border border-furrow bg-loam p-1.5 text-center sm:"
+  },
+  {
+    "file": "townhall.html",
+    "pattern": "Sealed",
+    "snippet": "/a><a class=\"inline-flex min-h-[44px] items-center hover:text-amber-300\" href=\"/county/\">The County</a><a class=\"inline-flex min-h-[44px] items-center hover:text-amber-300\" href=\"/swap/\">Swap</a><span class=\"py-3 text-ink-muted sm:ml-auto\">Sealed weather. Frozen tiers. Every purchase burns.</span></div></div></footer></div><script src=\"/_next/static/chunks/3ptd233sj6t0y.js\" id=\"_R_\" async=\"\"></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,\"1:\\\"$Sreact.fragment\\\"\\n2:I[44636,[\\\"/_next/static/chunks/1bpn6osrwh2e3.js\\\",\\\"/_next/static/chunks/2wr43wabj_-hj.js\\\",\\\"/_next/static/chunks/1p-aczc7tpi-9.js\\\",\\\"/_next/static/chunks/14jzgko6_btc6.js\\\",\\\"/_next/static/chunks/40g7prjkx48wy.js\\\","
+  },
+  {
+    "file": "townhall.html",
+    "pattern": "Sealed",
+    "snippet": "\\\"$Lb\\\",null,{\\\"href\\\":\\\"/swap/\\\",\\\"prefetch\\\":false,\\\"className\\\":\\\"inline-flex min-h-[44px] items-center hover:text-amber-300\\\",\\\"children\\\":\\\"Swap\\\"}],[\\\"$\\\",\\\"span\\\",null,{\\\"className\\\":\\\"py-3 text-ink-muted sm:ml-auto\\\",\\\"children\\\":\\\"Sealed weather. Frozen tiers. Every purchase burns.\\\"}]]}]\\n10:[\\\"$\\\",\\\"$L19\\\",null,{}]\\n11:[\\\"$\\\",\\\"$1\\\",\\\"c\\\",{\\\"children\\\":[null,[\\\"$\\\",\\\"$L7\\\",null,{\\\"parallelRouterKey\\\":\\\"children\\\",\\\"error\\\":\\\"$undefined\\\",\\\"errorStyles\\\":\\\"$undefined\\\",\\\"errorScripts\\\":\\\"$undefined\\\",\\\"template\\\":[\\\"$\\\",\\\"$L9\\\",null,{}],\\\"templateStyles\\\":\\\"$undefined\\\",\\\"templateScripts\\\":\\\"$undefined\\\",\\\"notFound\\\":\\\"$undefined\\\",\\\"forbidden\\\":\\\"$undefined\\\",\\\"unauthorized\\\":\\\"$undefined\\\"}]]}]\\n1a:[[\\\"$\\\",\\\"source\\\",n"
+  },
+  {
+    "file": "home-script-6.js",
+    "pattern": "weatherOf",
+    "snippet": "s account, address operator) view returns (bool)\",\"function setApprovalForAll(address operator, bool approved)\",\"function uri(uint256 id) view returns (string)\"]),E=(0,i.parseAbi)([\"function currentEpoch() view returns (uint256)\",\"function weatherOf(uint256 epoch) view returns (uint8)\",\"function multiplierNow() view returns (uint256)\",\"function floodActive() view returns (bool)\",\"function moonActive() view returns (bool)\",\"function nextBoundary() view returns (uint256)\",\"function epochStart(uint256 epoch) view returns (uint256)\",\"function moonCount() view returns (uint256)\",\"function moons(uint256 i) view returns (uint256)\",\"function commitHash() view returns (bytes32)\",\"event WeatherScheduled(uint256 indexed epoch, uint8 weather)"
+  },
+  {
+    "file": "home-script-6.js",
+    "pattern": "WeatherScheduled",
+    "snippet": "ry() view returns (uint256)\",\"function epochStart(uint256 epoch) view returns (uint256)\",\"function moonCount() view returns (uint256)\",\"function moons(uint256 i) view returns (uint256)\",\"function commitHash() view returns (bytes32)\",\"event WeatherScheduled(uint256 indexed epoch, uint8 weather)\"]),S=t=>{let e=Math.abs(t);if(e<1e3)return Math.trunc(t).toLocaleString(\"en-US\").replace(/[\\u202f\\u2009]/g,\"\u00a0\");let[n,i]=e<1e6?[t/1e3,\"k\"]:e<1e9?[t/1e6,\"M\"]:[t/1e9,\"B\"];return(Math.trunc(10*n)/10).toLocaleString(\"en-US\",{maximumFractionDigits:1}).replace(/[\\u202f\\u2009]/g,\"\u00a0\")+i},M={WrongPrice:\"Mabel just re-priced her bags. Open the shed again.\",BagClosed:\"Mabel is out of bags today. Plant from your sack.\"};t.s([\"APPROVE_CAP\",0,100000n*10n*"
+  },
+  {
+    "file": "home-script-6.js",
+    "pattern": "commitHash",
+    "snippet": "() view returns (bool)\",\"function nextBoundary() view returns (uint256)\",\"function epochStart(uint256 epoch) view returns (uint256)\",\"function moonCount() view returns (uint256)\",\"function moons(uint256 i) view returns (uint256)\",\"function commitHash() view returns (bytes32)\",\"event WeatherScheduled(uint256 indexed epoch, uint8 weather)\"]),S=t=>{let e=Math.abs(t);if(e<1e3)return Math.trunc(t).toLocaleString(\"en-US\").replace(/[\\u202f\\u2009]/g,\"\u00a0\");let[n,i]=e<1e6?[t/1e3,\"k\"]:e<1e9?[t/1e6,\"M\"]:[t/1e9,\"B\"];return(Math.trunc(10*n)/10).toLocaleString(\"en-US\",{maximumFractionDigits:1}).replace(/[\\u202f\\u2009]/g,\"\u00a0\")+i},M={WrongPrice:\"Mabel just re-priced her bags. Open the shed again.\",BagClosed:\"Mabel is out of bags today. Plant from yo"
+  },
+  {
+    "file": "almanac-script-14.js",
+    "pattern": "Founding Week",
+    "snippet": "sName:\"text-[11px] uppercase tracking-widest text-ink-faint\",children:\"Your plot would earn\"}),N&&(0,t.jsx)(\"div\",{className:\"text-[11px] leading-snug text-ink-faint\",children:\"Genesis is Monday Sep 21, 00:00 UTC. This previews week 1, the Founding Week.\"}),(0,t.jsx)(p,{perSec:A/86400}),(0,t.jsx)(\"div\",{className:\"mt-4 grid grid-cols-2 gap-px border border-furrow/40 bg-furrow/40 sm:grid-cols-4\",children:[[\"per hour\",h(A/24,1)],[\"per day\",h(A)],[\"per week\",h(P)],[\"First Soil\",2===R?N?\"\u00d72 from Sep 21\":\"\u00d72 until Sep 28\":1.5===R?\"\u00d71.5 until Oct 19\":\"ended Oct 19\"]].map(([e,n])=>(0,t.jsxs)(\"div\",{className:\"bg-soil px-3 py-2.5\",children:[(0,t.jsx)(\"div\",{className:\"font-pixel text-[11px] text-amber-50 tabular-nums\",children:n}),(0,t.js"
+  },
+  {
+    "file": "almanac.html",
+    "pattern": "Founding Week",
+    "snippet": " text-ink-faint\">\u00d7</span><span class=\"border border-furrow bg-soil px-2 py-1 font-pixel text-[10px] text-amber-100 tabular-nums\">your weight</span></span></div><p class=\"mt-2 text-[11px] leading-snug text-ink-faint\">First Soil is 2\u00d7 in the Founding Week, Sep 21 to 28, then 1.5\u00d7 until Oct 19, then 1, for every planted plot: the earlier you plant, the more of it you get. The ceiling applies to the rate before First Soil and the weather: the farm&#x27;s base rate reaches the year&#x27;s weekly budget at about 3,644 weight units, about the whole collection planted plus a few upgrades, and above that the base is shared by weight. First Soil and sunny weeks are paid from the Granary on top, while it lasts.</p></div><div class=\"mt-3 grid"
+  },
+  {
+    "file": "almanac.html",
+    "pattern": "Founding Week",
+    "snippet": "/p></div></div><div class=\"p-4\"><div class=\"text-[11px] uppercase tracking-widest text-ink-faint\">Your plot would earn</div><div class=\"text-[11px] leading-snug text-ink-faint\">Genesis is Monday Sep 21, 00:00 UTC. This previews week 1, the Founding Week.</div><div class=\"mt-1 flex flex-wrap items-baseline gap-x-3\"><span class=\"font-pixel text-2xl text-amber-300 tabular-nums sm:text-3xl\">0.0000</span><span class=\"font-pixel text-[10px] text-amber-100/65\">$CROP <!-- -->since you opened this page</span></div><div class=\"mt-4 grid grid-cols-2 gap-px border border-furrow/40 bg-furrow/40 sm:grid-cols-4\"><div class=\"bg-soil px-3 py-2.5\"><div class=\"font-pixel text-[11px] text-amber-50 tabular-nums\">23.8</div><div class=\"mt-1 text-[11px] "
+  },
+  {
+    "file": "almanac.html",
+    "pattern": "Founding Week",
+    "snippet": " class=\"whitespace-nowrap text-right font-pixel text-[11px] text-amber-100 tabular-nums\">2,000 / week</span><span class=\"col-span-2 text-xs leading-snug text-ink-faint sm:col-span-1\">per weight unit, times the weather; First Soil 2\u00d7 in the Founding Week, then 1.5\u00d7 until Oct 19, paid from the Granary</span></div><div class=\"grid grid-cols-[1fr_auto] items-center gap-x-3 gap-y-1 border-b border-furrow/40 px-3 py-2 text-sm last:border-b-0 sm:grid-cols-[1fr_10rem_14rem]\"><span class=\"text-amber-100/80\">Year 1 ceiling</span><span class=\"whitespace-nowrap text-right font-pixel text-[11px] text-amber-100 tabular-nums\">380M</span><span class=\"col-span-2 text-xs leading-snug text-ink-faint sm:col-span-1\">$CROP; what the rate does not use c"
+  },
+  {
+    "file": "almanac.html",
+    "pattern": "Founding Week",
+    "snippet": "der-furrow bg-soil px-2 py-1 font-pixel text-[10px] text-amber-100 tabular-nums\\\",\\\"children\\\":\\\"your weight\\\"}]]}]]}],[\\\"$\\\",\\\"p\\\",null,{\\\"className\\\":\\\"mt-2 text-[11px] leading-snug text-ink-faint\\\",\\\"children\\\":\\\"First Soil is 2\u00d7 in the Founding Week, Sep 21 to 28, then 1.5\u00d7 until Oct 19, then 1, for every planted plot: the earlier you plant, the more of it you get. The ceiling applies to the rate before First Soil and the weather: the farm's base rate reaches the year's weekly budget at about 3,644 weight units, about the whole collection planted plus a few upgrades, and above that the base is shared by weight. First Soil and sunny weeks are paid from the Granary on top, while it lasts.\\\"}]]}]\\n33:[\\\"$\\\",\\\"div\\\",null,{\\\"classN"
+  },
+  {
+    "file": "almanac.html",
+    "pattern": "Founding Week",
+    "snippet": "1px] text-amber-100 tabular-nums\\\",\\\"children\\\":\\\"2,000 / week\\\"}],[\\\"$\\\",\\\"span\\\",null,{\\\"className\\\":\\\"col-span-2 text-xs leading-snug text-ink-faint sm:col-span-1\\\",\\\"children\\\":\\\"per weight unit, times the weather; First Soil 2\u00d7 in the Founding Week, then 1.5\u00d7 until Oct 19, paid from the Granary\\\"}]]}],[\\\"$\\\",\\\"div\\\",null,{\\\"className\\\":\\\"grid grid-cols-[1fr_auto] items-center gap-x-3 gap-y-1 border-b border-furrow/40 px-3 py-2 text-sm last:border-b-0 sm:grid-cols-[1fr_10rem_14rem]\\\",\\\"children\\\":[[\\\"$\\\",\\\"span\\\",null,{\\\"className\\\":\\\"text-amber-100/80\\\",\\\"children\\\":\\\"Year 1 ceiling\\\"}],[\\\"$\\\",\\\"span\\\",null,{\\\"className\\\":\\\"whitespace-nowrap text-right font-pixel text-[11px] text-amber-100 tabular-nums\\\",\\\"children\\\":\\\"380M\\\""
+  },
+  {
+    "file": "almanac.html",
+    "pattern": "Sealed",
+    "snippet": "/a><a class=\"inline-flex min-h-[44px] items-center hover:text-amber-300\" href=\"/county/\">The County</a><a class=\"inline-flex min-h-[44px] items-center hover:text-amber-300\" href=\"/swap/\">Swap</a><span class=\"py-3 text-ink-muted sm:ml-auto\">Sealed weather. Frozen tiers. Every purchase burns.</span></div></div></footer></div><script src=\"/_next/static/chunks/3ptd233sj6t0y.js\" id=\"_R_\" async=\"\"></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,\"1:\\\"$Sreact.fragment\\\"\\n2:I[44636,[\\\"/_next/static/chunks/1bpn6osrwh2e3.js\\\",\\\"/_next/static/chunks/2wr43wabj_-hj.js\\\",\\\"/_next/static/chunks/1p-aczc7tpi-9.js\\\",\\\"/_next/static/chunks/14jzgko6_btc6.js\\\",\\\"/_next/static/chunks/40g7prjkx48wy.js\\\","
+  },
+  {
+    "file": "almanac.html",
+    "pattern": "Sealed",
+    "snippet": "\\\"$Lb\\\",null,{\\\"href\\\":\\\"/swap/\\\",\\\"prefetch\\\":false,\\\"className\\\":\\\"inline-flex min-h-[44px] items-center hover:text-amber-300\\\",\\\"children\\\":\\\"Swap\\\"}],[\\\"$\\\",\\\"span\\\",null,{\\\"className\\\":\\\"py-3 text-ink-muted sm:ml-auto\\\",\\\"children\\\":\\\"Sealed weather. Frozen tiers. Every purchase burns.\\\"}]]}]\\n10:[\\\"$\\\",\\\"$L19\\\",null,{}]\\n11:[\\\"$\\\",\\\"$1\\\",\\\"c\\\",{\\\"children\\\":[null,[\\\"$\\\",\\\"$L7\\\",null,{\\\"parallelRouterKey\\\":\\\"children\\\",\\\"error\\\":\\\"$undefined\\\",\\\"errorStyles\\\":\\\"$undefined\\\",\\\"errorScripts\\\":\\\"$undefined\\\",\\\"template\\\":[\\\"$\\\",\\\"$L9\\\",null,{}],\\\"templateStyles\\\":\\\"$undefined\\\",\\\"templateScripts\\\":\\\"$undefined\\\",\\\"notFound\\\":\\\"$undefined\\\",\\\"forbidden\\\":\\\"$undefined\\\",\\\"unauthorized\\\":\\\"$undefined\\\"}]]}]\\n1b:[[\\\"$\\\",\\\"source\\\",n"
+  },
+  {
+    "file": "townhall-script-17.js",
+    "pattern": "Sealed",
+    "snippet": ";if(M(t)){var r=Ha(t);if(!0===r)return Ja(e).get(t);if(r)return r[e.id]}},set:function(t,e){return u(this,t,e)}}:{add:function(t){return u(this,t,!0)}}),o}},ru=ne.enforce,nu=Object,ou=Array.isArray,iu=nu.isExtensible,au=nu.isFrozen,uu=nu.isSealed,su=nu.freeze,cu=nu.seal,fu=!i.ActiveXObject&&\"ActiveXObject\"in i,lu=function(t){return function(){return t(this,arguments.length?arguments[0]:void 0)}},hu=To(\"WeakMap\",lu,eu),pu=hu.prototype,vu=b(pu.set);if(Vt)if(fu){tu=eu.getConstructor(lu,\"WeakMap\",!0),Oo.enable();var du=b(pu.delete),gu=b(pu.has),yu=b(pu.get);Mo(pu,{delete:function(t){if(M(t)&&!iu(t)){var e=ru(this);return e.frozen||(e.frozen=new tu),du(this,t)||e.frozen.delete(t)}return du(this,t)},has:function(t){if(M(t)&&!iu(t)){var "
+  },
+  {
+    "file": "almanac-script-12.js",
+    "pattern": "first 12",
+    "snippet": "className:\"text-xs uppercase tracking-widest text-ink-muted\",children:\"The weather\"}),(0,t.jsx)(\"div\",{className:\"font-pixel mt-2 text-amber-300\",children:\"SEALED\"}),(0,t.jsx)(\"div\",{className:\"mt-1 text-sm text-amber-100/70\",children:\"The first 12 weeks are committed by hash before mint. Nobody can re-roll them, us included.\"}),(0,t.jsx)(\"div\",{className:\"mt-2 text-xs text-ink-muted\",children:\"the vane turns at Genesis \u00b7 Mon Sep 21\"})]});if(e.preGenesis)return(0,t.jsxs)(\"div\",{className:\"border border-hedge bg-loam p-4\",children:[(0,t.jsx)(\"div\",{className:\"text-xs uppercase tracking-widest text-ink-muted\",children:\"The weather \u00b7 pre-season\"}),(0,t.jsxs)(\"div\",{className:\"font-pixel mt-2 text-amber-300\",children:[\"WEEK 1 IS \",e.n"
+  },
+  {
+    "file": "almanac-script-12.js",
+    "pattern": "weatherOf",
+    "snippet": "extBoundary\"},{address:i.addresses.weather,abi:i.weatherAbi,functionName:\"epochStart\",args:[0n]}]}),o=e?.[0].result,{data:l,isError:u,refetch:c}=(0,s.useReadContracts)({contracts:[{address:i.addresses.weather,abi:i.weatherAbi,functionName:\"weatherOf\",args:[o??0n]}],query:{enabled:!i.PRELAUNCH&&void 0!==o}}),h=void 0!==e&&e.every(e=>\"success\"===e.status)&&l?.[0].status===\"success\",d=t||u||void 0!==e&&e.some(e=>\"failure\"===e.status)||l?.[0].status===\"failure\",f=Number(l?.[0].result??0),p=h?Number(e[4].result??0n):0,m=()=>{a(),c()};return(0,r.useEffect)(()=>{if(!p)return;let e=1e3*p-(0,n.nowMs)()+1500;if(e<=0||e>0x80000000-1)return;let t=setTimeout(m,e);return()=>clearTimeout(t)},[p]),{ready:h,failed:d,refetch:m,epoch:o,name:h?i.WEAT"
+  },
+  {
+    "file": "almanac-script-6.js",
+    "pattern": "weatherOf",
+    "snippet": "s account, address operator) view returns (bool)\",\"function setApprovalForAll(address operator, bool approved)\",\"function uri(uint256 id) view returns (string)\"]),E=(0,i.parseAbi)([\"function currentEpoch() view returns (uint256)\",\"function weatherOf(uint256 epoch) view returns (uint8)\",\"function multiplierNow() view returns (uint256)\",\"function floodActive() view returns (bool)\",\"function moonActive() view returns (bool)\",\"function nextBoundary() view returns (uint256)\",\"function epochStart(uint256 epoch) view returns (uint256)\",\"function moonCount() view returns (uint256)\",\"function moons(uint256 i) view returns (uint256)\",\"function commitHash() view returns (bytes32)\",\"event WeatherScheduled(uint256 indexed epoch, uint8 weather)"
+  },
+  {
+    "file": "almanac-script-6.js",
+    "pattern": "WeatherScheduled",
+    "snippet": "ry() view returns (uint256)\",\"function epochStart(uint256 epoch) view returns (uint256)\",\"function moonCount() view returns (uint256)\",\"function moons(uint256 i) view returns (uint256)\",\"function commitHash() view returns (bytes32)\",\"event WeatherScheduled(uint256 indexed epoch, uint8 weather)\"]),S=t=>{let e=Math.abs(t);if(e<1e3)return Math.trunc(t).toLocaleString(\"en-US\").replace(/[\\u202f\\u2009]/g,\"\u00a0\");let[n,i]=e<1e6?[t/1e3,\"k\"]:e<1e9?[t/1e6,\"M\"]:[t/1e9,\"B\"];return(Math.trunc(10*n)/10).toLocaleString(\"en-US\",{maximumFractionDigits:1}).replace(/[\\u202f\\u2009]/g,\"\u00a0\")+i},M={WrongPrice:\"Mabel just re-priced her bags. Open the shed again.\",BagClosed:\"Mabel is out of bags today. Plant from your sack.\"};t.s([\"APPROVE_CAP\",0,100000n*10n*"
+  },
+  {
+    "file": "almanac-script-6.js",
+    "pattern": "commitHash",
+    "snippet": "() view returns (bool)\",\"function nextBoundary() view returns (uint256)\",\"function epochStart(uint256 epoch) view returns (uint256)\",\"function moonCount() view returns (uint256)\",\"function moons(uint256 i) view returns (uint256)\",\"function commitHash() view returns (bytes32)\",\"event WeatherScheduled(uint256 indexed epoch, uint8 weather)\"]),S=t=>{let e=Math.abs(t);if(e<1e3)return Math.trunc(t).toLocaleString(\"en-US\").replace(/[\\u202f\\u2009]/g,\"\u00a0\");let[n,i]=e<1e6?[t/1e3,\"k\"]:e<1e9?[t/1e6,\"M\"]:[t/1e9,\"B\"];return(Math.trunc(10*n)/10).toLocaleString(\"en-US\",{maximumFractionDigits:1}).replace(/[\\u202f\\u2009]/g,\"\u00a0\")+i},M={WrongPrice:\"Mabel just re-priced her bags. Open the shed again.\",BagClosed:\"Mabel is out of bags today. Plant from yo"
+  },
+  {
+    "file": "almanac-script-16.js",
+    "pattern": "Sealed",
+    "snippet": ";if(M(t)){var r=Ha(t);if(!0===r)return Ja(e).get(t);if(r)return r[e.id]}},set:function(t,e){return u(this,t,e)}}:{add:function(t){return u(this,t,!0)}}),o}},ru=ne.enforce,nu=Object,ou=Array.isArray,iu=nu.isExtensible,au=nu.isFrozen,uu=nu.isSealed,su=nu.freeze,cu=nu.seal,fu=!i.ActiveXObject&&\"ActiveXObject\"in i,lu=function(t){return function(){return t(this,arguments.length?arguments[0]:void 0)}},hu=To(\"WeakMap\",lu,eu),pu=hu.prototype,vu=b(pu.set);if(Vt)if(fu){tu=eu.getConstructor(lu,\"WeakMap\",!0),Oo.enable();var du=b(pu.delete),gu=b(pu.has),yu=b(pu.get);Mo(pu,{delete:function(t){if(M(t)&&!iu(t)){var e=ru(this);return e.frozen||(e.frozen=new tu),du(this,t)||e.frozen.delete(t)}return du(this,t)},has:function(t){if(M(t)&&!iu(t)){var "
+  },
+  {
+    "file": "home-script-12.js",
+    "pattern": "first 12",
+    "snippet": "className:\"text-xs uppercase tracking-widest text-ink-muted\",children:\"The weather\"}),(0,t.jsx)(\"div\",{className:\"font-pixel mt-2 text-amber-300\",children:\"SEALED\"}),(0,t.jsx)(\"div\",{className:\"mt-1 text-sm text-amber-100/70\",children:\"The first 12 weeks are committed by hash before mint. Nobody can re-roll them, us included.\"}),(0,t.jsx)(\"div\",{className:\"mt-2 text-xs text-ink-muted\",children:\"the vane turns at Genesis \u00b7 Mon Sep 21\"})]});if(e.preGenesis)return(0,t.jsxs)(\"div\",{className:\"border border-hedge bg-loam p-4\",children:[(0,t.jsx)(\"div\",{className:\"text-xs uppercase tracking-widest text-ink-muted\",children:\"The weather \u00b7 pre-season\"}),(0,t.jsxs)(\"div\",{className:\"font-pixel mt-2 text-amber-300\",children:[\"WEEK 1 IS \",e.n"
+  },
+  {
+    "file": "home-script-12.js",
+    "pattern": "weatherOf",
+    "snippet": "extBoundary\"},{address:i.addresses.weather,abi:i.weatherAbi,functionName:\"epochStart\",args:[0n]}]}),o=e?.[0].result,{data:l,isError:u,refetch:c}=(0,s.useReadContracts)({contracts:[{address:i.addresses.weather,abi:i.weatherAbi,functionName:\"weatherOf\",args:[o??0n]}],query:{enabled:!i.PRELAUNCH&&void 0!==o}}),h=void 0!==e&&e.every(e=>\"success\"===e.status)&&l?.[0].status===\"success\",d=t||u||void 0!==e&&e.some(e=>\"failure\"===e.status)||l?.[0].status===\"failure\",f=Number(l?.[0].result??0),p=h?Number(e[4].result??0n):0,m=()=>{a(),c()};return(0,r.useEffect)(()=>{if(!p)return;let e=1e3*p-(0,n.nowMs)()+1500;if(e<=0||e>0x80000000-1)return;let t=setTimeout(m,e);return()=>clearTimeout(t)},[p]),{ready:h,failed:d,refetch:m,epoch:o,name:h?i.WEAT"
+  },
+  {
+    "file": "townhall-script-14.js",
+    "pattern": "Founding Week",
+    "snippet": ",{className:\"font-pixel text-[11px] tracking-wider text-amber-200\",children:\"FOUNDING WEEK BOOST \u00b7 SEP 21 TO 28\"}),(0,t.jsxs)(\"div\",{className:\"mt-1 text-sm leading-snug text-amber-100/80\",children:[\"First Soil doubles every harvest in the Founding Week\",z?`, on top of ${_}'s \\xd7${y.toFixed(2)}`:\"\",\". Then the soil pays \u00d71.5 until Oct 19. Plant on day one and you get all of it.\"]})]})]}),(0,t.jsx)(\"p\",{className:\"mt-3 max-w-prose text-sm leading-relaxed text-amber-100/70\",children:w?z?`All 12 launch weeks were committed by hash before mint. Week 1 is already set on-chain and public: ${_}, \\xd7${y.toFixed(2)} on every harvest. The vane starts turning at Genesis, Monday Sep 21, and each later week is revealed at least 24 hours befo"
+  },
+  {
+    "file": "townhall-script-14.js",
+    "pattern": "first 12",
+    "snippet": "jsx)(\"h2\",{className:\"font-pixel text-sm text-amber-300\",children:\"SCHEDULE\"}),(0,t.jsx)(\"p\",{className:\"mt-1 text-xs text-ink-muted\",children:\"Every week is locked in at least 24 hours before it starts, sometimes earlier, never later. The first 12 weeks were committed by hash before mint.\"}),(0,t.jsxs)(\"ul\",{className:\"mt-3 divide-y divide-furrow/50\",children:[(0,t.jsxs)(\"li\",{className:\"flex items-center gap-3 py-2.5\",children:[(0,t.jsx)(d,{name:e,size:24}),(0,t.jsxs)(\"div\",{className:\"flex-1\",children:[(0,t.jsx)(\"span\",{className:\"text-sm text-amber-50\",children:e}),(0,t.jsx)(\"span\",{className:\"ml-2 text-[11px] text-ink-faint\",children:n(0)})]}),s?(0,t.jsx)(\"span\",{className:\"font-pixel border border-amber-700 px-1.5 py-0.5 tex"
+  },
+  {
+    "file": "townhall-script-14.js",
+    "pattern": "24 hours",
+    "snippet": "\"scroll-mt-24 border border-furrow bg-loam p-5\",children:[(0,t.jsx)(\"h2\",{className:\"font-pixel text-sm text-amber-300\",children:\"SCHEDULE\"}),(0,t.jsx)(\"p\",{className:\"mt-1 text-xs text-ink-muted\",children:\"Every week is locked in at least 24 hours before it starts, sometimes earlier, never later. The first 12 weeks were committed by hash before mint.\"}),(0,t.jsxs)(\"ul\",{className:\"mt-3 divide-y divide-furrow/50\",children:[(0,t.jsxs)(\"li\",{className:\"flex items-center gap-3 py-2.5\",children:[(0,t.jsx)(d,{name:e,size:24}),(0,t.jsxs)(\"div\",{className:\"flex-1\",children:[(0,t.jsx)(\"span\",{className:\"text-sm text-amber-50\",children:e}),(0,t.jsx)(\"span\",{className:\"ml-2 text-[11px] text-ink-faint\",children:n(0)})]}),s?(0,t.jsx)(\"span\",{"
+  },
+  {
+    "file": "townhall-script-14.js",
+    "pattern": "24 hours",
+    "snippet": "w?z?`All 12 launch weeks were committed by hash before mint. Week 1 is already set on-chain and public: ${_}, \\xd7${y.toFixed(2)} on every harvest. The vane starts turning at Genesis, Monday Sep 21, and each later week is revealed at least 24 hours before it starts.`:N?\"Week 1 is set on-chain and public, but Robinhood Chain did not answer just now, so the desk will not guess it. The vane starts turning at Genesis, Monday Sep 21.\":\"Week 1 is set on-chain and public. Fetching it from the chain.\":\"Weeks 1 through 12 were committed by hash before mint. The vane starts turning at Genesis, Monday Sep 21, and turns every Monday after. Until then, nobody knows what it says, us included.\"}),w&&!z&&N&&(0,t.jsx)(\"button\",{type:\"button\",onCli"
+  },
+  {
+    "file": "townhall-script-14.js",
+    "pattern": "weatherOf",
+    "snippet": "Number(n?.[1].result??10000n)/1e4,k=!!n?.[2].result,S=!!n?.[3].result,E=Number(n?.[4].result??0n),A=Number(n?.[5].result??0n),{data:C,refetch:M}=(0,a.useReadContracts)({contracts:[{address:c.addresses.weather,abi:c.weatherAbi,functionName:\"weatherOf\",args:[v]},{address:c.addresses.weather,abi:c.weatherAbi,functionName:\"weatherOf\",args:[v+1n]},{address:c.addresses.weather,abi:c.weatherAbi,functionName:\"epochStart\",args:[v]},{address:c.addresses.weather,abi:c.weatherAbi,functionName:\"epochStart\",args:[v+1n]},{address:c.addresses.weather,abi:c.weatherAbi,functionName:\"epochStart\",args:[v+2n]},{address:c.addresses.weather,abi:c.weatherAbi,functionName:\"epochStart\",args:[v+3n]},{address:c.addresses.weather,abi:c.weatherAbi,functionName"
+  },
+  {
+    "file": "townhall-script-14.js",
+    "pattern": "weatherOf",
+    "snippet": ".[4].result??0n),A=Number(n?.[5].result??0n),{data:C,refetch:M}=(0,a.useReadContracts)({contracts:[{address:c.addresses.weather,abi:c.weatherAbi,functionName:\"weatherOf\",args:[v]},{address:c.addresses.weather,abi:c.weatherAbi,functionName:\"weatherOf\",args:[v+1n]},{address:c.addresses.weather,abi:c.weatherAbi,functionName:\"epochStart\",args:[v]},{address:c.addresses.weather,abi:c.weatherAbi,functionName:\"epochStart\",args:[v+1n]},{address:c.addresses.weather,abi:c.weatherAbi,functionName:\"epochStart\",args:[v+2n]},{address:c.addresses.weather,abi:c.weatherAbi,functionName:\"epochStart\",args:[v+3n]},{address:c.addresses.weather,abi:c.weatherAbi,functionName:\"epochStart\",args:[v+4n]}],query:{enabled:!c.PRELAUNCH&&j,refetchInterval:6e4}})"
+  },
+  {
+    "file": "townhall-script-14.js",
+    "pattern": "WeatherScheduled",
+    "snippet": "]?.status===\"success\"?c.WEATHER_NAMES[Number(C[e].result)]??\"\u2026\":\"\u2026\",[R,P]=(0,s.useState)(null);(0,s.useEffect)(()=>{if(c.PRELAUNCH||!j)return;let e=!0;return x.logsClient.getLogs({address:c.addresses.weather,event:(0,r.parseAbiItem)(\"event WeatherScheduled(uint256 indexed epoch, uint8 weather)\"),args:{epoch:v+1n},fromBlock:0n}).then(t=>{e&&P(t.length>0)}).catch(()=>{e&&P(null)}),()=>{e=!1}},[v,j]);let I=e=>Number(C?.[e+2]?.result??0n),{data:U}=(0,a.useReadContracts)({contracts:Array.from({length:Math.min(A,12)},(e,t)=>({address:c.addresses.weather,abi:c.weatherAbi,functionName:\"moons\",args:[BigInt(t)]})),query:{enabled:!c.PRELAUNCH&&A>0}}),$=(U??[]).map(e=>Number(e.result??0n)).filter(t=>t>e.now/1e3),[F,L]=(0,s.useState)(()=>Math."
+  },
+  {
+    "file": "townhall-script-14.js",
+    "pattern": "Sealed",
+    "snippet": "\",children:\"NEXT\"})]}):(0,t.jsxs)(\"li\",{className:\"flex items-center gap-3 py-2.5\",children:[(0,t.jsx)(d,{name:\"sealed\",size:24}),(0,t.jsxs)(\"div\",{className:\"flex-1\",children:[(0,t.jsx)(\"span\",{className:\"text-sm text-ink-muted\",children:\"Sealed\"}),(0,t.jsx)(\"span\",{className:\"ml-2 text-[11px] text-ink-faint\",children:n(1)})]}),(0,t.jsx)(\"span\",{className:\"text-[11px] uppercase tracking-widest text-ink-faint\",children:i(1)})]}),[2,3].map(e=>(0,t.jsxs)(\"li\",{className:\"flex items-center gap-3 py-2.5\",children:[(0,t.jsx)(d,{name:\"sealed\",size:24}),(0,t.jsxs)(\"div\",{className:\"flex-1\",children:[(0,t.jsx)(\"span\",{className:\"text-sm text-ink-muted\",children:\"Sealed\"}),(0,t.jsx)(\"span\",{className:\"ml-2 text-[11px] text-ink-faint\",child"
+  },
+  {
+    "file": "townhall-script-14.js",
+    "pattern": "Sealed",
+    "snippet": "i(1)})]}),[2,3].map(e=>(0,t.jsxs)(\"li\",{className:\"flex items-center gap-3 py-2.5\",children:[(0,t.jsx)(d,{name:\"sealed\",size:24}),(0,t.jsxs)(\"div\",{className:\"flex-1\",children:[(0,t.jsx)(\"span\",{className:\"text-sm text-ink-muted\",children:\"Sealed\"}),(0,t.jsx)(\"span\",{className:\"ml-2 text-[11px] text-ink-faint\",children:n(e)})]}),(0,t.jsx)(\"span\",{className:\"text-[11px] uppercase tracking-widest text-ink-faint\",children:i(e)})]},e))]})]})}e.s([\"WeatherDesk\",0,function(){let e=(0,h.useSeason)(),{data:n,isError:i,refetch:l}=(0,a.useReadContracts)({contracts:[{address:c.addresses.weather,abi:c.weatherAbi,functionName:\"currentEpoch\"},{address:c.addresses.weather,abi:c.weatherAbi,functionName:\"multiplierNow\"},{address:c.addresses.weathe"
+  }
+]

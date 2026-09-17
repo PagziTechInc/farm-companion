@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "chain_id": 4663,
+  "reviewed_on_utc": "2026-09-11",
+  "block_number": 60592342,
+  "source_evidence": "snapshots/verified-contracts-2026-09-11/review.json",
+  "contracts": {
+    "emissions": {
+      "address": "0x8ed784b4772ae3fdefafaa746fe405eb0410cdf3",
+      "runtime_keccak256": "0x010e25777f65ea0e83d2c39cee3b969951ffc86de0461ef23680ad01ddcea8b2"
+    },
+    "levels": {
+      "address": "0x4804043472416241d2334ecb3684fa179791bf8c",
+      "runtime_keccak256": "0x6b1005360575356eeaa099a08aeadbf9a0a525dcfc28e58d73e809920ad09eb4"
+    },
+    "nft": {
+      "address": "0x481ba120a6632714d8c872d1f4b6b57c8769dc21",
+      "runtime_keccak256": "0xa8bebed3f9ea474e01f95396bbb92b406005293d274b96ecd8ce646b4d17e493"
+    },
+    "weather": {
+      "address": "0xd45919b30bdac5f810a18434b3aac9c2d7093c67",
+      "runtime_keccak256": "0x715eeaafd15d174f204a6a71db458404e57b92b103c12f1af9a03538043118e1"
+    },
+    "crop": {
+      "address": "0x6cfaf2f60f47182f0c9f5d199db92ab261a9d487",
+      "runtime_keccak256": "0x1be44955cd2dae7359a6bd961da2ad9a8cb55041962d5b60fb2190488297e37d"
+    },
+    "activation": {
+      "address": "0xc7455c9dc27b3b5ceecbb3941e50185f17625431",
+      "runtime_keccak256": "0xbb1c60f4aa1cbf0814d8f0b3c5cab929e5d7d08fe57389f71eb9f75b54941a0a"
+    }
+  }
+}

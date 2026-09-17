@@ -1,0 +1,684 @@
+{
+  "schema_version": 1,
+  "observed_at_utc": "2026-09-07T07:20:40.859460+00:00",
+  "authority": "Almanac controls gameplay rules per user instruction. Other pages and client declarations are supporting evidence.",
+  "pages": [
+    {
+      "url": "https://rh.farm/almanac/",
+      "status": 200,
+      "sha256": "bf3ff238c9950d9aa489f3f4b4b95652e15caaf22eedd2adb0a3b2bd0d7408fa",
+      "bytes": 153315,
+      "headings": [
+        "THE FARMER'S ALMANAC",
+        "01GETTING HERE",
+        "02THE LOOP",
+        "03HOW PLOTS ARE DEALT",
+        "04WEIGHT: WHO EARNS WHAT",
+        "05THE HARVEST, WORKED OUT",
+        "06WEATHER",
+        "07THE FEES, ALL OF THEM",
+        "08WHAT TRAVELS WITH A PLOT",
+        "09HONEST EXPECTATIONS",
+        "10THE MAYOR'S DRAWINGS",
+        "11WHERE EVERY $CROP LIVES",
+        "12YOUR FIRST WEEK",
+        "WHERE THESE NUMBERS COME FROM"
+      ],
+      "links": [
+        "#dealt",
+        "#drawings",
+        "#expectations",
+        "#fees",
+        "#first-week",
+        "#getting-here",
+        "#harvest",
+        "#main",
+        "#supply",
+        "#the-loop",
+        "#travels",
+        "#weather",
+        "#weight",
+        "/",
+        "/almanac/",
+        "/charter/",
+        "/check/",
+        "/county/",
+        "/deeds/",
+        "/farm/",
+        "/leaderboard/",
+        "/provenance/",
+        "/security/",
+        "/standings/",
+        "/store/",
+        "/swap/",
+        "/townhall/",
+        "https://discord.gg/yieldfarm",
+        "https://opensea.io/swap",
+        "https://portal.arbitrum.io/bridge?destinationChain=robinhood-chain&sourceChain=ethereum",
+        "https://robinhoodchain.blockscout.com/address/0x27af61a7227314bf8b558ec9777423a49e46600f?tab=read_contract",
+        "https://robinhoodchain.blockscout.com/address/0x34a9f041dce0b8e39cc1ca7b1e32238fa5e45284?tab=read_contract",
+        "https://robinhoodchain.blockscout.com/address/0x3974f8d2eaaf2425fb8556b688534332adc4dacd?tab=read_contract",
+        "https://robinhoodchain.blockscout.com/address/0xd45919b30bdac5f810a18434b3aac9c2d7093c67?tab=read_contract",
+        "https://x.com/YieldFarmRH"
+      ]
+    },
+    {
+      "url": "https://rh.farm/townhall/",
+      "status": 200,
+      "sha256": "97b201392d8fcc5161c58523745f16ae15457f9d3f1b88cce9b2a575a79c6a5f",
+      "bytes": 57164,
+      "headings": [
+        "THE TOWN HALL",
+        "SCHEDULE",
+        "THE FIVE WEEKLY WEATHERS",
+        "EVENTS",
+        "THE NOTICE BOARD",
+        "THE MAYOR'S SWEEPSTAKE"
+      ],
+      "links": [
+        "#main",
+        "/",
+        "/almanac/",
+        "/charter/",
+        "/check/",
+        "/county/",
+        "/deeds/",
+        "/farm/",
+        "/leaderboard/",
+        "/provenance/",
+        "/security/",
+        "/standings/",
+        "/store/",
+        "/swap/",
+        "/townhall/",
+        "https://discord.gg/yieldfarm",
+        "https://x.com/YieldFarmRH"
+      ]
+    },
+    {
+      "url": "https://rh.farm/store/",
+      "status": 200,
+      "sha256": "f3eb37ebaa47a33b2bfe7b4f8624a2317ae0161237b2a46ec2dcdd3535dc3edb",
+      "bytes": 49401,
+      "headings": [
+        "THE GENERAL STORE",
+        "THE LOOKS WALL",
+        "THE WORK SHELF"
+      ],
+      "links": [
+        "#main",
+        "/",
+        "/almanac/",
+        "/almanac/#travels",
+        "/charter/",
+        "/check/",
+        "/county/",
+        "/deeds/",
+        "/farm/",
+        "/leaderboard/",
+        "/provenance/",
+        "/security/",
+        "/standings/",
+        "/store/",
+        "/swap/",
+        "/townhall/",
+        "https://discord.gg/yieldfarm",
+        "https://x.com/YieldFarmRH"
+      ]
+    },
+    {
+      "url": "https://rh.farm/provenance/",
+      "status": 200,
+      "sha256": "a252fe18941ee9f4faf5c0b173626549d01f36731c09e11d71bbec9a0d56e88a",
+      "bytes": 32729,
+      "headings": [
+        "PROVENANCE",
+        "READ IT OFF THE CHAIN YOURSELF"
+      ],
+      "links": [
+        "#main",
+        "/",
+        "/almanac/",
+        "/charter/",
+        "/check/",
+        "/county/",
+        "/deeds/",
+        "/farm/",
+        "/leaderboard/",
+        "/provenance/",
+        "/security/",
+        "/standings/",
+        "/store/",
+        "/swap/",
+        "/townhall/",
+        "https://api.rh.farm/manifest.json",
+        "https://discord.gg/yieldfarm",
+        "https://robinhoodchain.blockscout.com/address/0x27af61a7227314bf8b558ec9777423a49e46600f?tab=read_contract",
+        "https://robinhoodchain.blockscout.com/address/0xd45919b30bdac5f810a18434b3aac9c2d7093c67?tab=read_contract",
+        "https://x.com/YieldFarmRH"
+      ]
+    },
+    {
+      "url": "https://rh.farm/security/",
+      "status": 200,
+      "sha256": "edbcf6b7bfad4c3a02e1b1096241389182de42c4bc8c1d7639cb2f7b93d03963",
+      "bytes": 76299,
+      "headings": [
+        "THE LOCKS",
+        "CARVED IN THE CONTRACTS",
+        "WHAT THE OWNER CAN STILL DO",
+        "THE MINT",
+        "TESTED, THEN TESTED AGAIN",
+        "VERIFY IT YOURSELF",
+        "STAY SAFE OUT THERE"
+      ],
+      "links": [
+        "#main",
+        "/",
+        "/almanac/",
+        "/charter/",
+        "/check/",
+        "/county/",
+        "/deeds/",
+        "/farm/",
+        "/leaderboard/",
+        "/provenance/",
+        "/security/",
+        "/standings/",
+        "/store/",
+        "/swap/",
+        "/townhall/",
+        "https://discord.gg/yieldfarm",
+        "https://robinhoodchain.blockscout.com/address/0x0858fbbdae8a6c85ec926c6a2684b94f60dedf52",
+        "https://robinhoodchain.blockscout.com/address/0x27af61a7227314bf8b558ec9777423a49e46600f",
+        "https://robinhoodchain.blockscout.com/address/0x3056572cd7ee8b7be487bbfed5000a9c867997da",
+        "https://robinhoodchain.blockscout.com/address/0x34a9f041dce0b8e39cc1ca7b1e32238fa5e45284",
+        "https://robinhoodchain.blockscout.com/address/0x3974f8d2eaaf2425fb8556b688534332adc4dacd",
+        "https://robinhoodchain.blockscout.com/address/0x6af020c14e1f6fc7e6972a8a6590b98f756e605d",
+        "https://robinhoodchain.blockscout.com/address/0x6de0f2e903bfec34c71e329c789789befeec517f",
+        "https://robinhoodchain.blockscout.com/address/0x71d5fe93bba27a7ecf0e77a13f21880caa2d115a",
+        "https://robinhoodchain.blockscout.com/address/0x778aa5BD0b28829b7C27eb3957C2D33848125D85",
+        "https://robinhoodchain.blockscout.com/address/0xc023f81ec14261dabe9de17c30ae70a4c78d87a2",
+        "https://robinhoodchain.blockscout.com/address/0xd11822ea81669500e576fc0fbbef618f99dd158a",
+        "https://robinhoodchain.blockscout.com/address/0xd45919b30bdac5f810a18434b3aac9c2d7093c67",
+        "https://x.com/YieldFarmRH"
+      ]
+    },
+    {
+      "url": "https://rh.farm/swap/",
+      "status": 200,
+      "sha256": "fc0a8f3dd74b14aa9042d0a54246c884323ce13506c9cbb3623a80a2ef954882",
+      "bytes": 28536,
+      "headings": [],
+      "links": [
+        "#main",
+        "/",
+        "/almanac/",
+        "/charter/",
+        "/check/",
+        "/county/",
+        "/deeds/",
+        "/farm/",
+        "/leaderboard/",
+        "/provenance/",
+        "/security/",
+        "/standings/",
+        "/store/",
+        "/swap/",
+        "/townhall/",
+        "https://discord.gg/yieldfarm",
+        "https://x.com/YieldFarmRH"
+      ]
+    },
+    {
+      "url": "https://rh.farm/farm/",
+      "status": 200,
+      "sha256": "392b3d88969bf92f7c4c7e80bb9564d64b6a4924d99f3124a539a8efd5c67312",
+      "bytes": 30958,
+      "headings": [
+        "My Plots"
+      ],
+      "links": [
+        "#main",
+        "/",
+        "/almanac/",
+        "/charter/",
+        "/check/",
+        "/county/",
+        "/deeds/",
+        "/farm/",
+        "/leaderboard/",
+        "/provenance/",
+        "/security/",
+        "/standings/",
+        "/store/",
+        "/swap/",
+        "/townhall/",
+        "https://discord.gg/yieldfarm",
+        "https://x.com/YieldFarmRH"
+      ]
+    },
+    {
+      "url": "https://rh.farm/deeds/",
+      "status": 200,
+      "sha256": "055d0f82176295740c118d0685013baa28af5e0178dfc5c2d4d9f8be09ee41cd",
+      "bytes": 39145,
+      "headings": [
+        "THE DEEDS OFFICE",
+        "THREE WAYS ONTO THE WHITELIST",
+        "THE CENSUS",
+        "NEIGHBORS' DEEDS",
+        "GUARANTEED SPOT, NO LINE: SIGN THE CHARTER.",
+        "AT THE COUNTER",
+        "SIGN IN WITH X",
+        "FOLLOW ON X",
+        "THE WALLET HOLDING YOUR NFT",
+        "THE ALLIED TOWNS"
+      ],
+      "links": [
+        "#claim",
+        "#main",
+        "/",
+        "/almanac/",
+        "/charter/",
+        "/check/",
+        "/county/",
+        "/deeds/",
+        "/farm/",
+        "/leaderboard/",
+        "/provenance/",
+        "/security/",
+        "/standings/",
+        "/store/",
+        "/swap/",
+        "/townhall/",
+        "https://discord.gg/yieldfarm",
+        "https://x.com/YieldFarmRH"
+      ]
+    },
+    {
+      "url": "https://rh.farm/check/",
+      "status": 200,
+      "sha256": "5bb5d5b0eb9c400a5f03e0f5f27f03de441daec0aa7b1a8fe0e1515a3c2b23c0",
+      "bytes": 31623,
+      "headings": [
+        "THE WALLET CHECKER"
+      ],
+      "links": [
+        "#main",
+        "/",
+        "/almanac/",
+        "/charter/",
+        "/check/",
+        "/county/",
+        "/deeds/",
+        "/farm/",
+        "/leaderboard/",
+        "/provenance/",
+        "/security/",
+        "/standings/",
+        "/store/",
+        "/swap/",
+        "/townhall/",
+        "https://discord.gg/yieldfarm",
+        "https://x.com/YieldFarmRH"
+      ]
+    },
+    {
+      "url": "https://rh.farm/charter/",
+      "status": 200,
+      "sha256": "8fc8037be8af89eee1088f27676794bbccb59ec4e02a68daf64fb0083ca8507f",
+      "bytes": 38679,
+      "headings": [
+        "THE FOUNDING CHARTER",
+        "SOULBOUND. UNTRADABLE.",
+        "PAINTED FOR THE TOWN.",
+        "WHAT AN ELDER HOLDS",
+        "HOW TO SIGN",
+        "CONNECT ON ROBINHOOD CHAIN",
+        "SIGN THE CHARTER \u00b7 0.05 ETH",
+        "TAKE YOUR SEAT",
+        "THE ELDERS' PLAQUE"
+      ],
+      "links": [
+        "#charter",
+        "#main",
+        "/",
+        "/almanac/",
+        "/charter/",
+        "/check/",
+        "/county/",
+        "/deeds/",
+        "/farm/",
+        "/leaderboard/",
+        "/provenance/",
+        "/security/",
+        "/standings/",
+        "/store/",
+        "/swap/",
+        "/townhall/",
+        "https://discord.gg/yieldfarm",
+        "https://robinhoodchain.blockscout.com/address/0x6de0f2e903bfec34c71e329c789789befeec517f",
+        "https://x.com/YieldFarmRH"
+      ]
+    }
+  ],
+  "scripts": [
+    {
+      "url": "https://rh.farm/_next/static/chunks/00njw0-whut1p.js",
+      "status": 200,
+      "sha256": "e94db7433b1821be35705b1c53a44b40c7297dadadca9587bb7c1b09b5521d0e",
+      "bytes": 113758,
+      "declarations": [
+        "event Transfer(address indexed from, address indexed to, uint256 value)",
+        "event WeatherScheduled(uint256 indexed epoch, uint8 weather)",
+        "function balanceOf(address) returns (uint256)",
+        "function decimals() returns (uint256)",
+        "function getBalance(address)",
+        "function query(address target, bytes data)",
+        "function symbol() returns (string)",
+        "function tokenURI(uint256) returns (string)"
+      ],
+      "api_paths": [
+        "/stats"
+      ]
+    },
+    {
+      "url": "https://rh.farm/_next/static/chunks/03kcjim05v5w2.js",
+      "status": 200,
+      "sha256": "b13812004152cd60a7ea9c7a9f09e953373f8d99e5e3fd35593343570193ab04",
+      "bytes": 53549,
+      "declarations": [],
+      "api_paths": []
+    },
+    {
+      "url": "https://rh.farm/_next/static/chunks/0cz1d0mv5g_q7.js",
+      "status": 200,
+      "sha256": "0973c1d64c88adc8e3c950410cb58b288f72118d5965b78049438deb8f2f9683",
+      "bytes": 112594,
+      "declarations": [],
+      "api_paths": []
+    },
+    {
+      "url": "https://rh.farm/_next/static/chunks/0ifi16abjnq6j.js",
+      "status": 200,
+      "sha256": "148ee20a1556aae7c2e8d35b8d2380ae937e7cf35c26cdd67a71a7488186bfc4",
+      "bytes": 44653,
+      "declarations": [
+        "event WeatherScheduled(uint256 indexed epoch, uint8 weather)",
+        "function FEE() view returns (uint256)",
+        "function MAX_SUPPLY() view returns (uint256)",
+        "function PRICE() view returns (uint256)",
+        "function activation() view returns (address)",
+        "function allowance(address owner, address spender) view returns (uint256)",
+        "function approve(address spender, uint256 amount) returns (bool)",
+        "function balanceOf(address account, uint256 id) view returns (uint256)",
+        "function balanceOf(address) view returns (uint256)",
+        "function balanceOfBatch(address[] accounts, uint256[] ids) view returns (uint256[])",
+        "function buy(uint8 itemId, uint32 qty)",
+        "function carve(string name)",
+        "function claim(uint256 tokenId) returns (uint256)",
+        "function claimMany(uint256[] tokenIds) returns (uint256)",
+        "function clear()",
+        "function commitHash() view returns (bytes32)",
+        "function costToReach(uint8 level) view returns (uint256)",
+        "function currentEpoch() view returns (uint256)",
+        "function elders() view returns (address[])",
+        "function emitted() view returns (uint256)",
+        "function epochStart(uint256 epoch) view returns (uint256)",
+        "function equip(uint256 plotId, uint8 itemId)",
+        "function equippedMask(uint256 plotId) view returns (uint32)",
+        "function equippedOf(uint256 plotId) view returns (uint8[4])",
+        "function fee() view returns (uint256)",
+        "function floodActive() view returns (bool)",
+        "function isActive(uint256 tokenId) view returns (bool)",
+        "function isApprovedForAll(address account, address operator) view returns (bool)",
+        "function isElder(address) view returns (bool)",
+        "function levelOf(uint256 tokenId) view returns (uint8)",
+        "function listings(uint8 itemId) view returns (uint256 price, uint32 maxSupply, uint32 sold, uint8 slot, bool listed)",
+        "function manifestHash() view returns (bytes32)",
+        "function mint(uint256 qty) payable",
+        "function mintWL(uint256 qty, bytes32[] proof)",
+        "function moonActive() view returns (bool)",
+        "function moonCount() view returns (uint256)",
+        "function moons(uint256 i) view returns (uint256)",
+        "function multiplierNow() view returns (uint256)",
+        "function nameOf(address farmer) view returns (string)",
+        "function nextBoundary() view returns (uint256)",
+        "function open() view returns (bool)",
+        "function pending(uint256 tokenId) view returns (uint256)",
+        "function pendingMany(uint256[] ids) view returns (uint256)",
+        "function plant(uint256 tokenId)",
+        "function publicMinted(address) view returns (uint256)",
+        "function remaining(uint8 itemId) view returns (uint32)",
+        "function saleState() view returns (uint8)",
+        "function setApprovalForAll(address operator, bool approved)",
+        "function sign() payable",
+        "function startingIndex() view returns (uint256)",
+        "function sync(uint256 tokenId)",
+        "function tokenURI(uint256 tokenId) view returns (string)",
+        "function tokensOfOwner(address owner) view returns (uint256[])",
+        "function totalSupply() view returns (uint256)",
+        "function totalWeight() view returns (uint256)",
+        "function unequip(uint256 plotId, uint8 slot)",
+        "function upgrade(uint256 tokenId)",
+        "function uri(uint256 id) view returns (string)",
+        "function weatherOf(uint256 epoch) view returns (uint8)",
+        "function weightOf(uint256 tokenId) view returns (uint256)",
+        "function wlMinted(address) view returns (uint256)"
+      ],
+      "api_paths": []
+    },
+    {
+      "url": "https://rh.farm/_next/static/chunks/0wsx6twuas6j4.js",
+      "status": 200,
+      "sha256": "c5d20577f73a0c0a2ef45550a46481771843ae26e80adb8e115c80c215c199b1",
+      "bytes": 14640,
+      "declarations": [],
+      "api_paths": []
+    },
+    {
+      "url": "https://rh.farm/_next/static/chunks/0x4r0qtj971d_.js",
+      "status": 200,
+      "sha256": "2a0f45576e66415348b1cd92bb33a7264162b97b50f3115844f9b620ce788c81",
+      "bytes": 12953,
+      "declarations": [],
+      "api_paths": []
+    },
+    {
+      "url": "https://rh.farm/_next/static/chunks/0xwiu7cken43a.js",
+      "status": 200,
+      "sha256": "291fa144d4eaa9b8fcf53fb647181a9be55bd0b4ffd9189e7a8de35b4af66933",
+      "bytes": 26402,
+      "declarations": [],
+      "api_paths": []
+    },
+    {
+      "url": "https://rh.farm/_next/static/chunks/0zd5y-h191ny8.js",
+      "status": 200,
+      "sha256": "d15a73c2f7bc5bb2fa2491efa51d79e4a793a4421f3b13d56f9fdd5ac2f8b64d",
+      "bytes": 33325,
+      "declarations": [],
+      "api_paths": [
+        "/metadata/${e}",
+        "/stats"
+      ]
+    },
+    {
+      "url": "https://rh.farm/_next/static/chunks/1-dd8ola-3fxz.js",
+      "status": 200,
+      "sha256": "8f89383ff92a864a837fe29b58502df47cb40756bc0b2cf7d0f498d2e43bedfa",
+      "bytes": 9967,
+      "declarations": [],
+      "api_paths": [
+        "/stats",
+        "/weather"
+      ]
+    },
+    {
+      "url": "https://rh.farm/_next/static/chunks/18ts-wu42zice.js",
+      "status": 200,
+      "sha256": "67e4f6b0818c1253a3b66abd06a064de7e458dca0428c8378900e0874de40c6f",
+      "bytes": 48727,
+      "declarations": [],
+      "api_paths": []
+    },
+    {
+      "url": "https://rh.farm/_next/static/chunks/1_zdayb60dgyz.js",
+      "status": 200,
+      "sha256": "ba88d3689fba959a393f56b195ce71d4b1f17c06f35f8aae57957c74dc12258e",
+      "bytes": 80057,
+      "declarations": [],
+      "api_paths": []
+    },
+    {
+      "url": "https://rh.farm/_next/static/chunks/1au33_ifqpheu.js",
+      "status": 200,
+      "sha256": "52494ec41167bc6d6bab7cbe141605aa1f29acc5fd46de25fe9145101b53064f",
+      "bytes": 212,
+      "declarations": [],
+      "api_paths": []
+    },
+    {
+      "url": "https://rh.farm/_next/static/chunks/1bcpprlfq676v.js",
+      "status": 200,
+      "sha256": "21c6a31f82be8a6f18d3d374e27249dc90c85be33c6a33e21bac430e961d4c1e",
+      "bytes": 234151,
+      "declarations": [],
+      "api_paths": []
+    },
+    {
+      "url": "https://rh.farm/_next/static/chunks/1bj_i_1wgsr98.js",
+      "status": 200,
+      "sha256": "004efa9c4291e69536b60c4fe395effcb3c4b71283d6d314efc769f454f3ccf4",
+      "bytes": 30619,
+      "declarations": [],
+      "api_paths": []
+    },
+    {
+      "url": "https://rh.farm/_next/static/chunks/1g5c6uvkid-p8.js",
+      "status": 200,
+      "sha256": "9637e59a7c813a7c01917885c770ae6927e97134ec23d7bdf4ccd77394cc7345",
+      "bytes": 29196,
+      "declarations": [],
+      "api_paths": []
+    },
+    {
+      "url": "https://rh.farm/_next/static/chunks/1medmnew5uh7t.js",
+      "status": 200,
+      "sha256": "0bc6cd800d6c7fd2afe569d91f336f09927f0a915e8ccce7bf7153662ad1ac67",
+      "bytes": 165768,
+      "declarations": [],
+      "api_paths": []
+    },
+    {
+      "url": "https://rh.farm/_next/static/chunks/1of6sy_9gx8ma.js",
+      "status": 200,
+      "sha256": "052b7d56c71574e2f3c05692fcff19b630082bdd35da30bbbeb702b1ce5865c4",
+      "bytes": 7087,
+      "declarations": [],
+      "api_paths": [
+        "/manifest.json",
+        "/manifest.py"
+      ]
+    },
+    {
+      "url": "https://rh.farm/_next/static/chunks/1w8ku_yh-5df1.js",
+      "status": 200,
+      "sha256": "65f80252dc3e5b3514f6ab3c2806e4b541ad1b3a276c99b8d203434036aa47ce",
+      "bytes": 1017,
+      "declarations": [],
+      "api_paths": []
+    },
+    {
+      "url": "https://rh.farm/_next/static/chunks/2iuczp5utqiae.js",
+      "status": 200,
+      "sha256": "a41d8e35a2a848da6f4bf3c27ce7945f3cc5b0721459a8f253f231bf825e1fc3",
+      "bytes": 4491,
+      "declarations": [],
+      "api_paths": []
+    },
+    {
+      "url": "https://rh.farm/_next/static/chunks/35ixflop4uq07.js",
+      "status": 200,
+      "sha256": "c1205503d5fcec77a38784910fb132c685a5897d0462f72c83f7540722af6e2e",
+      "bytes": 35663,
+      "declarations": [],
+      "api_paths": [
+        "/metadata/${e}"
+      ]
+    },
+    {
+      "url": "https://rh.farm/_next/static/chunks/3ptd233sj6t0y.js",
+      "status": 200,
+      "sha256": "a28a082aa173a7b5e35d20763f1daf4820c619287827d103156924567c4665b7",
+      "bytes": 347,
+      "declarations": [],
+      "api_paths": []
+    },
+    {
+      "url": "https://rh.farm/_next/static/chunks/3rdz-q9ohshpg.js",
+      "status": 200,
+      "sha256": "06100a1833582d8ce484d351a5eac8a5c03fb1b4091894e7860f85e884d6785a",
+      "bytes": 31489,
+      "declarations": [],
+      "api_paths": []
+    },
+    {
+      "url": "https://rh.farm/_next/static/chunks/3rwvp-ebxj937.js",
+      "status": 200,
+      "sha256": "41d385cac62e57c06b5e406fc80dea59c956be4812a9e26bfd4e4f8635366d5c",
+      "bytes": 6633,
+      "declarations": [],
+      "api_paths": []
+    },
+    {
+      "url": "https://rh.farm/_next/static/chunks/3t-qh1y3col8t.js",
+      "status": 200,
+      "sha256": "8872417f85dec239cdd953f52b9707b3ede55132a86f595d2f89d9bd332f48be",
+      "bytes": 17380,
+      "declarations": [],
+      "api_paths": []
+    },
+    {
+      "url": "https://rh.farm/_next/static/chunks/3vfo7q3i_eqqu.js",
+      "status": 200,
+      "sha256": "65717737af6e9d923ed53ede3b9e882dc10a2a9825aad179e2f31094e69466c6",
+      "bytes": 2707,
+      "declarations": [],
+      "api_paths": []
+    },
+    {
+      "url": "https://rh.farm/_next/static/chunks/3z9a04_6ry45g.js",
+      "status": 200,
+      "sha256": "4dced24147f20107240bba26634a3f466106cede6fa63512a1b47395af807ab6",
+      "bytes": 60789,
+      "declarations": [],
+      "api_paths": []
+    },
+    {
+      "url": "https://rh.farm/_next/static/chunks/40yvj0d4jc2fe.js",
+      "status": 200,
+      "sha256": "5e6718300d2dd0915ad5161a1caf169a9e11b0ac25856c1b3175b456a707c84c",
+      "bytes": 46086,
+      "declarations": [],
+      "api_paths": []
+    },
+    {
+      "url": "https://rh.farm/_next/static/chunks/43b5nf4-jgbmb.js",
+      "status": 200,
+      "sha256": "07ff41e052cb440443c90fba150f1ae6c52a1355e04f8208292fb230e6b5b24d",
+      "bytes": 28408,
+      "declarations": [],
+      "api_paths": []
+    },
+    {
+      "url": "https://rh.farm/_next/static/chunks/turbopack-2vy8ro0hbmnsj.js",
+      "status": 200,
+      "sha256": "6cab73cf180afd7249d04b730215ca568449c7cf38e356746c5dcf2b7096d702",
+      "bytes": 9721,
+      "declarations": [],
+      "api_paths": []
+    }
+  ]
+}

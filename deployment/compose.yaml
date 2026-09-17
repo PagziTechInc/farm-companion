@@ -1,0 +1,66 @@
+name: farm-companion
+
+services:
+  nginx:
+    image: nginx:1.28-alpine@sha256:a8b39bd9cf0f83869a2162827a0caf6137ddf759d50a171451b335cecc87d236
+    container_name: farm-companion-nginx
+    restart: unless-stopped
+    init: true
+    user: "101:101"
+    command: ["nginx", "-g", "daemon off;"]
+    read_only: true
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    mem_limit: 256m
+    cpus: "0.50"
+    pids_limit: 64
+    stop_grace_period: 10s
+    tmpfs:
+      - /tmp:mode=1777,noexec,nosuid,size=16m,uid=101,gid=101
+      - /var/cache/nginx:mode=0755,noexec,nosuid,size=32m,uid=101,gid=101
+      - /var/run:mode=0755,noexec,nosuid,size=8m,uid=101,gid=101
+    volumes:
+      - type: bind
+        source: /opt/farm-companion/site
+        target: /srv/farm
+        read_only: true
+        bind:
+          create_host_path: false
+      - type: bind
+        source: /opt/farm-companion/config
+        target: /etc/nginx/conf.d
+        read_only: true
+        bind:
+          create_host_path: false
+    ports:
+      - "127.0.0.1:18947:8080"
+    networks:
+      - farm-companion
+    healthcheck:
+      test:
+        - CMD
+        - wget
+        - -q
+        - -O
+        - /dev/null
+        - http://127.0.0.1:8080/build.json
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 10s
+    labels:
+      traefik.enable: "true"
+      traefik.docker.network: farm-companion
+      traefik.http.routers.farm-companion.rule: "Host(`farm.pagzi.tech`)"
+      traefik.http.routers.farm-companion.entrypoints: websecure
+      traefik.http.routers.farm-companion.tls: "true"
+      traefik.http.routers.farm-companion.tls.certresolver: letsencrypt
+      traefik.http.routers.farm-companion.service: farm-companion
+      traefik.http.services.farm-companion.loadbalancer.server.port: "8080"
+
+networks:
+  farm-companion:
+    name: farm-companion
+    driver: bridge

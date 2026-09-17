@@ -1,0 +1,114 @@
+Yield Farm
+Skip to content
+YIELD FARMHomeMy PlotsTown HallCheck walletCharterAlmanacVOLConnect wallet☰
+111 ELDERS · THE FOUNDING CHARTER · RH.FARM/CHARTER◆FIRST SOIL · 2× IN THE FOUNDING WEEK, 1.5× UNTIL OCT 19 · PLANT EARLY◆FLASH FLOOD DOUBLES THE WEEK, CAPPED AT 2×◆HARVEST MOON DOUBLES THE WEEK, CAPPED AT 2×◆60% OF EVERY PLANT BURNS◆33 / 3,333 GOLDEN ACRES◆3,333 ORIGINALS · ZERO REPEATS◆WEATHER ROLLS WEEKLY◆EVERY PLOT ARRIVES SEALED IN WAX◆THE MAYOR DRAWS EVERY MONDAY FROM OCTOBER◆MABEL'S SHELVES OPEN LATER THIS YEAR◆UPGRADES BURN UP TO 50,000 $CROP◆
+111 ELDERS · THE FOUNDING CHARTER · RH.FARM/CHARTER◆FIRST SOIL · 2× IN THE FOUNDING WEEK, 1.5× UNTIL OCT 19 · PLANT EARLY◆FLASH FLOOD DOUBLES THE WEEK, CAPPED AT 2×◆HARVEST MOON DOUBLES THE WEEK, CAPPED AT 2×◆60% OF EVERY PLANT BURNS◆33 / 3,333 GOLDEN ACRES◆3,333 ORIGINALS · ZERO REPEATS◆WEATHER ROLLS WEEKLY◆EVERY PLOT ARRIVES SEALED IN WAX◆THE MAYOR DRAWS EVERY MONDAY FROM OCTOBER◆MABEL'S SHELVES OPEN LATER THIS YEAR◆UPGRADES BURN UP TO 50,000 $CROP◆
+YIELD FARM_$CROP
+3,333 one-of-a-kind pixel farms on Robinhood Chain. Plant. Ride the weather. Harvest $CROP.
+Mint price0.002 ETH
+Supply3,333
+Plant burn60%
+Top rarity multiplier2.0×
+Golden odds1 in 100
+Mint · Sep 15 · 1 PM ET (opens in a new tab)View my farm →
+1 OF 165DORMANT
+PLANT ME
+PUMPKIN · BEAR · DAYPRIZE PLOT · 1.5×
+Live gallery
+3,333 FARMS. NO TWO ALIKE.
+Straight from the field, every tier, every level, day and night. Every plot is its own painting, not a stamp from shared layers.
+GOLDEN ACRE2.0×wheat · scarecrow · day
+COMMON1.0×corn · wizard · LV 2
+COMMON1.0×hops · straw hat · LV 3
+COMMON1.0×wheat · suit · LV 4
+FERTILE1.25×corn · astronaut · overcast
+PRIZE PLOT1.5×sunflower · robot · day
+COMMON1.0×tulip · astronaut · LV 5
+COMMON1.0×corn · straw hat · dusk
+Season skins
+THE SEASONS CHANGE
+One farm, four faces: a skin repaints your whole plot everywhere it appears, and taking it off is always free. At the General Store later this year.
+DEEP WINTER
+FESTIVAL NIGHT
+AUTUMN GOLD
+STORM WATCH
+How it works
+THE LOOP
+Plant
+2,500
+$CROP, 60% burned · or a seed bag at the pool's priceAlmanac · 02▶
+Harvest
+Whenever you like
+free to harvest · rarity × level × weather · First Soil ×2, then ×1.5 until Oct 19Almanac · 05▶
+Upgrade
+5k → 50k
+burned forever · ×3 weight at the windmillAlmanac · 04
+Weather is the market
+A committed on-chain oracle sets the conditions every week and multiplies every harvest on the farm. Harvest Moons are posted at least 30 days ahead; nobody can re-roll a bad week.
+0.5×
+Locusts
+0.8×
+Drought
+1.0×
+Fair
+1.2×
+Sunny
+1.5×
+Rain
+Flash Flood and Harvest Moon events stack, capped at 2×
+The sink
+BURN TO EVOLVE
+Upgrades burn $CROP forever and multiply your harvest weight, a maxed plot pulls 3× the weight of a fresh one, before rarity and weather. Drag the rail or press a level.
+LV 1
+LV 1 · SEEDLINGS
+Where every plot starts
+×1
+harvest weightburned so far0 $CROPnext step5,000 $CROPweight after it×1.25BURN 5,000 → LV 2
+burn 5,000burn 10,000burn 20,000burn 50,00012345
+LV 1×1harvest weightwhere every plot startsLV 2×1.25harvest weightburn 5,000LV 3×1.5harvest weightburn 10,000LV 4×2harvest weightburn 20,000LV 5×3harvest weightburn 50,000
+85,000 $CROP burned to max a plot. Every upgrade is on-chain and your plot's own scene re-renders to match.
+One real farm, Tulip · Astronaut, climbing all five levels.
+Rarity
+THE LOOT TABLE
+Common
+2,475 of 3,333
+1.0×
+74.25%
+Fertile
+660 of 3,333
+1.25×
+19.8%
+Prize Plot
+165 of 3,333
+1.5×
+4.95%
+Golden Acre
+33 of 3,333
+2.0×
+0.99%
+ExampleTierMultiplierPlots of 3,333Mint odds
+Common1.0×2,47574.25%
+Fertile1.25×66019.8%
+Prize Plot1.5×1654.95%
+Golden Acre2.0×330.99%
+Tiers come from a manifest committed on-chain before reveal, nobody picks winners, and the odds can't move. Verify on the provenance page.
+760M
+$CROP ceiling over 4 years
+60%
+of every plant burns
+85K
+burned to max a plot
+Mint
+CLAIM YOUR PLOT
+Minting happens on OpenSea, 3,333 plots, revealed after the drop. Your plot then plants, harvests and upgrades right here.
+MINT OPENS SEP 15 · 1 PM ET
+Until the bell rings, the town square is open. That's where mint news lands first.
+ Join the Discord Follow on XWatch the drop on OpenSea (opens in a new tab)
+Mint opens Tue Sep 15 at 1 PM ET (17:00 UTC) · 0.002 ETH. The button above turns into the mint link the moment it opens.
+This week's weather
+READING THE VANE…
+Fetching the sealed week from the chain.
+New to the farm? The Almanac has every rule, stated plainly.
+YIELD FARM
+3,333 pixel farms that actually farm, on Robinhood Chain.
+Provenance & fairnessTown StandingsStoreLeaderboardThe CountySwapSealed weather. Frozen tiers. Every purchase burns.

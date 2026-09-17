@@ -1,0 +1,303 @@
+{
+  "schema_version": 1,
+  "scope": "Current public read adapters and individually human-approved supported writes. Economy v2 deployment replaces the historical September 7 contracts; no credentials are stored.",
+  "network": {
+    "chain_id": 4663,
+    "rpc_url": "https://robinhood-rpc.publicnode.com/",
+    "explorer_url": "https://robinhoodchain.blockscout.com",
+    "api_base_url": "https://api.rh.farm",
+    "official_rpc_url": "https://rpc.mainnet.chain.robinhood.com/",
+    "rpc_provider": "PublicNode",
+    "rpc_source": "publicnode-robinhood-2026-09-16"
+  },
+  "contracts": {
+    "nft": {
+      "address": "0x481ba120a6632714d8c872d1f4b6b57c8769dc21",
+      "read_signatures": [
+        "function tokensOfOwner(address owner) view returns (uint256[])",
+        "function totalSupply() view returns (uint256)",
+        "function startingIndex() view returns (uint256)",
+        "function manifestHash() view returns (bytes32)",
+        "function rarityTier(uint256 tokenId) view returns (uint8)",
+        "function tiersFinalized() view returns (bool)",
+        "function ownerOf(uint256 tokenId) view returns (address)",
+        "function transferHook() view returns (address)"
+      ],
+      "sources": [
+        "almanac",
+        "verified-contracts-2026-09-11"
+      ],
+      "runtime_keccak256": "0xa8bebed3f9ea474e01f95396bbb92b406005293d274b96ecd8ce646b4d17e493",
+      "verified_at_block": 60592342
+    },
+    "crop": {
+      "address": "0x6cfaf2f60f47182f0c9f5d199db92ab261a9d487",
+      "read_signatures": [
+        "function balanceOf(address) view returns (uint256)",
+        "function allowance(address owner, address spender) view returns (uint256)",
+        "function decimals() view returns (uint8)"
+      ],
+      "sources": [
+        "verified-contracts-2026-09-11"
+      ],
+      "runtime_keccak256": "0x1be44955cd2dae7359a6bd961da2ad9a8cb55041962d5b60fb2190488297e37d",
+      "verified_at_block": 60592342
+    },
+    "levels": {
+      "address": "0x4804043472416241d2334ecb3684fa179791bf8c",
+      "read_signatures": [
+        "function levelOf(uint256 tokenId) view returns (uint8)",
+        "function costToReach(uint8 level) view returns (uint256)",
+        "function paused() view returns (bool)"
+      ],
+      "sources": [
+        "almanac",
+        "verified-contracts-2026-09-11"
+      ],
+      "runtime_keccak256": "0x6b1005360575356eeaa099a08aeadbf9a0a525dcfc28e58d73e809920ad09eb4",
+      "verified_at_block": 60592342
+    },
+    "emissions": {
+      "address": "0x8ed784b4772ae3fdefafaa746fe405eb0410cdf3",
+      "read_signatures": [
+        "function pending(uint256 tokenId) view returns (uint256)",
+        "function pendingMany(uint256[] ids) view returns (uint256)",
+        "function weightOf(uint256 tokenId) view returns (uint256)",
+        "function totalWeight() view returns (uint256)",
+        "function activation() view returns (address)",
+        "function emitted() view returns (uint256)",
+        "function carryNow() view returns (uint256)",
+        "function granaryNow() view returns (uint256)",
+        "function farmRatePerSec() view returns (uint256)",
+        "function RATE_PER_WEIGHT_PER_WEEK() view returns (uint256)",
+        "function foundingWeekEnd() view returns (uint256)",
+        "function firstSoilEnd() view returns (uint256)",
+        "function start() view returns (uint256)",
+        "function desiredWeight(uint256 tokenId) view returns (uint256)",
+        "function paused() view returns (bool)",
+        "function paidOut() view returns (uint256)"
+      ],
+      "sources": [
+        "almanac",
+        "verified-contracts-2026-09-11"
+      ],
+      "runtime_keccak256": "0x010e25777f65ea0e83d2c39cee3b969951ffc86de0461ef23680ad01ddcea8b2",
+      "verified_at_block": 60592342
+    },
+    "activation": {
+      "address": "0xc7455c9dc27b3b5ceecbb3941e50185f17625431",
+      "address_policy": "Resolve emissions.activation() at the same pinned block and require current reviewed code and wiring before preparing an action.",
+      "read_signatures": [
+        "function isActive(uint256 tokenId) view returns (bool)",
+        "function FEE() view returns (uint256)",
+        "function bagOpen() view returns (bool)",
+        "function bagPrice() view returns (uint256)",
+        "function BAG_BURN() view returns (uint256)",
+        "function MAX_BAG_PRICE() view returns (uint256)",
+        "function treasury() view returns (address)",
+        "function activatedSince(uint256 tokenId) view returns (uint64)"
+      ],
+      "sources": [
+        "verified-contracts-2026-09-11"
+      ],
+      "runtime_keccak256": "0xbb1c60f4aa1cbf0814d8f0b3c5cab929e5d7d08fe57389f71eb9f75b54941a0a",
+      "verified_at_block": 60592342
+    },
+    "weather": {
+      "address": "0xd45919b30bdac5f810a18434b3aac9c2d7093c67",
+      "read_signatures": [
+        "function currentEpoch() view returns (uint256)",
+        "function weatherOf(uint256 epoch) view returns (uint8)",
+        "function multiplierNow() view returns (uint256)",
+        "function floodActive() view returns (bool)",
+        "function moonActive() view returns (bool)",
+        "function nextBoundary() view returns (uint256)",
+        "function epochStart(uint256 epoch) view returns (uint256)",
+        "function moonCount() view returns (uint256)",
+        "function moons(uint256 i) view returns (uint256)",
+        "function commitHash() view returns (bytes32)"
+      ],
+      "sources": [
+        "almanac",
+        "verified-contracts-2026-09-11"
+      ],
+      "runtime_keccak256": "0x715eeaafd15d174f204a6a71db458404e57b92b103c12f1af9a03538043118e1",
+      "verified_at_block": 60592342,
+      "deployment_block": 52799568
+    },
+    "store": {
+      "address": "0x86b3f479e37b9243faa757a30ef899972d2e3958",
+      "read_signatures": [
+        "function listings(uint8 itemId) view returns (uint256 price, uint32 maxSupply, uint32 sold, uint8 slot, bool listed)",
+        "function remaining(uint8 itemId) view returns (uint32)",
+        "function equippedOf(uint256 plotId) view returns (uint8[4])"
+      ],
+      "sources": [
+        "client-config-2026-09-11"
+      ],
+      "address_status": "Published in current client; excluded from the six-core source/runtime review and from automated execution."
+    },
+    "wardrobe": {
+      "address": "0xd21f6eeb774b6cf61ef28854af3caca96a851ab0",
+      "read_signatures": [
+        "function balanceOf(address account, uint256 id) view returns (uint256)"
+      ],
+      "sources": [
+        "client-config-2026-09-11"
+      ],
+      "address_status": "Published in current client; excluded from the six-core source/runtime review and from automated execution."
+    },
+    "names": {
+      "address": "0xa60d3d91488e23b8b7f1afb9dbd4a5c82935e9c3",
+      "sources": [
+        "client-config-2026-09-11"
+      ],
+      "note": "Published address; inspected client has an environment-dependent zero-address fallback. Not validated here.",
+      "address_status": "Published in current client; excluded from the six-core source/runtime review and from automated execution."
+    },
+    "airdrop": {
+      "address": "0xde995ae64d9d03d931661f9ce410a5ee69e53886",
+      "sources": [
+        "client-config-2026-09-11",
+        "airdrop-source-2026-09-11"
+      ],
+      "address_status": "Separately source/runtime verified for deadline, token, sink and root; not an executable action target.",
+      "read_signatures": [
+        "function deadline() view returns (uint256)",
+        "function root() view returns (bytes32)",
+        "function sink() view returns (address)",
+        "function token() view returns (address)"
+      ]
+    },
+    "charter": {
+      "address": "0x6de0f2e903bfec34c71e329c789789befeec517f",
+      "sources": [
+        "client-config-2026-09-11"
+      ],
+      "note": "Separate soulbound collectible, not one of the 3333 farm plots. Do not assume a yield boost.",
+      "address_status": "Published in current client; excluded from the six-core source/runtime review and from automated execution."
+    },
+    "treasury": {
+      "address": "0x778aa5BD0b28829b7C27eb3957C2D33848125D85",
+      "sources": [
+        "verified-contracts-2026-09-11"
+      ],
+      "address_status": "Current activation.treasury() pinned at block 60592342; custody details not verified."
+    },
+    "pool": {
+      "address": "0x96fd1f206ce97d2f34c51d8c902e1a7650641f1a",
+      "sources": [
+        "client-config-2026-09-11",
+        "forecast-pool-2026-09-13"
+      ],
+      "address_status": "Published pool; V3 read interface, WETH/CROP pair and fee observed at block 61711122. Zero active liquidity at that historical observation. Fresh positive liquidity is required for fee-adjusted spot references, which are not executable-size quotes; no swap execution.",
+      "read_signatures": [
+        "function token0() view returns (address)",
+        "function token1() view returns (address)",
+        "function fee() view returns (uint24)",
+        "function liquidity() view returns (uint128)",
+        "function slot0() view returns (uint160,int24,uint16,uint16,uint16,uint8,bool)"
+      ]
+    },
+    "wrapped_eth": {
+      "address": "0x0bd7d308f8e1639fab988df18a8011f41eacad73",
+      "read_signatures": [
+        "function decimals() view returns (uint8)"
+      ],
+      "sources": [
+        "forecast-pool-2026-09-13"
+      ],
+      "address_status": "WETH token identity observed as token0 of the published pool at block 61711122, with name/symbol WETH and 18 decimals. Reference-price pairing only; wrapping and redemption were not audited. Not an execution target."
+    }
+  },
+  "abi_caution": "Current six core ABIs are archived from exact-match Sourcify source and runtime-matched public RPC at block 60592342. Other historical addresses are explicitly unverified. Weight/weather use BPS; CROP uses 18 decimals.",
+  "api_endpoints": [
+    {
+      "path": "/stats",
+      "fields": [
+        "plantedPlots",
+        "totalSupply",
+        "totalWeightBps",
+        "ratePerSecWei",
+        "burnedWei",
+        "burnCount",
+        "levels",
+        "recentHarvests"
+      ],
+      "notes": "Observed aggregate JSON. No block tag in observed response; freshness and ratePerSecWei base-versus-weather semantics are unverified. Do not apply weather twice."
+    },
+    {
+      "path": "/metadata/{token_id}",
+      "fields": [
+        "name",
+        "description",
+        "image",
+        "external_url",
+        "attributes"
+      ],
+      "notes": "Unrevealed is an explicit status, never Common by default. Metadata ID 1 is only a public research example."
+    },
+    {
+      "path": "/manifest.json",
+      "fields": [
+        "row",
+        "source_row",
+        "tier",
+        "golden",
+        "crop",
+        "soil",
+        "scarecrow",
+        "sky",
+        "fence",
+        "critter",
+        "score"
+      ],
+      "notes": "Cached bytes were matched to the recorded chain commitment using Keccak-256; recheck on changed bytes/deployment. Token mapping is unknown until reveal. Use manifest row, not source_row, in reveal mapping."
+    },
+    {
+      "path": "/weather",
+      "fields": [
+        "epoch",
+        "weather",
+        "label",
+        "multiplierBps",
+        "flood",
+        "moon",
+        "nextBoundary"
+      ],
+      "notes": "Observed in follow-up; agrees with sampled current chain weather but has no block tag. Not a future-weather reveal."
+    }
+  ],
+  "refresh_policy": {
+    "rules": "Local first; recheck only relevant rule on changed deployment, reported change or conflict.",
+    "chain_state": "Implemented block-pinned public reads. Browser polling is opt-in every 30 seconds while visible and not editing; CLI monitoring is separately opt-in. Record timestamp and block.",
+    "api_state": "Store response time separately. Compare against chain data; missing/errors are not zero.",
+    "quotes": "Get fresh executable-size quotes when estimating buys/sales/transfers, including wallet-paid costs. No live price assumed in this package.",
+    "manifest": "Cached for offline use. Re-fetch on changed commitment/file, and resolve token mapping only after reveal.",
+    "future_weeks": "Use revealed data only; a commitment is not a weather forecast.",
+    "season": "Pin weather, epochs/events, NFT supply, total weight, carryNow(), granaryNow(), farmRatePerSec(), foundingWeekEnd()/firstSoilEnd(), activation bagOpen()/bagPrice() to one block. farmRatePerSec is a next-day average under scheduled weather, not instantaneous or guaranteed future yield.",
+    "rewards": "Use fresh carryNow/Granary as scenario starting state only when timing matches. Genesis scenario has explicit 0 carry and 40M Granary. Future reserve contributions, including the 100M airdrop sweep, are not automatic without a known transaction/event."
+  },
+  "shared_data_contract": {
+    "amounts": "Nonnegative decimal integer strings for *_wei fields; signed net-profit results may be negative.",
+    "weights": "Integer BPS, kept exact.",
+    "unknown": "null, accompanied by missing input/evidence notes; no default rarity, zero balance or free fee.",
+    "portfolio": "Public local browser workspaces accept user-entered wallets/plots. Personal 11/22-count examples are historical and never public defaults.",
+    "scenario": "See portfolio/scenarios.json.",
+    "result": "Implemented in src/engine.js: status, scenario/horizon, earned/spent/bought CROP, liquid/pending/ending balances, purchases, wallet-paid fees, operating ETH, cash recovery, optional NFT-inclusive estimate, per-wallet actions and assumptions. See docs/ARCHITECTURE.md."
+  },
+  "reviewed_on_utc": "2026-09-11",
+  "production_assets": {
+    "origin": "https://api.rh.farm",
+    "live_path": "/plot/{id}",
+    "metadata_path": "/metadata/{id}",
+    "animation_path": "/animation/{id}.html",
+    "image_path": "/image/{id}.png",
+    "token_ids": {
+      "min": 1,
+      "max": 3333
+    },
+    "source_id": "production-assets-2026-09-14",
+    "status": "Endpoints verified; sampled assets remain unrevealed. API display state is not chain authority."
+  }
+}

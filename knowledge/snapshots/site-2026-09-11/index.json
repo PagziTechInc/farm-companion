@@ -1,0 +1,44 @@
+[
+  {
+    "url": "https://rh.farm/almanac/",
+    "path": "knowledge/snapshots/site-2026-09-11/almanac.html",
+    "sha256": "fae08b09d284b577d222b4d07d291326da7171f5278c06b8a382c543a376dfc7",
+    "retrieved_at": "2026-09-11T21:57:43.781841+00:00"
+  },
+  {
+    "url": "https://rh.farm/",
+    "path": "knowledge/snapshots/site-2026-09-11/home.html",
+    "sha256": "f1eec63d1cc6a3e6d48bf496ebdb5684556659d25f819ff5ebe8345d6ed7db6c",
+    "retrieved_at": "2026-09-11T21:57:43.873122+00:00"
+  },
+  {
+    "url": "https://rh.farm/security/",
+    "path": "knowledge/snapshots/site-2026-09-11/security.html",
+    "sha256": "0063cdf56ea759d97c5f2e68c73bbab0226b6b2e263ecc3b05ee87885cfed906",
+    "retrieved_at": "2026-09-11T21:57:43.967146+00:00"
+  },
+  {
+    "url": "https://rh.farm/provenance/",
+    "path": "knowledge/snapshots/site-2026-09-11/provenance.html",
+    "sha256": "948496da364bdb89c21c8b76982ba3a9759bf73c73555984f13069bcc7526617",
+    "retrieved_at": "2026-09-11T21:57:44.004539+00:00"
+  },
+  {
+    "url": "https://rh.farm/townhall/",
+    "path": "knowledge/snapshots/site-2026-09-11/townhall.html",
+    "sha256": "39309d35fd135b81ba11b87670dc7fcdea47d9ffcd3c2fa60ac05c095f3dc410",
+    "retrieved_at": "2026-09-11T21:57:44.091642+00:00"
+  },
+  {
+    "url": "https://rh.farm/store/",
+    "path": "knowledge/snapshots/site-2026-09-11/store.html",
+    "sha256": "59f10eeba643aa79045dcec44ae30c78ab91cc7eebc869a7a805f4b9eb438605",
+    "retrieved_at": "2026-09-11T21:57:44.179988+00:00"
+  },
+  {
+    "url": "https://rh.farm/_next/static/chunks/2vlupv71md16s.js",
+    "path": "knowledge/snapshots/site-2026-09-11/client-config.js",
+    "sha256": "fdae061b17941bdee8e0824690250ee8ec4f7f8a59153f1739ccc6e58ab321e3",
+    "retrieved_at": "2026-09-11T21:58:35.574Z"
+  }
+]

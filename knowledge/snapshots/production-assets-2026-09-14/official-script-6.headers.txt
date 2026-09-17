@@ -1,0 +1,22 @@
+HTTP/2 200 
+date: Mon, 14 Sep 2026 03:10:01 GMT
+content-type: application/javascript
+content-length: 31457
+server: cloudflare
+last-modified: Sun, 13 Sep 2026 23:16:32 GMT
+etag: "6aa72ed0-7ae1"
+strict-transport-security: max-age=31536000; includeSubDomains
+x-content-type-options: nosniff
+referrer-policy: strict-origin-when-cross-origin
+x-frame-options: DENY
+permissions-policy: camera=(), microphone=(), geolocation=()
+content-security-policy-report-only: default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https:; font-src 'self' data:; connect-src 'self' https: wss:; frame-src https://verify.walletconnect.com https://verify.walletconnect.org; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
+cache-control: public, max-age=31536000, immutable
+accept-ranges: bytes
+nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+age: 13282
+cf-cache-status: HIT
+report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=TtZbGOV3xAes1%2Bz6GuagPY79BmHQrNnWi%2Bh2hYiQNsRPVN9GcoEOyTnCrj4TtlYAm8jqek%2B5eYtBbVSZn5y2GEx%2F%2F5bKVxQxVgy%2Fe0J5UlJhDoPcHZqiysDC"}]}
+cf-ray: a3ac323b896cdde5-YYZ
+alt-svc: h3=":443"; ma=86400
+

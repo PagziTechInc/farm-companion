@@ -1,0 +1,17 @@
+{
+  "address": "0xdE995Ae64d9d03d931661F9Ce410a5Ee69e53886",
+  "chain_id": 4663,
+  "block_hash": "0xbc4d6e10137f164be24d7450935f35d476a1b97d378d94f4af47608531963fe0",
+  "block_number": 60600268,
+  "block_time": "2026-09-11T22:12:00.000Z",
+  "source_url": "https://sourcify.dev/server/v2/contract/4663/0xdE995Ae64d9d03d931661F9Ce410a5Ee69e53886?fields=all",
+  "reads": {
+    "deadline": "1803859200",
+    "root": "0xe4bb42f20d457a1ed280a22ffd5ae60fa6d73eb04d0794fd8a3e571dea1c45b2",
+    "sink": "0x8Ed784B4772Ae3fdEfAfAA746fE405eb0410cDf3",
+    "token": "0x6cfaf2F60F47182f0c9F5d199db92Ab261A9d487"
+  },
+  "source_match": "exact_match",
+  "runtime_keccak256": "0x0a128d7f2b5a2c9944b3dec092eff202857b19cc42395e8c71b30bb7ed36e04f",
+  "runtime_matches": true
+}

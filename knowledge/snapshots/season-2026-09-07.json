@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "chain_id": 4663,
+  "observed_at_utc": "2026-09-07T06:49:00.468Z",
+  "block_number": 56632260,
+  "block_timestamp": 1788763740,
+  "current_epoch": 0,
+  "genesis_timestamp": 1789948800,
+  "epoch_start_timestamp": 1789948800,
+  "next_boundary_timestamp": 1789948800,
+  "weather_enum": 1,
+  "effective_multiplier_bps": 12000,
+  "flood_active": false,
+  "moon_active": false,
+  "moon_count": 0,
+  "moon_starts": [],
+  "commit_hash": "0x46f41dbcb8d9c74f8dd4c20bedb8f0b9e3ac4de373f2a3244b311e3f1ea0fe95",
+  "minted_count": 0,
+  "total_weight_bps": 0,
+  "read_errors": []
+}

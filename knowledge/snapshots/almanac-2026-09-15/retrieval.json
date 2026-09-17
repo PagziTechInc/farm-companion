@@ -1,0 +1,29 @@
+{
+  "source_url": "https://rh.farm/almanac/",
+  "retrieved_at_utc": "2026-09-15T21:04:12.836848+00:00",
+  "http_status": 200,
+  "sha256": "ec2843ab9880fc8f68a49eba81fb58e8a83b69fa55bffb6b4b525d6dfb374612",
+  "byte_count": 165974,
+  "headers": {
+    "Date": "Tue, 15 Sep 2026 21:04:12 GMT",
+    "Content-Type": "text/html",
+    "Transfer-Encoding": "chunked",
+    "Connection": "close",
+    "Server": "cloudflare",
+    "last-modified": "Mon, 14 Sep 2026 22:52:31 GMT",
+    "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=6f8Gh%2BaGzwMo1YLA9X9bCHdfZmAVWX8KdZaCtC%2FeKSlHkrHH531cla0qh9ocIyOl5ZCuyzY7%2BjUmLrgegJIfwndIk9hUM4bmqonhZCRRIKzLwdm6wtN5dzjd\"}]}",
+    "strict-transport-security": "max-age=31536000; includeSubDomains",
+    "x-content-type-options": "nosniff",
+    "referrer-policy": "strict-origin-when-cross-origin",
+    "x-frame-options": "DENY",
+    "permissions-policy": "camera=(), microphone=(), geolocation=()",
+    "content-security-policy-report-only": "default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https:; font-src 'self' data:; connect-src 'self' https: wss:; frame-src https://verify.walletconnect.com https://verify.walletconnect.org; frame-ancestors 'none'; base-uri 'self'; form-action 'self'",
+    "cache-control": "public, max-age=300",
+    "Accept-Ranges": "bytes",
+    "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+    "cf-cache-status": "HIT",
+    "Server-Timing": "cfCacheStatus;desc=\"HIT\"",
+    "CF-RAY": "a3ba951eeccda246-YYZ",
+    "alt-svc": "h3=\":443\"; ma=86400"
+  }
+}

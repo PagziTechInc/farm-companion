@@ -1,0 +1,1140 @@
+{
+  "schema_version": 1,
+  "observed_at_utc": "2026-09-07T22:45:05.057Z",
+  "chain_id": 4663,
+  "block_number": 57200789,
+  "block_hash": "0x7cdbfef4ed530dbf570fd3ed9c41ffe587361b666ba95b5fa507de959f2e460a",
+  "block_timestamp_utc": "2026-09-07T22:45:01.000Z",
+  "rpc_url": "https://rpc.mainnet.chain.robinhood.com/rpc",
+  "scope": "Read-only contract getter and simulation research. Token #1 is a nonexistent public test ID, not a holding. No transaction or signature was submitted.",
+  "activation_address": "0xC023f81EC14261dAbe9De17C30aE70A4c78d87A2",
+  "read_calls": [
+    {
+      "signature": "function FEE() view returns (uint256)",
+      "address": "0xC023f81EC14261dAbe9De17C30aE70A4c78d87A2",
+      "data": "0xc57981b5",
+      "result": "2500000000000000000000"
+    },
+    {
+      "signature": "function paused() view returns (bool)",
+      "address": "0x3974f8d2eaaf2425fb8556b688534332adc4dacd",
+      "data": "0x5c975abb",
+      "result": false
+    },
+    {
+      "signature": "function epochStart(uint256 epoch) view returns(uint256)",
+      "address": "0xd45919b30bdac5f810a18434b3aac9c2d7093c67",
+      "data": "0xaa9354a30000000000000000000000000000000000000000000000000000000000000000",
+      "result": "1789948800"
+    },
+    {
+      "signature": "function totalSupply() view returns(uint256)",
+      "address": "0x27af61a7227314bf8b558ec9777423a49e46600f",
+      "data": "0x18160ddd",
+      "result": "0"
+    },
+    {
+      "signature": "function costToReach(uint8 level) view returns(uint256)",
+      "address": "0x34a9f041dce0b8e39cc1ca7b1e32238fa5e45284",
+      "data": "0xd96d15600000000000000000000000000000000000000000000000000000000000000002",
+      "result": "10000000000000000000000"
+    },
+    {
+      "signature": "function costToReach(uint8 level) view returns(uint256)",
+      "address": "0x34a9f041dce0b8e39cc1ca7b1e32238fa5e45284",
+      "data": "0xd96d15600000000000000000000000000000000000000000000000000000000000000003",
+      "result": "25000000000000000000000"
+    },
+    {
+      "signature": "function costToReach(uint8 level) view returns(uint256)",
+      "address": "0x34a9f041dce0b8e39cc1ca7b1e32238fa5e45284",
+      "data": "0xd96d15600000000000000000000000000000000000000000000000000000000000000004",
+      "result": "60000000000000000000000"
+    },
+    {
+      "signature": "function costToReach(uint8 level) view returns(uint256)",
+      "address": "0x34a9f041dce0b8e39cc1ca7b1e32238fa5e45284",
+      "data": "0xd96d15600000000000000000000000000000000000000000000000000000000000000005",
+      "result": "150000000000000000000000"
+    },
+    {
+      "signature": "function crop() view returns(address)",
+      "address": "0xc023f81ec14261dabe9de17c30ae70a4c78d87a2",
+      "data": "0x3fb239d0",
+      "result": "0x6aF020C14e1f6fc7E6972A8a6590B98F756E605D"
+    },
+    {
+      "signature": "function nft() view returns(address)",
+      "address": "0xc023f81ec14261dabe9de17c30ae70a4c78d87a2",
+      "data": "0x47ccca02",
+      "result": "0x27aF61A7227314bf8B558eC9777423a49E46600f"
+    },
+    {
+      "signature": "function treasury() view returns(address)",
+      "address": "0xc023f81ec14261dabe9de17c30ae70a4c78d87a2",
+      "data": "0x61d027b3",
+      "result": "0x778aa5BD0b28829b7C27eb3957C2D33848125D85"
+    },
+    {
+      "signature": "function emissions() view returns(address)",
+      "address": "0xc023f81ec14261dabe9de17c30ae70a4c78d87a2",
+      "data": "0x2267716c",
+      "result": "0x3974f8D2eAAf2425fB8556B688534332ADc4dAcD"
+    },
+    {
+      "signature": "function paused() view returns(bool)",
+      "address": "0x34a9f041dce0b8e39cc1ca7b1e32238fa5e45284",
+      "data": "0x5c975abb",
+      "result": false
+    },
+    {
+      "signature": "function nft() view returns(address)",
+      "address": "0x34a9f041dce0b8e39cc1ca7b1e32238fa5e45284",
+      "data": "0x47ccca02",
+      "result": "0x27aF61A7227314bf8B558eC9777423a49E46600f"
+    },
+    {
+      "signature": "function emissions() view returns(address)",
+      "address": "0x34a9f041dce0b8e39cc1ca7b1e32238fa5e45284",
+      "data": "0x2267716c",
+      "result": "0x3974f8D2eAAf2425fB8556B688534332ADc4dAcD"
+    },
+    {
+      "signature": "function crop() view returns(address)",
+      "address": "0x34a9f041dce0b8e39cc1ca7b1e32238fa5e45284",
+      "data": "0x3fb239d0",
+      "result": "0x6aF020C14e1f6fc7E6972A8a6590B98F756E605D"
+    },
+    {
+      "signature": "function nft() view returns(address)",
+      "address": "0x3974f8d2eaaf2425fb8556b688534332adc4dacd",
+      "data": "0x47ccca02",
+      "result": "0x27aF61A7227314bf8B558eC9777423a49E46600f"
+    },
+    {
+      "signature": "function weather() view returns(address)",
+      "address": "0x3974f8d2eaaf2425fb8556b688534332adc4dacd",
+      "data": "0x686b6159",
+      "result": "0xd45919b30BDac5F810A18434B3aaC9C2d7093C67"
+    },
+    {
+      "signature": "function levels() view returns(address)",
+      "address": "0x3974f8d2eaaf2425fb8556b688534332adc4dacd",
+      "data": "0x4ecf518b",
+      "result": "0x34a9F041DCe0b8E39CC1cA7b1E32238fA5e45284"
+    },
+    {
+      "signature": "function start() view returns(uint256)",
+      "address": "0x3974f8d2eaaf2425fb8556b688534332adc4dacd",
+      "data": "0xbe9a6555",
+      "result": "1789948800"
+    },
+    {
+      "signature": "function crop() view returns(address)",
+      "address": "0x3974f8d2eaaf2425fb8556b688534332adc4dacd",
+      "data": "0x3fb239d0",
+      "result": "0x6aF020C14e1f6fc7E6972A8a6590B98F756E605D"
+    },
+    {
+      "signature": "function YEAR() view returns(uint256)",
+      "address": "0x3974f8d2eaaf2425fb8556b688534332adc4dacd",
+      "data": "0x83914540",
+      "result": "31536000"
+    },
+    {
+      "signature": "function granaryNow() view returns(uint256)",
+      "address": "0x3974f8d2eaaf2425fb8556b688534332adc4dacd",
+      "data": "0x6317043d",
+      "result": "40000000000000000000000000"
+    },
+    {
+      "signature": "function granary() view returns(uint256)",
+      "address": "0x3974f8d2eaaf2425fb8556b688534332adc4dacd",
+      "data": "0x1dd52c21",
+      "result": "40000000000000000000000000"
+    },
+    {
+      "signature": "function paidOut() view returns(uint256)",
+      "address": "0x3974f8d2eaaf2425fb8556b688534332adc4dacd",
+      "data": "0x5c76ca2d",
+      "result": "0"
+    },
+    {
+      "signature": "function emitted() view returns(uint256)",
+      "address": "0x3974f8d2eaaf2425fb8556b688534332adc4dacd",
+      "data": "0xbd153c64",
+      "result": "0"
+    },
+    {
+      "signature": "function totalWeight() view returns(uint256)",
+      "address": "0x3974f8d2eaaf2425fb8556b688534332adc4dacd",
+      "data": "0x96c82e57",
+      "result": "0"
+    },
+    {
+      "signature": "function transferHook() view returns(address)",
+      "address": "0x27af61a7227314bf8b558ec9777423a49e46600f",
+      "data": "0x82bc7bc9",
+      "result": "0xC023f81EC14261dAbe9De17C30aE70A4c78d87A2"
+    },
+    {
+      "signature": "function tiersFinalized() view returns(bool)",
+      "address": "0x27af61a7227314bf8b558ec9777423a49e46600f",
+      "data": "0xaeceddd2",
+      "result": false
+    },
+    {
+      "signature": "function revealDeadline() view returns(uint256)",
+      "address": "0x27af61a7227314bf8b558ec9777423a49e46600f",
+      "data": "0xb14b28a3",
+      "result": "1789754400"
+    },
+    {
+      "signature": "function activationClearer() view returns(address)",
+      "address": "0x27af61a7227314bf8b558ec9777423a49e46600f",
+      "data": "0x54c3ec15",
+      "result": "0x0000000000000000000000000000000000000000"
+    },
+    {
+      "signature": "function startingIndex() view returns(uint256)",
+      "address": "0x27af61a7227314bf8b558ec9777423a49e46600f",
+      "data": "0xcb774d47",
+      "result": "0"
+    },
+    {
+      "signature": "function getAllowedSeaDrop() view returns(address[])",
+      "address": "0x27af61a7227314bf8b558ec9777423a49e46600f",
+      "data": "0xb2490c3b",
+      "error": {
+        "code": 3,
+        "message": "execution reverted",
+        "data": "0x"
+      }
+    },
+    {
+      "signature": "function keeper() view returns(address)",
+      "address": "0xd45919b30bdac5f810a18434b3aac9c2d7093c67",
+      "data": "0xaced1661",
+      "result": "0x9556c1D489ecFE2a059A16ba33e5aEdAB6626f46"
+    },
+    {
+      "signature": "function owner() view returns(address)",
+      "address": "0xd45919b30bdac5f810a18434b3aac9c2d7093c67",
+      "data": "0x8da5cb5b",
+      "result": "0xe55a30526DF5CC0fc4E812E6D95D8cba5C8E5ea9"
+    },
+    {
+      "signature": "function rarity() view returns(address)",
+      "address": "0x3974f8d2eaaf2425fb8556b688534332adc4dacd",
+      "data": "0xfef21f0f",
+      "result": "0x27aF61A7227314bf8B558eC9777423a49E46600f"
+    }
+  ],
+  "code": {
+    "activation": {
+      "address": "0xC023f81EC14261dAbe9De17C30aE70A4c78d87A2",
+      "bytes": 2971,
+      "keccak256": "0x9227f0600b677a3a12a41b097bbaca85f57bea6fc4bbe13461570e79d0faea73",
+      "metadata_ipfs_cid": "QmfAkMkY1xEGRW3FizEU1Us784eaMVeXFmSTMM5MgifMow",
+      "action_selector_present": {
+        "plant": true
+      }
+    },
+    "nft": {
+      "address": "0x27af61a7227314bf8b558ec9777423a49e46600f",
+      "bytes": 14254,
+      "keccak256": "0x57188cb5aa7bd308e1ff805bee1698c50ae9bce20de377d651de1d9386206448",
+      "metadata_ipfs_cid": "QmZLnBAVWmdtJZzF2SiPgkb68xPedKLLKyoWFhhzCMNYRX",
+      "action_selector_present": {}
+    },
+    "crop": {
+      "address": "0x6af020c14e1f6fc7e6972a8a6590b98f756e605d",
+      "bytes": 1968,
+      "keccak256": "0x1be44955cd2dae7359a6bd961da2ad9a8cb55041962d5b60fb2190488297e37d",
+      "metadata_ipfs_cid": "QmWqakGu35tapfwCxX4Eog1AWjVdSGvqiSqdafLqn8WEAH",
+      "action_selector_present": {
+        "approve": true
+      }
+    },
+    "levels": {
+      "address": "0x34a9f041dce0b8e39cc1ca7b1e32238fa5e45284",
+      "bytes": 2488,
+      "keccak256": "0xbff079f6a98048241b342c2e1c11b6e29d8bb08b0fd721094ec4ca6af7369a72",
+      "metadata_ipfs_cid": "QmNtq4EPbiWAeMqbSxZNGzbcKSxvxNvEe4pNawPgoQUxU8",
+      "action_selector_present": {
+        "upgrade": true
+      }
+    },
+    "emissions": {
+      "address": "0x3974f8d2eaaf2425fb8556b688534332adc4dacd",
+      "bytes": 7875,
+      "keccak256": "0xf71f5627de987279c166e1ce40c6465dad36ed7c6aec931b249a7c75807f249e",
+      "metadata_ipfs_cid": "QmXCtstmkDvzUX6eanHxAKJux7py16sJBKag54yXyDUXpF",
+      "action_selector_present": {
+        "claim": true,
+        "claimMany": true
+      }
+    },
+    "weather": {
+      "address": "0xd45919b30bdac5f810a18434b3aac9c2d7093c67",
+      "bytes": 4502,
+      "keccak256": "0x715eeaafd15d174f204a6a71db458404e57b92b103c12f1af9a03538043118e1",
+      "metadata_ipfs_cid": "QmbVPDxD97NpUToV9gvYxi1jJTHkfLbrobQyGGhEPkSH9a",
+      "action_selector_present": {}
+    }
+  },
+  "simulations": [],
+  "verified_source": {
+    "provider": "Sourcify v2 API",
+    "method": "Exact-match metadata from verification service; independently compared service onchain runtime bytes hash against fresh pinned RPC eth_getCode. Compiler was not rerun locally.",
+    "contracts": {
+      "activation": {
+        "address": "0xC023f81EC14261dAbe9De17C30aE70A4c78d87A2",
+        "source_url": "https://sourcify.dev/server/v2/contract/4663/0xC023f81EC14261dAbe9De17C30aE70A4c78d87A2?fields=all",
+        "path": "verified-contracts/activation.json",
+        "source_path": "verified-contracts/source/src/activation/NativeActivation.sol",
+        "creation_match": "exact_match",
+        "runtime_match": "exact_match",
+        "verified_at_utc": "2026-09-02T19:19:48Z",
+        "compiler_version": "0.8.26+commit.8a97fa7a",
+        "contract_name": "NativeActivation",
+        "runtime_keccak256": "0x9227f0600b677a3a12a41b097bbaca85f57bea6fc4bbe13461570e79d0faea73",
+        "matches_pinned_rpc_runtime": true,
+        "abi": [
+          {
+            "name": "AlreadyActive",
+            "type": "error",
+            "inputs": []
+          },
+          {
+            "name": "AlreadySet",
+            "type": "error",
+            "inputs": []
+          },
+          {
+            "name": "NotContract",
+            "type": "error",
+            "inputs": []
+          },
+          {
+            "name": "NotNFT",
+            "type": "error",
+            "inputs": []
+          },
+          {
+            "name": "NotOwner",
+            "type": "error",
+            "inputs": []
+          },
+          {
+            "name": "OwnableInvalidOwner",
+            "type": "error",
+            "inputs": [
+              {
+                "name": "owner",
+                "type": "address",
+                "internalType": "address"
+              }
+            ]
+          },
+          {
+            "name": "OwnableUnauthorizedAccount",
+            "type": "error",
+            "inputs": [
+              {
+                "name": "account",
+                "type": "address",
+                "internalType": "address"
+              }
+            ]
+          },
+          {
+            "name": "ReentrancyGuardReentrantCall",
+            "type": "error",
+            "inputs": []
+          },
+          {
+            "name": "RenounceDisabled",
+            "type": "error",
+            "inputs": []
+          },
+          {
+            "name": "SafeERC20FailedOperation",
+            "type": "error",
+            "inputs": [
+              {
+                "name": "token",
+                "type": "address",
+                "internalType": "address"
+              }
+            ]
+          },
+          {
+            "name": "ZeroAddress",
+            "type": "error",
+            "inputs": []
+          }
+        ],
+        "response_sha256": "58c670913e6d2a550ba41627c1206789f02e2f399c82330b4523e68f169625ab",
+        "source_sha256": "c8bafc0644cf4f13fde5b5b9614a891d39301472e495018509646c24ffdb21be"
+      },
+      "levels": {
+        "address": "0x34a9F041DCe0b8E39CC1cA7b1E32238fA5e45284",
+        "source_url": "https://sourcify.dev/server/v2/contract/4663/0x34a9F041DCe0b8E39CC1cA7b1E32238fA5e45284?fields=all",
+        "path": "verified-contracts/levels.json",
+        "source_path": "verified-contracts/source/src/FarmLevels.sol",
+        "creation_match": "exact_match",
+        "runtime_match": "exact_match",
+        "verified_at_utc": "2026-09-02T19:20:16Z",
+        "compiler_version": "0.8.26+commit.8a97fa7a",
+        "contract_name": "FarmLevels",
+        "runtime_keccak256": "0xbff079f6a98048241b342c2e1c11b6e29d8bb08b0fd721094ec4ca6af7369a72",
+        "matches_pinned_rpc_runtime": true,
+        "abi": [
+          {
+            "name": "AlreadySet",
+            "type": "error",
+            "inputs": []
+          },
+          {
+            "name": "EnforcedPause",
+            "type": "error",
+            "inputs": []
+          },
+          {
+            "name": "ExpectedPause",
+            "type": "error",
+            "inputs": []
+          },
+          {
+            "name": "MaxLevel",
+            "type": "error",
+            "inputs": []
+          },
+          {
+            "name": "NotContract",
+            "type": "error",
+            "inputs": []
+          },
+          {
+            "name": "NotOwner",
+            "type": "error",
+            "inputs": []
+          },
+          {
+            "name": "OwnableInvalidOwner",
+            "type": "error",
+            "inputs": [
+              {
+                "name": "owner",
+                "type": "address",
+                "internalType": "address"
+              }
+            ]
+          },
+          {
+            "name": "OwnableUnauthorizedAccount",
+            "type": "error",
+            "inputs": [
+              {
+                "name": "account",
+                "type": "address",
+                "internalType": "address"
+              }
+            ]
+          },
+          {
+            "name": "ReentrancyGuardReentrantCall",
+            "type": "error",
+            "inputs": []
+          },
+          {
+            "name": "RenounceDisabled",
+            "type": "error",
+            "inputs": []
+          },
+          {
+            "name": "ZeroAddress",
+            "type": "error",
+            "inputs": []
+          }
+        ],
+        "response_sha256": "43893c2d05f7b5b58066543492dcf78f14c03ae2895bfe571d5b770e9e909a9c",
+        "source_sha256": "acb12f7f4e2cf53697ede2778ccd32a16e09768b061020b48c367946a66c4f43"
+      },
+      "emissions": {
+        "address": "0x3974f8D2eAAf2425fB8556B688534332ADc4dAcD",
+        "source_url": "https://sourcify.dev/server/v2/contract/4663/0x3974f8D2eAAf2425fB8556B688534332ADc4dAcD?fields=all",
+        "path": "verified-contracts/emissions.json",
+        "source_path": "verified-contracts/source/src/HarvestEmissions.sol",
+        "creation_match": "exact_match",
+        "runtime_match": "exact_match",
+        "verified_at_utc": "2026-09-02T19:19:31Z",
+        "compiler_version": "0.8.26+commit.8a97fa7a",
+        "contract_name": "HarvestEmissions",
+        "runtime_keccak256": "0xf71f5627de987279c166e1ce40c6465dad36ed7c6aec931b249a7c75807f249e",
+        "matches_pinned_rpc_runtime": true,
+        "abi": [
+          {
+            "name": "EnforcedPause",
+            "type": "error",
+            "inputs": []
+          },
+          {
+            "name": "ExpectedPause",
+            "type": "error",
+            "inputs": []
+          },
+          {
+            "name": "NotContract",
+            "type": "error",
+            "inputs": []
+          },
+          {
+            "name": "NotOwner",
+            "type": "error",
+            "inputs": []
+          },
+          {
+            "name": "OwnableInvalidOwner",
+            "type": "error",
+            "inputs": [
+              {
+                "name": "owner",
+                "type": "address",
+                "internalType": "address"
+              }
+            ]
+          },
+          {
+            "name": "OwnableUnauthorizedAccount",
+            "type": "error",
+            "inputs": [
+              {
+                "name": "account",
+                "type": "address",
+                "internalType": "address"
+              }
+            ]
+          },
+          {
+            "name": "ReentrancyGuardReentrantCall",
+            "type": "error",
+            "inputs": []
+          },
+          {
+            "name": "RenounceDisabled",
+            "type": "error",
+            "inputs": []
+          },
+          {
+            "name": "SafeERC20FailedOperation",
+            "type": "error",
+            "inputs": [
+              {
+                "name": "token",
+                "type": "address",
+                "internalType": "address"
+              }
+            ]
+          },
+          {
+            "name": "TooEarly",
+            "type": "error",
+            "inputs": []
+          },
+          {
+            "name": "ZeroAddress",
+            "type": "error",
+            "inputs": []
+          }
+        ],
+        "response_sha256": "bfefa2b17004dbff85f06fd2e3bec7e73e3ef73fee76f1962a49c3df91c3f3ba",
+        "source_sha256": "04bf13c14b30ae3946ff65881db3697bc5fbafd92b87902d0d0f6ae1891b1184"
+      },
+      "weather": {
+        "address": "0xd45919b30BDac5F810A18434B3aaC9C2d7093C67",
+        "source_url": "https://sourcify.dev/server/v2/contract/4663/0xd45919b30BDac5F810A18434B3aaC9C2d7093C67?fields=all",
+        "path": "verified-contracts/weather.json",
+        "source_path": "verified-contracts/source/src/WeatherOracle.sol",
+        "creation_match": "exact_match",
+        "runtime_match": "exact_match",
+        "verified_at_utc": "2026-09-02T19:16:02Z",
+        "compiler_version": "0.8.26+commit.8a97fa7a",
+        "contract_name": "WeatherOracle",
+        "runtime_keccak256": "0x715eeaafd15d174f204a6a71db458404e57b92b103c12f1af9a03538043118e1",
+        "matches_pinned_rpc_runtime": true,
+        "abi": [
+          {
+            "name": "BadTime",
+            "type": "error",
+            "inputs": []
+          },
+          {
+            "name": "FloodExists",
+            "type": "error",
+            "inputs": []
+          },
+          {
+            "name": "NotKeeper",
+            "type": "error",
+            "inputs": []
+          },
+          {
+            "name": "OwnableInvalidOwner",
+            "type": "error",
+            "inputs": [
+              {
+                "name": "owner",
+                "type": "address",
+                "internalType": "address"
+              }
+            ]
+          },
+          {
+            "name": "OwnableUnauthorizedAccount",
+            "type": "error",
+            "inputs": [
+              {
+                "name": "account",
+                "type": "address",
+                "internalType": "address"
+              }
+            ]
+          },
+          {
+            "name": "RenounceDisabled",
+            "type": "error",
+            "inputs": []
+          },
+          {
+            "name": "TooLate",
+            "type": "error",
+            "inputs": []
+          }
+        ],
+        "response_sha256": "3d5beb3030d7ff4e6ed22e86459e35ae23cf4a1f92bf8ddfb4b1140d489b2de3",
+        "source_sha256": "b56c3a78c885faf14a1ac7759dd9f4bbe2bbd2262a34d70b83d80b4d97f807e0"
+      },
+      "crop": {
+        "address": "0x6aF020C14e1f6fc7E6972A8a6590B98F756E605D",
+        "source_url": "https://sourcify.dev/server/v2/contract/4663/0x6aF020C14e1f6fc7E6972A8a6590B98F756E605D?fields=all",
+        "path": "verified-contracts/crop.json",
+        "source_path": "verified-contracts/source/src/CropToken.sol",
+        "creation_match": "exact_match",
+        "runtime_match": "exact_match",
+        "verified_at_utc": "2026-09-02T19:18:29Z",
+        "compiler_version": "0.8.26+commit.8a97fa7a",
+        "contract_name": "CropToken",
+        "runtime_keccak256": "0x1be44955cd2dae7359a6bd961da2ad9a8cb55041962d5b60fb2190488297e37d",
+        "matches_pinned_rpc_runtime": true,
+        "abi": [
+          {
+            "name": "ERC20InsufficientAllowance",
+            "type": "error",
+            "inputs": [
+              {
+                "name": "spender",
+                "type": "address",
+                "internalType": "address"
+              },
+              {
+                "name": "allowance",
+                "type": "uint256",
+                "internalType": "uint256"
+              },
+              {
+                "name": "needed",
+                "type": "uint256",
+                "internalType": "uint256"
+              }
+            ]
+          },
+          {
+            "name": "ERC20InsufficientBalance",
+            "type": "error",
+            "inputs": [
+              {
+                "name": "sender",
+                "type": "address",
+                "internalType": "address"
+              },
+              {
+                "name": "balance",
+                "type": "uint256",
+                "internalType": "uint256"
+              },
+              {
+                "name": "needed",
+                "type": "uint256",
+                "internalType": "uint256"
+              }
+            ]
+          },
+          {
+            "name": "ERC20InvalidApprover",
+            "type": "error",
+            "inputs": [
+              {
+                "name": "approver",
+                "type": "address",
+                "internalType": "address"
+              }
+            ]
+          },
+          {
+            "name": "ERC20InvalidReceiver",
+            "type": "error",
+            "inputs": [
+              {
+                "name": "receiver",
+                "type": "address",
+                "internalType": "address"
+              }
+            ]
+          },
+          {
+            "name": "ERC20InvalidSender",
+            "type": "error",
+            "inputs": [
+              {
+                "name": "sender",
+                "type": "address",
+                "internalType": "address"
+              }
+            ]
+          },
+          {
+            "name": "ERC20InvalidSpender",
+            "type": "error",
+            "inputs": [
+              {
+                "name": "spender",
+                "type": "address",
+                "internalType": "address"
+              }
+            ]
+          }
+        ],
+        "response_sha256": "9ce17d6bf93ff1436289ca5c422ed0531f6e895223c9dbee5ebb48c9a0f4c5a3",
+        "source_sha256": "07e5c6b1587431cebcd42aea35164a1f3fc2a74104d8da4bc9d13a153cf9c221"
+      },
+      "nft": {
+        "address": "0x27aF61A7227314bf8B558eC9777423a49E46600f",
+        "source_url": "https://sourcify.dev/server/v2/contract/4663/0x27aF61A7227314bf8B558eC9777423a49E46600f?fields=all",
+        "path": "verified-contracts/nft.json",
+        "source_path": "verified-contracts/source/src/YieldFarmNFT.sol",
+        "creation_match": "exact_match",
+        "runtime_match": "exact_match",
+        "verified_at_utc": "2026-09-02T19:14:10Z",
+        "compiler_version": "0.8.26+commit.8a97fa7a",
+        "contract_name": "YieldFarmNFT",
+        "runtime_keccak256": "0x57188cb5aa7bd308e1ff805bee1698c50ae9bce20de377d651de1d9386206448",
+        "matches_pinned_rpc_runtime": true,
+        "abi": [
+          {
+            "name": "AlreadyRevealed",
+            "type": "error",
+            "inputs": []
+          },
+          {
+            "name": "ApprovalCallerNotOwnerNorApproved",
+            "type": "error",
+            "inputs": []
+          },
+          {
+            "name": "ApprovalQueryForNonexistentToken",
+            "type": "error",
+            "inputs": []
+          },
+          {
+            "name": "BadInput",
+            "type": "error",
+            "inputs": []
+          },
+          {
+            "name": "BalanceQueryForZeroAddress",
+            "type": "error",
+            "inputs": []
+          },
+          {
+            "name": "CannotExceedMaxSupplyOfUint64",
+            "type": "error",
+            "inputs": [
+              {
+                "name": "newMaxSupply",
+                "type": "uint256",
+                "internalType": "uint256"
+              }
+            ]
+          },
+          {
+            "name": "InvalidQueryRange",
+            "type": "error",
+            "inputs": []
+          },
+          {
+            "name": "InvalidRevealDeadline",
+            "type": "error",
+            "inputs": []
+          },
+          {
+            "name": "InvalidRoyaltyBasisPoints",
+            "type": "error",
+            "inputs": [
+              {
+                "name": "basisPoints",
+                "type": "uint256",
+                "internalType": "uint256"
+              }
+            ]
+          },
+          {
+            "name": "MaxSupplyLocked",
+            "type": "error",
+            "inputs": []
+          },
+          {
+            "name": "MintClosedByReveal",
+            "type": "error",
+            "inputs": []
+          },
+          {
+            "name": "MintERC2309QuantityExceedsLimit",
+            "type": "error",
+            "inputs": []
+          },
+          {
+            "name": "MintQuantityExceedsMaxSupply",
+            "type": "error",
+            "inputs": [
+              {
+                "name": "total",
+                "type": "uint256",
+                "internalType": "uint256"
+              },
+              {
+                "name": "maxSupply",
+                "type": "uint256",
+                "internalType": "uint256"
+              }
+            ]
+          },
+          {
+            "name": "MintToZeroAddress",
+            "type": "error",
+            "inputs": []
+          },
+          {
+            "name": "MintZeroQuantity",
+            "type": "error",
+            "inputs": []
+          },
+          {
+            "name": "NewMaxSupplyCannotBeLessThenTotalMinted",
+            "type": "error",
+            "inputs": [
+              {
+                "name": "got",
+                "type": "uint256",
+                "internalType": "uint256"
+              },
+              {
+                "name": "totalMinted",
+                "type": "uint256",
+                "internalType": "uint256"
+              }
+            ]
+          },
+          {
+            "name": "NotCompatibleWithSpotMints",
+            "type": "error",
+            "inputs": []
+          },
+          {
+            "name": "NotContract",
+            "type": "error",
+            "inputs": []
+          },
+          {
+            "name": "NotRevealed",
+            "type": "error",
+            "inputs": []
+          },
+          {
+            "name": "NotSoldOut",
+            "type": "error",
+            "inputs": []
+          },
+          {
+            "name": "OnlyAllowedSeaDrop",
+            "type": "error",
+            "inputs": []
+          },
+          {
+            "name": "OwnableInvalidOwner",
+            "type": "error",
+            "inputs": [
+              {
+                "name": "owner",
+                "type": "address",
+                "internalType": "address"
+              }
+            ]
+          },
+          {
+            "name": "OwnableUnauthorizedAccount",
+            "type": "error",
+            "inputs": [
+              {
+                "name": "account",
+                "type": "address",
+                "internalType": "address"
+              }
+            ]
+          },
+          {
+            "name": "OwnerQueryForNonexistentToken",
+            "type": "error",
+            "inputs": []
+          },
+          {
+            "name": "OwnershipNotInitializedForExtraData",
+            "type": "error",
+            "inputs": []
+          },
+          {
+            "name": "ProvenanceHashCannotBeSetAfterMintStarted",
+            "type": "error",
+            "inputs": []
+          },
+          {
+            "name": "ReentrancyGuardReentrantCall",
+            "type": "error",
+            "inputs": []
+          },
+          {
+            "name": "RenounceDisabled",
+            "type": "error",
+            "inputs": []
+          },
+          {
+            "name": "RoyaltyAddressCannotBeZeroAddress",
+            "type": "error",
+            "inputs": []
+          },
+          {
+            "name": "RoyaltyExceedsCap",
+            "type": "error",
+            "inputs": [
+              {
+                "name": "bps",
+                "type": "uint256",
+                "internalType": "uint256"
+              },
+              {
+                "name": "cap",
+                "type": "uint256",
+                "internalType": "uint256"
+              }
+            ]
+          },
+          {
+            "name": "SameTransferValidator",
+            "type": "error",
+            "inputs": []
+          },
+          {
+            "name": "SequentialMintExceedsLimit",
+            "type": "error",
+            "inputs": []
+          },
+          {
+            "name": "SequentialUpToTooSmall",
+            "type": "error",
+            "inputs": []
+          },
+          {
+            "name": "SignersMismatch",
+            "type": "error",
+            "inputs": []
+          },
+          {
+            "name": "SpotMintTokenIdTooSmall",
+            "type": "error",
+            "inputs": []
+          },
+          {
+            "name": "TiersLocked",
+            "type": "error",
+            "inputs": []
+          },
+          {
+            "name": "TokenAlreadyExists",
+            "type": "error",
+            "inputs": []
+          },
+          {
+            "name": "TokenGatedMismatch",
+            "type": "error",
+            "inputs": []
+          },
+          {
+            "name": "TooEarly",
+            "type": "error",
+            "inputs": []
+          },
+          {
+            "name": "TransferCallerNotOwnerNorApproved",
+            "type": "error",
+            "inputs": []
+          },
+          {
+            "name": "TransferFromIncorrectOwner",
+            "type": "error",
+            "inputs": []
+          },
+          {
+            "name": "TransferToNonERC721ReceiverImplementer",
+            "type": "error",
+            "inputs": []
+          },
+          {
+            "name": "TransferToZeroAddress",
+            "type": "error",
+            "inputs": []
+          },
+          {
+            "name": "URIQueryForNonexistentToken",
+            "type": "error",
+            "inputs": []
+          },
+          {
+            "name": "UriLocked",
+            "type": "error",
+            "inputs": []
+          }
+        ],
+        "response_sha256": "7fb5ed9cc58258e4a174617b10c016b4a58477ce4720d9d1a9c99d3ffea752a4",
+        "source_sha256": "235b7d30d3f631ebd8e22e5c2793c3f8ae2cbee0163ae6030a3cc21244ec61b8"
+      }
+    }
+  },
+  "fee_observation": {
+    "eth_gasPrice_wei": "300894000",
+    "note": "Separate latest RPC observation; not block-pinned, not guaranteed sponsorship or final fee. eth_estimateGas supports second block argument in observed RPC. Approval dry-run from funded user wallet succeeded with no token holdings; approving does not spend tokens or make a game action feasible."
+  },
+  "weather_schedule_simulation": {
+    "method": "eth_call",
+    "block": "0x368d095",
+    "from": "0xe55a30526DF5CC0fc4E812E6D95D8cba5C8E5ea9",
+    "to": "0xd45919b30bdac5f810a18434b3aac9c2d7093c67",
+    "function": "setNext(uint256,uint8)",
+    "args": [
+      "0",
+      0
+    ],
+    "description": "Read-only simulation of owner scheduling Fair for epoch0 already observed as Sunny. No wallet connection, owner signing, transaction send, or state override. Caller from affects only this discarded EVM simulation.",
+    "before_weather_enum": 1,
+    "simulation_result": {
+      "jsonrpc": "2.0",
+      "id": 2,
+      "result": "0x"
+    },
+    "after_weather_enum": 1,
+    "implication": "Already scheduled epoch can be overwritten by owner/keeper before its24h timelock; commitHash is not checked by this function. Simulation did not persist."
+  },
+  "source_inspection_findings": {
+    "plant": {
+      "signature": "plant(uint256)",
+      "source": "verified-contracts/source/src/activation/NativeActivation.sol",
+      "preconditions": [
+        "NFT ownerOf(tokenId) equals caller",
+        "since[tokenId] is zero",
+        "CROP balance >= 2500e18 and allowance to activation >= 2500e18",
+        "configured emissions sync must succeed"
+      ],
+      "steps": [
+        "write since=block.timestamp",
+        "burnFrom caller 1500e18",
+        "transferFrom caller to immutable treasury1000e18",
+        "call configured emissions.sync(tokenId)"
+      ],
+      "no_contract_genesis_reveal_or_pause_gate": true,
+      "application_policy": "Keep published Genesis planting opening as the guided-plan default; distinguish this policy from source eligibility."
+    },
+    "upgrade": {
+      "signature": "upgrade(uint256)",
+      "source": "verified-contracts/source/src/FarmLevels.sol",
+      "preconditions": [
+        "NFT ownerOf(tokenId) equals caller",
+        "levels.paused() false",
+        "level<5",
+        "CROP balance and allowance to levels >= incremental costToReach(level+1)",
+        "configured emissions sync succeeds"
+      ],
+      "steps": [
+        "burnFrom caller incremental cost",
+        "increase level by one",
+        "sync plot in emissions"
+      ],
+      "no_contract_activation_genesis_or_reveal_gate": true,
+      "application_policy": "Guide upgrades after planting, using validated live rarity/effective weight and whole-portfolio marginal gain; do not infer urgency from rarity alone."
+    },
+    "claim": {
+      "single_signature": "claim(uint256) returns(uint256)",
+      "batch_signature": "claimMany(uint256[]) returns(uint256)",
+      "source": "verified-contracts/source/src/HarvestEmissions.sol",
+      "preconditions": [
+        "Each NFT owner equals caller",
+        "emissions.paused() false",
+        "CROP transfer from funded emissions contract succeeds"
+      ],
+      "no_token_allowance_required": true,
+      "zero_pending_behavior": "Successful zero return, no reward transfer",
+      "batch_behavior": "Sequential single claims inside one transaction; any ownership or pause failure reverts the whole batch; duplicates do not multiply rewards. Deduplicate owned IDs client-side.",
+      "historical_settlement": "_update segments exact historical weather and year boundaries before _sync. Waiting for better weather to claim does not retroactively multiply rewards."
+    },
+    "schedule": {
+      "year_seconds": 31536000,
+      "year_count": 4,
+      "base_rate_rounding": "Each annual budget is integer-divided by YEAR to a per-second wei rate, then multiplied by elapsed seconds within that year. Accumulator uses ACC=1e12 and floors amount*ACC/totalWeight and plot weight*acc/ACC separately.",
+      "genesis": 1789948800,
+      "zero_weight": "_update diverts base budget since lastUpdate into Granary if totalWeight==0; first planter does not receive backlog."
+    },
+    "granary": {
+      "live_getter": "granaryNow()",
+      "initial_observation_crop": "40000000",
+      "shortfall": "Below1x weather adds base-target to Granary.",
+      "excess": "Above1x weather pays base plus min(target-base, current segment Granary), reducing the buffer. After exhaustion, above-base weather falls to base reward.",
+      "after_schedule": "No extra base emissions after4years; pending remains claimable subject to contract state; owner sweep protects pending liability."
+    },
+    "weather": {
+      "multiplication": "weeklyBps *2 for each covering Flood and Moon, then min20000; overlapping Flood+Moon supported",
+      "history": "Unscheduled epoch carries most recent scheduled weather within52epochs, else Fair; no one-week-only default inference.",
+      "events": "Flood24hours, at least24hoursnotice, max2epochsout, no second scheduling while existing pending/active flood; Moon48hours, at least30daysnotice and27daysspacing.",
+      "critical_published_conflict": "setNext permits owner/keeper to overwrite any future epoch before its24h deadline. commitHash is never checked in setNext. Timely past history is fixed, but published precommitment/non-reroll claims are not enforced by the inspected function. Read-only owner-call simulation changing alreadySunny epoch0 toFair succeeded; persisted epoch remainedSunny.",
+      "application_policy": "Almanac remains gameplay planning authority; show explicit source conflict and never treat the hash as guaranteed fixed future weather."
+    },
+    "nft_reveal": {
+      "mapping": "(tokenId-1+startingIndex)%3333",
+      "source_offset_generation": "idx=uint256(blockhash)%3333; if idx==0 use1",
+      "distribution_caveat": "Under uniform256-bit hashes, offset0 has zero probability, offset1 combines residues0and1; other offsets have one residue. A uniform3333offset model is hypothetical and differs from deployed procedure. Exact modulo-bias weights can be computed from2^256.",
+      "reveal_deadline_timestamp": 1789754400,
+      "tiers": "rarityTier mapping defaults0 until owner writes tiers; tiersFinalized locks subsequent writes, but setting tiers does not itself validate the manifest hash or resync emissions. Compare direct tier, finalized flag, manifest row and effective weight.",
+      "application_policy": "Never assign an owned rarity solely from a defaultzero getter; require reveal/finalization evidence and consistency."
+    },
+    "activation_wiring": {
+      "transfer_hook": "Observed NFT.transferHook is NativeActivation. NFT.activationClearer is zero. NativeActivation.afterTransfer clears since then best-effort sync.",
+      "sync": "sync/syncMany permissionless and not paused; claim and plant/upgrade call sync; stale weight can exist after failed transfer hook or tier updates. Detect desiredWeight vs weightOf and offer a separately reviewed synchronization action only if implemented.",
+      "owner_controls": "Emissions activation source can change; NFT transferHook/activationClearer can change; FarmLevels and HarvestEmissions have independent pause controls."
+    },
+    "limits": [
+      "No transaction, signature or wallet connection was submitted. eth_call state was discarded.",
+      "Sourcify exact-match assertions were checked against current runtime bytes from public RPC. We did not independently recompile source or reproduce project audits.",
+      "Full source evidence applies to six saved contract deployments only, not SeaDrop, vests, store or future supplies.",
+      "Network sponsorship and final user-paid fee remain receipt-dependent. Quote failures must not be treated as zero."
+    ]
+  },
+  "publication_note": "Personal wallet reads and simulations omitted from this public research extract. Public contract observations are unchanged."
+}

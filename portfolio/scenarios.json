@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "is_template": true,
+  "status": "awaiting_portfolio_and_explicit_market_inputs",
+  "scenario_start_utc": "2026-09-21T00:00:00Z",
+  "scenario_start_note": "Launch baseline. Change explicitly for later decisions; do not restart past horizons implicitly.",
+  "horizons_days": [30, 90, 365],
+  "objectives": ["net_crop_accumulation", "net_eth_profit"],
+  "funding_models": [
+    {
+      "id": "harvest_funded",
+      "initial_planting_cost_crop": "55000",
+      "initial_planting_funded_externally": true,
+      "additional_upgrade_budget_eth_wei": "0",
+      "upgrade_funding": "Claimed earnings; explicit CROP transfers allowed. Gas funding still needs to be available."
+    },
+    {
+      "id": "extra_investment",
+      "initial_planting_cost_crop": "55000",
+      "initial_planting_funded_externally": true,
+      "additional_upgrade_budget_eth_wei": null,
+      "budget_policy": "Required cap per evaluated scenario; never assume unlimited investment. Report return versus the no-extra-investment baseline."
+    }
+  ],
+  "fee_cases": ["observed_or_estimated_wallet_paid_costs", "zero_wallet_paid_gas"],
+  "wallet_cases": ["two_wallets_with_optional_crop_transfers", "consolidate_before_initial_planting", "consolidate_after_initial_planting"],
+  "baseline_strategy": "Plant the 22 planned plots and make no upgrades. Actual readiness/activation and funding must be checked.",
+  "assumptions": {
+    "external_farm_weight_path": null,
+    "weather_path": null,
+    "crop_buy_quotes": null,
+    "crop_sell_quotes": null,
+    "wallet_paid_fee_quotes": null,
+    "eth_price_in_fiat": null,
+    "terminal_nft_values_eth_wei": null,
+    "valuation_basis": null,
+    "quote_observed_at_utc": null
+  },
+  "results": {
+    "net_crop_accumulation": null,
+    "net_eth_profit": null,
+    "best_strategy": null
+  }
+}

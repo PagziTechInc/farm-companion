@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Plot #0346 · Yield Farm</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
+<style>
+  html,body{margin:0;height:100%;background:#101c10;color:#fde68a;font-family:"Press Start 2P",monospace;overflow:hidden}
+  .stage{position:relative;width:min(100vw,100vh);height:min(100vw,100vh);margin:0 auto;background:#16260f;container-type:size}
+  .art{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;image-rendering:pixelated;image-rendering:crisp-edges}
+  .hud{position:absolute;left:0;right:0;bottom:0;padding:5cqw 4cqw 3.5cqw;background:linear-gradient(to top,rgba(16,28,16,.96) 0%,rgba(16,28,16,.86) 70%,rgba(16,28,16,0) 100%);text-shadow:0 2px 0 #000}
+  .row{display:block;white-space:nowrap}
+  .id{font-size:4.2cqw;color:#fcd34d} .state{display:block;margin-top:1.8cqw;font-size:2.4cqw;color:#4ade80} .state.off{color:#9e9c7d}
+  .big{margin-top:2.6cqw;font-size:6.4cqw;color:#fcd34d;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+  .big small{font-size:2.6cqw;color:#fde68a;margin-left:1cqw} .big .dec{font-size:3.2cqw;color:#fde68a}
+  .cap{margin-top:1.4cqw;font-size:2.2cqw;color:#9e9c7d}
+  .line{margin-top:2.4cqw;font-size:2.4cqw;color:#fde68a} .line b{color:#4ade80;font-weight:400}
+  .foot{margin-top:2.2cqw;font-size:1.9cqw;color:#929174;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .tag{position:absolute;top:3cqw;left:3cqw;font-size:2.2cqw;color:#101c10;background:#fcd34d;padding:1.2cqw 1.6cqw;border:.5cqw solid #101c10}
+  .hud.wrapped .big{font-size:4.6cqw}
+</style></head>
+<body><div class="stage" id="stage">
+  <img class="art" id="art" alt="PLOT #0346" src="https://api.rh.farm/image/unrevealed.png">
+  <div class="hud" id="hud">
+    <div class="row"><span class="id">PLOT #0346</span><span class="state" id="state">…</span></div>
+    <div class="big" id="big">—</div>
+    <div class="cap" id="cap">reading the registry…</div>
+    <div class="line" id="line"></div>
+    <div class="foot" id="foot"></div>
+  </div>
+</div>
+<script>
+(() => {
+  const C = {"id": 346, "mode": "real", "base": "https://api.rh.farm", "poll": 15};
+  const $ = (id) => document.getElementById(id);
+  const E18 = 1e18;
+  // three decimals: a plot earns a few thousandths of a $CROP a second, so whole numbers would look frozen for minutes
+  const fmt = (n) => { const [i, d] = Math.max(0, n).toFixed(3).split("."); return Number(i).toLocaleString("en-US") + '<span class="dec">.' + d + "</span>"; };
+  const since = (s) => s < 60 ? s + "s ago" : s < 3600 ? Math.floor(s / 60) + "m ago" : Math.floor(s / 3600) + "h ago";
+  const get = (p) => fetch(C.base + p + (p.includes("?") ? "&" : "?") + "fresh=" + Date.now(), {cache: "no-store"}).then((r) => r.json());
+  let last = null;     // the last read: pending (in $CROP), perSec, at (unix s), level, planted, revealed, tier, weather
+  let readAt = 0;      // wall clock of the last read
+  const setArt = (src) => { if ($("art").getAttribute("src") !== src) $("art").src = src; };
+  async function read() {
+    try {
+      let d;
+      if (C.mode === "rehearsal") {
+        d = await get("/rehearsal/live/" + C.id);
+      } else {
+        const [p, s, w] = await Promise.all([get("/plot/" + C.id), get("/stats"), get("/weather")]);
+        const share = (p.weightBps && Number(s.totalWeightBps)) ? p.weightBps / Number(s.totalWeightBps) : 0;
+        d = { revealed: p.revealed, level: p.level, planted: p.planted, tier: p.tier, at: p.at, pendingCrop: p.pendingCrop,
+              ratePerSecWei: String(Math.round(Number(s.ratePerSecWei) * share)), weather: w, lastHarvestAt: p.lastHarvestAt,
+              image: C.base + "/image/" + C.id + ".png?s=" + p.level + (p.planted ? "p" : "d") + "b" };
+      }
+      last = { pending: Number(d.pendingCrop || 0) / E18, perSec: Number(d.ratePerSecWei || 0) / E18, at: Number(d.at) || Math.floor(Date.now() / 1000),
+               level: d.level, planted: !!d.planted, revealed: !!d.revealed, tier: d.tier, weather: d.weather || {}, lastHarvestAt: d.lastHarvestAt || null, image: d.image };
+      readAt = Date.now();
+      if (last.revealed && last.image) setArt(last.image);
+      paint();
+    } catch (e) { $("cap").textContent = "the registry did not answer; trying again"; }
+  }
+  function paint() {
+    if (!last) return;
+    const hud = $("hud"); hud.classList.toggle("wrapped", !last.revealed);
+    const ageS = Math.max(0, Math.floor(Date.now() / 1000 - last.at));
+    if (!last.revealed) {
+      $("state").textContent = "WRAPPED"; $("state").className = "state off";
+      $("big").innerHTML = "SEALED UNTIL THE REVEAL";
+      $("cap").textContent = "opens at sell-out or Sep 18, 2 PM ET";
+      $("line").textContent = "3,333 farms fixed before the sale by a hash on chain";
+      $("foot").textContent = "rh.farm";
+      return;
+    }
+    const wx = last.weather.label ? (last.weather.label + " ×" + (Number(last.weather.multiplierBps || 10000) / 10000).toFixed(1)) : "";
+    const tier = last.tier ? " · " + String(last.tier).toUpperCase() : "";
+    if (!last.planted) {
+      $("state").textContent = "DORMANT"; $("state").className = "state off";
+      $("big").innerHTML = "LV " + last.level + tier;
+      $("cap").textContent = "nobody is farming it: plant it at rh.farm";
+      $("line").textContent = wx ? "this week: " + wx : "";
+      $("foot").textContent = "checked " + since(ageS) + " · rh.farm";
+      return;
+    }
+    const elapsed = (Date.now() - readAt) / 1000;
+    const standing = last.pending + last.perSec * elapsed;
+    $("state").textContent = "PLANTED · LV " + last.level + tier; $("state").className = "state";
+    $("big").innerHTML = "🌾 " + fmt(standing) + "<small>$CROP</small>";
+    $("cap").textContent = "standing harvest · live";
+    const wk = last.perSec * 604800;
+    $("line").innerHTML = (wk ? "<b>+" + Math.round(wk).toLocaleString("en-US") + " / wk</b>" : "") + (wx ? " · " + wx : "");
+    const harvested = last.lastHarvestAt && (Math.floor(Date.now() / 1000) - last.lastHarvestAt < 3600) ? " · harvested " + since(Math.floor(Date.now() / 1000) - last.lastHarvestAt) : "";
+    $("foot").textContent = "checked " + since(ageS) + harvested + " · travels with the deed · rh.farm";
+  }
+  read(); setInterval(read, C.poll * 1000); setInterval(paint, 1000);
+})();
+</script>
+</body></html>

@@ -1,0 +1,60 @@
+{
+  "read_at_utc": "2026-09-07T03:05:11.938726+00:00",
+  "chain_id": 4663,
+  "block": 56499166,
+  "rpc": "https://rpc.mainnet.chain.robinhood.com/rpc",
+  "reads": {
+    "level_2_cost": {
+      "address": "0x34a9f041dce0b8e39cc1ca7b1e32238fa5e45284",
+      "value": "10000000000000000000000",
+      "error": null
+    },
+    "level_3_cost": {
+      "address": "0x34a9f041dce0b8e39cc1ca7b1e32238fa5e45284",
+      "value": "25000000000000000000000",
+      "error": null
+    },
+    "level_4_cost": {
+      "address": "0x34a9f041dce0b8e39cc1ca7b1e32238fa5e45284",
+      "value": "60000000000000000000000",
+      "error": null
+    },
+    "level_5_cost": {
+      "address": "0x34a9f041dce0b8e39cc1ca7b1e32238fa5e45284",
+      "value": "150000000000000000000000",
+      "error": null
+    },
+    "weather_week0": {
+      "address": "0xd45919b30bdac5f810a18434b3aac9c2d7093c67",
+      "value": "1",
+      "error": null
+    },
+    "current_multiplier_bps": {
+      "address": "0xd45919b30bdac5f810a18434b3aac9c2d7093c67",
+      "value": "12000",
+      "error": null
+    },
+    "genesis_utc_timestamp": {
+      "address": "0xd45919b30bdac5f810a18434b3aac9c2d7093c67",
+      "value": "1789948800",
+      "error": null
+    },
+    "total_weight": {
+      "address": "0x3974f8d2eaaf2425fb8556b688534332adc4dacd",
+      "value": "0",
+      "error": null
+    },
+    "activation": {
+      "address": "0x3974f8d2eaaf2425fb8556b688534332adc4dacd",
+      "value": "0xc023f81ec14261dabe9de17c30ae70a4c78d87a2",
+      "error": null
+    },
+    "plant_fee": {
+      "address": "0xc023f81ec14261dabe9de17c30ae70a4c78d87a2",
+      "value": "2500000000000000000000",
+      "error": null
+    }
+  },
+  "evidence_status": "verified_read",
+  "note": "Historical, block-pinned eth_call results. Weather enum label and BPS interpretation come from the separately inspected site client. Not a current-state cache."
+}

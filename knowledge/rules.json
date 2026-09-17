@@ -1,0 +1,565 @@
+{
+  "schema_version": 1,
+  "units": {
+    "crop_amounts": "Decimal strings in whole CROP unless the field ends in _wei.",
+    "basis_points_per_multiplier": 10000,
+    "token_decimals": 18,
+    "timestamps": "UTC ISO-8601 or Unix seconds explicitly named.",
+    "evidence_statuses": [
+      "published_rule",
+      "verified_read",
+      "derived",
+      "unresolved"
+    ],
+    "rounding": "Preserve token base units. Source floors rate and accumulator arithmetic; forward projections remain scenario estimates."
+  },
+  "network": {
+    "name": "Robinhood Chain",
+    "chain_id": 4663,
+    "native_token": "ETH",
+    "crop_decimals": 18,
+    "sources": [
+      "client-config",
+      "rpc"
+    ],
+    "status": "verified_read"
+  },
+  "plots": {
+    "max_supply": 3333,
+    "mint_price_eth": "0.002",
+    "mint_source": "OpenSea SeaDrop",
+    "reveal_mapping": "(token_id - 1 + starting_index) mod 3333",
+    "starting_index": null,
+    "rarities": [
+      {
+        "tier": 0,
+        "name": "Common",
+        "count": 2475,
+        "multiplier_bps": 10000
+      },
+      {
+        "tier": 1,
+        "name": "Fertile",
+        "count": 660,
+        "multiplier_bps": 12500
+      },
+      {
+        "tier": 2,
+        "name": "Prize Plot",
+        "count": 165,
+        "multiplier_bps": 15000
+      },
+      {
+        "tier": 3,
+        "name": "Golden Acre",
+        "count": 33,
+        "multiplier_bps": 20000
+      }
+    ],
+    "traits": [
+      "Soil",
+      "Crop",
+      "Scarecrow",
+      "Sky",
+      "Fence",
+      "Critter"
+    ],
+    "trait_effect": "Traits inform fixed rarity/art; no independent crop/soil yield multiplier is documented.",
+    "rarity_freeze": "Published as finalized after reveal; token-to-row mapping must be read after reveal.",
+    "sources": [
+      "almanac",
+      "provenance",
+      "verified-contracts-2026-09-11"
+    ],
+    "status": "published_rule",
+    "manifest_commitment_verified": true,
+    "manifest_commitment_algorithm": "keccak256(raw_response_bytes)",
+    "manifest_commitment_evidence": "snapshots/verified-contracts-2026-09-11/review.json#manifest",
+    "verified_reveal_behavior": {
+      "zero_starting_index": "Unrevealed sentinel in this deployment; reveal maps hash modulo 3333 equal to zero onto one.",
+      "offset_probability": "Uniform-3333-offset probabilities are hypothetical. A uniform 256-bit hash model gives offset one the combined residues zero and one; hash uniformity and lack of influence are not established.",
+      "tier_assignment": "Owner sets rarityTier after reveal and may revise it until tiersFinalized. A default zero tier does not prove Common; compare finalized tier, committed manifest and synchronized weight.",
+      "status": "verified_source"
+    }
+  },
+  "planting": {
+    "cost_crop": "2500",
+    "burn_bps": 6000,
+    "treasury_bps": 4000,
+    "dormant_weight_bps": 0,
+    "ownership_effect": "NFT stays in the wallet. Activation is tied to ownership and clears on transfer.",
+    "fee_status": "verified_read",
+    "fee_evidence": "snapshots/verified-contracts-2026-09-11/review.json",
+    "allocation_status": "published_rule",
+    "sources": [
+      "almanac",
+      "verified-contracts-2026-09-11"
+    ],
+    "approval_spender": "Freshly resolved, reviewed NativeActivation deployment.",
+    "eligibility_note": "Source has no Genesis or reveal gate. The companion follows the Almanac opening at Genesis as application policy, not a claimed contract restriction.",
+    "seed_bag": {
+      "opening_price_eth": "0.001",
+      "repricing": "Published daily repricing to pool value of 2500 CROP; exact current bagPrice() must be read.",
+      "town_burn_crop": "1500",
+      "eligibility": "Owned dormant plot, seed bag open, exact ETH payment, sufficient town CROP balance and allowance.",
+      "execution_policy": "Separate payable method; never substitute for a CROP approval/plant without explicit user review.",
+      "repricing_enforcement": "Owner-set price capped at0.01ETH; daily market repricing is published operational policy, not an enforced oracle or time schedule."
+    }
+  },
+  "levels": {
+    "entries": [
+      {
+        "level": 1,
+        "name": "Seedlings",
+        "multiplier_bps": 10000,
+        "incremental_upgrade_cost_crop": "0"
+      },
+      {
+        "level": 2,
+        "name": "Barn",
+        "multiplier_bps": 12500,
+        "incremental_upgrade_cost_crop": "5000"
+      },
+      {
+        "level": 3,
+        "name": "Tractor",
+        "multiplier_bps": 15000,
+        "incremental_upgrade_cost_crop": "10000"
+      },
+      {
+        "level": 4,
+        "name": "Silo",
+        "multiplier_bps": 20000,
+        "incremental_upgrade_cost_crop": "20000"
+      },
+      {
+        "level": 5,
+        "name": "Windmill",
+        "multiplier_bps": 30000,
+        "incremental_upgrade_cost_crop": "50000"
+      }
+    ],
+    "upgrade_burn_bps": 10000,
+    "permanent": true,
+    "upgrade_steps": "Advance one level at a time; costToReach(next_level) is the incremental payment, not a cumulative total.",
+    "costs_status": "verified_read",
+    "costs_evidence": "snapshots/verified-contracts-2026-09-11/review.json",
+    "multipliers_status": "published_rule",
+    "sources": [
+      "almanac",
+      "verified-contracts-2026-09-11"
+    ],
+    "approval_spender": "FarmLevels deployment; each upgrade burns the exact incremental next-level amount.",
+    "eligibility_note": "Source checks ownership, levels pause and level cap, but does not require planting or Genesis. Dormant upgrades earn nothing until activated; companion policy waits for Genesis."
+  },
+  "yield": {
+    "base_plot_weight_bps": "level_multiplier_bps * rarity_multiplier_bps / 10000",
+    "ordinary_yield_per_second": "Nominal: 2000 CROP / 604800 * plot_weight_units * FirstSoil * weather; dormant plots earn zero. Annual base ceiling and finite Granary can reduce payout.",
+    "portfolio_yield_per_second": "Nominal: 2000 CROP / 604800 * own active weight * First Soil * weather. Schedule/carry and finite Granary may limit payout; total valley weight affects those limits, not the uncapped rate.",
+    "portfolio_marginal_yield_per_second": "Recompute the whole portfolio with and without the extra weight, with identical initial carry, Granary, weather and horizon; compare earned CROP.",
+    "variables": {
+      "P": "Tracked currently planted weight across every included wallet.",
+      "T": "Total farm weight including P.",
+      "delta": "Candidate extra weight.",
+      "B": "Base before multipliers, limited by schedule plus carry.",
+      "m": "First Soil times capped weather; surplus limited by Granary."
+    },
+    "zero_weight_policy": "Portfolio rate is zero; elapsed schedule enters carry. After activation, the nominal rate remains bounded and prior unused schedule can support its future base; no immediate lump-sum backlog claim.",
+    "accrual": "Published as continuous. Claiming realizes pending tokens; it does not itself increase weight.",
+    "compounding": "Only spending earned tokens on a yield-changing action compounds; pending rewards are not spendable balances.",
+    "limitations": [
+      "Future weight, weather, prices, fees, reserves and deposits are assumptions; label them.",
+      "Segment-rate and accumulator rounding can differ from actual transaction history.",
+      "No unverified future tarp, fertilizer or lottery profit is included.",
+      "Live rarity requires finalized tiers, manifest agreement and synchronized weight."
+    ],
+    "status": "published_rule",
+    "marginal_formula_status": "derived",
+    "sources": [
+      "almanac",
+      "verified-contracts-2026-09-11",
+      "rate-review-2026-09-15"
+    ],
+    "own_weight_rule_reviewed_on_utc": "2026-09-15"
+  },
+  "emissions": {
+    "annual_budgets_crop": [
+      "380000000",
+      "190000000",
+      "95000000",
+      "95000000"
+    ],
+    "total_base_emissions_crop": "760000000",
+    "initial_granary_crop": "40000000",
+    "advertised_emissions_plus_initial_granary_crop": "800000000",
+    "published_schedule_years": 4,
+    "year_4_does_not_halve": true,
+    "after_year_4": "Rate stops after four 365-day years; unused carry and Granary become sweepable subject to reward liabilities.",
+    "illustration_year_seconds": 31536000,
+    "illustration_year_seconds_status": "verified_source_and_getter",
+    "contract_year_boundary_seconds_verified": true,
+    "sources": [
+      "almanac",
+      "verified-contracts-2026-09-11"
+    ],
+    "status": "published_rule",
+    "verified_accounting": {
+      "year_seconds": 31536000,
+      "annual_rate_rounding": "floor(year_budget_wei / YEAR), then multiplied by segment seconds.",
+      "accumulator_precision": "1000000000000",
+      "settlement": "Split at year, weather/event, Founding Week and First Soil boundaries. Base=min(nominal rate for totalWeight over segment, carry + elapsed schedule budget). Carry=available-base. Apply combined soil/weather multiplier after the ceiling.",
+      "granary": "Combined multiplier above one draws up to available Granary; below one replenishes it. Idle schedule enters carry, not Granary.",
+      "current_getters": [
+        "carryNow()",
+        "granaryNow()"
+      ],
+      "rate_getter": "farmRatePerSec is next-24-hour accrual at current weight and stored scheduled weather divided by 86400, not an instantaneous rate.",
+      "projection_limit": "Carry and Granary are finite stocks consumed once per segment; forecasts depend on starting balances, future total weight and weather. Exact accumulator floors and future transaction timing remain approximations."
+    },
+    "economy_version": 2,
+    "nominal_crop_per_weight_week": "2000",
+    "first_soil": [
+      {
+        "start_utc": "2026-09-21T00:00:00Z",
+        "end_utc": "2026-09-28T00:00:00Z",
+        "multiplier_bps": 20000
+      },
+      {
+        "start_utc": "2026-09-28T00:00:00Z",
+        "end_utc": "2026-10-19T00:00:00Z",
+        "multiplier_bps": 15000
+      }
+    ],
+    "ceiling_scope": "Base before First Soil and weather. Unspent schedule budget enters carry, distinct from Granary.",
+    "initial_carry_crop": "0"
+  },
+  "weather": {
+    "boundary_weekday_utc": "Monday",
+    "boundary_time_utc": "00:00:00",
+    "period_seconds": 604800,
+    "states": [
+      {
+        "contract_enum": 0,
+        "name": "Fair",
+        "multiplier_bps": 10000
+      },
+      {
+        "contract_enum": 1,
+        "name": "Sunny",
+        "multiplier_bps": 12000
+      },
+      {
+        "contract_enum": 2,
+        "name": "Rain",
+        "multiplier_bps": 15000
+      },
+      {
+        "contract_enum": 3,
+        "name": "Drought",
+        "multiplier_bps": 8000
+      },
+      {
+        "contract_enum": 4,
+        "name": "Locusts",
+        "multiplier_bps": 5000
+      }
+    ],
+    "enum_source": "client-config",
+    "commit_lead_time_seconds": 86400,
+    "launch_weeks_committed": 12,
+    "granary_behavior": "First Soil times weather above one draws the available buffer; below one replenishes it. Idle schedule enters carry. The weather/event cap of 2x applies before First Soil.",
+    "events": [
+      {
+        "name": "Flash Flood",
+        "published_multiplier_bps": 20000,
+        "duration_seconds": 86400,
+        "notice_seconds": 86400
+      },
+      {
+        "name": "Harvest Moon",
+        "published_multiplier_bps": 20000,
+        "duration_seconds": 172800,
+        "notice": "Town Hall currently advertises at least 30 days ahead; not a guaranteed immutable schedule."
+      }
+    ],
+    "effective_multiplier_cap_bps": 20000,
+    "event_combination_status": "almanac_planning_rule",
+    "event_combination_issue": "U01",
+    "forecast_policy": "Treat commitments and early scheduled values as observations, not immutable forecasts; the verified deployment can replace a scheduled epoch before its cutoff. Unscheduled epochs carry a prior scheduled value within 52 preceding epochs, otherwise Fair.",
+    "sources": [
+      "almanac",
+      "townhall",
+      "verified-contracts-2026-09-11"
+    ],
+    "status": "published_rule",
+    "event_planning_model": "Double weekly BPS once for a covering Flood and once for a covering Moon, then cap at 20000. Source confirms simultaneous Flood and Moon stacking. Same-kind overlapping input windows are rejected as ambiguous duplicates.",
+    "verified_event_behavior": "multiplierAt applies each covering event independently before the total 2x cap; nominal multiplier remains subject to emissions Granary availability.",
+    "verified_schedule_conflict": "Almanac describes sealed commitments. Deployed setNext permits owner/keeper replacement before the 24-hour cutoff, without enforcing commitHash or a reveal preimage. Read-only replacement simulation succeeded; actual state was unchanged.",
+    "first_soil_cap_note": "Founding Week and a 2x capped weather/event multiplier combine to 4x while Granary can pay."
+  },
+  "harvest": {
+    "game_fee_crop": "0",
+    "token_approval_required": false,
+    "single_function": "claim(uint256)",
+    "batch_function": "claimMany(uint256[])",
+    "batch_scope": "Caller-owned plots; combine within each wallet, not across ownership boundaries.",
+    "unclaimed_rewards": "Travel with the NFT on transfer under the published rule.",
+    "pause": "Owner can pause claims; published policy says pending rewards keep accruing.",
+    "wallet_paid_gas": null,
+    "gas_status": "unresolved",
+    "gas_issue": "U02",
+    "sources": [
+      "almanac",
+      "verified-contracts-2026-09-11"
+    ],
+    "status": "published_rule",
+    "verified_claim_behavior": "Claims settle historical rewards and synchronize weights. One invalid owner in claimMany reverts the whole batch; claims pause independently of the levels pause. No token allowance is required."
+  },
+  "transfers": {
+    "level_preserved": true,
+    "rarity_preserved": true,
+    "pending_crop_preserved": true,
+    "activation_cleared": true,
+    "replant_cost_crop": "2500",
+    "internal_wallet_transfer_exemption_documented": false,
+    "equipped_skin_travels": true,
+    "consolidation_baseline_moved_plots": null,
+    "preplant_note": "Moving a never-planted plot incurs no lost prior activation, but still has transfer costs and subsequent initial planting.",
+    "sources": [
+      "almanac",
+      "store",
+      "verified-contracts-2026-09-11"
+    ],
+    "status": "published_rule",
+    "verified_sync_behavior": "NFT calls its NativeActivation transfer hook, which clears activation and attempts emissions synchronization. Caught hook failures can leave stale recorded weight until sync or claim."
+  },
+  "fees": {
+    "farmer_name_crop": "100",
+    "name_burn_bps": 10000,
+    "secondary_royalty_current_bps": 500,
+    "secondary_royalty_cap_bps": 1000,
+    "site_swap_fee_bps": 0,
+    "swap_fee_starts": "Pool launch",
+    "raffle_ticket_price_crop": null,
+    "harvest_game_fee_crop": "0",
+    "external_cost_categories": [
+      "wallet_paid_network_fee",
+      "bridge_or_swap_quote_fees",
+      "DEX_or_pool_fees",
+      "slippage_and_price_impact",
+      "marketplace_fees_if_applicable"
+    ],
+    "sources": [
+      "almanac"
+    ],
+    "status": "published_rule",
+    "pool_swap_fee_bps": 100,
+    "swap_fee_recipient": "Liquidity providers of the CROP Uniswap pool; no site fee according to current Almanac."
+  },
+  "store": {
+    "opens_with_genesis": false,
+    "all_purchases_burn_crop": true,
+    "removing_skin_free": true,
+    "skins": [
+      {
+        "name": "Deep Winter",
+        "planned_cost_crop": "15000",
+        "planned_supply": 500
+      },
+      {
+        "name": "Festival Night",
+        "planned_cost_crop": "25000",
+        "planned_supply": 500
+      },
+      {
+        "name": "Autumn Gold",
+        "planned_cost_crop": "15000",
+        "planned_supply": 750
+      },
+      {
+        "name": "Storm Watch",
+        "planned_cost_crop": "50000",
+        "planned_supply": 150
+      }
+    ],
+    "supplies": [
+      {
+        "name": "Fertilizer",
+        "planned_effect": "25% additional plot weight for one week",
+        "planned_weight_multiplier_bps": 12500,
+        "cost_crop": null
+      },
+      {
+        "name": "Greenhouse Tarp",
+        "planned_effect": "Floor the plot's weather multiplier at 1x for the coming week",
+        "planned_weather_floor_bps": 10000,
+        "cost_crop": null
+      }
+    ],
+    "supplies_expected": "2026-11",
+    "optimization_policy": "Exclude cosmetics as yield investments. Supply pricing, activation, stacking and settlement require confirmation before recommendations.",
+    "sources": [
+      "store"
+    ],
+    "status": "published_rule",
+    "final_supply_rules_status": "unresolved",
+    "expected_opening": "Later in 2026; final opening not specified"
+  },
+  "drawings": {
+    "expected_start": "2026-10",
+    "boundary": "Monday weather rollover",
+    "free_entries_per_planted_plot_per_week": 1,
+    "automatic_free_entry": true,
+    "tickets_burned": true,
+    "ticket_price_crop": null,
+    "prize": "Market-bought plot; Town Hall also mentions cosmetics.",
+    "budget_policy": "Budget capped by that week's tickets burned; thin weeks may roll forward.",
+    "draw_policy": "Seed committed before entry window, revealed at drawing.",
+    "optimization_policy": "Do not recommend purchased tickets without complete odds, ticket cost, prize valuation, and confirmed final rules.",
+    "sources": [
+      "almanac",
+      "townhall"
+    ],
+    "status": "published_rule",
+    "final_rules_status": "unresolved"
+  },
+  "token_allocations": {
+    "total_supply_crop": "2000000000",
+    "fixed_supply": true,
+    "allocations": [
+      {
+        "name": "Harvest emissions",
+        "crop": "760000000"
+      },
+      {
+        "name": "Initial Granary",
+        "crop": "40000000"
+      },
+      {
+        "name": "Airdrop pool",
+        "crop": "100000000"
+      },
+      {
+        "name": "Treasury vest",
+        "crop": "200000000"
+      },
+      {
+        "name": "Team vest",
+        "crop": "200000000"
+      },
+      {
+        "name": "Liquid treasury",
+        "crop": "700000000"
+      }
+    ],
+    "airdrop": "Published as unclaimable; entire pool designated for Granary after its deadline.",
+    "airdrop_sweep_date_utc": "2027-03-01",
+    "airdrop_sweep_exact_timestamp_verified": true,
+    "treasury_vesting": "Linear over year one.",
+    "team_vesting": "Published as six-month cliff then two years linear; exact release curve is not independently verified.",
+    "treasury_no_market_sales_year_one": "Published policy with an explicit exception: pool ceiling ranges convert treasury CROP into ETH retained in the pool as price rises. Not a contract-enforced blanket prohibition.",
+    "team_no_sales_year_one_inference_permitted": false,
+    "sources": [
+      "almanac",
+      "airdrop-source-2026-09-11"
+    ],
+    "status": "published_rule",
+    "airdrop_sweep_deadline_timestamp": 1803859200,
+    "airdrop_sweep_condition": "Permissionless sweep requires block.timestamp strictly after 2027-03-01T00:00:00Z. A transaction must actually transfer the remaining balance; do not pre-credit forecasts.",
+    "airdrop_claim_evidence": "Almanac says no allocation to claimants. Current source supports valid Merkle claims against an immutable nonzero root; lack of eligible leaves/proofs was not independently proven. No visitor allocation or free CROP is assumed."
+  },
+  "schedule": {
+    "mint_utc": "2026-09-15T17:00:00Z",
+    "reveal": "At sellout, or by September 18 18:00 UTC; current Almanac has an explicit deadline.",
+    "client_reveal_deadline_utc": "2026-09-18T18:00:00Z",
+    "reveal_wording_issue": "U04",
+    "pool_expected_date": "2026-09-18",
+    "genesis_utc": "2026-09-21T00:00:00Z",
+    "genesis_timestamp": 1789948800,
+    "genesis_toronto": "2026-09-20T20:00:00-04:00",
+    "genesis_status": "verified_read",
+    "sources": [
+      "almanac",
+      "verified-contracts-2026-09-11"
+    ],
+    "contract_reveal_deadline_utc": "2026-09-18T18:00:00Z",
+    "contract_reveal_deadline_timestamp": 1789754400,
+    "reveal_deadline_status": "verified_source_and_getter",
+    "reveal_note": "Permissionless reveal after the relevant sellout block or immutable deadline still requires a transaction. Date alone is not proof of reveal."
+  },
+  "administration": {
+    "published_immutable_claims": [
+      "3333 NFT supply cap",
+      "Mint permanently closes after reveal",
+      "Rarity freeze after finalization",
+      "No reseeding of already committed weather weeks",
+      "Fixed upgrade burns",
+      "Ownerless farmer-name registry",
+      "Royalty upper cap"
+    ],
+    "published_owner_powers": [
+      "Reveal sealed weather",
+      "Pause claims",
+      "Replace activation source behind stated resync guards",
+      "Set store listings/prices/supplies and later lock them",
+      "Spend treasury",
+      "Set royalty up to its cap"
+    ],
+    "owner_control": "Current six core owners share0xe55a30526df5cc0fc4e812e6d95d8cba5c8e5ea9 at reviewblock. Its key/multisig custody was not established by address equality.",
+    "audit_claims": "Historical site audit claims retained in history/2026-09-07; not independently reproduced. Current security URL is a moved-page pointing to Provenance.",
+    "source_verification": "Six current core Sourcify exact-match source records independently matched pinned runtime bytecode at block 60592342. Targeted review, not compiler reproduction or a full audit.",
+    "sources": [
+      "almanac",
+      "verified-contracts-2026-09-11"
+    ],
+    "status": "published_rule",
+    "verified_conflicts": [
+      "Weather reseeding promise: setNext does not enforce commitments and permits replacement until the scheduling cutoff.",
+      "Uniform cyclic offset assumption: reveal remaps residue zero to one.",
+      "Rarity assignment: owner-written tiers remain mutable until finalization; setters do not validate manifest or synchronize emissions.",
+      "Seed-bag daily market repricing is an owner-operation promise; source only caps owner-set price at0.01ETH and permits closing the bag."
+    ]
+  },
+  "onboarding": {
+    "wallets": "EVM wallets including MetaMask and Rabby",
+    "gas_asset": "ETH",
+    "initial_crop": "Swap for CROP when available, or published ETH seed bag can plant without acquiring initial CROP. No claimable airdrop is assumed.",
+    "bridge_paths": [
+      "OpenSea swap",
+      "Arbitrum canonical bridge"
+    ],
+    "published_canonical_exit_wait_days": 7,
+    "bridge_quote_policy": "Routing availability, fees and waits are time-sensitive; obtain fresh quotes instead of treating promotional estimates as constants.",
+    "sources": [
+      "almanac",
+      "home"
+    ],
+    "status": "published_rule"
+  },
+  "derived": {
+    "initial_planting_22_crop": "55000",
+    "initial_planting_11_crop": "27500",
+    "plant_burn_per_plot_crop": "1500",
+    "plant_treasury_per_plot_crop": "1000",
+    "upgrade_total_per_plot_crop": "85000",
+    "upgrade_total_22_crop": "1870000",
+    "plant_and_max_22_crop": "1925000",
+    "mint_22_eth_if_at_published_mint_price": "0.044",
+    "replant_after_moving_11_active_plots_crop": "27500",
+    "all_level1_exact_farm_weight_bps": 36135000,
+    "all_level5_exact_farm_weight_bps": 108405000,
+    "free_weekly_entries_if_all_22_planted": 22,
+    "sources": [
+      "almanac",
+      "home",
+      "townhall"
+    ],
+    "status": "derived",
+    "year1_no_carry_ceiling_weight_units": "3643.835616438356",
+    "common_l1_founding_fair_crop_per_week": "4000",
+    "common_l1_founding_fair_plant_payback_days": "4.375",
+    "historical_personal_count_examples": "Fields mentioning 11/22 are arithmetic examples only, not public defaults or ownership."
+  },
+  "reviewed_on_utc": "2026-09-11",
+  "revision": "economy-v2-2026-09-11"
+}

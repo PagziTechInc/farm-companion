@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "chain_id": 4663,
+  "observed_at_utc": "2026-09-14T02:15:56.886Z",
+  "block_number": 62445808,
+  "block_timestamp": 1789352150,
+  "current_epoch": 0,
+  "genesis_timestamp": 1789948800,
+  "epoch_start_timestamp": 1789948800,
+  "next_boundary_timestamp": 1789948800,
+  "weather_enum": 1,
+  "effective_multiplier_bps": 12000,
+  "flood_active": false,
+  "moon_active": false,
+  "moon_count": 0,
+  "moon_starts": [],
+  "commit_hash": "0x46f41dbcb8d9c74f8dd4c20bedb8f0b9e3ac4de373f2a3244b311e3f1ea0fe95",
+  "carry_crop_wei": "0",
+  "granary_crop_wei": "40000000000000000000000000",
+  "emitted_crop_wei": "0",
+  "paid_out_crop_wei": "0",
+  "seed_bag_price_wei": "1000000000000000",
+  "seed_bag_open": true,
+  "minted_count": 0,
+  "total_weight_bps": 0,
+  "read_errors": [],
+  "weather_schedule": {
+    "chain_id": 4663,
+    "block_number": 62445808,
+    "block_timestamp": 1789352150,
+    "observed_at_utc": "2026-09-14T02:15:51.756Z",
+    "weeks": [
+      {
+        "epoch": 0,
+        "multiplier_bps": 12000,
+        "announced": true,
+        "scheduled_block": 52808670,
+        "transaction_hash": "0x1f47a8d630e156b29a4dc727d429b5c64cf8e33a85a5ce0457f9f85486a2ae8b"
+      }
+    ],
+    "status": "ok",
+    "genesis_timestamp": 1789948800,
+    "commit_hash": "0x46f41dbcb8d9c74f8dd4c20bedb8f0b9e3ac4de373f2a3244b311e3f1ea0fe95"
+  }
+}

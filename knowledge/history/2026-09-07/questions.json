@@ -1,0 +1,132 @@
+{
+  "schema_version": 1,
+  "reviewed_on_utc": "2026-09-07",
+  "authority": "Almanac is the source of truth for gameplay planning, per user. Supporting pages cannot override it. Unspecified or internally inconsistent details remain explicit.",
+  "questions": [
+    {
+      "id": "U01",
+      "title": "Weather events",
+      "status": "Source verified; scheduling conflict",
+      "answer": "Almanac section 06 controls gameplay planning. The reviewed deployed oracle confirms weekly weather multiplied by 2 for a covering Flood and again for a covering Moon, then capped at 2\u00d7. Flood lasts 24 hours and Moon 48 hours; their overlap is supported. Above-base emission draws are limited by the available Granary.",
+      "remaining": "Published sealed-week wording conflicts with setNext: owner or keeper can replace a future scheduled epoch before its 24-hour cutoff, and commitHash is not checked. A discarded public RPC simulation confirmed an already-scheduled epoch could be replaced without changing actual chain state. Keep this conflict visible; future event dates and settings still require fresh reads.",
+      "sources": [
+        "almanac",
+        "townhall",
+        "verified-contracts-2026-09-07"
+      ]
+    },
+    {
+      "id": "U02",
+      "title": "Harvest fees and gas",
+      "status": "Game mechanics source verified",
+      "answer": "Almanac specifies zero harvest game fee and no token approval. Reviewed claim/claimMany code confirms owner checks, historical settlement and a CROP transfer with no token approval or separate game charge. claimMany loops claims within one transaction; one invalid ownership or pause check reverts the batch.",
+      "remaining": "Ordinary transaction execution does not establish zero wallet-paid network costs or sponsorship. Public eth_call and eth_estimateGas work, but actual fees and payer need fresh estimates and eventual receipt evidence. Keep zero-gas assumptions explicit.",
+      "sources": [
+        "almanac",
+        "client-farm",
+        "verified-contracts-2026-09-07"
+      ]
+    },
+    {
+      "id": "U03",
+      "title": "Fertilizer and tarp",
+      "status": "Not yet published",
+      "answer": "Store still plans November supplies: fertilizer adds 25% weight for one week; tarp floors a plot\u2019s multiplier at 1\u00d7. Cosmetics are removable and resellable; no earning boost is stated.",
+      "remaining": "Final supply prices, mechanics, transfer and overlapping effects are not published. Store explicitly calls current prices and supplies provisional. No purchase recommendation can be completed yet.",
+      "sources": [
+        "store",
+        "almanac"
+      ]
+    },
+    {
+      "id": "U04",
+      "title": "Reveal timing",
+      "status": "Deadline source verified",
+      "answer": "The Almanac remains the published schedule: mint September 15 at 17:00 UTC, reveal within 72 hours. Deployed revealDeadline() is 1789754400, September 18 at 18:00 UTC. Source allows permissionless reveal after the sellout block delay or after that deadline; minting closes at the deadline or successful reveal.",
+      "remaining": "The deadline and Almanac wording are distinct evidence, not proof that reveal has happened. At block 57200789, startingIndex was 0 and tiersFinalized was false. Reveal and tier finalization need actual transactions and fresh evidence before rarity-based advice.",
+      "sources": [
+        "almanac",
+        "townhall",
+        "api-followup",
+        "verified-contracts-2026-09-07"
+      ]
+    },
+    {
+      "id": "U05",
+      "title": "Weekly drawing",
+      "status": "Not yet published",
+      "answer": "Every planted plot gets one free entry. With all 22 planted, the plan is 22 entries across the two wallets. Draws begin in October; ticket CROP burns and prize spending is constrained by ticket funding.",
+      "remaining": "Town Hall still says the full rules and ticket window will be published before the first draw. Ticket price, entry denominator and prize value are absent, so paid-entry EV is unavailable.",
+      "sources": [
+        "almanac",
+        "townhall"
+      ]
+    },
+    {
+      "id": "U06",
+      "title": "Accrual and Genesis",
+      "status": "Accrual source verified",
+      "answer": "Deployed source confirms four 365-day years with 380M/190M/95M/95M budgets and Genesis September 21 at 00:00 UTC. Historical weather and year boundaries are settled separately; claiming in good weather cannot increase old rewards. Zero planted weight diverts base emissions to the Granary, so the first planter receives no backlog. Above-base weather draws only the available buffer. Claims pause independently from pending accrual and upgrade pause.",
+      "remaining": "Rounding is now documented: annual budget divided into an integer per-second wei rate, with further 1e12 accumulator and per-plot floors. Forecasts still require future competition, weather and prices. Plant/upgrade source has no Genesis or reveal gate, while the Almanac publishes planting at season opening; any retained pre-Genesis action block is an application policy, not a verified contract restriction.",
+      "sources": [
+        "almanac",
+        "rpc-season-2026-09-07",
+        "api-followup",
+        "verified-contracts-2026-09-07"
+      ]
+    },
+    {
+      "id": "U07",
+      "title": "Team and treasury vesting",
+      "status": "Partly answered",
+      "answer": "Almanac section 11 gives treasury vesting over year one and team vesting after a six-month cliff, then two years linear. Treasury no-selling in year one is a stated policy.",
+      "remaining": "The same section\u2019s broad team-cannot-sell wording does not follow from a six-month cliff alone. Keep the numeric schedule, flag this internal discrepancy, and do not infer a one-year enforceable lock or a price floor.",
+      "sources": [
+        "almanac"
+      ]
+    },
+    {
+      "id": "U08",
+      "title": "Manifest and rarity odds",
+      "status": "Mapping verified; offset model corrected",
+      "answer": "Almanac specifies one cyclic offset and the committed manifest still controls the published allocation. Deployed reveal computes hash modulo 3333, then maps result 0 to 1. Thus offset 0 is unreachable and offset 1 combines two residues under a uniform-hash assumption. Uniform sampling of all 3333 offsets remains a separate hypothetical model; source-aware odds must use the deployed mapping.",
+      "remaining": "No minted IDs or revealed traits exist for our wallets yet. Hash uniformity is an assumption, not proof. rarityTier defaults to zero until owner assignment and can change until tiersFinalized; compare finalized direct tiers, manifest mapping and effective weight. A tier write does not itself synchronize emission weight.",
+      "sources": [
+        "almanac",
+        "provenance",
+        "rpc-manifest-comparison",
+        "verified-contracts-2026-09-07"
+      ]
+    },
+    {
+      "id": "U09",
+      "title": "API and client interfaces",
+      "status": "Core deployment source verified",
+      "answer": "Sourcify v2 supplied complete source and ABIs for NFT, CROP, activation, levels, emissions and weather, all reporting exact bytecode matches. Their on-chain runtime hashes also matched independent pinned RPC reads at block 57200789. Ownership, balance, allowance, code/linkage, fee, pause and simulation checks can prepare separate human-approved actions. Plant allowance is to the live activation source; upgrade allowance is to levels.",
+      "remaining": "We did not locally rerun the compiler or reproduce a full security audit. API responses remain unpinned. SeaDrop mint routing, swaps, final supplies, drawings and vesting contracts are outside this source review. Actual wallet transactions were not submitted. See contract-review.md for weather-commitment and reveal-offset discrepancies.",
+      "sources": [
+        "api-followup",
+        "security",
+        "site-audit",
+        "verified-contracts-2026-09-07"
+      ]
+    },
+    {
+      "id": "U10",
+      "title": "Our portfolio and budget",
+      "status": "Awaiting mint or user inputs",
+      "answer": "Both user wallet addresses are now configured and publicly read. Neither owns farm plots yet; the plan remains 22, split 11 each. Each wallet exceeded the USD 100 native-ETH target at the funding observation; refresh the dashboard for current valuation.",
+      "remaining": "Actual future token IDs, revealed traits, an explicit extra-investment budget, fee reserve and executable CROP quotes remain needed. The USD funding target is not an investment authorization.",
+      "sources": [
+        "almanac"
+      ]
+    }
+  ],
+  "source_review": {
+    "document": "contract-review.md",
+    "evidence": "snapshots/execution-research-2026-09-07.json",
+    "block_number": 57200789,
+    "block_timestamp_utc": "2026-09-07T22:45:01Z",
+    "authority": "Verified deployment behavior supplements the Almanac; implementation discrepancies are explicitly shown and never silently replace the user-designated gameplay rules."
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "recorded_on_utc": "2026-09-07",
+  "authority": "User instructions and answers in this conversation",
+  "portfolio": {
+    "redacted": true,
+    "note": "Personal wallet addresses and allocation details removed for public publication."
+  },
+  "objectives": [
+    "net_crop_accumulation",
+    "net_eth_profit"
+  ],
+  "horizons_days": [
+    30,
+    90,
+    365
+  ],
+  "horizon_origin": "Scenario start timestamp; launch baseline uses Genesis. Present results separately for every horizon.",
+  "funding_models": [
+    {
+      "id": "harvest_funded",
+      "initial_planting_funded_externally": true,
+      "additional_upgrade_investment": false,
+      "upgrade_funding": "Claimed harvest balances, with sufficient ETH for wallet-paid costs if applicable."
+    },
+    {
+      "id": "extra_investment",
+      "initial_planting_funded_externally": true,
+      "additional_upgrade_investment": true,
+      "upgrade_funding": "Harvests plus explicitly budgeted external funds.",
+      "extra_budget_eth": null
+    }
+  ],
+  "wallet_policy": {
+    "baseline": "Keep plots in their original wallets unless consolidation improves the modeled outcome.",
+    "propose_crop_transfers": true,
+    "compare_nft_consolidation": [
+      "before_initial_planting",
+      "after_initial_planting"
+    ],
+    "consolidation_requirement": "Compare transfer and replanting costs against estimated future savings. Preserve per-wallet feasibility. User is willing to consolidate if cheaper.",
+    "execution_authorized_by_this_record": true,
+    "execution_scope": "Only individually human-approved supported actions. Swaps and asset transfers remain manual."
+  },
+  "fees": {
+    "user_expectation": "Many operations, especially harvesting, may have no wallet-paid gas; Robinhood Chain is expected to be cheap.",
+    "evidence": "Almanac and reviewed source confirm zero harvest game fee and no CROP approval. Claims are on-chain transactions; network sponsorship and eventual wallet-paid costs remain unverified.",
+    "scenarios": [
+      "observed_or_estimated_wallet_paid_costs",
+      "zero_wallet_paid_gas"
+    ],
+    "unknown_cost_policy": "Unknown is not zero. Label sponsored/zero-cost assumptions explicitly."
+  },
+  "future_interfaces": [
+    "standalone_local_browser_dashboard",
+    "tampermonkey_panel_on_rh_farm"
+  ],
+  "shared_engine_required": true,
+  "initial_interaction": "Public monitoring remains available without wallet connection. User now requests active guided planning and individually human-approved MetaMask actions.",
+  "milestone": "Shared planning engine, dashboard, Tampermonkey panel and read-only CLI implemented, with opt-in guided planning and one-at-a-time human-approved planting, upgrades and claims. No real transactions were sent during development.",
+  "profit_policy": {
+    "baseline": "Compare against planting and making no upgrades; allow choosing no additional investment.",
+    "optimization_claim": "Report the best evaluated strategy under named assumptions; do not claim a guaranteed future maximum.",
+    "capital": "External purchases and deposits are not income; count acquisition and operation costs without double-counting them.",
+    "eth_reporting": "Separate realized ETH profit from estimated token/NFT liquidation value.",
+    "crop_reporting": "Separate earned CROP, CROP spent, purchased CROP, pending CROP, and liquid balance.",
+    "terminal_nft_value": "Require an explicit estimate; burned upgrade cost is not a resale-value guarantee.",
+    "missing_inputs": "Return unavailable/required inputs instead of fabricating estimates."
+  },
+  "implementation": {
+    "version": "1.3.0",
+    "status": "implemented",
+    "entrypoints": [
+      "src/dashboard.js",
+      "src/userscript.js",
+      "tools/analyze.mjs"
+    ],
+    "guide": "docs/USAGE.md",
+    "strategy_search": "Complete affordable paths under multiple ranking policies and 25/50/100% extra-budget ceilings; best evaluated candidate, not a global guarantee.",
+    "pre_mint": "Wallet-free public season observations, cached evidence and clearly hypothetical allocation estimates. Never populate owned plots from expected counts.",
+    "guided_planning": "Optional current-time plan across both wallets, selected horizon/funding/objective; whole-portfolio marginal diagnostics, rare-next-step comparison, delayed planting opportunity cost and stress reruns of selected policy.",
+    "execution": "Shared executor for dashboard/userscript; public preparation, exact approvals, single transaction submissions only on explicit human action, durable pending lock and matching receipt reconciliation.",
+    "source_review": "Six verified-source/runtime matches archived in contract-review.md. Nominal projection still omits exact accumulator rounding and Granary depletion."
+  },
+  "rule_authority": {
+    "primary": "almanac",
+    "scope": "Gameplay planning; supporting pages and client descriptions do not override it.",
+    "limits": "Do not invent unspecified mechanics or extend the targeted six-contract source review into a blanket security or behavior guarantee. Record verified findings and Almanac conflicts explicitly."
+  },
+  "funding_target": {
+    "usd_per_wallet": "100",
+    "authority": "User attempted to fund each wallet at least USD 100; September 7, 2026",
+    "valuation": "Native ETH on Robinhood Chain \u00d7 timestamped indicative ETH/USD; does not establish all-in planting funding.",
+    "extra_investment_budget_not_inferred": true
+  },
+  "initial_interaction_history": "Read-only monitoring and advisory recommendations; user performs actions through MetaMask on the official site.",
+  "human_approval_execution": {
+    "authority": "Latest user request: automatically pull from wallets and take action with human approval, with an active guided plan to maximize profits. This supersedes the earlier read-only interaction scope.",
+    "supported_actions": [
+      "exact_crop_allowance",
+      "plant_one_owned_plot",
+      "upgrade_one_level",
+      "claim_owned_plots_within_one_wallet"
+    ],
+    "user_control": "Public reads and plan recalculation can be automatic when enabled. Preparing a draft is read-only; submission requires an explicit click and MetaMask approval for that one transaction.",
+    "follow_on_actions": "An approved token allowance is not authorization to spend; prepare and approve the intended plant/upgrade separately after the allowance receipt.",
+    "excluded_automation": [
+      "unattended_signing",
+      "swaps",
+      "crop_transfers",
+      "nft_transfers",
+      "minting"
+    ],
+    "credentials": "Never request or persist seed phrases/private keys.",
+    "guards": "Configured account/chain, current block, reviewed runtime and linked contracts, owner, costs, pauses, balances and allowances are checked; eth_call/gas estimate precede a short-lived draft. Pending or unknown broadcasts block another action until reconciled.",
+    "pre_genesis_policy": "Keep the Almanac Genesis opening for planting/upgrades, clearly distinguish it from source contracts which have no such gate.",
+    "budget": "The USD 100 per-wallet funding target does not establish an extra CROP investment cap."
+  }
+}

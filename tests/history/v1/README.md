@@ -1,0 +1,1 @@
+Archived browser scenarios for the retired private v1 interface. Current public interface coverage lives in tests/browser; shared economics and execution remain tested in tests/*.test.js. These historical files are not executable from this location.

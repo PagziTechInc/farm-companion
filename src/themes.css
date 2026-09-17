@@ -1,0 +1,178 @@
+/* Full-interface palettes live on the Shadow DOM host so dialogs and the
+   independently rendered action panel inherit the same visual preference.
+   Journal keeps its original authored palette. Economic rarity and weather
+   glyphs retain their own source colors in every theme. */
+:host {
+  --theme-surface: #18260f;
+  --theme-raised: #233317;
+  --theme-hover: #2b421f;
+  --theme-field: #0c170c;
+  --theme-border: #455d34;
+  --theme-border-bright: #7b8b4b;
+  --theme-ink: #eef0da;
+  --theme-ink-soft: #becbaa;
+  --theme-ink-muted: #9faf8a;
+  --theme-accent: #ffd534;
+  --theme-accent-soft: #f2d182;
+  --theme-accent-hover: #ffe66c;
+  --theme-on-accent: #18200a;
+  --theme-accent-edge: #9e7e21;
+  --theme-shadow: #080e06;
+}
+:host([data-theme="base"]) {
+  --ground: #0b1c14; --panel: #193c23; --panel-dark: #122b1d;
+  --theme-surface: #173321; --theme-raised: #244930; --theme-hover: #2e5838;
+  --theme-field: #0b2116; --theme-border: #416b49; --theme-border-bright: #7ca260;
+  --theme-ink: #eef3d8; --theme-ink-soft: #c3d5ad; --theme-ink-muted: #a6bf97;
+  --theme-accent: #e7d86b; --theme-accent-soft: #e4db9a; --theme-accent-hover: #f7ec94;
+  --theme-on-accent: #19270d; --theme-accent-edge: #8e7c31; --theme-shadow: #061209;
+}
+:host([data-theme="winter"]) {
+  --ground: #0b1827; --panel: #193347; --panel-dark: #12283b;
+  --theme-surface: #172f43; --theme-raised: #234459; --theme-hover: #2d5368;
+  --theme-field: #0b1e2e; --theme-border: #3f647c; --theme-border-bright: #749cb5;
+  --theme-ink: #eff7ff; --theme-ink-soft: #c7ddeb; --theme-ink-muted: #a8c0d1;
+  --theme-accent: #a7e6f6; --theme-accent-soft: #d0effc; --theme-accent-hover: #d3f5ff;
+  --theme-on-accent: #102a3b; --theme-accent-edge: #5791ab; --theme-shadow: #050f1c;
+}
+:host([data-theme="festival"]) {
+  --ground: #1c1026; --panel: #382044; --panel-dark: #2b1936;
+  --theme-surface: #34203f; --theme-raised: #4c2c55; --theme-hover: #5b3864;
+  --theme-field: #201329; --theme-border: #71517d; --theme-border-bright: #a476a5;
+  --theme-ink: #fbedf5; --theme-ink-soft: #e5cadd; --theme-ink-muted: #c7aac7;
+  --theme-accent: #f3bad6; --theme-accent-soft: #f7d8b9; --theme-accent-hover: #ffdaeb;
+  --theme-on-accent: #3b163c; --theme-accent-edge: #a15d85; --theme-shadow: #100716;
+}
+:host([data-theme="autumn"]) {
+  --ground: #24150f; --panel: #44271a; --panel-dark: #341e15;
+  --theme-surface: #3d2419; --theme-raised: #563323; --theme-hover: #653f2b;
+  --theme-field: #29160f; --theme-border: #7b5136; --theme-border-bright: #b48552;
+  --theme-ink: #fff0d8; --theme-ink-soft: #e9caaa; --theme-ink-muted: #cdae8d;
+  --theme-accent: #f5bc6a; --theme-accent-soft: #f6d3a0; --theme-accent-hover: #ffd99b;
+  --theme-on-accent: #38200b; --theme-accent-edge: #a57031; --theme-shadow: #150b07;
+}
+:host([data-theme="storm"]) {
+  --ground: #101725; --panel: #25314a; --panel-dark: #192338;
+  --theme-surface: #212d43; --theme-raised: #344059; --theme-hover: #414f6b;
+  --theme-field: #111c2d; --theme-border: #4b627e; --theme-border-bright: #809abb;
+  --theme-ink: #eef2ff; --theme-ink-soft: #cbd5ec; --theme-ink-muted: #aebed7;
+  --theme-accent: #e8da89; --theme-accent-soft: #d7d7ef; --theme-accent-hover: #fcf0b2;
+  --theme-on-accent: #252842; --theme-accent-edge: #969064; --theme-shadow: #090e19;
+}
+:host([data-theme="golden"]) {
+  --ground: #201b0d; --panel: #3e3416; --panel-dark: #302712;
+  --theme-surface: #382f16; --theme-raised: #4c401d; --theme-hover: #5b4e24;
+  --theme-field: #251e0e; --theme-border: #756332; --theme-border-bright: #b69b4b;
+  --theme-ink: #fff5d8; --theme-ink-soft: #eee0b5; --theme-ink-muted: #cbbb8c;
+  --theme-accent: #ffdc6a; --theme-accent-soft: #ffe8a2; --theme-accent-hover: #ffedaa;
+  --theme-on-accent: #32260b; --theme-accent-edge: #aa852c; --theme-shadow: #110d05;
+}
+:host([data-theme="dusk"]) {
+  --ground: #211723; --panel: #422e41; --panel-dark: #302332;
+  --theme-surface: #3a2b3b; --theme-raised: #50384c; --theme-hover: #614357;
+  --theme-field: #241b28; --theme-border: #7b6077; --theme-border-bright: #b28b9f;
+  --theme-ink: #fff0e9; --theme-ink-soft: #ead0d2; --theme-ink-muted: #c8aebd;
+  --theme-accent: #efb58d; --theme-accent-soft: #f5d2b7; --theme-accent-hover: #ffd6af;
+  --theme-on-accent: #392136; --theme-accent-edge: #a77364; --theme-shadow: #140d17;
+}
+:host([data-theme="overcast"]) {
+  --ground: #17201f; --panel: #30413b; --panel-dark: #26332f;
+  --theme-surface: #2c3b36; --theme-raised: #3a4d45; --theme-hover: #465c52;
+  --theme-field: #1b2924; --theme-border: #607d70; --theme-border-bright: #9bae99;
+  --theme-ink: #f2f3df; --theme-ink-soft: #d2dfcf; --theme-ink-muted: #b5c8b9;
+  --theme-accent: #d9dfac; --theme-accent-soft: #e8e8c8; --theme-accent-hover: #eff3cf;
+  --theme-on-accent: #27352a; --theme-accent-edge: #8b986c; --theme-shadow: #0c1511;
+}
+:host([data-theme]:not([data-theme="journal"])) {
+  --gold: var(--theme-accent); --gold-soft: var(--theme-accent-soft);
+  --cream: var(--theme-ink); --muted: var(--theme-ink-muted); --hedge: var(--theme-border);
+  background: var(--ground); color: var(--theme-ink);
+}
+
+/* The host prefix is intentional: it beats the later action-panel styles
+   without !important, including when that panel rerenders independently. */
+:host([data-theme]:not([data-theme="journal"])) :is(button,.button-link) {
+  color: var(--theme-ink); background: var(--theme-raised); border-color: var(--theme-border);
+  box-shadow: inset 0 0 0 1px var(--theme-field),0 3px 0 var(--theme-shadow);
+}
+:host([data-theme]:not([data-theme="journal"])) :is(button,.button-link):hover {
+  background: var(--theme-hover); border-color: var(--theme-accent-soft);
+}
+:host([data-theme]:not([data-theme="journal"])) :is(button.primary,.button-link.primary) {
+  color: var(--theme-on-accent); background: var(--theme-accent); border-color: var(--theme-accent-soft);
+  box-shadow: inset 0 -3px 0 var(--theme-accent-edge),0 3px 0 var(--theme-shadow);
+}
+:host([data-theme]:not([data-theme="journal"])) :is(button.primary,.button-link.primary):hover {background:var(--theme-accent-hover)}
+:host([data-theme]:not([data-theme="journal"])) :is(.quiet,.journey-step,.view-switch button) {background:transparent;box-shadow:none}
+:host([data-theme]:not([data-theme="journal"])) :is(button,input,select,a,summary):focus-visible {outline-color:var(--theme-accent)}
+:host([data-theme]:not([data-theme="journal"])) :is(input,select,.farm-approval input,.farm-approval select) {
+  background:var(--theme-field);color:var(--theme-ink);border-color:var(--theme-border);box-shadow:inset 2px 2px var(--theme-shadow);
+}
+:host([data-theme]:not([data-theme="journal"])) input::placeholder {color:var(--theme-ink-muted)}
+:host([data-theme]:not([data-theme="journal"])) :is(label,.hero-copy p,.returning-hero p,.journey-step,.panel-header p,.muted,.disclosure summary,.keeper-note p,.empty p,.target-picker p,.goal-content>p,.weather-stamp,.funding-caption,.farm-approval label,.farm-approval .approval-intro) {color:var(--theme-ink-soft)}
+:host([data-theme]:not([data-theme="journal"])) :is(.fan-tag,.eyebrow,.hero-footnote,.tab-number,.metric label,.metric small,.address,.wallet-metrics span,.plot-wallet,.plot-numbers small,td small,.rule-note,.keeper-sign,.disclosure p,.disclosure ul,.forecast-value>span,.harvest-terms span,.harvest-terms small,.level-card-info small,.move-stats small,.footer,.scene-caption,.plot-tools label,.plot-tools .small,.plot-harvest small,.plot-harvest span,.weather-reading p,.weather-reading small,.valley-stats small,.valley-stats label,.valley-stats span,.desk-evidence,.calendar-top p,.calendar-top small,.calendar-countdown>span,.calendar-desk>.small,.weather-case small,.goal-art p,.goal-art small,.goal-content>.eyebrow,.goal-presets>span,.goal-summary small,.goal-summary label,.goal-summary span,.farm-approval small,.farm-approval dt,.farm-approval details p,.farm-approval .approval-empty) {color:var(--theme-ink-muted)}
+:host([data-theme]:not([data-theme="journal"])) :is(.plot-content h3,.plot-numbers strong,.forecast-top h2,.next-copy h2,.weather-reading h3,.valley-stats strong,.calendar-top h2,.weather-case h3,.weather-case>span,.weather-case strong,.goal-content h3,.goal-summary strong,.move-stats strong,.level-card-info h3) {color:var(--theme-ink)}
+:host([data-theme]:not([data-theme="journal"])) :is(.keeper-note h3,.harvest-terms strong,.goal-art h2,.goal-progress strong,.goal-progress-label strong,.plot-harvest strong,.soil-stamp,.metric-icon,.footer .glyph,.footer a,.calendar-top .eyebrow,.farm-approval .approval-eyebrow,.farm-approval .approval-connection strong,.farm-approval summary) {color:var(--theme-accent-soft)}
+:host([data-theme]:not([data-theme="journal"])) :is(.game-link,.journey-step,.table-scroll,.wallet-metrics,.harvest-terms,.harvest-terms>div,.valley-stats,.desk-evidence,.goal-summary,.goal-summary>div,.footer,.tabs,.farm-approval details,.farm-approval dl,.farm-approval dl>div) {border-color:var(--theme-border)}
+:host([data-theme]:not([data-theme="journal"])) :is(.panel,.weather-desk,.calendar-desk,.goal-board,.next-move) {
+  background:var(--panel-dark);border-color:var(--theme-border);border-top-color:var(--theme-border-bright);box-shadow:inset 0 0 0 3px var(--theme-field),0 4px 0 var(--theme-shadow);
+}
+:host([data-theme]:not([data-theme="journal"])) :is(.panel::before,.panel::after) {background:var(--theme-border-bright)}
+:host([data-theme]:not([data-theme="journal"])) :is(.metric,.wallet-card,.plot-card,.level-card,.plot-tools,.disclosure,.empty,.plot-harvest,.weather-case,.scene-option) {background:var(--theme-surface);border-color:var(--theme-border)}
+:host([data-theme]:not([data-theme="journal"])) :is(.plot-card,.scene-option,.weather-case) {box-shadow:0 4px 0 var(--theme-shadow)}
+:host([data-theme]:not([data-theme="journal"])) :is(.plot-card:hover,.scene-option:hover,.weather-case:hover) {border-color:var(--theme-accent)}
+:host([data-theme]:not([data-theme="journal"])) :is(.plot-card.tier-3,.plot-card.tier-2) {border-color:#b49a36}
+:host([data-theme]:not([data-theme="journal"])) .plot-card.tier-1 {border-color:#78a56d}
+:host([data-theme]:not([data-theme="journal"])) .plot-card.pinned {outline-color:var(--theme-accent);border-color:var(--theme-accent)}
+:host([data-theme]:not([data-theme="journal"])) :is(.panel-icon,.wallet-emblem,.quest-number,.badge,.tabs button,.keeper-note,.milestone-track>*,.farm-approval .approval-connection,.farm-approval dl) {background:var(--theme-raised);border-color:var(--theme-border);color:var(--theme-ink-soft)}
+:host([data-theme]:not([data-theme="journal"])) :is(.badge.gold,.tiny-status.active) {color:var(--theme-accent-soft)}
+:host([data-theme]:not([data-theme="journal"])) .badge.gray {color:var(--theme-ink-muted)}
+:host([data-theme]:not([data-theme="journal"])) :is(.tabs button:hover,.quest-number,.view-switch button[aria-pressed="true"],.horizon-pills .active,.level-card.selected,tr.best td,.milestone-track>.next,.weather-case.selected,.weather-case[aria-pressed="true"],.scene-option[aria-pressed="true"]) {background:var(--theme-hover);color:var(--theme-accent);border-color:var(--theme-accent)}
+:host([data-theme]:not([data-theme="journal"])) .tabs button[aria-selected="true"] {background:var(--theme-hover);color:var(--theme-accent);border-color:var(--theme-border-bright);box-shadow:inset 0 3px var(--theme-accent)}
+:host([data-theme]:not([data-theme="journal"])) .tabs button[aria-selected="true"] .tab-number {color:var(--theme-accent-soft)}
+:host([data-theme]:not([data-theme="journal"])) :is(.scene-option[aria-pressed="true"],.weather-case[aria-pressed="true"],.level-card.selected) {box-shadow:inset 0 -2px var(--theme-accent),0 3px 0 var(--theme-shadow)}
+:host([data-theme]:not([data-theme="journal"])) :is(.scene-option img,.scene-option[aria-pressed="true"] img) {border-color:var(--theme-border-bright)}
+:host([data-theme]:not([data-theme="journal"])) :is(.hero-art,.returning-hero>img,.next-art img,.goal-art>img,.intake-art) {background:var(--theme-field);border-color:var(--theme-field);outline-color:var(--theme-border-bright);box-shadow:0 5px 0 var(--theme-shadow)}
+:host([data-theme]:not([data-theme="journal"])) .art-corner {border-color:var(--theme-accent-soft)}
+:host([data-theme]:not([data-theme="journal"])) :is(.scene-label,.plot-tag,.plot-level,.level-card-image>span,.next-art>span) {background:color-mix(in srgb,var(--theme-field) 94%,transparent);border-color:var(--theme-border-bright);color:var(--theme-accent-soft)}
+:host([data-theme]:not([data-theme="journal"])) :is(.scene-label i,.art-note) {color:var(--theme-ink-soft)}
+:host([data-theme]:not([data-theme="journal"])) .journal-stamp {color:var(--theme-accent-soft);border-color:var(--theme-border-bright);outline-color:var(--theme-border)}
+:host([data-theme]:not([data-theme="journal"])) .plot-picture {background:var(--theme-field)}
+:host([data-theme]:not([data-theme="journal"])) .plot-card .pin-plot {background:var(--theme-field);border-color:var(--theme-border-bright);color:var(--theme-accent-soft);box-shadow:0 2px 0 var(--theme-shadow)}
+:host([data-theme]:not([data-theme="journal"])) .plot-card .pin-plot:hover {background:var(--theme-hover);color:var(--theme-accent)}
+:host([data-theme]:not([data-theme="journal"])) .plot-card .pin-plot[aria-pressed="true"] {background:var(--theme-accent);border-color:var(--theme-accent-soft);color:var(--theme-on-accent)}
+:host([data-theme]:not([data-theme="journal"])) :is(.level-meter i,.funding-bar,.weather-bar) {background:var(--theme-field);border-color:var(--theme-border)}
+:host([data-theme]:not([data-theme="journal"])) :is(.level-meter i.filled,.weather-bar>span,.weather-bar>i,.weather-case.selected .weather-bar>span,.weather-case[aria-pressed="true"] .weather-bar>span) {background:var(--theme-accent);border-color:var(--theme-accent-soft)}
+:host([data-theme]:not([data-theme="journal"])) .funding-bar>span {background:repeating-linear-gradient(90deg,var(--theme-accent) 0,var(--theme-accent) 9px,var(--theme-accent-edge) 9px,var(--theme-accent-edge) 11px)}
+:host([data-theme]:not([data-theme="journal"])) .table-scroll {scrollbar-color:var(--theme-border-bright) var(--theme-field)}
+:host([data-theme]:not([data-theme="journal"])) th {background:var(--theme-raised);color:var(--theme-ink-soft)}
+:host([data-theme]:not([data-theme="journal"])) :is(td,th) {border-color:var(--theme-border)}
+:host([data-theme]:not([data-theme="journal"])) .chart text {fill:var(--theme-ink-muted)}
+:host([data-theme]:not([data-theme="journal"])) .chart .gridline {stroke:var(--theme-border)}
+:host([data-theme]:not([data-theme="journal"])) .chart .area {fill:var(--theme-accent)}
+:host([data-theme]:not([data-theme="journal"])) .chart .line {stroke:var(--theme-accent)}
+:host([data-theme]:not([data-theme="journal"])) .chart circle {fill:var(--theme-accent);stroke:var(--panel-dark)}
+:host([data-theme]:not([data-theme="journal"])) .weather-desk::after {background:repeating-linear-gradient(90deg,var(--theme-border) 0,var(--theme-border) 3px,transparent 3px,transparent 10px)}
+:host([data-theme]:not([data-theme="journal"])) :is(.milestone-track strong,.milestone-track h3,.milestone-track time,.milestone-track small,.milestone-track span,.milestone-track>.next strong,.milestone-track>.next time,.desk-evidence summary,.weather-case .multiplier,.weather-case .weather-multiplier,.weather-case>.weather-difference,.goal-progress) {color:var(--theme-ink-soft)}
+:host([data-theme]:not([data-theme="journal"])) .milestone-track>*::before {background:var(--theme-field);border-color:var(--theme-border-bright);box-shadow:0 0 0 3px var(--panel-dark)}
+:host([data-theme]:not([data-theme="journal"])) :is(.milestone-track>.next::before,.milestone-track>.past::before,.weather-case.selected::after,.weather-case[aria-pressed="true"]::after) {background:var(--theme-accent);border-color:var(--theme-accent-soft);box-shadow:0 0 0 2px var(--theme-field)}
+:host([data-theme]:not([data-theme="journal"])) :is(.advanced,.harvest-ledger) {background:transparent;box-shadow:none}
+:host([data-theme]:not([data-theme="journal"])) :is(.notice,.farm-approval .approval-important) {background:var(--theme-raised);border-color:var(--theme-accent-edge);color:var(--theme-accent-soft)}
+:host([data-theme]:not([data-theme="journal"])) :is(.notice.error,.farm-approval .error) {background:#392326;border-color:#ae7473;color:#ffd1c3}
+:host([data-theme]:not([data-theme="journal"])) .notice.good {background:#24382c;border-color:#718d70;color:#d6ecc5}
+:host([data-theme]:not([data-theme="journal"])) .dialog-backdrop {background:color-mix(in srgb,var(--theme-shadow) 86%,transparent)}
+:host([data-theme]:not([data-theme="journal"])) .dialog {background:var(--panel-dark);border-color:var(--theme-border);outline-color:var(--theme-border-bright);box-shadow:inset 0 0 0 3px var(--theme-field),0 15px 60px var(--theme-shadow)}
+:host([data-theme]:not([data-theme="journal"])) .farm-approval {
+  --action-pine:var(--panel-dark);--action-gold:var(--theme-accent);--action-cream:var(--theme-ink);--action-border:var(--theme-border);
+  box-shadow:4px 4px 0 var(--theme-shadow),inset 0 1px 0 var(--theme-border-bright);
+}
+:host([data-theme]:not([data-theme="journal"])) .farm-approval .approval-mark {background:var(--theme-raised);box-shadow:3px 3px 0 var(--theme-shadow)}
+:host([data-theme]:not([data-theme="journal"])) .farm-approval button {background:var(--theme-accent);border-color:var(--theme-accent-soft);color:var(--theme-on-accent);box-shadow:3px 3px 0 var(--theme-shadow)}
+:host([data-theme]:not([data-theme="journal"])) .farm-approval button:hover:not(:disabled) {background:var(--theme-accent-hover);box-shadow:3px 4px 0 var(--theme-shadow)}
+:host([data-theme]:not([data-theme="journal"])) .farm-approval :is(button[data-connect],button[data-discard],button[data-export]) {background:var(--theme-raised);color:var(--theme-ink);border-color:var(--theme-border-bright)}
+:host([data-theme]:not([data-theme="journal"])) .farm-approval :is(button[data-connect],button[data-discard],button[data-export]):hover:not(:disabled) {background:var(--theme-hover)}
+:host([data-theme]:not([data-theme="journal"])) .farm-approval pre {background:var(--theme-field);border-color:var(--theme-border);color:var(--theme-ink-soft)}
+:host([data-theme]:not([data-theme="journal"])) .farm-approval :is(button,input,select,summary,a):focus-visible {outline-color:var(--theme-accent)}
+@media(prefers-reduced-motion:reduce) {
+  :host([data-theme]) *, :host([data-theme]) *::before, :host([data-theme]) *::after {animation:none!important;transition:none!important}
+}

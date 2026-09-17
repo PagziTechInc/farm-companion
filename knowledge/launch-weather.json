@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "chain_id": 4663,
+  "status": "ok",
+  "block_number": 62434395,
+  "block_timestamp": 1789350992,
+  "observed_at_utc": "2026-09-14T01:57:36.456Z",
+  "genesis_timestamp": 1789948800,
+  "commit_hash": "0x46f41dbcb8d9c74f8dd4c20bedb8f0b9e3ac4de373f2a3244b311e3f1ea0fe95",
+  "weeks": [
+    {
+      "epoch": 0,
+      "multiplier_bps": 12000,
+      "announced": true,
+      "scheduled_block": 52808670,
+      "transaction_hash": "0x1f47a8d630e156b29a4dc727d429b5c64cf8e33a85a5ce0457f9f85486a2ae8b"
+    }
+  ],
+  "source_id": "launch-weather-2026-09-14",
+  "evidence": "snapshots/launch-weather-2026-09-14/SUMMARY.md",
+  "policy": "Dated fallback scenario only. Refresh before using an early scheduled value; changes remain possible through the 24-hour cutoff. Unannounced weeks use the chosen assumption."
+}

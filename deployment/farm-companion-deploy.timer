@@ -1,0 +1,11 @@
+[Unit]
+Description=Watch Farm Companion for stable changes
+
+[Timer]
+OnBootSec=30s
+OnUnitInactiveSec=30s
+AccuracySec=1s
+Unit=farm-companion-deploy.service
+
+[Install]
+WantedBy=timers.target

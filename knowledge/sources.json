@@ -1,0 +1,306 @@
+{
+  "schema_version": 1,
+  "initial_research_local_date": "2026-09-06",
+  "local_timezone": "America/Toronto",
+  "research_utc_date": "2026-09-16",
+  "policy": "Archive dated fetched page/source bytes with integrity hashes; retain historical facts separately. Almanac controls published gameplay; deployed-source conflicts are explicit. Historical snapshots are not current state.",
+  "source_records": [
+    {
+      "id": "almanac",
+      "title": "Farmer's Almanac",
+      "url": "https://rh.farm/almanac/",
+      "scope": "Current own-weight nominal formula, annual base ceiling, Granary funding, mint and reveal deadline; other sections rechecked.",
+      "inspected_on_utc": "2026-09-15",
+      "evidence_kind": "published_rule",
+      "previous_inspection_utc": "2026-09-11",
+      "snapshot": "snapshots/almanac-2026-09-15/almanac.html"
+    },
+    {
+      "id": "home",
+      "title": "Yield Farm homepage",
+      "url": "https://rh.farm/",
+      "scope": "Upgrade totals, swap timing and mint overview.",
+      "inspected_on_utc": "2026-09-11",
+      "evidence_kind": "published_rule",
+      "previous_inspection_utc": "2026-09-07",
+      "snapshot": "snapshots/site-2026-09-11/home.html"
+    },
+    {
+      "id": "townhall",
+      "title": "Town Hall",
+      "url": "https://rh.farm/townhall/",
+      "scope": "Weather events, launch notices and provisional drawings.",
+      "inspected_on_utc": "2026-09-11",
+      "evidence_kind": "published_rule",
+      "previous_inspection_utc": "2026-09-07",
+      "snapshot": "snapshots/site-2026-09-11/townhall.html"
+    },
+    {
+      "id": "security",
+      "title": "The Locks",
+      "url": "https://rh.farm/security/",
+      "scope": "Now a moved-page directing visitors to Provenance; previous owner/audit claims retained only as historical evidence.",
+      "inspected_on_utc": "2026-09-11",
+      "evidence_kind": "published_rule",
+      "previous_inspection_utc": "2026-09-07",
+      "snapshot": "snapshots/site-2026-09-11/security.html"
+    },
+    {
+      "id": "provenance",
+      "title": "Provenance",
+      "url": "https://rh.farm/provenance/",
+      "scope": "Manifest mapping and tier construction.",
+      "inspected_on_utc": "2026-09-11",
+      "evidence_kind": "published_rule",
+      "previous_inspection_utc": "2026-09-07",
+      "snapshot": "snapshots/site-2026-09-11/provenance.html"
+    },
+    {
+      "id": "store",
+      "title": "General Store",
+      "url": "https://rh.farm/store/",
+      "scope": "Cosmetics and provisional November supplies.",
+      "inspected_on_utc": "2026-09-11",
+      "evidence_kind": "published_rule",
+      "previous_inspection_utc": "2026-09-07",
+      "snapshot": "snapshots/site-2026-09-11/store.html"
+    },
+    {
+      "id": "client-config",
+      "title": "Public client constants and abbreviated ABIs",
+      "url": "https://rh.farm/_next/static/chunks/190dgph-zq6sa.js",
+      "scope": "Inspected module 53519 (configuration) and module 15092 (network). Not deployed Solidity source.",
+      "inspected_on_utc": "2026-09-07",
+      "evidence_kind": "inspected_client"
+    },
+    {
+      "id": "client-farm",
+      "title": "Public My Plots client",
+      "url": "https://rh.farm/_next/static/chunks/0zd5y-h191ny8.js",
+      "scope": "Ownership, activation, reward reads and claim transaction flow.",
+      "inspected_on_utc": "2026-09-07",
+      "evidence_kind": "inspected_client"
+    },
+    {
+      "id": "client-shared",
+      "title": "Public weather and schedule client",
+      "url": "https://rh.farm/_next/static/chunks/2qlu3af59zjje.js",
+      "scope": "Weather enum interpretation, effective multiplier, Genesis and UI schedule.",
+      "inspected_on_utc": "2026-09-07",
+      "evidence_kind": "inspected_client"
+    },
+    {
+      "id": "api-stats",
+      "title": "Public aggregate statistics",
+      "url": "https://api.rh.farm/stats",
+      "scope": "Raw response cached; historical, not block-pinned.",
+      "inspected_on_utc": "2026-09-07",
+      "evidence_kind": "api_observation"
+    },
+    {
+      "id": "api-manifest",
+      "title": "Public manifest",
+      "url": "https://api.rh.farm/manifest.json",
+      "scope": "Raw 3333-row dataset; local SHA-256 is a file-integrity hash, not proof of chain commitment.",
+      "inspected_on_utc": "2026-09-07",
+      "evidence_kind": "api_observation"
+    },
+    {
+      "id": "api-metadata-example",
+      "title": "Unrevealed metadata example",
+      "url": "https://api.rh.farm/metadata/1",
+      "scope": "Public example only, not one of the user's confirmed holdings.",
+      "inspected_on_utc": "2026-09-07",
+      "evidence_kind": "api_observation"
+    },
+    {
+      "id": "rpc",
+      "title": "Robinhood Chain public RPC",
+      "url": "https://rpc.mainnet.chain.robinhood.com/rpc",
+      "scope": "Read-only JSON-RPC; chain ID observed as 4663 and token decimals as 18 during research.",
+      "inspected_on_utc": "2026-09-07",
+      "evidence_kind": "verified_read"
+    },
+    {
+      "id": "rpc-snapshot",
+      "title": "Block-pinned contract observations",
+      "url": "https://rpc.mainnet.chain.robinhood.com/rpc",
+      "scope": "eth_call at block 56499166; method targets and values preserved in local snapshot.",
+      "inspected_on_utc": "2026-09-07",
+      "evidence_kind": "verified_read"
+    },
+    {
+      "id": "rpc-manifest-comparison",
+      "title": "Manifest commitment comparison",
+      "url": "https://rpc.mainnet.chain.robinhood.com/rpc",
+      "scope": "manifestHash() at block 56530213 matches web3_sha3 of exact cached manifest bytes. SHA-256 is only the separate integrity checksum.",
+      "inspected_on_utc": "2026-09-07",
+      "evidence_kind": "verified_read"
+    },
+    {
+      "id": "rpc-season-2026-09-07",
+      "title": "Wallet-free season observation at block 56632260",
+      "url": "https://rpc.mainnet.chain.robinhood.com/rpc",
+      "scope": "Pinned weather enum/effective multiplier, current epoch and boundaries, Flood/Moon flags, moon schedule count, commitment, NFT supply and planted weight. See snapshots/season-2026-09-07.json.",
+      "inspected_on_utc": "2026-09-07",
+      "evidence_kind": "verified_read"
+    },
+    {
+      "id": "site-audit",
+      "title": "Further site and linked interface inspection",
+      "url": "https://rh.farm/",
+      "scope": "Evidence stored in snapshots/site-audit-2026-09-07.json",
+      "inspected_on_utc": "2026-09-07",
+      "evidence_kind": "verified_read"
+    },
+    {
+      "id": "api-followup",
+      "title": "Public API and explorer follow-up",
+      "url": "https://api.rh.farm/weather",
+      "scope": "Evidence stored in snapshots/api-followup-2026-09-07.json",
+      "inspected_on_utc": "2026-09-07",
+      "evidence_kind": "verified_read"
+    },
+    {
+      "id": "verified-contracts-2026-09-07",
+      "title": "Verified deployed game contracts and pinned execution research",
+      "url": "https://sourcify.dev/server/v2/contract/4663/0x3974f8d2eaaf2425fb8556b688534332adc4dacd?fields=all",
+      "scope": "Six Sourcify v2 exact creation/runtime matches: activation, levels, emissions, weather, NFT and CROP. Runtime hashes independently matched pinned eth_getCode at chain 4663 block 57200789. Targeted source review and discarded eth_call simulations; compiler not rerun locally. See contract-review.md and snapshots/execution-research-2026-09-07.json.",
+      "inspected_on_utc": "2026-09-07",
+      "evidence_kind": "verified_source_and_pinned_runtime"
+    },
+    {
+      "id": "verified-contracts-2026-09-11",
+      "title": "Economy v2 verified source and pinned runtime review",
+      "url": "https://sourcify.dev/server/v2/contract/4663/0x8ed784b4772ae3fdefafaa746fe405eb0410cdf3?fields=all",
+      "scope": "Six current core contracts; source exact-match metadata plus independent RPC runtime hashes at block 60592342. carryNow/granaryNow, costs, bag pricing and links pinned. See contract-review.md.",
+      "inspected_on_utc": "2026-09-11",
+      "evidence_kind": "verified_source_and_pinned_runtime"
+    },
+    {
+      "id": "client-config-2026-09-11",
+      "title": "Current public client address configuration",
+      "url": "https://rh.farm/_next/static/chunks/2vlupv71md16s.js",
+      "scope": "Current core and ancillary contract addresses. Supporting client evidence; not itself proof of contract behavior.",
+      "inspected_on_utc": "2026-09-11",
+      "evidence_kind": "inspected_client"
+    },
+    {
+      "id": "airdrop-source-2026-09-11",
+      "title": "Current Merkle airdrop deadline and sink review",
+      "url": "https://sourcify.dev/server/v2/contract/4663/0xde995ae64d9d03d931661f9ce410a5ee69e53886?fields=all",
+      "scope": "Separate bounded source/runtime review of deadline, immutable root, token and sink. Not an execution allowlist entry or proof of claimant eligibility.",
+      "inspected_on_utc": "2026-09-11",
+      "evidence_kind": "verified_source_and_pinned_runtime"
+    },
+    {
+      "id": "forecast-pool-2026-09-13",
+      "title": "Forecast pool reference and pinned public season read",
+      "url": "https://robinhoodchain.blockscout.com/address/0x96fd1f206ce97d2f34c51d8c902e1a7650641f1a",
+      "inspected_on_utc": "2026-09-13",
+      "evidence_kind": "pinned_public_rpc",
+      "scope": "Historical WETH/CROP pool identity, 18-decimal assets, 1% fee, initialized spot with zero active liquidity; not a market quote or swap audit.",
+      "snapshot": "snapshots/forecast-pool-2026-09-13.json"
+    },
+    {
+      "id": "launch-weather-2026-09-14",
+      "title": "Launch weather, First Soil and future-week verification",
+      "url": "https://rh.farm/almanac/",
+      "scope": "Fresh Almanac, home and Town Hall bytes; pinned WeatherOracle event history, private schedule mapping and current getters; First Soil constants. Only week 1 explicitly scheduled. Published reveal timing and contract mutation limits remain distinct.",
+      "inspected_on_utc": "2026-09-14",
+      "evidence_kind": "published_rule_and_verified_chain_observation",
+      "snapshot": "snapshots/launch-weather-2026-09-14/SUMMARY.md"
+    },
+    {
+      "id": "production-assets-2026-09-14",
+      "title": "Production plot state, metadata and animation endpoints",
+      "url": "https://api.rh.farm/plot/1",
+      "scope": "User-supplied production URLs; bounded token1/346/3333 samples remain prereveal. Separate live state, metadata, canonical animation and image behavior, cache headers and sandbox verification. Post-reveal production metadata remains unobserved.",
+      "inspected_on_utc": "2026-09-14",
+      "evidence_kind": "public_api_observation",
+      "snapshot": "snapshots/production-assets-2026-09-14/SUMMARY.md"
+    },
+    {
+      "id": "rate-review-2026-09-15",
+      "title": "Post-mint rate, runtime and reveal verification",
+      "url": "https://rh.farm/almanac/#weight",
+      "inspected_on_utc": "2026-09-15",
+      "evidence_kind": "verified_read",
+      "scope": "All six runtimes unchanged at block 63958680; own-weight nominal rate and finite annual/Granary limits; mint progress and unrevealed API samples.",
+      "snapshot": "snapshots/rate-review-2026-09-15/chain-review.json"
+    },
+    {
+      "id": "publicnode-robinhood-2026-09-16",
+      "title": "PublicNode Robinhood Chain endpoint",
+      "url": "https://robinhood.publicnode.com/",
+      "scope": "Free public mainnet JSON-RPC endpoint; verified chain ID, current block, reviewed NFT runtime and real-browser CORS reads.",
+      "inspected_on_utc": "2026-09-16",
+      "evidence_kind": "infrastructure",
+      "snapshot": "snapshots/rpc-network-2026-09-16/publicnode-read.json"
+    },
+    {
+      "id": "robinhood-rpc-docs-2026-09-16",
+      "title": "Connecting to Robinhood Chain",
+      "url": "https://docs.robinhood.com/chain/connecting/",
+      "scope": "Official network configuration and public endpoint rate-limit guidance.",
+      "inspected_on_utc": "2026-09-16",
+      "evidence_kind": "infrastructure"
+    }
+  ],
+  "local_evidence": [
+    {
+      "path": "snapshots/chain-2026-09-07.json",
+      "source_id": "rpc-snapshot"
+    },
+    {
+      "path": "snapshots/api-index.json",
+      "source_id": "api-manifest",
+      "note": "Fetch metadata, exact raw-response SHA-256 digests and paths for all three API snapshots."
+    },
+    {
+      "path": "snapshots/client-interface-2026-09-07.json",
+      "source_id": "client-config",
+      "note": "Extracted factual constants and function signatures; source chunk contents are not retained."
+    },
+    {
+      "path": "snapshots/manifest-comparison-2026-09-07.json",
+      "source_id": "rpc-manifest-comparison"
+    },
+    {
+      "path": "contract-review.md",
+      "source_id": "verified-contracts-2026-09-07",
+      "note": "Targeted findings, exact source paths and source-rule conflicts."
+    },
+    {
+      "path": "snapshots/execution-research-2026-09-07.json",
+      "source_id": "verified-contracts-2026-09-07",
+      "note": "Pinned reads, runtime/source evidence, bytecode hashes, read-only simulations and historical wallet state."
+    },
+    {
+      "path": "snapshots/site-2026-09-11/index.json",
+      "source_id": "almanac",
+      "note": "Dated raw HTML/text sources with SHA256 integrity checks."
+    },
+    {
+      "path": "snapshots/verified-contracts-2026-09-11/review.json",
+      "source_id": "verified-contracts-2026-09-11",
+      "note": "Pinned runtime hashes, linked addresses, constants and reserve balances."
+    },
+    {
+      "path": "reviewed-deployment.json",
+      "source_id": "verified-contracts-2026-09-11",
+      "note": "Compact current audited-target metadata for supported public execution."
+    },
+    {
+      "path": "snapshots/airdrop-2026-09-11/review.json",
+      "source_id": "airdrop-source-2026-09-11"
+    }
+  ],
+  "verification_limits": [
+    "Six contract sources were subsequently obtained through Sourcify v2 and independently matched by runtime hash; the compiler was not rerun and this is not a full security audit.",
+    "Earlier Blockscout API requests returned HTTP 403; legacy Sourcify full-match metadata paths returned HTTP 404 and IPFS retrieval returned HTTP 403. These historical failures do not describe the successful v2 source retrieval.",
+    "Public eth_call simulations discarded all state changes; no actual wallet, mint, plant, upgrade, claim, approval, transfer or swap transaction was performed during development.",
+    "API snapshots are fetched at separate times; they are not atomic chain-state snapshots.",
+    "Economy-v2 projections model carry/Granary depletion but remain dependent on initial reserve assumptions, future weight/weather and exact settlement timing; paid fees, future supplies/drawings/vesting need fresh evidence."
+  ]
+}

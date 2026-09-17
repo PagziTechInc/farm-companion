@@ -1,0 +1,223 @@
+{
+  "schema_version": 1,
+  "scope": "Reference for implemented read-only adapters in src/reader.js and both UI entry points. No signing integration.",
+  "network": {
+    "chain_id": 4663,
+    "rpc_url": "https://rpc.mainnet.chain.robinhood.com/rpc",
+    "explorer_url": "https://robinhoodchain.blockscout.com",
+    "api_base_url": "https://api.rh.farm"
+  },
+  "contracts": {
+    "nft": {
+      "address": "0x27af61a7227314bf8b558ec9777423a49e46600f",
+      "read_signatures": [
+        "function tokensOfOwner(address owner) view returns (uint256[])",
+        "function totalSupply() view returns (uint256)",
+        "function startingIndex() view returns (uint256)",
+        "function manifestHash() view returns (bytes32)"
+      ],
+      "sources": [
+        "security",
+        "client-config",
+        "rpc-manifest-comparison"
+      ]
+    },
+    "crop": {
+      "address": "0x6af020c14e1f6fc7e6972a8a6590b98f756e605d",
+      "read_signatures": [
+        "function balanceOf(address) view returns (uint256)",
+        "function allowance(address owner, address spender) view returns (uint256)",
+        "function decimals() view returns (uint8)"
+      ],
+      "sources": [
+        "security",
+        "client-config",
+        "rpc"
+      ]
+    },
+    "levels": {
+      "address": "0x34a9f041dce0b8e39cc1ca7b1e32238fa5e45284",
+      "read_signatures": [
+        "function levelOf(uint256 tokenId) view returns (uint8)",
+        "function costToReach(uint8 level) view returns (uint256)"
+      ],
+      "sources": [
+        "security",
+        "client-config",
+        "rpc-snapshot"
+      ]
+    },
+    "emissions": {
+      "address": "0x3974f8d2eaaf2425fb8556b688534332adc4dacd",
+      "read_signatures": [
+        "function pending(uint256 tokenId) view returns (uint256)",
+        "function pendingMany(uint256[] ids) view returns (uint256)",
+        "function weightOf(uint256 tokenId) view returns (uint256)",
+        "function totalWeight() view returns (uint256)",
+        "function activation() view returns (address)",
+        "function emitted() view returns (uint256)"
+      ],
+      "sources": [
+        "security",
+        "client-config",
+        "rpc-snapshot"
+      ]
+    },
+    "activation": {
+      "address": "0xc023f81ec14261dabe9de17c30ae70a4c78d87a2",
+      "address_policy": "Resolve emissions.activation() each session; this address is the historical snapshot value.",
+      "read_signatures": [
+        "function isActive(uint256 tokenId) view returns (bool)",
+        "function FEE() view returns (uint256)"
+      ],
+      "sources": [
+        "security",
+        "client-config",
+        "rpc-snapshot"
+      ]
+    },
+    "weather": {
+      "address": "0xd45919b30bdac5f810a18434b3aac9c2d7093c67",
+      "read_signatures": [
+        "function currentEpoch() view returns (uint256)",
+        "function weatherOf(uint256 epoch) view returns (uint8)",
+        "function multiplierNow() view returns (uint256)",
+        "function floodActive() view returns (bool)",
+        "function moonActive() view returns (bool)",
+        "function nextBoundary() view returns (uint256)",
+        "function epochStart(uint256 epoch) view returns (uint256)",
+        "function moonCount() view returns (uint256)",
+        "function moons(uint256 i) view returns (uint256)",
+        "function commitHash() view returns (bytes32)"
+      ],
+      "sources": [
+        "security",
+        "client-config",
+        "rpc-snapshot"
+      ]
+    },
+    "store": {
+      "address": "0xd11822ea81669500e576fc0fbbef618f99dd158a",
+      "read_signatures": [
+        "function listings(uint8 itemId) view returns (uint256 price, uint32 maxSupply, uint32 sold, uint8 slot, bool listed)",
+        "function remaining(uint8 itemId) view returns (uint32)",
+        "function equippedOf(uint256 plotId) view returns (uint8[4])"
+      ],
+      "sources": [
+        "security",
+        "client-config"
+      ]
+    },
+    "wardrobe": {
+      "address": "0x71d5fe93bba27a7ecf0e77a13f21880caa2d115a",
+      "read_signatures": [
+        "function balanceOf(address account, uint256 id) view returns (uint256)"
+      ],
+      "sources": [
+        "security",
+        "client-config"
+      ]
+    },
+    "names": {
+      "address": "0x0858fbbdae8a6c85ec926c6a2684b94f60dedf52",
+      "sources": [
+        "security"
+      ],
+      "note": "Published address; inspected client has an environment-dependent zero-address fallback. Not validated here."
+    },
+    "airdrop": {
+      "address": "0x3056572cd7ee8b7be487bbfed5000a9c867997da",
+      "sources": [
+        "security"
+      ]
+    },
+    "charter": {
+      "address": "0x6de0f2e903bfec34c71e329c789789befeec517f",
+      "sources": [
+        "security"
+      ],
+      "note": "Separate soulbound collectible, not one of the 3333 farm plots. Do not assume a yield boost."
+    },
+    "treasury": {
+      "address": "0x778aa5BD0b28829b7C27eb3957C2D33848125D85",
+      "sources": [
+        "security"
+      ]
+    }
+  },
+  "abi_caution": "Signatures are from the public client, except the standard decimals getter checked by RPC. Only calls in the snapshot have block-pinned evidence here. Snapshot values are integers; CROP uses 18 decimals and displayed weight/weather use BPS.",
+  "api_endpoints": [
+    {
+      "path": "/stats",
+      "fields": [
+        "plantedPlots",
+        "totalSupply",
+        "totalWeightBps",
+        "ratePerSecWei",
+        "burnedWei",
+        "burnCount",
+        "levels",
+        "recentHarvests"
+      ],
+      "notes": "Observed aggregate JSON. No block tag in observed response; freshness and ratePerSecWei base-versus-weather semantics are unverified. Do not apply weather twice."
+    },
+    {
+      "path": "/metadata/{token_id}",
+      "fields": [
+        "name",
+        "description",
+        "image",
+        "external_url",
+        "attributes"
+      ],
+      "notes": "Unrevealed is an explicit status, never Common by default. Metadata ID 1 is only a public research example."
+    },
+    {
+      "path": "/manifest.json",
+      "fields": [
+        "row",
+        "source_row",
+        "tier",
+        "golden",
+        "crop",
+        "soil",
+        "scarecrow",
+        "sky",
+        "fence",
+        "critter",
+        "score"
+      ],
+      "notes": "Cached bytes were matched to the recorded chain commitment using Keccak-256; recheck on changed bytes/deployment. Token mapping is unknown until reveal. Use manifest row, not source_row, in reveal mapping."
+    },
+    {
+      "path": "/weather",
+      "fields": [
+        "epoch",
+        "weather",
+        "label",
+        "multiplierBps",
+        "flood",
+        "moon",
+        "nextBoundary"
+      ],
+      "notes": "Observed in follow-up; agrees with sampled current chain weather but has no block tag. Not a future-weather reveal."
+    }
+  ],
+  "refresh_policy": {
+    "rules": "Local first; recheck only relevant rule on changed deployment, reported change or conflict.",
+    "chain_state": "Implemented block-pinned public reads. Browser polling is opt-in every 30 seconds while visible and not editing; CLI monitoring is separately opt-in. Record timestamp and block.",
+    "api_state": "Store response time separately. Compare against chain data; missing/errors are not zero.",
+    "quotes": "Get fresh executable-size quotes when estimating buys/sales/transfers, including wallet-paid costs. No live price assumed in this package.",
+    "manifest": "Cached for offline use. Re-fetch on changed commitment/file, and resolve token mapping only after reveal.",
+    "future_weeks": "Use revealed data only; a commitment is not a weather forecast.",
+    "season": "src/season.js reads weather, epochs, events, registered moon starts, commitment, NFT supply and total weight without any wallet address. Pin all reads to one block. Read current weatherOf only; future getter defaults are not reveal evidence. CLI: node tools/season.mjs. Legacy NFT PRICE()/saleState() probes reverted on 2026-09-07; do not use these to establish mint availability or price."
+  },
+  "shared_data_contract": {
+    "amounts": "Nonnegative decimal integer strings for *_wei fields; signed net-profit results may be negative.",
+    "weights": "Integer BPS, kept exact.",
+    "unknown": "null, accompanied by missing input/evidence notes; no default rarity, zero balance or free fee.",
+    "portfolio": "See portfolio/holdings.example.json and portfolio/plot.example.json.",
+    "scenario": "See portfolio/scenarios.json.",
+    "result": "Implemented in src/engine.js: status, scenario/horizon, earned/spent/bought CROP, liquid/pending/ending balances, purchases, wallet-paid fees, operating ETH, cash recovery, optional NFT-inclusive estimate, per-wallet actions and assumptions. See docs/ARCHITECTURE.md."
+  }
+}

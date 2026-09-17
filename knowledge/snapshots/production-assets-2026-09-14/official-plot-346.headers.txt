@@ -1,0 +1,17 @@
+HTTP/2 404 
+date: Mon, 14 Sep 2026 03:10:01 GMT
+content-type: text/html
+server: cloudflare
+report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=fGzmyXsgZ72peMK6ck%2BjaUORn4AVM2l5IUwve8XGdKMsnCyHhun3BshEqTtO9GY8k4otENjL8spPYBriLdukGL1ZYykkG6FgIXWH87ftMp1qnZclVI9W3IJY"}]}
+strict-transport-security: max-age=31536000; includeSubDomains
+x-content-type-options: nosniff
+referrer-policy: strict-origin-when-cross-origin
+x-frame-options: DENY
+permissions-policy: camera=(), microphone=(), geolocation=()
+content-security-policy-report-only: default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https:; font-src 'self' data:; connect-src 'self' https: wss:; frame-src https://verify.walletconnect.com https://verify.walletconnect.org; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
+cache-control: public, max-age=300
+nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+cf-cache-status: MISS
+cf-ray: a3ac323a3afd36af-YYZ
+alt-svc: h3=":443"; ma=86400
+

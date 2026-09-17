@@ -1,0 +1,89 @@
+[
+  {
+    "url": "https://api.rh.farm/stats",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "url": "https://api.rh.farm/weather",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "url": "https://api.rh.farm/metadata/1",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "url": "https://robinhoodchain.blockscout.com/api/v2/smart-contracts/0xd45919b30bdac5f810a18434b3aac9c2d7093c67",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "url": "https://robinhoodchain.blockscout.com/api/v2/smart-contracts/0x3974f8d2eaaf2425fb8556b688534332adc4dacd",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "url": "https://api.rh.farm/stats",
+    "transport": "Node fetch",
+    "observed_at_utc": "2026-09-07T07:22:35.917Z",
+    "result": {
+      "plantedPlots": 0,
+      "totalSupply": 0,
+      "totalWeightBps": 0,
+      "ratePerSecWei": "0",
+      "burnedWei": "0",
+      "burnCount": 0,
+      "levels": {
+        "1": {
+          "total": 0,
+          "planted": 0
+        },
+        "2": {
+          "total": 0,
+          "planted": 0
+        },
+        "3": {
+          "total": 0,
+          "planted": 0
+        },
+        "4": {
+          "total": 0,
+          "planted": 0
+        },
+        "5": {
+          "total": 0,
+          "planted": 0
+        }
+      },
+      "recentHarvests": []
+    }
+  },
+  {
+    "url": "https://api.rh.farm/weather",
+    "transport": "Node fetch",
+    "observed_at_utc": "2026-09-07T07:22:35.937Z",
+    "result": {
+      "epoch": 0,
+      "weather": "sunny",
+      "label": "Sunny",
+      "multiplierBps": 12000,
+      "flood": false,
+      "moon": false,
+      "nextBoundary": 1789948800
+    }
+  },
+  {
+    "url": "https://api.rh.farm/metadata/1",
+    "transport": "Node fetch",
+    "observed_at_utc": "2026-09-07T07:22:35.939Z",
+    "result": {
+      "name": "Plot #0001",
+      "description": "A plot of Yield Farm, still wrapped. Every parcel reveals at sellout or by September 18 at 2pm ET, whichever comes first, enforced by the contract. The 3,333 farms inside were fixed before the sale by a hash you can check on-chain; which one lands in this parcel is drawn at the reveal. Nobody, including us, knows yet.",
+      "image": "https://api.rh.farm/image/unrevealed.png",
+      "external_url": "https://api.rh.farm/plot/1",
+      "attributes": [
+        {
+          "trait_type": "Status",
+          "value": "Unrevealed"
+        }
+      ]
+    }
+  }
+]

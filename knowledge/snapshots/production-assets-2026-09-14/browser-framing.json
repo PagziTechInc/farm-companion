@@ -1,0 +1,24 @@
+{
+  "observed_at_utc": "2026-09-14T03:10:34.278Z",
+  "parent_url": "https://farm.pagzi.tech/",
+  "iframe_url": "https://api.rh.farm/animation/346.html",
+  "sandbox": "allow-scripts",
+  "referrer_policy": "no-referrer",
+  "status": "SEALED UNTIL THE REVEAL",
+  "image_url": "https://api.rh.farm/image/unrevealed.png",
+  "image_loaded": true,
+  "requests": [
+    "https://farm.pagzi.tech/",
+    "https://farm.pagzi.tech/releases/20260914T022433Z-3dea54e2ca0f/app.js",
+    "https://api.rh.farm/animation/346.html",
+    "https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap",
+    "https://api.rh.farm/image/unrevealed.png",
+    "https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495",
+    "https://api.rh.farm/plot/346?fresh=1789355434079",
+    "https://api.rh.farm/stats?fresh=1789355434080",
+    "https://api.rh.farm/weather?fresh=1789355434080",
+    "https://fonts.gstatic.com/s/pressstart2p/v16/e3t4euO8T-267oIAQAu6jDQyK3nVivM.woff2",
+    "https://api.rh.farm/cdn-cgi/rum?"
+  ],
+  "errors": []
+}

@@ -1,0 +1,177 @@
+{
+  "fetched_at_utc": "2026-09-12T03:50:37.462Z",
+  "source_pages": [
+    "https://rh.farm/",
+    "https://rh.farm/store/",
+    "https://rh.farm/plots/"
+  ],
+  "note": "Official publicly displayed artwork reused unchanged for the fan companion. Season skins and gallery images are cosmetic examples, not owned token art or yield modifiers. The Almanac controls gameplay and opening dates; store imagery does not establish availability.",
+  "assets": [
+    {
+      "key": "winter",
+      "path": "assets/site/season-winter.webp",
+      "url": "https://rh.farm/store/store_skin_winter.webp",
+      "bytes": 116970,
+      "sha256": "439e249345ad1ada14d273f313ba13100b86fc31377326ac831f6f594cc090d8",
+      "width": 560,
+      "height": 560
+    },
+    {
+      "key": "festival",
+      "path": "assets/site/season-festival.webp",
+      "url": "https://rh.farm/store/store_skin_festival.webp",
+      "bytes": 92160,
+      "sha256": "9d804a0a6d07168ed367445ebbc436013f5c07539ab233bb2c45e0ac978c38b4",
+      "width": 560,
+      "height": 560
+    },
+    {
+      "key": "autumn",
+      "path": "assets/site/season-autumn.webp",
+      "url": "https://rh.farm/store/store_skin_autumn.webp",
+      "bytes": 96354,
+      "sha256": "1a3af82843cf80bc8497369b0ff364d17933001e0918522d125293aab86a4501",
+      "width": 560,
+      "height": 560
+    },
+    {
+      "key": "storm",
+      "path": "assets/site/season-storm.webp",
+      "url": "https://rh.farm/store/store_skin_storm.webp",
+      "bytes": 84904,
+      "sha256": "8f2aa28e3cc0e41364a8382d7a1160e639c491f006c5487537a385e5f6db4d8b",
+      "width": 560,
+      "height": 560
+    },
+    {
+      "key": "base",
+      "path": "assets/site/season-base.webp",
+      "url": "https://rh.farm/store/store_base-320.webp",
+      "bytes": 33916,
+      "sha256": "c8f9a6ffb52aa2593c60dfcab71bf743c332fcb4c80a96f41acdcb05b0358a68",
+      "width": 320,
+      "height": 320
+    },
+    {
+      "key": "store",
+      "path": "assets/site/season-store.webp",
+      "url": "https://rh.farm/store/store_hero.webp",
+      "bytes": 287732,
+      "sha256": "1c94ab81f12db75b61a2ffd4a6491e2307451dff7320ed3b55bb2d1d0411eadb",
+      "width": 1400,
+      "height": 933
+    },
+    {
+      "key": "overcast",
+      "path": "assets/site/season-overcast.webp",
+      "url": "https://rh.farm/gallery/plot_340-320.webp",
+      "bytes": 30406,
+      "sha256": "5cb9a00351b3de65802019e076cf6e54e7c421be99f522882d023d097c720b5c",
+      "width": 320,
+      "height": 320
+    },
+    {
+      "key": "dusk",
+      "path": "assets/site/season-dusk.webp",
+      "url": "https://rh.farm/gallery/plot_12-320.webp",
+      "bytes": 26128,
+      "sha256": "d2da0f7154eaa615708de4148c960eb2456e761bb6b53de48ffe8a857ad0bcb4",
+      "width": 320,
+      "height": 320
+    },
+    {
+      "key": "goose",
+      "path": "assets/site/goose.png",
+      "url": "https://rh.farm/goose1.png?v=2",
+      "bytes": 9073,
+      "sha256": "a0b2de3e5c4b39b137cf5b3814e2f0aaccf23ba15fb503336d089284a0dbd5f2",
+      "width": 92,
+      "height": 113
+    },
+    {
+      "key": "scarecrow",
+      "path": "assets/site/season-scarecrow.webp",
+      "url": "https://rh.farm/busts/scarecrow.webp",
+      "bytes": 47704,
+      "sha256": "6232e4744e82ea98e9ba714e535f050cbdde50a546df26391516d30fdde1a811",
+      "width": 320,
+      "height": 339
+    },
+    {
+      "key": "fertilizer",
+      "path": "assets/site/season-fertilizer.webp",
+      "url": "https://rh.farm/store/store_icon_fertilizer-320.webp",
+      "bytes": 11002,
+      "sha256": "1c3fd15ef897a4c209bb0e3bc9d20768e17540bbf81552ac7b8b85d2887d99a3",
+      "width": 320,
+      "height": 320
+    },
+    {
+      "key": "tarp",
+      "path": "assets/site/season-tarp.webp",
+      "url": "https://rh.farm/store/store_icon_tarp-320.webp",
+      "bytes": 11532,
+      "sha256": "b04254936d987b1ca9f4ed1fed2636ee1471afbf530e34ea6f683be5b44c2b7b",
+      "width": 320,
+      "height": 320
+    }
+  ],
+  "total_bytes": 847881,
+  "inline_svg": [
+    {
+      "key": "locusts",
+      "path": "assets/site/weather-locusts.svg",
+      "url": "https://rh.farm/",
+      "selector": "Weather is the market > locusts",
+      "note": "Unchanged inline SVG from official weather row; no external resources or scripts.",
+      "bytes": 1094,
+      "sha256": "40990a1afbe00746e3c507da80600eb6560bf0405bfc58e961914e5e28a93b73",
+      "width": 24,
+      "height": 24
+    },
+    {
+      "key": "drought",
+      "path": "assets/site/weather-drought.svg",
+      "url": "https://rh.farm/",
+      "selector": "Weather is the market > drought",
+      "note": "Unchanged inline SVG from official weather row; no external resources or scripts.",
+      "bytes": 972,
+      "sha256": "c09df30686dd235c4d562df2d49aab32a7d1961fd13a9dfa110a0c62fc18b4a5",
+      "width": 24,
+      "height": 24
+    },
+    {
+      "key": "fair",
+      "path": "assets/site/weather-fair.svg",
+      "url": "https://rh.farm/",
+      "selector": "Weather is the market > fair",
+      "note": "Unchanged inline SVG from official weather row; no external resources or scripts.",
+      "bytes": 545,
+      "sha256": "9abeff6591f60426fb166948de0a810cb46aacb1940f712980ab5d900d4ea1bb",
+      "width": 24,
+      "height": 24
+    },
+    {
+      "key": "sunny",
+      "path": "assets/site/weather-sunny.svg",
+      "url": "https://rh.farm/",
+      "selector": "Weather is the market > sunny",
+      "note": "Unchanged inline SVG from official weather row; no external resources or scripts.",
+      "bytes": 667,
+      "sha256": "a2cd48be50ad2048e48247ae76992d0a8b47d4cf4ce6c405ec6aaae009a4e0dd",
+      "width": 24,
+      "height": 24
+    },
+    {
+      "key": "rain",
+      "path": "assets/site/weather-rain.svg",
+      "url": "https://rh.farm/",
+      "selector": "Weather is the market > rain",
+      "note": "Unchanged inline SVG from official weather row; no external resources or scripts.",
+      "bytes": 606,
+      "sha256": "322929aac95249b0e8befe2f3ff584a69b4c5f81d9ba7cf2c73801040ef787c0",
+      "width": 24,
+      "height": 24
+    }
+  ]
+}

@@ -1,0 +1,251 @@
+{
+  "schema_version": 1,
+  "recorded_on_utc": "2026-09-15",
+  "authority": "User instructions and answers in this conversation",
+  "portfolio": {
+    "expected_plot_count": null,
+    "wallets": [],
+    "actual_addresses_and_token_ids_supplied": false,
+    "rarity_policy": "Model each user-entered or observed plot individually; never infer ownership or rarity from target counts.",
+    "default_policy": "Public workspaces start empty. Any user can add public wallet addresses and manual hypothetical plots. Saved data stays in that browser.",
+    "historical_personal_profile": "The original owner supplied two addresses and planned 22 plots; those historical facts remain under history/2026-09-07/decisions.json and local portfolio files. They are not bundled defaults or evidence of a visitor holding.",
+    "actual_addresses_and_token_ids_supplied_scope": "This flag describes the empty public default workspace, not the original owner history. Visitors add their own addresses and plots."
+  },
+  "objectives": [
+    "net_crop_accumulation",
+    "net_eth_profit"
+  ],
+  "horizons_days": [
+    30,
+    90,
+    365
+  ],
+  "horizon_origin": "Explicit scenario start, or current time rebased by guided planning. The public calculator includes 7/30/90/365-day views and time-to-upgrade estimates.",
+  "funding_models": [
+    {
+      "id": "harvest_funded",
+      "initial_planting_funded_externally": true,
+      "additional_upgrade_investment": false,
+      "upgrade_funding": "Claimed harvest balances, with sufficient ETH for wallet-paid costs if applicable."
+    },
+    {
+      "id": "extra_investment",
+      "initial_planting_funded_externally": true,
+      "additional_upgrade_investment": true,
+      "upgrade_funding": "Harvests plus explicitly budgeted external funds.",
+      "extra_budget_eth": null
+    }
+  ],
+  "wallet_policy": {
+    "baseline": "Keep plots in their entered wallet; support arbitrary user portfolios and preserve wallet-level balances and constraints.",
+    "propose_crop_transfers": true,
+    "compare_nft_consolidation": [
+      "before_initial_planting",
+      "after_initial_planting"
+    ],
+    "consolidation_requirement": "Optional scenario comparison using entered plot counts and transfer/replant costs; no presumption that a visitor wants to consolidate.",
+    "execution_authorized_by_this_record": true,
+    "execution_scope": "Only individually human-approved supported actions. Swaps and asset transfers remain manual."
+  },
+  "fees": {
+    "user_expectation": "Many operations, especially harvesting, may have no wallet-paid gas; Robinhood Chain is expected to be cheap.",
+    "evidence": "Almanac and reviewed source confirm zero harvest game fee and no CROP approval. Claims are on-chain transactions; network sponsorship and eventual wallet-paid costs remain unverified.",
+    "scenarios": [
+      "observed_or_estimated_wallet_paid_costs",
+      "zero_wallet_paid_gas"
+    ],
+    "unknown_cost_policy": "Unknown is not zero. Label sponsored/zero-cost assumptions explicitly."
+  },
+  "future_interfaces": [
+    "standalone_local_browser_dashboard",
+    "tampermonkey_panel_on_rh_farm",
+    "chromium_extension_on_rh_farm"
+  ],
+  "shared_engine_required": true,
+  "initial_interaction": "Public monitoring remains available without wallet connection. User now requests active guided planning and individually human-approved MetaMask actions.",
+  "milestone": "Public platform migration authorized: empty visitor workspaces, programmatic advice, updated economy-v2 rules, and individually approved supported wallet actions.",
+  "profit_policy": {
+    "baseline": "Compare against planting and making no upgrades; allow choosing no additional investment.",
+    "optimization_claim": "Report the best evaluated strategy under named assumptions; do not claim a guaranteed future maximum.",
+    "capital": "External purchases and deposits are not income; count acquisition and operation costs without double-counting them.",
+    "eth_reporting": "Separate realized ETH profit from estimated token/NFT liquidation value.",
+    "crop_reporting": "Separate earned CROP, CROP spent, purchased CROP, pending CROP, and liquid balance.",
+    "terminal_nft_value": "Require an explicit estimate; burned upgrade cost is not a resale-value guarantee.",
+    "missing_inputs": "Return unavailable/required inputs instead of fabricating estimates."
+  },
+  "implementation": {
+    "version": "2.3.0",
+    "status": "implemented",
+    "entrypoints": [
+      "src/dashboard.js",
+      "src/userscript.js",
+      "src/extension-content.js",
+      "src/extension-frame.js",
+      "src/extension-background.js",
+      "tools/analyze.mjs"
+    ],
+    "guide": "docs/USAGE.md",
+    "strategy_search": "Complete affordable paths under multiple ranking policies and 25/50/100% extra-budget ceilings; best evaluated candidate, not a global guarantee.",
+    "pre_mint": "Wallet-free public season observations, cached evidence and clearly hypothetical allocation estimates. Never populate owned plots from expected counts.",
+    "guided_planning": "Current-time, locally computed advice for all entered wallets, plus per-plot yield and upgrade funding estimates.",
+    "execution": "Shared executor for dashboard, userscript and native Chromium extension; public preparation, exact approvals, single transaction submissions only on explicit human action, durable pending lock and matching receipt reconciliation.",
+    "source_review": "Six reviewed September 11 deployments independently matched again September 15 at block 63958680. No economic runtime change was observed. The nominal own-weight rate, annual base ceiling, carry and finite Granary remain; exact accumulator rounding and future state are limitations.",
+    "native_extension": "Manifest V3 distribution is built separately in dist-extension and farm-companion-chrome.zip. The isolated launcher embeds an extension-origin frame with synchronous local storage and a restricted wallet adapter. Website, userscript and extension workspaces/action journals remain separate.",
+    "companion_tools": "Version 2.2 adds a manually refreshed valley snapshot, published milestone calendar/UTC export, independent total-CROP wallet goals, five weather scenarios with finite reserves, per-plot day-one/term projections, filters and pinned upgrade targets. Scenery is cosmetic. Dated observations stay separate from forecast assumptions; each interface retains its own storage.",
+    "appearance": "Version 2.3 applies scene palettes throughout all companion interfaces. A manual rehearsal plot studio shows token artwork and traits for IDs 1\u20133333, supports isolated click-to-play previews and can save a validated plot theme. Inventory artwork is a separate saved opt-in, paged with bounded concurrent requests and cache. Appearance changes preserve holdings, scenario inputs and calculated results.",
+    "rehearsal_source": "PLOT_ART_SOURCES in src/plot-art.js centrally defines the supplied production and testing API paths. Production URLs were supplied September 14; production_asset_collection supersedes this historical source choice. Imported farm files cannot configure arbitrary endpoints. Metadata and animation counters are display-only and can disagree; they are never economic or ownership evidence. Source observations are in knowledge/rehearsal-assets.md.",
+    "remote_preview": "Only an explicit Play animation action creates a sandbox=allow-scripts remote iframe, without same-origin access or wallet bridge privileges. Pause, close or choosing another plot removes that frame and stops its polling. Remote scripts are never inserted into the companion origin."
+  },
+  "rule_authority": {
+    "primary": "almanac",
+    "scope": "Gameplay planning; supporting pages and client descriptions do not override it.",
+    "limits": "Do not invent unspecified mechanics or extend the targeted six-contract source review into a blanket security or behavior guarantee. Record verified findings and Almanac conflicts explicitly."
+  },
+  "funding_target": {
+    "usd_per_wallet": null,
+    "authority": "Each visitor chooses their funding target and investment cap. Historical owner USD 100 target is not a public default.",
+    "extra_investment_budget_not_inferred": true
+  },
+  "initial_interaction_history": "Read-only monitoring and advisory recommendations; user performs actions through MetaMask on the official site.",
+  "human_approval_execution": {
+    "authority": "Latest user request: automatically pull from wallets and take action with human approval, with an active guided plan to maximize profits. This supersedes the earlier read-only interaction scope.",
+    "supported_actions": [
+      "exact_crop_allowance",
+      "plant_one_owned_plot",
+      "upgrade_one_level",
+      "claim_owned_plots_within_one_wallet",
+      "plant_bag"
+    ],
+    "user_control": "Public reads and plan recalculation can be automatic when enabled. Preparing a draft is read-only; submission requires an explicit click and MetaMask approval for that one transaction.",
+    "follow_on_actions": "An approved token allowance is not authorization to spend; prepare and approve the intended plant/upgrade separately after the allowance receipt.",
+    "excluded_automation": [
+      "unattended_signing",
+      "swaps",
+      "crop_transfers",
+      "nft_transfers",
+      "minting"
+    ],
+    "credentials": "Never request or persist seed phrases/private keys.",
+    "guards": "Configured account/chain, current block, reviewed runtime and linked contracts, owner, costs, pauses, balances and allowances are checked; eth_call/gas estimate precede a short-lived draft. Pending or unknown broadcasts block another action until reconciled.",
+    "pre_genesis_policy": "Keep the Almanac Genesis opening for planting/upgrades, clearly distinguish it from source contracts which have no such gate.",
+    "budget": "Never infer spending authorization from a deposit, public wallet address, balance or target.",
+    "plant_bag": "Individually approved plantWithBag(uint256) at the freshly read ETH bag price, with bag-open, exact value, ownership, treasury CROP balance/allowance and simulation checks. It needs no user CROP allowance."
+  },
+  "public_platform": {
+    "audience": "Any Yield Farm participant or prospective player",
+    "authorization": "User requested a public platform on September 11, 2026.",
+    "privacy": "Do not bundle or expose the original owner wallets, holdings, saved scenarios, funding targets or pending records in public assets. Browser storage and optional local JSON export only.",
+    "advice": "Deterministic calculations in the shared engine; no AI calls, API keys or paid model spend.",
+    "network": "Optional public RPC/API reads; no wallet connection needed for address analysis. Artwork requests use the selected production/rehearsal API after manual lookup or the saved inventory-artwork opt-in; the visible reveal watch reads public collection status. A saved plot theme can display its remote image on reload. Fees for user-approved on-chain actions remain separate.",
+    "features": [
+      "multi-wallet intake",
+      "manual hypothetical plots",
+      "income projections",
+      "time-to-next-upgrade",
+      "marginal-yield ranking",
+      "policy comparisons",
+      "finite carry and Granary scenarios",
+      "stress cases",
+      "per-wallet affordability",
+      "local import/export",
+      "manual valley snapshot",
+      "published milestone calendar",
+      "per-wallet total-CROP goals",
+      "five weather scenarios",
+      "per-plot harvest estimates",
+      "inventory filters and pinned targets",
+      "whole-companion visual themes",
+      "manual rehearsal plot studio",
+      "validated saved plot themes",
+      "opt-in per-token artwork",
+      "isolated click-to-play plot animations",
+      "active guided policy plan",
+      "opt-in visible-panel wallet monitoring",
+      "single-step approval handoff",
+      "persistent extra-investment cap accounting",
+      "persistent per-wallet claim cadence",
+      "random model rarity batches",
+      "automatic pinned-block forecast inputs",
+      "explicit fallback and input provenance"
+    ]
+  },
+  "active_public_plan": {
+    "requested_on_utc": "2026-09-12",
+    "scope": "Website, native Chromium extension and Tampermonkey share local policy planning and the existing individual approval executor.",
+    "production_asset_api": "Production URLs supplied September 14. See production_asset_collection; economic ownership/rarity still come from reviewed chain reads.",
+    "investment_cap": "Remaining extra-purchase cap = configured total less manually recorded prior extra purchases. Public balance changes do not establish investment spend.",
+    "claim_cadence": "Persist advisory wallet anchors independently from rebased forecasts; advance after successfully reconciled claims. Do not infer external claim history.",
+    "execution": "Opt-in public reads and local planning only; separately reviewed and confirmed allowance, plant, upgrade or claim. Swaps and transfers remain manual."
+  },
+  "forecast_initialization": {
+    "requested_on_utc": "2026-09-13",
+    "authorization": "User requested automatic forecast assumptions from chain, with valid defaults where unavailable, plus random model rarity and removal of duplicate landing navigation.",
+    "network": "One public read when Yield forecast is first opened; explicit Use chain defaults refreshes again. Empty landing stays offline. No wallet provider is requested.",
+    "manual_fields": "Keep saved and in-progress user edits, grouping start/carry/Granary atomically; only explicit Use chain defaults replaces them.",
+    "evidence": "Fresh pinned-block observations initialize a scenario; future weather, growth, liquidity and prices remain assumptions. Unavailable prices use labeled seed-bag planting parity.",
+    "random_models": "Sample published rarity counts without replacement within each batch; no token-to-rarity assignment or ownership inference."
+  },
+  "compact_workspace": {
+    "requested_on_utc": "2026-09-13",
+    "intent": "Simple, playful screen-fitting web app with less prose and scrolling while retaining functionality.",
+    "layout": "Persistent three-tab shell, internal gallery/table scrolling, side-by-side desktop forecasts and upgrades; mobile forecast settings collapse after calculation.",
+    "tools": "Themes, valley/calendar, saved farms/downloads and wallet actions are secondary utility panels. Wallet management and intake remain accessible from My farm.",
+    "preservation": "Keep drafts when switching tools; keep the existing approval root, execution guards, separate wallet balances, chain defaults and exact arithmetic."
+  },
+  "launch_week_planning": {
+    "requested_on_utc": "2026-09-14",
+    "weather": "Public forecasts use absolute Genesis-anchored epoch observations, initially the dated week-1 Sunny cache. Full-history event reads and getters are pinned to one block and checked against reviewed runtime. Unknown future weeks use editable Fair defaults; whole-term weather experiments opt out. Early observations remain mutable.",
+    "soil": "Apply First Soil independently by UTC date: 2x first week, 1.5x following three weeks; cap base emissions and use finite Granary. Nominal 2.40 is not a guaranteed payout multiplier.",
+    "upgrades": "Retain next-level alternatives and expose all cumulative paths to level 5, ranked by term net CROP. Waiting assumes the owning wallet funds the entire path; active policies can stage and repeat same-plot upgrades, checking portfolio return and no-upgrade baseline.",
+    "capital": "Cheap future markets are a user scenario, not a price fact. Quote purchase shortfalls after claims; extra-funded policies require separate wallet ETH, user buy/exit quotes, fees and cap less recorded spend. Bought tokens are capital; swaps stay manual.",
+    "gallery": "Show 23 plots initially, with the load-more control in grid position 24; reveal 23 more per click.",
+    "source_id": "launch-weather-2026-09-14"
+  },
+  "production_asset_collection": {
+    "requested_on_utc": "2026-09-14",
+    "authorization": "User supplied final production plot and animation URLs and requests collection as soon as real revealed data becomes valid. Run a read-only full-collection watcher on the companion VPS; no browser needs to remain open.",
+    "gate": "Pinned reviewed NFT runtime, known manifest and positive revealed startingIndex with minted supply, then matching production live tokenId/revealed:true and actual non-placeholder metadata. Sold-out count or an HTTP 200/token-shaped image URL is insufficient.",
+    "scope": "Collect metadata for IDs1\u20133333 with throttling, retries, checkpoints and raw private evidence. Publish only normalized display metadata/status. No private wallet addresses are stored by the collector.",
+    "timing": "Check chain every 30 seconds while waiting. Drain due assets after reveal with at least 500 ms between API calls; use bounded backoff for failures and respect Retry-After. No full collection image crawl.",
+    "economics": "Finalized on-chain tiers, manifest agreement, owner, levels, balances, activation and weight checks remain required for investment actions. A separately labeled forecast preview may use verified committed manifest tiers while finalization is pending; an API tier/counter remains display-only.",
+    "rehearsal": "Retain old saved rehearsal themes and explicit rehearsal viewing; production becomes default for new requests. Exact source paths and cache identities remain separate.",
+    "source_id": "production-assets-2026-09-14"
+  },
+  "harvest_rate_clarification": {
+    "reviewed_on_utc": "2026-09-15",
+    "authority": "Almanac sections 04, 05 and 09, verified against unchanged deployed source.",
+    "formula": "2000 CROP/week \u00d7 own active weight \u00d7 First Soil \u00d7 weather.",
+    "limits": "Do not dilute the nominal rate merely because more plots plant. Annual schedule/carry caps base; finite Granary caps bonuses. Total valley weight matters when these funding limits bind.",
+    "public_default": "Outside weight is optional and defaults to zero when unspecified. Remove the automatic full-collection planting assumption; label this as a rate scenario, not observed future participation. Preserve explicit advanced assumptions and validated post-Genesis chain inputs for ceiling/Granary checks.",
+    "presentation": "Lead with Your harvest rate and dated own-weight formula. Keep optional valley weight/growth/presets in collapsed Harvest limits. Distinguish nominal start rate from integrated period earnings, and identify binding base/bonus limits.",
+    "guided_plan": "Replace Competition doubles stress with Granary starts empty; rerun the selected policy while preserving isolated wallet budgets, claims, capital and fees.",
+    "reveal": "Mint progress is display-only and cannot unlock traits or economic advice. Animation URLs can exist before reveal. Keep positive offset, revealed API flag, real metadata and separately finalized economic tiers as existing gates.",
+    "source_id": "rate-review-2026-09-15"
+  },
+  "pending_rarity_forecasts": {
+    "reviewed_on_utc": "2026-09-15",
+    "problem": "Revealed plots remain economically pending until the NFT tiers are finalized. Pending is a collection status, not one RPC failure per plot.",
+    "forecast": "An isolated, labeled preview may use the committed manifest tier after reviewed NFT runtime, manifest hash, positive reveal offset and matching owned plot block/time observations. Missing economic reads and rule conflicts remain blocking. Raw holdings and verification flags are never rewritten.",
+    "planting": "Assume all planted is off by default. Its scenario assumes planting paid from separate capital, shows the total CROP cost and excludes that cost from gross harvest. Existing wallet budgets are unchanged.",
+    "execution": "Preview markers on either portfolio or plots reject transaction preparation and active-plan actions. Unfinalized raw tiers continue to block new investments; independently verified claims retain their existing flow.",
+    "reads": "Public RPC concurrency is bounded; temporary throttles retry with bounded backoff and Retry-After. Artwork failures are separate from economic errors."
+  },
+  "public_rpc_recovery": {
+    "reviewed_on_utc": "2026-09-16",
+    "cause": "Official RPC temporarily returned HTTP 429 with duplicate CORS allow-origin values, surfaced by Chrome as Failed to fetch. A successful eth_chainId alone did not establish usable state reads.",
+    "provider": "Use the independently verified, free PublicNode Robinhood endpoint. Keep the official URL as provenance; no endpoint rotation, credentials, paid calls or server proxy.",
+    "retries": "Bound recognizable browser network errors, timeouts and throttling behind one paced queue with shared cooldown. Preserve request IDs and original pinned block tags. Deterministic contract errors remain failures.",
+    "snapshots": "A failed UI refresh retains the entire prior snapshot and its original observation time; do not splice blocks or save missing balances as zero. Failed refreshes cannot rebuild active action plans.",
+    "batching": "Group at most 20 read-only calls per HTTP request, validate response IDs and preserve per-item failures. Keep cosmetic metadata on a separate bounded queue so pinned chain reads finish promptly within the provider's recent-state window. Archive errors remain failures; never fall back individual reads to latest."
+  },
+  "automatic_companion": {
+    "requested_on_utc": "2026-09-16",
+    "intent": "Default to complete estimates immediately after adding or connecting a wallet; keep custom scenario settings optional. Shared website, Tampermonkey and native extension interface.",
+    "inputs": "Use fresh pinned portfolio reserve observations and optional same-block pool references. Otherwise use the existing published or conservative fallbacks. Never fabricate unobserved ownership, rarity, balances or action eligibility.",
+    "participation": "User-supplied 30% participation is an estimate of remaining collection level-1 weight, used only for shared funding-limit checks. Fresh post-Genesis observed outside weight supersedes it. Nominal own-weight yield is never multiplied by participation or divided among participants.",
+    "planting": "Automatic forecasts prepare a scenario-only planted copy of dormant plots; raw holdings remain unchanged. Display planting capital separately; it is excluded from gross harvest. This supersedes the off-by-default option in pending_rarity_forecasts for automatic mode only.",
+    "fees": "Active-plan fees are explicitly estimated from assumed gas budgets at a 0.1 gwei fallback with 2x margin and a 0.000001 ETH floor; no transaction is declared free. Execution still freshly simulates and separately reviews actual transactions. Extra-purchase budgets and execution intent are never auto-filled.",
+    "custom": "Keep saved manual scenarios. Automatic defaults may be restored explicitly; no action review is remounted or silently rewritten.",
+    "schedule": "Fresh September 16 Almanac and pinned chain review confirms Genesis September 21 00:00 UTC, reveal finalized and supply3333. September18 is the published reveal deadline, not the harvest start."
+  }
+}

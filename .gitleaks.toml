@@ -1,0 +1,11 @@
+title = "Farm Companion secret scanning"
+[extend]
+useDefault = true
+
+# Exact public contract identifiers misclassified by the generic key detector.
+[[rules]]
+id = "generic-api-key"
+[[rules.allowlists]]
+description = "Reviewed public CROP address and Solidity inheritance identifier"
+regexTarget = "secret"
+regexes = ['''^0x6cfaf2F60F47182f0c9F5d199db92Ab261A9d487$''', '''^ERC20Burnable$''']

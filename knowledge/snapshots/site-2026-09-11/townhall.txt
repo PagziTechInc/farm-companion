@@ -1,0 +1,77 @@
+Town Hall · Yield Farm
+Skip to content
+YIELD FARMHomeMy PlotsTown HallCheck walletCharterAlmanacVOLConnect wallet☰
+THE TOWN HALL
+Seat of the farm's only elected official. He ran unopposed.
+★ EVERY MONDAY FROM OCTOBER · TICKETS BURN · SOMEBODY WINS A FARM ★
+THE MAYOR
+Citizens! Plant your fields, mind the weather, and keep your $CROP where I can see it burn. Come October, every Monday I pull a name from the barrel, right when the new weather breaks. See you at the town hall.Citizens!Citizens! Plant your fields, mind the weather, and keep your $CROP where I can see it burn. Come October, every Monday I pull a name from the barrel, right when the new weather breaks. See you at the town hall.▼
+Pre-season
+READING WEEK 1…
+×2
+FOUNDING WEEK BOOST · SEP 21 TO 28
+First Soil doubles every harvest in the Founding Week. Then the soil pays ×1.5 until Oct 19. Plant on day one and you get all of it.
+Week 1 is set on-chain and public. Fetching it from the chain.
+▶ MINT SEP 15 · 1 PM ET · THE VANE TURNS SEP 21
+SCHEDULE
+Every week is locked in at least 24 hours before it starts, sometimes earlier, never later. The first 12 weeks were committed by hash before mint.
+…WEEK 1
+Sealed
+Sealed
+Sealed
+THE FIVE WEEKLY WEATHERS
+One per week, Monday to Monday. It multiplies every harvest on the farm.
+LOCUSTS
+0.5×
+the bear week
+DROUGHT
+0.8×
+lean; the shortfall banks in the Granary
+FAIR
+1.0×
+the default week
+SUNNY
+1.2×
+a good week
+RAIN
+1.5×
+a great week
+the bear weekthe great week
+EVENTS
+Short bursts that double whatever week is running while they last, capped at 2× in total: a Locusts week floods to 1×, a Drought week to 1.6×, a Rain week stays at 2×. Paid from the Granary, never from thin air.
+FLASH FLOOD
+week ×2 · 24h
+doubles the running week, capped at 2× in total; announced at least 24h ahead
+HARVEST MOON
+week ×2 · 48h
+doubles the running week, capped at 2× in total; real full moons, posted at least 30 days ahead
+THE NOTICE BOARD
+Pinned by the Mayor's own hand. The season, as planned.
+SEP 15
+MINT DAY
+1 PM ET · 3,333 plots · 0.002 ETH
+BY SEP 18
+THE REVEAL
+art and tiers land at sell-out or by 2 PM ET; the $CROP pool opens
+SEP 21
+GENESIS
+planting opens; the vane turns for week 1
+SEP 21 TO 28
+FOUNDING WEEK
+every harvest ×2 with First Soil, then ×1.5 until Oct 19
+OCTOBER
+THE DRAWINGS
+every Monday: new weather, new winner
+NOVEMBER
+SUPPLIES
+fertilizer and tarps reach the Store
+THE MAYOR'S DRAWINGS
+The rules, plainly:
+TicketsBought with $CROP and burned on the spot, every one. The barrel is a furnace.
+Free entryEvery planted plot gets one entry each week, automatically. Farming is a ticket.
+The prizeThe Mayor buys a plot from the open market and raffles it, with cosmetics from the wardrobe alongside. His budget is capped by what that week's tickets burned, so the math always holds. A thin week rolls the barrel into the next one.
+The drawEvery Monday at the weather boundary: a sealed seed committed before entries open is revealed and picks the winner. Same machinery that seals the weather. Anyone can verify it.
+Full rules and the ticket window are published before the first drawing.
+YIELD FARM
+3,333 pixel farms that actually farm, on Robinhood Chain.
+Provenance & fairnessTown StandingsStoreLeaderboardThe CountySwapSealed weather. Frozen tiers. Every purchase burns.

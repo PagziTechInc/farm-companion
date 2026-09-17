@@ -1,0 +1,15 @@
+{
+  "observed_at_utc": "2026-09-07T03:57:23.876707+00:00",
+  "chain_id": 4663,
+  "block_number": 56530213,
+  "rpc_url": "https://rpc.mainnet.chain.robinhood.com/rpc",
+  "contract": "0x27af61a7227314bf8b558ec9777423a49e46600f",
+  "method": "manifestHash()",
+  "on_chain_hash": "0x80eba662f570dd94efbde3ed6351ada0313856bd9eccdd011b048be4ba709588",
+  "local_raw_sha256": "0xf9cbf502b3418a969751ad79e43e32068aa624aeadd3b0c07f37cf1595797138",
+  "raw_sha256_matches": false,
+  "interpretation": "The Keccak-256 of exact cached response bytes, computed through web3_sha3, equals manifestHash() at the recorded block. SHA-256 separately checks local file integrity. This verifies the cached table commitment, not a revealed token assignment or Solidity immutability.",
+  "raw_keccak256": "0x80eba662f570dd94efbde3ed6351ada0313856bd9eccdd011b048be4ba709588",
+  "raw_keccak256_matches": true,
+  "hash_computation_source": "web3_sha3 on the same public RPC; not a second independent provider"
+}

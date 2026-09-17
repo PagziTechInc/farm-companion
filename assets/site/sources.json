@@ -1,0 +1,156 @@
+{
+  "fetched_at_utc": "2026-09-12T01:23:40.315827+00:00",
+  "source_pages": [
+    "https://rh.farm/",
+    "https://rh.farm/almanac/",
+    "https://rh.farm/store/"
+  ],
+  "note": "Official publicly shown artwork reused for this fan companion. Showcase images are illustration references, never a token ID or ownership mapping. Original artwork belongs to its respective creators.",
+  "assets": [
+    {
+      "key": "hero",
+      "path": "assets/site/hero-plot.webp",
+      "url": "https://rh.farm/gallery/hero_573.feb28786.webp",
+      "bytes": 113234,
+      "sha256": "3b8de21d9e668cbccb0f5dc5226f69f32c1464865deb1343fa2319b91a448ad1",
+      "width": 640,
+      "height": 640
+    },
+    {
+      "key": "keeper",
+      "path": "assets/site/keeper.webp",
+      "url": "https://rh.farm/busts/keeper.webp",
+      "bytes": 36744,
+      "sha256": "022bb50808478940c1c5b66b8e258c11f08e2e9012c546150e0b5f69365ef29f",
+      "width": 320,
+      "height": 323
+    },
+    {
+      "key": "almanac",
+      "path": "assets/site/almanac-study.webp",
+      "url": "https://rh.farm/hero_almanac.webp",
+      "bytes": 315454,
+      "sha256": "b367561cc857778d627cabc6cf90913e1fe2cc951e89c0242858f2728d57ac71",
+      "width": 1400,
+      "height": 933
+    },
+    {
+      "key": "mabel",
+      "path": "assets/site/mabel.webp",
+      "url": "https://rh.farm/busts/mabel.webp",
+      "bytes": 26562,
+      "sha256": "50ac1b6e0ec032521c16e72a562198c41be8e176a25a209248ac50bd60dd9b71",
+      "width": 320,
+      "height": 326
+    },
+    {
+      "key": "common",
+      "path": "assets/site/common-showcase.webp",
+      "url": "https://rh.farm/gallery/plot_0_L2.928603c3-320.webp",
+      "bytes": 33480,
+      "sha256": "ee9a57671c6d7a523aea9778ce090a384de0f4ca6e928e1438804f37365ec1b1",
+      "width": 320,
+      "height": 320
+    },
+    {
+      "key": "fertile",
+      "path": "assets/site/fertile-showcase.webp",
+      "url": "https://rh.farm/gallery/plot_80-320.webp",
+      "bytes": 31570,
+      "sha256": "d447752a42d356954e0ea7fe635d3f0e57bc4804a18b634dd9d31f580410dc7a",
+      "width": 320,
+      "height": 320
+    },
+    {
+      "key": "prize",
+      "path": "assets/site/prize-showcase.webp",
+      "url": "https://rh.farm/gallery/plot_108-320.webp",
+      "bytes": 30020,
+      "sha256": "a71f7430480047b9a02d62ebda5bc0fdbb45d73380c5ec0d95e2cb5981c4cdfa",
+      "width": 320,
+      "height": 320
+    },
+    {
+      "key": "golden",
+      "path": "assets/site/golden-showcase.webp",
+      "url": "https://rh.farm/gallery/plot_129-320.webp",
+      "bytes": 42376,
+      "sha256": "6669768816948e9865d27b550ab826300fca337559df25deab56459e8ea5a503",
+      "width": 320,
+      "height": 320
+    },
+    {
+      "key": "level1",
+      "path": "assets/site/level-1.webp",
+      "url": "https://rh.farm/levels/real_l1.8e605e0c-320.webp",
+      "bytes": 28628,
+      "sha256": "cf1efc73b72fdd0165c3a0572760d0928f7e90b5460b8ebfb12e3b96266d4f24",
+      "width": 320,
+      "height": 320
+    },
+    {
+      "key": "level2",
+      "path": "assets/site/level-2.webp",
+      "url": "https://rh.farm/levels/real_l2.d03ea71d-320.webp",
+      "bytes": 29832,
+      "sha256": "6472bfb4b0daeade998e3ccc28823190c7f7de2352bdf9d648758420cd62f266",
+      "width": 320,
+      "height": 320
+    },
+    {
+      "key": "level3",
+      "path": "assets/site/level-3.webp",
+      "url": "https://rh.farm/levels/real_l3.34e9bcdb-320.webp",
+      "bytes": 28614,
+      "sha256": "797b1bda5015fa709920857e7f9adbfddf367755055622c3da8f6fa9b0c33cd3",
+      "width": 320,
+      "height": 320
+    },
+    {
+      "key": "level4",
+      "path": "assets/site/level-4.webp",
+      "url": "https://rh.farm/levels/real_l4.be2ecac7-320.webp",
+      "bytes": 28448,
+      "sha256": "0a3fc3b448657d3fe74a233c89caa6724f95ab81b76185f16080a561e7d8d6e1",
+      "width": 320,
+      "height": 320
+    },
+    {
+      "key": "level5",
+      "path": "assets/site/level-5.webp",
+      "url": "https://rh.farm/levels/real_l5.39c96acf-320.webp",
+      "bytes": 28782,
+      "sha256": "94c2ad350b3db8f612e06df30231175ec9a8201d01e920dd24656410a8060914",
+      "width": 320,
+      "height": 320
+    },
+    {
+      "key": "corn",
+      "path": "assets/site/corn.png",
+      "url": "https://rh.farm/icon-corn.png",
+      "bytes": 57641,
+      "sha256": "7c9bbe06a5ab488b6945956e1873deab61fe448905bb5a32251ff5c7e4f54d13",
+      "width": 192,
+      "height": 192
+    }
+  ],
+  "total_bytes": 831385,
+  "fonts": [
+    {
+      "key": "body",
+      "path": "assets/site/ibm-plex-sans-latin.woff2",
+      "url": "https://rh.farm/_next/static/media/03fc1b4a8d284b5e-s.p.0wiir8udbzjvx.woff2",
+      "family": "IBM Plex Sans",
+      "style": "normal",
+      "weights": [
+        400,
+        600
+      ],
+      "subset": "latin",
+      "license_path": "assets/site/IBM-Plex-LICENSE.txt",
+      "license_url": "https://raw.githubusercontent.com/IBM/plex/master/LICENSE.txt",
+      "bytes": 40240,
+      "sha256": "056e4e2459f57a0033c8c9c844ff19d6e42ac8602027803d4345823bcc939818"
+    }
+  ]
+}

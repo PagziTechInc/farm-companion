@@ -1,0 +1,45 @@
+[
+  {
+    "source_id": "manifest",
+    "url": "https://api.rh.farm/manifest.json",
+    "retrieved_at_utc": "2026-09-07T03:43:33.397014+00:00",
+    "http_status": 200,
+    "path": "snapshots/manifest-2026-09-07.json",
+    "sha256": "f9cbf502b3418a969751ad79e43e32068aa624aeadd3b0c07f37cf1595797138",
+    "bytes": 656980,
+    "evidence_status": "verified_read",
+    "trust_scope": "Exact cached bytes match the recorded on-chain commitment via Keccak-256; token-to-row assignment remains unknown.",
+    "row_count": 3333,
+    "tier_counts": {
+      "0": 2475,
+      "1": 660,
+      "2": 165,
+      "3": 33
+    },
+    "on_chain_hash_match_verified": true,
+    "commitment_algorithm": "keccak256(raw_response_bytes)",
+    "commitment_comparison_evidence": "snapshots/manifest-comparison-2026-09-07.json"
+  },
+  {
+    "source_id": "stats",
+    "url": "https://api.rh.farm/stats",
+    "retrieved_at_utc": "2026-09-07T03:43:33.397478+00:00",
+    "http_status": 200,
+    "path": "snapshots/stats-2026-09-07.json",
+    "sha256": "e18dba6696a35a5211e99018e8a86297f9a58ee55e2beb5cd9147a5b9cd1df00",
+    "bytes": 274,
+    "evidence_status": "verified_read",
+    "trust_scope": "API response only; not independent on-chain verification"
+  },
+  {
+    "source_id": "metadata-1",
+    "url": "https://api.rh.farm/metadata/1",
+    "retrieved_at_utc": "2026-09-07T03:43:33.397735+00:00",
+    "http_status": 200,
+    "path": "snapshots/metadata-1-2026-09-07.json",
+    "sha256": "0b55a0234914c0ee9b29ab1885c4554b9cced9e195e63caff39829fc31c45fc4",
+    "bytes": 512,
+    "evidence_status": "verified_read",
+    "trust_scope": "API response only; not independent on-chain verification"
+  }
+]

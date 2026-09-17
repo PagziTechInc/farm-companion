@@ -1,0 +1,67 @@
+name: farm-companion-assets
+
+services:
+  collector:
+    image: node:24-alpine@sha256:50c8e8ca1d27439048670df5883f32d57cf81cff6233222c893fd0d9884cbd81
+    container_name: farm-companion-assets-collector
+    restart: unless-stopped
+    init: true
+    user: "1000:1000"
+    working_dir: /app/current
+    command: ["node", "/app/current/collector.mjs", "--data-dir", "/data"]
+    environment:
+      NODE_ENV: production
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+    mem_limit: 384m
+    cpus: "0.50"
+    pids_limit: 64
+    stop_grace_period: 15s
+    tmpfs:
+      - /tmp:mode=1777,noexec,nosuid,size=16m,uid=1000,gid=1000
+    volumes:
+      - type: bind
+        source: /opt/farm-companion/collector/runtime
+        target: /app
+        read_only: true
+        bind:
+          create_host_path: false
+      - type: bind
+        source: /opt/farm-companion/collector/data
+        target: /data
+        bind:
+          create_host_path: false
+      - type: bind
+        source: /opt/farm-companion/site/collection
+        target: /data/public
+        bind:
+          create_host_path: false
+    healthcheck:
+      test:
+        - CMD
+        - node
+        - -e
+        - >-
+          const fs = require('node:fs');
+          const s = JSON.parse(fs.readFileSync('/data/public/status.json', 'utf8'));
+          const age = Date.now() - Date.parse(s.last_checked_at_utc);
+          if (s.schema_version !== 1 || s.environment !== 'production' ||
+          !Number.isFinite(age) || age < -30000 || age > 600000) process.exit(1);
+      interval: 5s
+      timeout: 3s
+      retries: 3
+      start_period: 5s
+    logging:
+      driver: json-file
+      options:
+        max-size: "5m"
+        max-file: "2"
+    labels:
+      traefik.enable: "false"
+    networks: [farm-companion-assets]
+
+networks:
+  farm-companion-assets:
+    name: farm-companion-assets
+    driver: bridge

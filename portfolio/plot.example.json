@@ -1,0 +1,24 @@
+{
+  "is_template": true,
+  "token_id": null,
+  "owner_address": null,
+  "reveal_status": "unknown",
+  "rarity_tier": null,
+  "level": null,
+  "is_active": null,
+  "effective_weight_bps": null,
+  "pending_crop_wei": null,
+  "traits": {},
+  "modifiers": null,
+  "acquisition": {
+    "acquired_at_utc": null,
+    "cost_eth_wei": null,
+    "fees_eth_wei": null,
+    "source": null,
+    "includes_fees": null
+  },
+  "observed_at_utc": null,
+  "block_number": null,
+  "evidence_source": null,
+  "notes": "Copy into the correct wallet's plots array only after receiving a real token ID. Preserve unknowns. modifiers=null means unknown; [] means confirmed none."
+}

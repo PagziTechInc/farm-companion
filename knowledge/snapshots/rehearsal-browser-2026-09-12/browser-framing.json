@@ -1,0 +1,44 @@
+{
+  "observed_at_utc": "2026-09-12T18:21:14.983Z",
+  "sandbox": "allow-scripts",
+  "referrer_policy": "no-referrer",
+  "rendered": {
+    "title": "PLOT #0331",
+    "state": "PLANTED",
+    "registry": "15s",
+    "imageLoaded": true
+  },
+  "error": null,
+  "responses": [
+    {
+      "url": "https://api.rh.farm/rehearsal/animation/331.html",
+      "status": 200
+    },
+    {
+      "url": "https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495",
+      "status": 200
+    },
+    {
+      "url": "https://api.rh.farm/rehearsal/image/331.png?r=1337",
+      "status": 200
+    },
+    {
+      "url": "https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap",
+      "status": 200
+    },
+    {
+      "url": "https://api.rh.farm/rehearsal/live/331?fresh=1789237274811",
+      "status": 200
+    },
+    {
+      "url": "https://fonts.gstatic.com/s/pressstart2p/v16/e3t4euO8T-267oIAQAu6jDQyK3nVivM.woff2",
+      "status": 200
+    }
+  ],
+  "failures": [
+    {
+      "url": "https://api.rh.farm/cdn-cgi/rum?",
+      "error": "net::ERR_FAILED"
+    }
+  ]
+}

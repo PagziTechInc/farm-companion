@@ -1,0 +1,25 @@
+{
+  "at": "2026-09-16T00:19:28.712Z",
+  "url": "https://robinhood-rpc.publicnode.com",
+  "chain": "0x1237",
+  "block_number": 64073974,
+  "block_hash": "0xdd54fe0e4f1c9309e37526d25a1ff438c6a50c152e142165ad2c1e98f240ef46",
+  "runtime_verified": true,
+  "rows": [
+    {
+      "method": "eth_chainId",
+      "status": 200,
+      "error": null
+    },
+    {
+      "method": "eth_getBlockByNumber",
+      "status": 200,
+      "error": null
+    },
+    {
+      "method": "eth_getCode",
+      "status": 200,
+      "error": null
+    }
+  ]
+}

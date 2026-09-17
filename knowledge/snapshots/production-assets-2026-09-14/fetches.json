@@ -1,0 +1,331 @@
+[
+  {
+    "kind": "plot",
+    "token_id": 1,
+    "url": "https://api.rh.farm/plot/1?fresh=1789355042929",
+    "started_at_utc": "2026-09-14T03:08:14.808525+00:00",
+    "observed_at_utc": "2026-09-14T03:08:15.002786+00:00",
+    "curl_exit": 0,
+    "response": "200 https://api.rh.farm/plot/1?fresh=1789355042929",
+    "stderr": "",
+    "body_file": "plot-1.json",
+    "headers_file": "plot-1.headers.txt",
+    "bytes": 221,
+    "sha256": "9836f71057118330f13377b5371e00d8d506684e9e66d2d37417c939ba94ad4b"
+  },
+  {
+    "kind": "metadata",
+    "token_id": 1,
+    "url": "https://api.rh.farm/metadata/1",
+    "started_at_utc": "2026-09-14T03:08:14.808707+00:00",
+    "observed_at_utc": "2026-09-14T03:08:15.009418+00:00",
+    "curl_exit": 0,
+    "response": "200 https://api.rh.farm/metadata/1",
+    "stderr": "",
+    "body_file": "metadata-1.json",
+    "headers_file": "metadata-1.headers.txt",
+    "bytes": 512,
+    "sha256": "0b55a0234914c0ee9b29ab1885c4554b9cced9e195e63caff39829fc31c45fc4"
+  },
+  {
+    "kind": "animation",
+    "token_id": 1,
+    "url": "https://api.rh.farm/animation/1.html",
+    "started_at_utc": "2026-09-14T03:08:14.808931+00:00",
+    "observed_at_utc": "2026-09-14T03:08:14.993456+00:00",
+    "curl_exit": 0,
+    "response": "200 https://api.rh.farm/animation/1.html",
+    "stderr": "",
+    "body_file": "animation-1.html",
+    "headers_file": "animation-1.headers.txt",
+    "bytes": 6587,
+    "sha256": "4637be69b9b4f59835e4c7d0f669609087e1615c01cd3c8ac1d53f3c945ec1d8"
+  },
+  {
+    "kind": "plot",
+    "token_id": 346,
+    "url": "https://api.rh.farm/plot/346?fresh=1789355042929",
+    "started_at_utc": "2026-09-14T03:08:14.993555+00:00",
+    "observed_at_utc": "2026-09-14T03:08:15.168774+00:00",
+    "curl_exit": 0,
+    "response": "200 https://api.rh.farm/plot/346?fresh=1789355042929",
+    "stderr": "",
+    "body_file": "plot-346.json",
+    "headers_file": "plot-346.headers.txt",
+    "bytes": 223,
+    "sha256": "049540806722716cf415e8dc01e3b0a4ce89719408389b3eb8e75b7c2ab80b7f"
+  },
+  {
+    "kind": "metadata",
+    "token_id": 346,
+    "url": "https://api.rh.farm/metadata/346",
+    "started_at_utc": "2026-09-14T03:08:15.002876+00:00",
+    "observed_at_utc": "2026-09-14T03:08:15.162830+00:00",
+    "curl_exit": 0,
+    "response": "200 https://api.rh.farm/metadata/346",
+    "stderr": "",
+    "body_file": "metadata-346.json",
+    "headers_file": "metadata-346.headers.txt",
+    "bytes": 514,
+    "sha256": "10e5e82f3864f56eb38ed3523a9f635ea95bcd698480dccf6b2ebd191db5a49c"
+  },
+  {
+    "kind": "animation",
+    "token_id": 346,
+    "url": "https://api.rh.farm/animation/346.html",
+    "started_at_utc": "2026-09-14T03:08:15.009513+00:00",
+    "observed_at_utc": "2026-09-14T03:08:15.066267+00:00",
+    "curl_exit": 0,
+    "response": "200 https://api.rh.farm/animation/346.html",
+    "stderr": "",
+    "body_file": "animation-346.html",
+    "headers_file": "animation-346.headers.txt",
+    "bytes": 6589,
+    "sha256": "189fd181c232a4d490ec0e3151a28c4c09b1056549ef43e6342cc7b5b6d3a629"
+  },
+  {
+    "kind": "plot",
+    "token_id": 3333,
+    "url": "https://api.rh.farm/plot/3333?fresh=1789355042929",
+    "started_at_utc": "2026-09-14T03:08:15.066359+00:00",
+    "observed_at_utc": "2026-09-14T03:08:15.229808+00:00",
+    "curl_exit": 0,
+    "response": "200 https://api.rh.farm/plot/3333?fresh=1789355042929",
+    "stderr": "",
+    "body_file": "plot-3333.json",
+    "headers_file": "plot-3333.headers.txt",
+    "bytes": 224,
+    "sha256": "c5fc9133de4f546055e0b15104f36456bd1be240a7315fb18093a3bbd4f4f517"
+  },
+  {
+    "kind": "metadata",
+    "token_id": 3333,
+    "url": "https://api.rh.farm/metadata/3333",
+    "started_at_utc": "2026-09-14T03:08:15.162923+00:00",
+    "observed_at_utc": "2026-09-14T03:08:15.253131+00:00",
+    "curl_exit": 0,
+    "response": "200 https://api.rh.farm/metadata/3333",
+    "stderr": "",
+    "body_file": "metadata-3333.json",
+    "headers_file": "metadata-3333.headers.txt",
+    "bytes": 515,
+    "sha256": "76a5f1419e6764fd1251445926178d4ccf481aad4b8cb56ff68bf9ee6f8376ed"
+  },
+  {
+    "kind": "animation",
+    "token_id": 3333,
+    "url": "https://api.rh.farm/animation/3333.html",
+    "started_at_utc": "2026-09-14T03:08:15.168865+00:00",
+    "observed_at_utc": "2026-09-14T03:08:15.295150+00:00",
+    "curl_exit": 0,
+    "response": "200 https://api.rh.farm/animation/3333.html",
+    "stderr": "",
+    "body_file": "animation-3333.html",
+    "headers_file": "animation-3333.headers.txt",
+    "bytes": 6590,
+    "sha256": "07a706f339acc81042facbcbff9a4fc1d0eb0e5cdadd536a96f7ec6f8201b880"
+  },
+  {
+    "url": "https://rh.farm/plot/346",
+    "observed_at_utc": "2026-09-14T03:09:59.526915+00:00",
+    "response": "404 https://rh.farm/plot/346",
+    "body_file": "official-plot-346.html",
+    "headers_file": "official-plot-346.headers.txt",
+    "bytes": 33841,
+    "sha256": "6a4fafa89820c0c1d5be0146660c9d4b676700b107232a132316a030d8f2c66d"
+  },
+  {
+    "url": "https://rh.farm/_next/static/chunks/1medmnew5uh7t.js",
+    "observed_at_utc": "2026-09-14T03:09:59.582042+00:00",
+    "response": "200 https://rh.farm/_next/static/chunks/1medmnew5uh7t.js",
+    "body_file": "official-script-2.js",
+    "headers_file": "official-script-2.headers.txt",
+    "bytes": 165768,
+    "sha256": "0bc6cd800d6c7fd2afe569d91f336f09927f0a915e8ccce7bf7153662ad1ac67"
+  },
+  {
+    "url": "https://rh.farm/_next/static/chunks/43b5nf4-jgbmb.js",
+    "observed_at_utc": "2026-09-14T03:09:59.594825+00:00",
+    "response": "200 https://rh.farm/_next/static/chunks/43b5nf4-jgbmb.js",
+    "body_file": "official-script-0.js",
+    "headers_file": "official-script-0.headers.txt",
+    "bytes": 28408,
+    "sha256": "07ff41e052cb440443c90fba150f1ae6c52a1355e04f8208292fb230e6b5b24d"
+  },
+  {
+    "url": "https://rh.farm/_next/static/chunks/1bcpprlfq676v.js",
+    "observed_at_utc": "2026-09-14T03:09:59.600228+00:00",
+    "response": "200 https://rh.farm/_next/static/chunks/1bcpprlfq676v.js",
+    "body_file": "official-script-1.js",
+    "headers_file": "official-script-1.headers.txt",
+    "bytes": 234151,
+    "sha256": "21c6a31f82be8a6f18d3d374e27249dc90c85be33c6a33e21bac430e961d4c1e"
+  },
+  {
+    "url": "https://rh.farm/_next/static/chunks/turbopack-2vy8ro0hbmnsj.js",
+    "observed_at_utc": "2026-09-14T03:09:59.628150+00:00",
+    "response": "200 https://rh.farm/_next/static/chunks/turbopack-2vy8ro0hbmnsj.js",
+    "body_file": "official-script-3.js",
+    "headers_file": "official-script-3.headers.txt",
+    "bytes": 9721,
+    "sha256": "6cab73cf180afd7249d04b730215ca568449c7cf38e356746c5dcf2b7096d702"
+  },
+  {
+    "url": "https://rh.farm/_next/static/chunks/1bpn6osrwh2e3.js",
+    "observed_at_utc": "2026-09-14T03:09:59.634049+00:00",
+    "response": "200 https://rh.farm/_next/static/chunks/1bpn6osrwh2e3.js",
+    "body_file": "official-script-4.js",
+    "headers_file": "official-script-4.headers.txt",
+    "bytes": 14693,
+    "sha256": "a48fcab188440d130dc81b51645610ee270f5ef411297c3be9315418e8ea35a9"
+  },
+  {
+    "url": "https://rh.farm/_next/static/chunks/2wr43wabj_-hj.js",
+    "observed_at_utc": "2026-09-14T03:09:59.654747+00:00",
+    "response": "200 https://rh.farm/_next/static/chunks/2wr43wabj_-hj.js",
+    "body_file": "official-script-5.js",
+    "headers_file": "official-script-5.headers.txt",
+    "bytes": 29510,
+    "sha256": "f5f456ff321dd8cf93398421eb4cf7c08e5856d1dff41e53bca60464385c2255"
+  },
+  {
+    "url": "https://rh.farm/_next/static/chunks/1p-aczc7tpi-9.js",
+    "observed_at_utc": "2026-09-14T03:09:59.672035+00:00",
+    "response": "200 https://rh.farm/_next/static/chunks/1p-aczc7tpi-9.js",
+    "body_file": "official-script-6.js",
+    "headers_file": "official-script-6.headers.txt",
+    "bytes": 31457,
+    "sha256": "99c800bc91e6357090809a2f7db0ab1419e832f8c88853912d9a1a8bb64b5982"
+  },
+  {
+    "url": "https://rh.farm/_next/static/chunks/14jzgko6_btc6.js",
+    "observed_at_utc": "2026-09-14T03:09:59.680014+00:00",
+    "response": "200 https://rh.farm/_next/static/chunks/14jzgko6_btc6.js",
+    "body_file": "official-script-7.js",
+    "headers_file": "official-script-7.headers.txt",
+    "bytes": 34523,
+    "sha256": "511d440092b4a5914f14f101ab02d1e59464aee70d7bc1b214dc89da20fec1f6"
+  },
+  {
+    "url": "https://rh.farm/_next/static/chunks/40g7prjkx48wy.js",
+    "observed_at_utc": "2026-09-14T03:09:59.702167+00:00",
+    "response": "200 https://rh.farm/_next/static/chunks/40g7prjkx48wy.js",
+    "body_file": "official-script-8.js",
+    "headers_file": "official-script-8.headers.txt",
+    "bytes": 35479,
+    "sha256": "72473cd37ac937dcc9d298491b08cec4546da043fbfded7b17b7cd236607b3ae"
+  },
+  {
+    "url": "https://rh.farm/_next/static/chunks/1h_eora0f4d2v.js",
+    "observed_at_utc": "2026-09-14T03:09:59.726066+00:00",
+    "response": "200 https://rh.farm/_next/static/chunks/1h_eora0f4d2v.js",
+    "body_file": "official-script-9.js",
+    "headers_file": "official-script-9.headers.txt",
+    "bytes": 136508,
+    "sha256": "e3147fc51992c3ac06b803fc2c03a0a8d363f39694aa4208b3f8d7d16b44b7d0"
+  },
+  {
+    "url": "https://rh.farm/_next/static/chunks/0fj72jrg6meua.js",
+    "observed_at_utc": "2026-09-14T03:09:59.728367+00:00",
+    "response": "200 https://rh.farm/_next/static/chunks/0fj72jrg6meua.js",
+    "body_file": "official-script-10.js",
+    "headers_file": "official-script-10.headers.txt",
+    "bytes": 37233,
+    "sha256": "8f34cb2cba290907467f3d9e263caccdd5c4e74470812128bcddfc4439bc5afc"
+  },
+  {
+    "url": "https://rh.farm/_next/static/chunks/15qaosgdjwri5.js",
+    "observed_at_utc": "2026-09-14T03:09:59.767949+00:00",
+    "response": "200 https://rh.farm/_next/static/chunks/15qaosgdjwri5.js",
+    "body_file": "official-script-11.js",
+    "headers_file": "official-script-11.headers.txt",
+    "bytes": 100760,
+    "sha256": "2b019eb0a8846b7ed54a30b17fb82ce4a5a4517424b1881ed05e3fe5f4876722"
+  },
+  {
+    "url": "https://rh.farm/_next/static/chunks/0rq_e4a451qe9.js",
+    "observed_at_utc": "2026-09-14T03:09:59.777640+00:00",
+    "response": "200 https://rh.farm/_next/static/chunks/0rq_e4a451qe9.js",
+    "body_file": "official-script-12.js",
+    "headers_file": "official-script-12.headers.txt",
+    "bytes": 54213,
+    "sha256": "dc5779922034e77367edf3a17a4f9392bddf4744f9a3360d355945b501d34c93"
+  },
+  {
+    "url": "https://rh.farm/_next/static/chunks/2aiy14j039uwt.js",
+    "observed_at_utc": "2026-09-14T03:09:59.786179+00:00",
+    "response": "200 https://rh.farm/_next/static/chunks/2aiy14j039uwt.js",
+    "body_file": "official-script-13.js",
+    "headers_file": "official-script-13.headers.txt",
+    "bytes": 4266,
+    "sha256": "c469a29c17154d95ebc4d7881a8035dc9ab3c5f519dbeb7d795e6f8f792107ca"
+  },
+  {
+    "url": "https://rh.farm/_next/static/chunks/0zvowtfefsfhr.js",
+    "observed_at_utc": "2026-09-14T03:09:59.818978+00:00",
+    "response": "200 https://rh.farm/_next/static/chunks/0zvowtfefsfhr.js",
+    "body_file": "official-script-14.js",
+    "headers_file": "official-script-14.headers.txt",
+    "bytes": 2880,
+    "sha256": "7883db428bb469d623dbba4d477f89fec50093e9c74559d139712267eff9e2e9"
+  },
+  {
+    "url": "https://rh.farm/_next/static/chunks/1w8ku_yh-5df1.js",
+    "observed_at_utc": "2026-09-14T03:09:59.825486+00:00",
+    "response": "200 https://rh.farm/_next/static/chunks/1w8ku_yh-5df1.js",
+    "body_file": "official-script-15.js",
+    "headers_file": "official-script-15.headers.txt",
+    "bytes": 1017,
+    "sha256": "65f80252dc3e5b3514f6ab3c2806e4b541ad1b3a276c99b8d203434036aa47ce"
+  },
+  {
+    "url": "https://rh.farm/_next/static/chunks/0cz1d0mv5g_q7.js",
+    "observed_at_utc": "2026-09-14T03:09:59.836829+00:00",
+    "response": "200 https://rh.farm/_next/static/chunks/0cz1d0mv5g_q7.js",
+    "body_file": "official-script-16.js",
+    "headers_file": "official-script-16.headers.txt",
+    "bytes": 112594,
+    "sha256": "0973c1d64c88adc8e3c950410cb58b288f72118d5965b78049438deb8f2f9683"
+  },
+  {
+    "url": "https://rh.farm/_next/static/chunks/3ptd233sj6t0y.js",
+    "observed_at_utc": "2026-09-14T03:09:59.862903+00:00",
+    "response": "200 https://rh.farm/_next/static/chunks/3ptd233sj6t0y.js",
+    "body_file": "official-script-17.js",
+    "headers_file": "official-script-17.headers.txt",
+    "bytes": 347,
+    "sha256": "a28a082aa173a7b5e35d20763f1daf4820c619287827d103156924567c4665b7"
+  },
+  {
+    "url": "https://api.rh.farm/image/unrevealed.png",
+    "method": "HEAD",
+    "observed_at_utc": "2026-09-14T03:11:25.332477+00:00",
+    "headers_file": "image-unrevealed.headers.txt",
+    "curl_exit": 0
+  },
+  {
+    "url": "https://api.rh.farm/image/346.png?s=1db",
+    "method": "HEAD",
+    "observed_at_utc": "2026-09-14T03:11:25.499407+00:00",
+    "headers_file": "image-346-state.headers.txt",
+    "curl_exit": 0
+  },
+  {
+    "url": "https://api.rh.farm/image/unrevealed.png",
+    "method": "GET",
+    "observed_at_utc": "2026-09-14T03:12:18.325880+00:00",
+    "body_file": "image-unrevealed.png",
+    "headers_file": "image-unrevealed-get.headers.txt",
+    "bytes": 307577,
+    "sha256": "15fdaeaa805835cf239d90a10114ccd89db163e99e4ae22a48360a543fae6cd7"
+  },
+  {
+    "url": "https://api.rh.farm/image/346.png?s=1db",
+    "method": "GET",
+    "observed_at_utc": "2026-09-14T03:12:18.368483+00:00",
+    "body_file": "image-346-state.png",
+    "headers_file": "image-346-state-get.headers.txt",
+    "bytes": 307577,
+    "sha256": "15fdaeaa805835cf239d90a10114ccd89db163e99e4ae22a48360a543fae6cd7"
+  }
+]

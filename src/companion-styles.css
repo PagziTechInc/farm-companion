@@ -1,0 +1,272 @@
+/* Valley tools share the field journal's palette, fonts and square frames. */
+.valley-board{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.18fr);gap:20px;align-items:stretch}
+.valley-board>*{min-width:0}
+.weather-desk,.calendar-desk{position:relative;min-width:0;padding:23px;background:#14230f;border:1px solid #44562e;border-top-color:#7a793d;box-shadow:inset 0 0 0 3px #0f1d0c,0 4px 0 #091106}
+.weather-desk{background:radial-gradient(ellipse at 85% 0,#34451c55,transparent 70%),#14230f}
+.weather-desk::after{content:'';position:absolute;bottom:7px;left:9px;right:9px;height:3px;background:repeating-linear-gradient(90deg,#425526 0,#425526 3px,transparent 3px,transparent 10px);opacity:.65;pointer-events:none}
+.desk-header{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:19px;min-width:0}
+.desk-header h2{font-size:12px}
+.desk-header .eyebrow{margin-bottom:5px;font-size:9px}
+.desk-header button{font-size:11px;min-height:34px;padding:7px 10px;flex:none}
+.weather-reading{display:flex;align-items:center;gap:20px;min-width:0;min-height:82px;margin:0 0 21px}
+.weather-reading>svg,.weather-reading svg{width:64px;height:64px;flex:none;filter:drop-shadow(3px 5px #080f07)}
+.weather-reading>div{min-width:0}
+.weather-reading h3{font-size:18px;color:#ecdfab}
+.weather-reading strong{color:var(--gold);font:22px/1.7 var(--font-display);overflow-wrap:anywhere}
+.weather-reading p,.weather-reading small,.weather-reading .small{display:block;font:11px/1.6 'Farm Sans',system-ui,sans-serif;color:#a0b185}
+.weather-reading>strong{margin-left:auto;min-width:76px;flex:none;text-align:right}
+.weather-reading>strong small{font:10px/1.55 'Farm Sans',system-ui,sans-serif;max-width:90px;margin-top:4px}
+.weather-reading .badge{margin-top:5px}
+.valley-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;border-top:1px dashed #3c522b;padding-top:15px;margin-top:15px}
+.valley-stats>*{min-width:0}
+.valley-stats strong{display:block;color:#e4dfb1;font-size:15px;font-weight:600;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.valley-stats small,.valley-stats label,.valley-stats span{display:block;color:#8fa775;font-size:10px;line-height:1.5;margin-top:3px}
+.weather-desk>.small,.weather-desk>.rule-note{margin-top:13px;margin-bottom:4px;overflow-wrap:anywhere}
+.desk-evidence{margin-top:16px;padding-top:11px;border-top:1px dashed #3c522b;font:10px/1.6 'Farm Sans',system-ui,sans-serif;color:#97ab7f;overflow-wrap:anywhere}
+.desk-evidence summary{cursor:pointer;color:#b0bd94}
+.desk-evidence p{font-size:11px;margin-top:9px}
+.calendar-desk{background:linear-gradient(145deg,#242d13 0,#14230f 68%);border-color:#665e31;border-top-color:#aa8c41}
+.calendar-top{display:flex;align-items:center;gap:21px;margin-bottom:20px;min-width:0}
+.calendar-top>img,.calendar-top .calendar-goose{width:75px;height:80px;object-fit:contain;image-rendering:pixelated;flex:none;filter:drop-shadow(3px 4px #07100588)}
+.calendar-top>div{min-width:0}
+.calendar-top .eyebrow{font-size:9px;color:#a69e68;margin-bottom:5px}
+.calendar-top h2{font-size:12px;line-height:1.8;color:#efe0a4}
+.calendar-top strong,.calendar-countdown,.calendar-top .countdown{display:block;margin-top:8px;font:17px/1.8 var(--font-display);color:var(--gold);font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.calendar-countdown>span{display:block;margin-top:5px;font:10px/1.5 'Farm Sans',system-ui,sans-serif;color:#a7ad87}
+.calendar-top p,.calendar-top small{font-size:11px;color:#a7ad87;margin-top:5px}
+.milestone-track{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;margin:0;padding:0;list-style:none;min-width:0;scrollbar-color:#8a7b38 #15210e}
+.milestone-track>*{position:relative;min-width:0;padding:17px 7px 9px;border-top:2px solid #405329;background:#12200b}
+.milestone-track>*::before{content:'';position:absolute;top:-4px;left:12px;width:6px;height:6px;background:#17280e;border:1px solid #687342;box-shadow:0 0 0 3px #14230f}
+.milestone-track strong,.milestone-track h3{display:block;font-size:10px;font-weight:600;line-height:1.5;color:#a1b084;overflow-wrap:anywhere}
+.milestone-track time,.milestone-track small,.milestone-track span{display:block;font-size:9px;color:#7f9466;line-height:1.7;margin-top:5px}
+.milestone-track>.past{border-top-color:#677c34}
+.milestone-track>.past::before{background:#8fa652;border-color:#aebd70}
+.milestone-track>.next{background:#2c3313;border-top-color:#e4bc4b}
+.milestone-track>.next::before{background:#ffdc56;border-color:#ffeb8f;box-shadow:0 0 0 3px #2d3413}
+.milestone-track>.next strong,.milestone-track>.next h3{color:#f0dfa3}
+.milestone-track>.next time,.milestone-track>.next small,.milestone-track>.next span{color:#c2b575}
+.calendar-desk>footer,.calendar-desk>.row,.calendar-desk>.actions:last-child{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-top:17px}
+.calendar-desk>footer button,.calendar-desk>.row button,.calendar-desk>.actions button{font-size:11px;padding:7px 10px}
+.calendar-desk>footer small,.calendar-desk>footer p{font-size:10px;line-height:1.6;color:#98a67c;max-width:280px}
+.calendar-desk>.small{font-size:10px;line-height:1.6;margin-top:12px;color:#98a67c}
+.soil-stamp{font-size:12px;color:#d6cf9b}
+
+/* Small illustrated tabs change only the companion's backdrop. */
+.scene-picker{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:6px;padding-top:0;min-width:0;width:min(620px,100%);margin:-9px 0 0 auto}
+.scene-caption{max-width:620px;margin:9px 0 26px auto;font:10px/1.6 'Farm Sans',system-ui,sans-serif;color:#8fa17c;text-align:right}
+.scene-option{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:7px;min-width:0;padding:6px 3px 7px;background:#131f0e;border:1px solid #435229;box-shadow:0 3px 0 #081006;font-size:9px;line-height:1.4;color:#9eac83}
+.scene-option img{width:48px;height:48px;object-fit:cover;image-rendering:pixelated;border:1px solid #68703a;display:block;max-width:100%}
+.scene-option span,.scene-option small{font-size:9px;line-height:1.4;text-align:center;overflow-wrap:anywhere;max-width:100%}
+.scene-option[aria-pressed=true],.scene-option.selected{color:#f4e4a6;background:#2d3415;border-color:#ceb350;box-shadow:inset 0 -2px #ceb350,0 3px 0 #081006}
+.scene-option[aria-pressed=true] img,.scene-option.selected img{border-color:#efd17b}
+.scene-option:hover{border-color:var(--gold-soft);background:#283718}
+
+/* Inventory controls and the harvest value live beside each plot. */
+.plot-tools{display:flex;align-items:flex-end;flex-wrap:wrap;gap:11px;padding:14px;margin:-2px 0 20px;border:1px solid #304724;background:#111e0d;min-width:0}
+.plot-tools>*{flex:1 1 145px;min-width:0;max-width:100%}
+.plot-tools>:first-child{flex:1.6 1 210px}
+.plot-tools label{font-size:10px;gap:5px;color:#92a97c}
+.plot-tools input,.plot-tools select{font-size:12px;padding:9px 10px}
+.plot-tools .small,.plot-tools .filter-count{flex-basis:100%;font-size:10px;color:#8fa578}
+.plot-card{position:relative}
+.plot-card.pinned,.plot-card.pinned-card,.plot-card[data-pinned=true]{outline:2px solid #dfbd52;outline-offset:2px;border-color:#d2b54c;box-shadow:0 5px 0 #091006,0 0 20px #dac04910}
+.plot-content>.actions{flex-wrap:nowrap;gap:7px;margin-top:15px}
+.plot-content .plot-edit{flex:1;min-width:0;width:auto;margin:0;padding:7px 6px;min-height:32px;font-size:10px}
+.plot-card .pin-plot{position:static;display:inline-flex;align-items:center;justify-content:center;flex:1.6;min-width:0;width:auto;min-height:32px;padding:7px 8px;border:1px solid #a08b49;background:#111a0def;color:#d2cb91;box-shadow:0 2px 0 #061005;line-height:1.4;font-size:10px;white-space:nowrap}
+.plot-card .pin-plot .glyph{width:14px;height:14px}
+.plot-card .pin-plot[aria-pressed=true]{background:#ead05a;border-color:#ffe48b;color:#242a0f}
+.plot-card .pin-plot:hover{background:#405020;color:#ffe582}
+.plot-card .pin-plot[aria-pressed=true]:hover{background:#ffe282;color:#242a0f}
+.plot-harvest{display:flex;flex-direction:column;align-items:flex-start;gap:7px;padding:9px;margin-top:13px;border-left:2px solid #c4aa47;background:#0f1c09;min-width:0}
+.plot-harvest strong{font-size:15px;font-variant-numeric:tabular-nums;color:#e6d786;overflow-wrap:anywhere}
+.plot-harvest small,.plot-harvest span{font-size:9px;color:#92a876}
+.plot-harvest strong small{display:block;margin-top:2px;font:9px/1.5 'Farm Sans',system-ui,sans-serif;color:#92a876}
+
+/* A weather strip compares scenarios without borrowing rarity colors. */
+.weather-lab{min-width:0}
+.weather-cases{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:11px}
+.weather-case{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:9px;min-width:0;padding:19px 13px 15px;border:1px solid #485c31;background:linear-gradient(180deg,#25371744,#14230f 60%);box-shadow:0 4px 0 #091207;line-height:1.4;text-align:center}
+.weather-case svg{display:block;width:48px;height:48px;flex:none;margin-bottom:5px;filter:drop-shadow(2px 3px #081108)}
+.weather-case h3,.weather-case .weather-name,.weather-case>span{font-size:12px;color:#d2d8b0;font-weight:600}
+.weather-case .multiplier,.weather-case .weather-multiplier{font:9px/1.7 var(--font-display);color:#bcb785}
+.weather-case strong{font-size:20px;color:#eee0a9;font-variant-numeric:tabular-nums;overflow-wrap:anywhere;max-width:100%;margin-top:2px}
+.weather-case small{color:#91a576;font-size:10px;line-height:1.5;font-weight:400;max-width:100%}
+.weather-case-name small{display:inline-block;font:10px/1.5 'Farm Sans',system-ui,sans-serif;margin-left:5px}
+.weather-case strong small{font:9px/1.5 'Farm Sans',system-ui,sans-serif;margin-left:4px}
+.weather-case>.weather-difference{font-size:10px;font-weight:400;line-height:1.5;color:#c6cba3}
+.weather-lab>.rule-note{margin-top:13px;font-size:10px;line-height:1.6}
+.weather-bar{height:7px;width:100%;max-width:100%;padding:1px;background:#091507;border:1px solid #455b2d;margin:3px 0 0;overflow:hidden}
+.weather-bar>span,.weather-bar>i{display:block;height:100%;max-width:100%;background:#9fab49}
+.weather-case.selected,.weather-case[aria-pressed=true]{background:linear-gradient(180deg,#3b411a,#1d2d12);border-color:#d8ba55;box-shadow:inset 0 0 0 1px #77682e,0 4px 0 #091207}
+.weather-case.selected::after,.weather-case[aria-pressed=true]::after{content:'';position:absolute;top:9px;right:9px;width:5px;height:5px;background:#f4d969;box-shadow:0 0 0 2px #1b280d}
+.weather-case.selected .weather-bar>span,.weather-case[aria-pressed=true] .weather-bar>span{background:#e0c458}
+.weather-case:hover{background:#263818;border-color:var(--gold-soft);transform:translateY(-2px)}
+
+/* The savings goal borrows Mabel's warm wood and ledger colors. */
+.goal-board{display:grid;grid-template-columns:170px minmax(0,1fr);gap:26px;padding:24px;background:linear-gradient(105deg,#302b164d,#18250f 42%);border:1px solid #736638;border-top-color:#b1984d;box-shadow:inset 0 0 0 3px #18200e,0 4px 0 #0a1207;min-width:0}
+.goal-art{min-width:0;display:flex;flex-direction:column;align-items:flex-start;gap:12px}
+.goal-art>img{display:block;width:140px;height:140px;max-width:100%;object-fit:cover;image-rendering:pixelated;border:4px solid #292212;outline:1px solid #938045;box-shadow:0 4px 0 #0a1007}
+.goal-art h2{font-size:12px;line-height:1.8;color:#e6d28e}
+.goal-art p,.goal-art small{font-size:11px;line-height:1.5;color:#a6aa81}
+.goal-art>.eyebrow{margin-bottom:0;line-height:1.6}
+.goal-content{min-width:0;align-self:center}
+.goal-content h3{color:#e8dba0}
+.goal-content>.eyebrow{color:#a2a575;margin-bottom:6px}
+.goal-content>p{font-size:12px;color:#a4b18b;margin-top:7px}
+.goal-form{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) auto;gap:13px;align-items:end;margin:17px 0 20px;min-width:0}
+.goal-form label{font-size:11px}
+.goal-form input,.goal-form select{font-size:12px}
+.goal-form button{min-height:43px;align-self:end;font-size:12px;padding:10px 15px;white-space:normal}
+.goal-presets{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin-bottom:17px}
+.goal-presets button{font-size:11px;padding:6px 11px;box-shadow:none;min-height:30px}
+.goal-presets>span{font-size:10px;color:#9eaf82;margin-left:5px}
+.goal-progresslabel,.goal-progress-label,.goal-progress{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;font-size:11px;color:#b3bc90;margin-top:15px;min-width:0}
+.goal-progresslabel strong,.goal-progress-label strong,.goal-progress strong{color:#e4d488;font-size:13px;font-variant-numeric:tabular-nums}
+.goal-content .funding-bar{height:14px}
+.goal-summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px;padding-top:17px;margin-top:18px;border-top:1px dashed #5a5c32}
+.goal-summary>*{min-width:0;padding-right:8px;border-right:1px solid #394629}
+.goal-summary>:last-child{border-right:0;padding-right:0}
+.goal-summary strong{display:block;color:#ecdfa6;font-size:18px;line-height:1.5;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.goal-summary small,.goal-summary label,.goal-summary span{display:block;color:#98ab7a;font-size:10px;line-height:1.6;margin-top:3px}
+.goal-content>.rule-note{margin-top:11px;font-size:10px}
+.target-picker{display:flex;align-items:center;gap:22px;min-width:0;background:linear-gradient(110deg,#2b341844,#111e0f 50%)}
+.target-picker>img,.target-picker .target-portrait{width:83px;height:94px;object-fit:contain;image-rendering:pixelated;flex:none;align-self:flex-end;filter:drop-shadow(3px 3px #0a1307)}
+.target-picker>div{min-width:0;flex:1}
+.target-picker h2{font-size:12px}
+.target-picker p{color:#9faf88;font-size:12px;margin-top:5px}
+.target-picker form,.target-picker .target-form{display:flex;align-items:flex-end;flex-wrap:wrap;gap:11px;min-width:0;margin-top:16px}
+.target-picker form>label,.target-picker .target-form>label{flex:1 1 180px;min-width:0;font-size:11px}
+.target-picker form button,.target-picker .target-form button{font-size:12px;min-height:43px}
+.target-picker select{font-size:12px}
+
+@media(max-width:1100px){
+  .valley-board{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:17px}
+  .weather-desk,.calendar-desk{padding:20px}
+  .calendar-top{gap:13px}
+  .calendar-top>img,.calendar-top .calendar-goose{width:61px;height:72px}
+  .calendar-top strong,.calendar-countdown,.calendar-top .countdown{font-size:14px}
+  .milestone-track strong,.milestone-track h3{font-size:9px}
+  .milestone-track time,.milestone-track small,.milestone-track span{font-size:8px}
+  .weather-case{padding:17px 10px 13px}
+  .weather-case strong{font-size:18px}
+  .scene-picker{gap:4px}
+  .scene-option img{width:43px;height:43px}
+  .scene-option span,.scene-option small{font-size:8px}
+  .goal-board{grid-template-columns:150px minmax(0,1fr);gap:22px}
+}
+@media(max-width:860px){
+  .valley-board{grid-template-columns:1fr}
+  .weather-desk,.calendar-desk{padding:22px}
+  .calendar-top>img,.calendar-top .calendar-goose{width:75px;height:80px}
+  .calendar-top strong,.calendar-countdown,.calendar-top .countdown{font-size:18px}
+  .milestone-track>*{padding:18px 10px 12px}
+  .milestone-track strong,.milestone-track h3{font-size:11px}
+  .milestone-track time,.milestone-track small,.milestone-track span{font-size:10px}
+  .weather-cases{gap:9px}
+  .weather-case{padding:17px 8px 12px}
+  .weather-case strong{font-size:17px}
+  .weather-case small{font-size:9px}
+  .scene-option img{width:36px;height:36px}
+  .scene-option span,.scene-option small{font-size:7px}
+  .goal-board{grid-template-columns:130px minmax(0,1fr);gap:22px;padding:21px}
+  .goal-art>img{width:124px;height:124px}
+  .goal-form{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .goal-form button{grid-column:1/-1;justify-self:start;min-width:125px}
+  .goal-summary{gap:12px}
+  .goal-summary strong{font-size:16px}
+}
+@media(max-width:600px){
+  .weather-desk,.calendar-desk{padding:20px 16px}
+  .desk-header h2,.calendar-top h2{font-size:11px}
+  .weather-reading{gap:17px;margin-bottom:17px}
+  .weather-reading h3{font-size:17px}
+  .weather-reading strong{font-size:20px}
+  .weather-reading svg{width:56px;height:56px}
+  .valley-stats{gap:10px}
+  .valley-stats strong{font-size:14px}
+  .valley-stats small,.valley-stats label,.valley-stats span{font-size:9px}
+  .calendar-top{gap:13px}
+  .calendar-top>img,.calendar-top .calendar-goose{width:58px;height:70px}
+  .calendar-top strong,.calendar-countdown,.calendar-top .countdown{font-size:14px;line-height:1.8}
+  .milestone-track{grid-template-columns:repeat(5,minmax(83px,1fr));overflow-x:auto;padding-top:4px;padding-bottom:5px;overscroll-behavior-x:contain}
+  .milestone-track>*{padding:15px 8px 10px}
+  .milestone-track strong,.milestone-track h3{font-size:10px}
+  .milestone-track time,.milestone-track small,.milestone-track span{font-size:9px}
+  .scene-picker{gap:5px;padding-top:0;margin-top:0}
+  .scene-caption{margin-bottom:23px;text-align:left}
+  .scene-option{padding:5px 2px 7px;gap:6px}
+  .scene-option img{width:42px;height:42px}
+  .scene-option span,.scene-option small{font-size:8px}
+  .plot-tools{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding:12px}
+  .plot-tools>:first-child{grid-column:1/-1}
+  .plot-tools>.small,.plot-tools>.filter-count{grid-column:1/-1}
+  .plot-tools label{font-size:10px}
+  .plot-tools input,.plot-tools select{font-size:11px;padding:9px 8px}
+  .plot-content>.actions{gap:5px}
+  .plot-content .plot-edit{font-size:9px;min-height:31px;padding:6px 4px}
+  .plot-card .pin-plot{font-size:9px;min-height:31px;padding:6px 5px}
+  .plot-card .pin-plot .glyph{width:12px;height:12px}
+  .plot-harvest{gap:6px;padding:8px 6px;margin-top:11px}
+  .plot-harvest strong{font-size:12px}
+  .plot-harvest small,.plot-harvest span{font-size:8px}
+  .weather-cases{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+  .weather-case{padding:16px 13px 13px;gap:7px}
+  .weather-case:last-child{grid-column:1/-1;display:grid;grid-template-columns:48px minmax(0,1fr) minmax(0,1.15fr);text-align:left;align-items:center;gap:8px 14px}
+  .weather-case:last-child>.weather-case-icon{grid-column:1;grid-row:1/4}
+  .weather-case:last-child svg{margin:0}
+  .weather-case:last-child>.weather-case-name{grid-column:2;grid-row:1;font-size:11px}
+  .weather-case:last-child>strong{grid-column:3;grid-row:1;font-size:17px;text-align:right}
+  .weather-case:last-child>.weather-bar{grid-column:2/-1;grid-row:2}
+  .weather-case:last-child>.weather-difference{grid-column:2/-1;grid-row:3;font-size:10px}
+  .weather-case strong{font-size:19px}
+  .weather-case small{font-size:10px}
+  .goal-board{grid-template-columns:1fr;padding:20px 17px;gap:20px}
+  .goal-art{display:grid;grid-template-columns:87px 1fr;align-items:center;gap:7px 17px}
+  .goal-art>img{width:87px;height:87px;grid-column:1;grid-row:1/4}
+  .goal-art h2{font-size:12px}
+  .goal-art p,.goal-art small{font-size:10px}
+  .goal-form{margin-top:15px}
+  .goal-form button{grid-column:1/-1;justify-self:stretch}
+  .goal-summary{gap:11px}
+  .goal-summary strong{font-size:15px}
+  .goal-summary small,.goal-summary label,.goal-summary span{font-size:9px}
+  .goal-presets{gap:5px}
+  .goal-presets button{padding:5px 9px;font-size:10px}
+  .goal-progresslabel,.goal-progress-label,.goal-progress{font-size:10px}
+  .target-picker{gap:14px;align-items:flex-start}
+  .target-picker>img,.target-picker .target-portrait{width:59px;height:73px;align-self:flex-start}
+  .target-picker h2{font-size:11px}
+  .target-picker p{font-size:11px}
+  .target-picker form,.target-picker .target-form{gap:9px;margin-top:13px}
+  .target-picker form>label,.target-picker .target-form>label{flex-basis:100%;font-size:10px}
+  .target-picker form button,.target-picker .target-form button{font-size:10px;padding:9px 10px;min-height:37px}
+}
+@media(max-width:520px){
+  .scene-picker{grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+  .scene-option{flex-direction:row;align-items:center;justify-content:flex-start;padding:6px;gap:7px}
+  .scene-option img{width:33px;height:33px;flex:none}
+  .scene-option span,.scene-option small{text-align:left;font-size:9px}
+  .weather-reading{gap:13px}
+  .weather-reading>strong{min-width:64px}
+  .weather-reading>strong small{max-width:73px;font-size:9px}
+}
+@media(max-width:360px){
+  .valley-stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+  .desk-header{flex-wrap:wrap}
+  .calendar-top>img,.calendar-top .calendar-goose{width:46px;height:58px}
+  .calendar-top strong,.calendar-countdown,.calendar-top .countdown{font-size:12px}
+  .scene-picker{grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+  .scene-option{flex-direction:row;align-items:center;justify-content:flex-start;padding:5px;gap:5px}
+  .scene-option img{width:31px;height:31px;flex:none}
+  .scene-option span,.scene-option small{text-align:left;font-size:8px}
+  .goal-summary{gap:7px}
+  .goal-summary strong{font-size:13px}
+  .target-picker{gap:9px}
+  .target-picker>img,.target-picker .target-portrait{width:42px;height:58px}
+}
+@media(prefers-reduced-motion:reduce){
+  .scene-option,.weather-case,.plot-card{transition:none}
+  .scene-option:hover,.weather-case:hover{transform:none}
+}
+
+.forecast-source{margin:0 0 22px;padding:14px 16px;background:var(--panel-dark);border:1px solid var(--hedge)}.forecast-source>.row{align-items:center;gap:12px;flex-wrap:wrap}.forecast-source details{margin-top:10px;color:var(--muted);font-size:11px}.forecast-source summary{cursor:pointer}.forecast-source details p,.forecast-source ul{margin-top:9px}.forecast-source li+li{margin-top:5px}

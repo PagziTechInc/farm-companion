@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "is_template": true,
+  "chain_id": 4663,
+  "expected_total_plots": 22,
+  "observed_at_utc": null,
+  "block_number": null,
+  "wallets": [
+    {
+      "id": "wallet_a",
+      "label": "Wallet A",
+      "address": null,
+      "expected_plot_count": 11,
+      "crop_balance_wei": null,
+      "eth_balance_wei": null,
+      "plots": []
+    },
+    {
+      "id": "wallet_b",
+      "label": "Wallet B",
+      "address": null,
+      "expected_plot_count": 11,
+      "crop_balance_wei": null,
+      "eth_balance_wei": null,
+      "plots": []
+    }
+  ],
+  "total_planted_farm_weight_bps": null,
+  "base_emission_rate_wei_per_second": null,
+  "effective_weather_multiplier_bps": null,
+  "notes": "Expected holdings only. Empty arrays do not mean on-chain balances are zero. No plot ID, rarity, balance, or ownership has been invented."
+}

@@ -1,0 +1,157 @@
+The Farmer's Almanac · Yield Farm
+Skip to content
+YIELD FARMHomeMy PlotsTown HallCheck walletCharterAlmanacVOLConnect wallet☰
+THE FARMER'S ALMANAC
+Everything the farm does, in one read. No hidden switches.
+★ EVERY MECHANIC, PLAINLY · NO HIDDEN SWITCHES ★
+THE KEEPER
+Every rule of the valley is in these pages, and not one can be rewritten. The short of it: plant once and your plot grows $CROP every second, burn $CROP to upgrade and your weight goes up, and the weather turns every Monday.Every rule of the valley is in these pages, and not one can be rewritten.Every rule of the valley is in these pages, and not one can be rewritten. The short of it: plant once and your plot grows $CROP every second, burn $CROP to upgrade and your weight goes up, and the weather turns every Monday.▼
+CONTENTS
+01Getting herewallet, network, bridge
+02The loopmint, plant, harvest, upgrade
+03How plots are dealtone hash, one shuffle, no hands
+04Weight: who earns whatlevel × rarity, over the farm
+05The harvest, worked outpick a plot, see what it pays
+06Weatherone per week, sealed ahead
+07The fees, all of themthe whole list, nothing else
+08What travels with a plotlevels stay, planting clears
+09Honest expectationsa rate that holds, a ceiling that is public
+10The Mayor's drawingsevery Monday from October
+11Where every $CROP lives2,000,000,000, all of it named
+12Your first weekmint, reveal, season↑ Contents
+01GETTING HERE
+Robinhood Chain runs on ETH. Three steps and a couple of minutes gets you farming.
+1A wallet. MetaMask, Rabby or any EVM wallet works.
+2Add the network. One click below adds Robinhood Chain to your wallet.
+3Move ETH over. OpenSea's swap moves ETH from Ethereum to Robinhood Chain in one step, free of fees, in a minute or two, and runs both ways.
+Connect a wallet to add Robinhood ChainConnect a wallet to add $CROPSwap on OpenSea
+02THE LOOP
+1Mint a plot. 3,333 exist. Your farm's art, crop, soil and rarity are revealed shortly after the mint closes.
+2Plant it. Wake the plot with 2,500 $CROP, or take a seed bag from Mabel in one click: 0.001 ETH at the opening, then repriced every day to what 2,500 $CROP costs in the pool. From that second it earns its rate.
+3Harvest. Whenever you like. One click collects one plot; Harvest all collects every plot in a single transaction.
+4Upgrade. Burn $CROP to climb five levels, LV 1 to LV 5. Each level is permanent and raises the plot's weight.
+03HOW PLOTS
+ARE DEALT
+Every farm was drawn before the mint and laid out in a table of 3,333 rows. The table's hash is on-chain already. What nobody knows, us included, is which token lands on which row.
+token id−1+starting indexmod3,333=manifest row
+The starting index comes from a block hash that did not exist when the table was built. Because it is one offset applied to every token, each row is used exactly once: no two plots can come out the same and none are left over.
+Rarity is part of the row, so it is dealt the same way: 33 Golden Acres, 165 Prize Plots, 660 Fertile, 2,475 Common, in a proportion fixed before anyone paid. After reveal the tiers freeze and no key, ours included, can edit them. The Provenance page compares the table's hash against the chain, live.
+04WEIGHT:
+WHO EARNS WHAT
+Every planted plot earns up to 2,000 $CROP a week per weight unit, times the weather. Weight = level times rarity. Dormant plots earn nothing. Your rate is yours: nobody planting after you lowers it.
+your $CROP / week=2,000×First Soil×weather×your weight
+First Soil is 2× in the Founding Week, Sep 21 to 28, then 1.5× until Oct 19, then 1, for every planted plot: the earlier you plant, the more of it you get. The ceiling applies to the rate before First Soil and the weather: the farm's base rate reaches the year's weekly budget at about 3,644 weight units, about the whole collection planted plus a few upgrades, and above that the base is shared by weight. First Soil and sunny weeks are paid from the Granary on top, while it lasts.
+Level
+LV 11x
+LV 21.25x
+LV 31.5x
+LV 42x
+LV 53x
+Rarity
+Common2,475 plots1x
+Fertile660 plots1.25x
+Prize Plot165 plots1.5x
+Golden Acre33 plots2x
+The spread runs 1x to 6x: a level 5 Golden Acre earns six times a fresh common plot, every second, forever. Every plot's weight and live rate are on its details card.
+05THE HARVEST,
+WORKED OUT
+Pick a plot and see what the formula above pays. Nothing here touches a wallet; it is the contract's arithmetic running in your browser.
+Rarity
+COMMON1× · 2,475 plotsFERTILE1.25× · 660 plotsPRIZE PLOT1.5× · 165 plotsGOLDEN ACRE2× · 33 plots
+Level
+LV 11×LV 21.25×LV 31.5×LV 42×LV 53×
+This week's weather
+LOCUSTS0.5×DROUGHT0.8×FAIR1×SUNNY1.2×RAIN1.5×
+Your rate is yours
+It does not depend on how many others plant. If the whole valley is planted and upgraded past the yearly ceiling (about 3,644 weight units), the base is shared by weight.
+Your plot would earn
+Genesis is Monday Sep 21, 00:00 UTC. This previews week 1, the Founding Week.
+0.0000$CROP since you opened this page
+23.8
+per hour
+571
+per day
+4,000
+per week
+×2 from Sep 21
+First Soil
+2,000 a week × 2× First Soil (from Sep 21) × 1× weather × weight 1 = 4,000 a week
+Planting costs 2,500 $CROP. At this rate it is earned back in 5 days.
+Level 1 costs nothing beyond planting. Each upgrade burns $CROP and raises your weight for good.
+A rate, not a balance: harvest pays out continuously from Genesis at up to 2,000 $CROP a week per weight unit. The schedule is the ceiling and what it does not pay carries over. First Soil and sunny weeks are paid from the Granary on top.
+06WEATHER
+One weather rules each week, Monday to Monday at 00:00 UTC. It multiplies the whole farm's harvest, good weeks and bad.
+0.5×
+Locusts
+0.8×
+Drought
+1.0×
+Fair
+1.2×
+Sunny
+1.5×
+Rain
+Each week is committed in advance and sealed on chain, then revealed at the boundary: nobody, including us, can change a week after it is sealed. Sunny weeks pay above the base rate with the surplus drawn from the Granary; harsh weeks pay under it and the difference flows back in. Some weeks bring events: Flash Floods (2×, 24h) and Harvest Moons (2×, 48h) stack on the week, capped at 2× in total. The Town Hall shows the live week and the sealed ones ahead.
+07THE FEES,
+ALL OF THEM
+Mint0.002 ETHOpenSea · Sep 15 · 1 PM ET
+Plant2,500 $CROP60% burned, 40% treasury · or a seed bag: 0.001 ETH at the opening, repriced daily to the pool's price of 2,500 $CROP, 1,500 $CROP burned by the town
+Upgrade to LV 25,000 $CROP100% burned
+Upgrade to LV 310,000 $CROP100% burned
+Upgrade to LV 420,000 $CROP100% burned
+Upgrade to LV 550,000 $CROP100% burned
+Carve a farmer name100 $CROPburned
+Secondary sales5% royaltyto the treasury; hard-capped at 10% on chain
+Swap1%to the liquidity providers of the $CROP pool on Uniswap; nothing to the site
+Drawing ticketsburnedweekly from October, price posted at open
+That is the whole list. Harvesting is free, always, and never needs a token approval. Planting from your own sack and upgrading each ask your wallet once for a 100,000 $CROP allowance, enough for a plot's whole road to LV 5, so the plants and upgrades after that are one transaction each. Your wallet lets you lower that figure before you sign it.
+08WHAT TRAVELS
+WITH A PLOT
+Sell a plot and its level, its rarity and its unharvested $CROP all go with it. Planting does not: a traded plot arrives dormant and the new farmer plants it fresh.
+Levels are burned into the plot and can never be taken away. Unharvested $CROP belongs to the plot too, so a farm with a standing harvest is worth more than an idle one. Planting clears on transfer by design: yield follows the farmer who planted, not a bot passing tokens around.
+Selling? Harvest before you list. Whatever is still standing on the day the deed changes hands goes to the buyer, and the County shows it on every listed plot so nobody is surprised.
+09HONEST EXPECTATIONS
+The rate2,000 / weekper weight unit, times the weather; First Soil 2× in the Founding Week, then 1.5× until Oct 19, paid from the Granary
+Year 1 ceiling380M$CROP; what the rate does not use carries over
+Year 2190Mplus the carry-over from year one
+Year 395Mplus carry-over
+Year 495Mfinal year; the remainder is swept with the Granary
+The rate holds while the schedule and its carry-over can pay it, and the ceiling is public. Weather swings the week both ways. Every upgrade raises your weight for good. None of it can be quietly changed: the rate, the ceiling and First Soil are constants in the contract, verified on the explorer.
+10THE MAYOR'S DRAWINGS
+From October: every Monday, right when the new weather breaks, the Mayor pulls a winner from the ticket barrel. Every ticket is burned. Every planted plot enters once, free.
+The prize is a plot bought from the open market with a budget capped by what that week's tickets burned, so the drawing can never spend what it did not take in. The draw uses the same sealed-seed machinery as the weather, so anyone can verify the winner. Full rules hang at the Town Hall.
+11WHERE EVERY
+$CROP LIVES
+Total supply is 2,000,000,000, minted once. More than half is project-held, and every piece of it is scheduled and named below. Nothing moves quietly.
+760M
+200M
+200M
+700M
+Harvest emissions 760Mthe 4-year ceiling
+Granary 40Mweather buffer
+Airdrop pool 100Msweeps into the Granary
+Treasury vest 200Myear one, linear
+Team vest 200M6-month cliff, 2 years
+Treasury, liquid 700Mpool seed + reserves
+Harvest emissions760Mthe 4-year ceiling, the number the homepage counts; the 40M Granary sits beside it for the weather and First Soil
+Granary40Mthe weather buffer; grows to ~140M when the airdrop pool sweeps in
+Airdrop pool100Mgiven to nobody, provably: the whole pool sweeps into the Granary after its deadline
+Treasury vest200Munlocks linearly across year one
+Team vest200Mlocked 6 months, then 2 years linear, by contract
+Treasury, liquid700Mseeds the trading pool; the rest is reserves
+The policy, stated where it can be quoted: the treasury sells nothing on the market in year one. The pool's published ceiling ranges are the one exception everyone can see: as the price rises they turn treasury $CROP into ETH that stays in the pool. The team could not sell even if it wanted to, the cliff is in the contract. The vests exist to run the farm, not to farm the farmers.
+12YOUR FIRST WEEK
+Tue Sep 15MINT1 PM ET (17:00 UTC), 0.002 ETH on OpenSea
+by Fri Sep 18REVEALat sellout, or by Sep 18, 2 PM ET (18:00 UTC): art, crops and rarity land
+Mon Sep 21SEASONPlant Season opens, weather week 1
+Sep 21 to 28FOUNDING WEEKFirst Soil: everything planted harvests at 2×
+Sep 28 to Oct 18FIRST SOILthe soil is still rich: 1.5×
+every MonROLLnew weather at 00:00 UTC
+Mon Oct 19SOIL SETTLESFirst Soil ends at 00:00 UTC, exact to the second
+WHERE THESE NUMBERS COME FROM
+Everything above is computed from constants in the contracts. Read them off the chain yourself; Provenance compares every hash live and links the verified contracts.
+Harvest Emissions · the rate, the weights, the year budgetsREAD (opens in a new tab)Weather Oracle · the sealed weeks and every multiplierREAD (opens in a new tab)Farm Levels · upgrade costs, burned foreverREAD (opens in a new tab)Yield Farm plots · 3,333 max, the manifest hashREAD (opens in a new tab)
+Watch the drop on OpenSea (opens in a new tab)My farm
+YIELD FARM
+3,333 pixel farms that actually farm, on Robinhood Chain.
+Provenance & fairnessTown StandingsStoreLeaderboardThe CountySwapSealed weather. Frozen tiers. Every purchase burns.

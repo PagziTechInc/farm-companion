@@ -1,0 +1,143 @@
+{
+  "schema_version": 1,
+  "purpose": "Read-only evidence for public forecast defaults and the CROP/ETH pool reference adapter.",
+  "read_method": "Robinhood Chain public JSON-RPC only; eth_call and eth_getCode, no wallet provider, signing, simulation, swap or transaction.",
+  "rpc_url": "https://rpc.mainnet.chain.robinhood.com/rpc",
+  "observed_at_utc": "2026-09-13T05:33:25.264Z",
+  "chain_id": 4663,
+  "block": {
+    "number": 61711122,
+    "timestamp": 1789277596,
+    "timestamp_utc": "2026-09-13T05:33:16.000Z",
+    "hash": "0x7f317ab357460917ae474e8d83931ab00164e73aa12f8bffbbf9889cb804df3d"
+  },
+  "season": {
+    "current_epoch": 0,
+    "epoch_start_timestamp": 1789948800,
+    "epoch_start_utc": "2026-09-21T00:00:00.000Z",
+    "genesis_timestamp": 1789948800,
+    "genesis_utc": "2026-09-21T00:00:00.000Z",
+    "next_boundary_timestamp": 1789948800,
+    "weather_enum": 1,
+    "weather_name": "Sunny",
+    "effective_multiplier_bps": 12000,
+    "flood_active": false,
+    "moon_active": false,
+    "moon_count": 0,
+    "minted_count": 0,
+    "total_weight_bps": 0,
+    "carry_crop_wei": "0",
+    "granary_crop_wei": "40000000000000000000000000",
+    "emitted_crop_wei": "0",
+    "paid_out_crop_wei": "0",
+    "read_errors": [],
+    "interpretation": "Pre-Genesis observation. Epoch 0 is the scheduled Genesis week, not a weather reading for the current civil week. Sunny is the live getter result at this block and can be changed before the weather cutoff; it is not an immutable forecast. Flood and Moon are not active in the read, and the weather contract reported no moon starts."
+  },
+  "emissions": {
+    "start_utc": "2026-09-21T00:00:00.000Z",
+    "founding_week_end_utc": "2026-09-28T00:00:00.000Z",
+    "first_soil_end_utc": "2026-10-19T00:00:00.000Z",
+    "farm_rate_per_sec_crop_wei": "0"
+  },
+  "ordinary_weather_and_events": {
+    "enum_source": "knowledge/rules.json",
+    "ordinary_states": [
+      { "enum": 0, "name": "Fair", "multiplier_bps": 10000 },
+      { "enum": 1, "name": "Sunny", "multiplier_bps": 12000 },
+      { "enum": 2, "name": "Rain", "multiplier_bps": 15000 },
+      { "enum": 3, "name": "Drought", "multiplier_bps": 8000 },
+      { "enum": 4, "name": "Locusts", "multiplier_bps": 5000 }
+    ],
+    "events": [
+      { "name": "Flash Flood", "multiplier_bps": 20000, "duration_seconds": 86400 },
+      { "name": "Harvest Moon", "multiplier_bps": 20000, "duration_seconds": 172800 }
+    ],
+    "event_cap_bps": 20000,
+    "note": "Events multiply ordinary weather independently before the 2x cap. The pinned read reports no currently active Flood or Moon; this does not establish the absence of future events."
+  },
+  "pool": {
+    "address": "0x96fd1f206ce97d2f34c51d8c902e1a7650641f1a",
+    "address_source": {
+      "source_id": "client-config-2026-09-11",
+      "official_url": "https://rh.farm/_next/static/chunks/2vlupv71md16s.js",
+      "cached_path": "knowledge/snapshots/site-2026-09-11/client-config.js",
+      "cached_sha256": "fdae061b17941bdee8e0824690250ee8ec4f7f8a59153f1739ccc6e58ab321e3",
+      "index_path": "knowledge/snapshots/site-2026-09-11/index.json",
+      "note": "The cached official client config publishes the pool address; it does not include the WETH address."
+    },
+    "code_bytes": 22142,
+    "token0": {
+      "address": "0x0bd7d308f8e1639fab988df18a8011f41eacad73",
+      "name": "WETH",
+      "symbol": "WETH",
+      "decimals": 18,
+      "code_bytes": 2202
+    },
+    "token1": {
+      "address": "0x6cfaf2f60f47182f0c9f5d199db92ab261a9d487",
+      "name": "Yield Farm Crop",
+      "symbol": "CROP",
+      "decimals": 18,
+      "code_bytes": 1968
+    },
+    "fee_pips": 10000,
+    "uniswap_v3_fee_denominator": 1000000,
+    "fee_percent": 1,
+    "tick_spacing": 200,
+    "liquidity_raw": "0",
+    "slot0": {
+      "abi_outputs": [
+        "uint160 sqrtPriceX96",
+        "int24 tick",
+        "uint16 observationIndex",
+        "uint16 observationCardinality",
+        "uint16 observationCardinalityNext",
+        "uint8 feeProtocol",
+        "bool unlocked"
+      ],
+      "sqrtPriceX96": "125270724187523972165942539976704",
+      "tick": 147325,
+      "observationIndex": 0,
+      "observationCardinality": 1,
+      "observationCardinalityNext": 1,
+      "feeProtocol": 102,
+      "unlocked": true
+    },
+    "stored_slot0_price_interpretation": {
+      "crop_per_weth": "2500000",
+      "eth_per_crop": "0.0000004",
+      "eth_wei_per_whole_crop": "400000000000",
+      "usable_as_market_price": false,
+      "reason": "The pool has zero active liquidity at this block. Its stored sqrtPriceX96 is not an executable quote or a live market-price reference."
+    }
+  },
+  "seed_bag": {
+    "open": true,
+    "price_wei": "1000000000000000",
+    "price_eth": "0.001",
+    "published_standard_plant_cost_crop": "2500",
+    "parity_eth_per_crop": "0.0000004",
+    "parity_eth_wei_per_whole_crop": "400000000000",
+    "label": "Planting-parity scenario only; not a CROP market price, executable buy quote, or sell quote.",
+    "source_note": "The live activation read supplies the bag price/open state at the pinned block. The Almanac describes daily repricing to 2,500 CROP in the pool; the reviewed source enforces no oracle or repricing schedule."
+  },
+  "forecast_recommendation": {
+    "crop_buy_quote": null,
+    "crop_sell_quote": null,
+    "crop_market_price": null,
+    "crop_eth_quote_unavailable_reason": "Published pool has zero active liquidity at block 61711122.",
+    "fallback_scenario": "The on-chain seed-bag price divided by the published 2,500 CROP plant cost is available as a clearly named planting-parity scenario only. It must not populate market-price or sell-quote evidence.",
+    "weather": "Use the chain-observed epoch-0 Sunny value only as a dated, replaceable Genesis-week observation. Future weather/events remain assumptions. Fair is a neutral fallback for unscheduled periods only when the UI labels it as an assumption; do not treat getter defaults as revealed weather.",
+    "portfolio": "Global minted count and total weight are both zero in this pre-mint observation; they do not establish visitor holdings. The public workspace remains empty until entered or observed wallet data/hypothetical plots are supplied.",
+    "reserves": "Pre-Genesis carry/Granary observation is 0 / 40M CROP. At later post-Genesis observation times, use refreshed values or label explicit reserve assumptions."
+  },
+  "sources": [
+    "knowledge/integrations.json (pool address and current getter signatures; source IDs client-config-2026-09-11 and forecast-pool-2026-09-13)",
+    "knowledge/sources.json (source registry and evidence scope)",
+    "knowledge/contract-review.md, U11 / seed-bag review (daily pool repricing is an operational promise, not enforced by source)",
+    "knowledge/rules.json (weather enum/event definitions and economics)",
+    "https://rh.farm/almanac/ (current published plant, weather, seed-bag, and fee statements)",
+    "https://raw.githubusercontent.com/Uniswap/v3-core/main/contracts/interfaces/pool/IUniswapV3PoolState.sol (V3 liquidity/slot0 interface)",
+    "https://raw.githubusercontent.com/Uniswap/v3-core/main/contracts/interfaces/pool/IUniswapV3PoolImmutables.sol (V3 fee/token interface)"
+  ]
+}

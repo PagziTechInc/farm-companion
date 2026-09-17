@@ -1,0 +1,54 @@
+{
+  "manifest_version": 3,
+  "name": "Farm Companion for Yield Farm",
+  "version": "2.10.0",
+  "description": "Your fan-made field journal. Track plots, forecast harvests and plan upgrades on rh.farm.",
+  "minimum_chrome_version": "120",
+  "permissions": [
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://rh.farm/*",
+    "https://rpc.mainnet.chain.robinhood.com/*",
+    "https://robinhood-rpc.publicnode.com/*",
+    "https://api.rh.farm/*",
+    "https://api.coinbase.com/*",
+    "https://farm.pagzi.tech/collection/status.json"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Open Farm Companion",
+    "default_icon": "icon.png"
+  },
+  "icons": {
+    "128": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://rh.farm/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle",
+      "all_frames": false,
+      "world": "ISOLATED"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "companion.html"
+      ],
+      "matches": [
+        "https://rh.farm/*"
+      ]
+    }
+  ],
+  "content_security_policy": {
+    "extension_pages": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://api.rh.farm; frame-src https://api.rh.farm; font-src 'self' data:; connect-src 'self' https://rpc.mainnet.chain.robinhood.com https://robinhood-rpc.publicnode.com https://api.rh.farm https://api.coinbase.com https://farm.pagzi.tech; object-src 'none'; base-uri 'none'; frame-ancestors https://rh.farm"
+  }
+}
