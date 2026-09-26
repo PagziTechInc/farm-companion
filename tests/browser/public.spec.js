@@ -215,9 +215,9 @@ test('observed reserves align the forecast date and seed bag quote stays distinc
   await expect(page.getByLabel('Start date (UTC)',{exact:true})).toHaveValue('2026-09-22T12:34');
   await page.getByRole('button',{name:'Calculate forecast'}).click();
   await page.locator('[data-forecast-view="planting"]').click();
-  await expect(page.getByRole('heading',{name:'Compare planting payments'})).toBeVisible();
-  await expect(page.getByText('0.00100000 ETH per plot',{exact:false})).toBeVisible();
-  await expect(page.getByText('Availability: Closed',{exact:true})).toBeVisible();
+  await expect(page.getByRole('heading',{name:'Choose your planting payment'})).toBeVisible();
+  await expect(page.getByRole('heading',{name:'Seed bag · 0.001 ETH',exact:true})).toBeVisible();
+  await expect(page.getByText('Bags closed',{exact:true})).toBeVisible();
   const s=await page.evaluate(()=>JSON.parse(localStorage.getItem('yield-farm-public-v2')).scenario);
   expect(s.rewardStateBasis).toBe('observed');expect(s.carryCrop).toBe('123456');expect(s.granaryCrop).toBe('987654');expect(s.rewardObservedAt).toBe(p.reward_observed_at_utc);
   expect(s.start).toBe('2026-09-22T12:34:25.000Z');

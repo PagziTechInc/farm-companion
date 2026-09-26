@@ -14,7 +14,7 @@ const TIER=manifest[1].tier;
 const NOW = new Date('2026-09-22T12:00:00Z'), STORAGE = 'yield-farm-public-v2';
 const hex = value => `0x${BigInt(value).toString(16)}`;
 const target = key => EXECUTION_DEPLOYMENTS[key].address;
-const contracts = Object.fromEntries(await Promise.all(Object.keys(EXECUTION_DEPLOYMENTS).map(async key => [key, JSON.parse(await readFile(new URL(`../../knowledge/snapshots/verified-contracts-2026-09-11/${key}.json`, import.meta.url), 'utf8'))])));
+const contracts = Object.fromEntries(await Promise.all(Object.keys(EXECUTION_DEPLOYMENTS).map(async key => [key, JSON.parse(await readFile(new URL(`../../knowledge/snapshots/${['activation','activation_previous'].includes(key) ? 'review-2026-09-26' : 'verified-contracts-2026-09-11'}/${key}.json`, import.meta.url), 'utf8'))])));
 
 function workspace(withPlot = false) {
   const portfolio = emptyPortfolio(); portfolio.is_demo = false; portfolio.is_template = false;
@@ -68,6 +68,7 @@ async function mockContracts(page) {
         const { functionName: name, args } = decodeFunctionData({ abi, data: tx.data });
         let output;
         if (name === 'activation' || name === 'transferHook') output = target('activation');
+        else if (name === 'previous') output = target('activation_previous');
         else if (name === 'activationClearer') output = ZERO;
         else if (name === 'rarity') output = target('nft');
         else if (['crop', 'nft', 'emissions', 'levels', 'weather'].includes(name)) output = target(name);

@@ -31,7 +31,7 @@ function mock({ wrongChain = false, failPending = false, changedManifest = false
       if ((fn === 'tokensOfOwner' && failInventory) || (fn === 'rarityTier' && failTier) || (fn === 'tiersFinalized' && failFinalized) || (fn === 'desiredWeight' && failDesired)) return { jsonrpc: '2.0', id: request.id, error: { message: 'Fixture RPC failure' } };
       const values = { totalWeight: 25000n, activation: integrations.contracts.activation.address, multiplierNow: 12000n, epochStart: 1789948800n, startingIndex, tiersFinalized,
         manifestHash: changedManifest ? '0x' + '0'.repeat(64) : commitment.on_chain_hash, currentEpoch: 0n, nextBoundary: 1790553600n,
-        FEE: units('2500'), balanceOf: 0n, levelOf: 1, pending: units('100'), weightOf: 10000n, isActive: true, carryNow:units('123'),granaryNow:units('40000000'),emitted:0n,paidOut:0n,RATE_PER_WEIGHT_PER_WEEK:units('2000'),bagPrice:10n**15n,bagOpen:true };
+        FEE: units('2500'), balanceOf: 0n, levelOf: 1, pending: units('100'), weightOf: 10000n, isActive: true, carryNow:units('123'),granaryNow:units('40000000'),emitted:0n,paidOut:0n,RATE_PER_WEIGHT_PER_WEEK:units('2000'),bagPrice:10n**15n,bagOpen:true,bagAvailable:false,sproutsAvailable:false,sproutPrice:2n*10n**15n,bagsLeft:10n };
       let result = values[fn];
       if (fn === 'rarityTier') result = args[0] === 2n ? chainTierB : 0;
       if (fn === 'weightOf') result = args[0] === 2n && !staleWeight ? 15000n : 10000n;

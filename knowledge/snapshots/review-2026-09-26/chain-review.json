@@ -1,0 +1,59 @@
+{
+  "chain_id": 4663,
+  "observed_at_utc": "2026-09-26T01:37:31.054Z",
+  "block_number": 72697223,
+  "block_hash": "0x4a997335d68b4f880b7ba27b8ad8d7fb79b6cbf473766f299a139c6b7f024710",
+  "block_timestamp_utc": "2026-09-26T01:37:29.000Z",
+  "contracts": {
+    "emissions": {
+      "address": "0x8ed784b4772ae3fdefafaa746fe405eb0410cdf3",
+      "runtime_keccak256": "0x010e25777f65ea0e83d2c39cee3b969951ffc86de0461ef23680ad01ddcea8b2"
+    },
+    "levels": {
+      "address": "0x4804043472416241d2334ecb3684fa179791bf8c",
+      "runtime_keccak256": "0x6b1005360575356eeaa099a08aeadbf9a0a525dcfc28e58d73e809920ad09eb4"
+    },
+    "nft": {
+      "address": "0x481ba120a6632714d8c872d1f4b6b57c8769dc21",
+      "runtime_keccak256": "0xa8bebed3f9ea474e01f95396bbb92b406005293d274b96ecd8ce646b4d17e493"
+    },
+    "weather": {
+      "address": "0xd45919b30bdac5f810a18434b3aac9c2d7093c67",
+      "runtime_keccak256": "0x715eeaafd15d174f204a6a71db458404e57b92b103c12f1af9a03538043118e1"
+    },
+    "crop": {
+      "address": "0x6cfaf2f60f47182f0c9f5d199db92ab261a9d487",
+      "runtime_keccak256": "0x1be44955cd2dae7359a6bd961da2ad9a8cb55041962d5b60fb2190488297e37d"
+    },
+    "activation": {
+      "address": "0x75bb7544c07353f500E531bC89F9518b4d2bd32A",
+      "runtime_keccak256": "0x52e23282cafac84108dc9b23b7d81d8a935491658e474a47cd91ee9875cb0637",
+      "sourcify_runtime_matches": true
+    },
+    "activation_previous": {
+      "address": "0xd87FB27b292e48faFBafb860BA24583Acb50404b",
+      "runtime_keccak256": "0xfc1c3f1321270612815dcdc9791d3ebf0d436c85b32d2c24459b44581e652e1a"
+    }
+  },
+  "reads": {
+    "activation.previous": "0xd87FB27b292e48faFBafb860BA24583Acb50404b",
+    "activation.plantingOpen": true,
+    "activation.bagPrice": "1000000000000000",
+    "activation.bagsLeft": "864",
+    "activation.sproutsOpen": true,
+    "activation.sproutPrice": "1334000000000000",
+    "activation.crop": "0x6cfaf2F60F47182f0c9F5d199db92Ab261A9d487",
+    "activation.nft": "0x481BA120a6632714D8C872D1f4B6B57C8769dc21",
+    "activation.emissions": "0x8Ed784B4772Ae3fdEfAfAA746fE405eb0410cDf3",
+    "activation.treasury": "0x778aa5BD0b28829b7C27eb3957C2D33848125D85",
+    "nft.transferHook": "0x75bb7544c07353f500E531bC89F9518b4d2bd32A",
+    "nft.tiersFinalized": true,
+    "nft.startingIndex": "1827",
+    "nft.totalSupply": "3333",
+    "weather.owner": "0x060543F9a55dBDf12f4D2B98a154A1D099559f7A",
+    "weather.weatherOf0": 1,
+    "weather.weatherOf1": 1,
+    "weather.commitHash": "0x46f41dbcb8d9c74f8dd4c20bedb8f0b9e3ac4de373f2a3244b311e3f1ea0fe95",
+    "emissions.totalWeight": "33983750"
+  }
+}

@@ -85,7 +85,7 @@
       "verified_at_block": 60592342
     },
     "activation": {
-      "address": "0xc7455c9dc27b3b5ceecbb3941e50185f17625431",
+      "address": "0x75bb7544c07353f500e531bc89f9518b4d2bd32a",
       "address_policy": "Resolve emissions.activation() at the same pinned block and require current reviewed code and wiring before preparing an action.",
       "read_signatures": [
         "function isActive(uint256 tokenId) view returns (bool)",
@@ -93,15 +93,22 @@
         "function bagOpen() view returns (bool)",
         "function bagPrice() view returns (uint256)",
         "function BAG_BURN() view returns (uint256)",
-        "function MAX_BAG_PRICE() view returns (uint256)",
         "function treasury() view returns (address)",
-        "function activatedSince(uint256 tokenId) view returns (uint64)"
+        "function activatedSince(uint256 tokenId) view returns (uint64)",
+        "function plantingOpen() view returns(bool)",
+        "function bagAvailable(uint256) view returns(bool)",
+        "function bagsLeft() view returns(uint256)",
+        "function everPlanted(uint256) view returns(bool)",
+        "function sproutPrice() view returns(uint256)",
+        "function sproutsOpen() view returns(bool)",
+        "function sproutsAvailable(uint256) view returns(bool)",
+        "function previous() view returns(address)"
       ],
       "sources": [
-        "verified-contracts-2026-09-11"
+        "game-review-2026-09-26"
       ],
-      "runtime_keccak256": "0xbb1c60f4aa1cbf0814d8f0b3c5cab929e5d7d08fe57389f71eb9f75b54941a0a",
-      "verified_at_block": 60592342
+      "runtime_keccak256": "0x52e23282cafac84108dc9b23b7d81d8a935491658e474a47cd91ee9875cb0637",
+      "verified_at_block": 72697223
     },
     "weather": {
       "address": "0xd45919b30bdac5f810a18434b3aac9c2d7093c67",
@@ -208,6 +215,14 @@
         "forecast-pool-2026-09-13"
       ],
       "address_status": "WETH token identity observed as token0 of the published pool at block 61711122, with name/symbol WETH and 18 decimals. Reference-price pairing only; wrapping and redemption were not audited. Not an execution target."
+    },
+    "activation_previous": {
+      "address": "0xd87fb27b292e48fafbafb860ba24583acb50404b",
+      "runtime_keccak256": "0xfc1c3f1321270612815dcdc9791d3ebf0d436c85b32d2c24459b44581e652e1a",
+      "sources": [
+        "game-review-2026-09-26"
+      ],
+      "address_status": "Immutable V2 read-through dependency of V3; runtime checked before actions, never a new transaction target."
     }
   },
   "abi_caution": "Current six core ABIs are archived from exact-match Sourcify source and runtime-matched public RPC at block 60592342. Other historical addresses are explicitly unverified. Weight/weather use BPS; CROP uses 18 decimals.",
@@ -286,7 +301,7 @@
     "scenario": "See portfolio/scenarios.json.",
     "result": "Implemented in src/engine.js: status, scenario/horizon, earned/spent/bought CROP, liquid/pending/ending balances, purchases, wallet-paid fees, operating ETH, cash recovery, optional NFT-inclusive estimate, per-wallet actions and assumptions. See docs/ARCHITECTURE.md."
   },
-  "reviewed_on_utc": "2026-09-11",
+  "reviewed_on_utc": "2026-09-26",
   "production_assets": {
     "origin": "https://api.rh.farm",
     "live_path": "/plot/{id}",
@@ -298,6 +313,6 @@
       "max": 3333
     },
     "source_id": "production-assets-2026-09-14",
-    "status": "Endpoints verified; sampled assets remain unrevealed. API display state is not chain authority."
+    "status": "Collection revealed and tiers finalized at block 72697223. Metadata remains cosmetic; refresh ownership and economics from chain."
   }
 }

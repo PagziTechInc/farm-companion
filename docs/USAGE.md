@@ -202,3 +202,9 @@ The gallery shows 23 plots and places **Show more** in tile 24. Each click revea
 Open **Valley → Reveal watch** for collection progress. Mint progress is shown separately from collected revealed assets. The hosted watcher runs while your browser is closed. It checks for a verified chain reveal every 30 seconds, then collects valid production metadata for plots 1–3333 with paced requests and retries. Placeholder or incomplete assets stay pending, and restarts retain progress. **Refresh** checks its current status; the catalogue download appears once assets have been collected.
 
 In **My farm**, enable **Load plot artwork** with **Production** selected. Pending visible artwork retries as the collection count grows. The studio also defaults to Production; choose Rehearsal for testing themes. Previously saved rehearsal themes remain available. Public wallet refresh and the opt-in active plan still provide the economic state.
+
+## September 26 update
+
+The planting panel supports first-use seed bags at a fixed 0.001 ETH and fresh-quote ETH sprouts for previously planted dormant plots. Refresh holdings to see eligibility. Each operation still needs its own review and wallet confirmation; CROP approvals stay exact. Old-registry pending transactions can be recovered but cannot be drafted again.
+
+Tools → Valley includes the Orchard guide and official reward records. AAPL rewards use actual earning-week production and are excluded from companion profit estimates.

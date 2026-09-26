@@ -1,0 +1,17 @@
+{
+  "chain_id": 4663,
+  "block_number": 72699956,
+  "block_timestamp": 1790386927,
+  "observed_at_utc": "2026-09-26T01:42:06.993Z",
+  "weeks": [
+    {
+      "epoch": 0,
+      "multiplier_bps": 12000,
+      "announced": true,
+      "evidence": "pinned-storage"
+    }
+  ],
+  "status": "ok",
+  "genesis_timestamp": 1789948800,
+  "commit_hash": "0x46f41dbcb8d9c74f8dd4c20bedb8f0b9e3ac4de373f2a3244b311e3f1ea0fe95"
+}

@@ -245,6 +245,14 @@
       "scope": "Official network configuration and public endpoint rate-limit guidance.",
       "inspected_on_utc": "2026-09-16",
       "evidence_kind": "infrastructure"
+    },
+    {
+      "id": "game-review-2026-09-26",
+      "title": "September 26 current game and planting V3 review",
+      "url": "https://rh.farm/almanac/",
+      "inspected_on_utc": "2026-09-26",
+      "evidence_kind": "published_rules_and_pinned_runtime",
+      "scope": "Almanac, V3 and previous V2 verified source, current core runtime and wiring."
     }
   ],
   "local_evidence": [
@@ -294,6 +302,22 @@
     {
       "path": "snapshots/airdrop-2026-09-11/review.json",
       "source_id": "airdrop-source-2026-09-11"
+    },
+    {
+      "path": "snapshots/review-2026-09-26/index.json",
+      "source_id": "game-review-2026-09-26"
+    },
+    {
+      "path": "snapshots/review-2026-09-26/chain-review.json",
+      "source_id": "game-review-2026-09-26"
+    },
+    {
+      "path": "snapshots/review-2026-09-26/activation.json",
+      "source_id": "game-review-2026-09-26"
+    },
+    {
+      "path": "snapshots/review-2026-09-26/activation_previous.json",
+      "source_id": "game-review-2026-09-26"
     }
   ],
   "verification_limits": [

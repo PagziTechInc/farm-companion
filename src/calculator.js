@@ -105,9 +105,11 @@ export function analyzeFarm(portfolio,scenario,{days=90,now=Date.now()}={}) {
   const cropPlantCost=cropPrice===null?null:(units(rules.planting.cost_crop)*cropPrice+UNIT-1n)/UNIT;
   const plantingOptions={crop_cost_wei:units(rules.planting.cost_crop),quoted_crop_purchase_eth_wei:cropPlantCost,seed_bag_eth_wei:bag,seed_bag_open:portfolio.seed_bag_open??null,
     cheaper_before_gas:portfolio.seed_bag_open!==true||bag===null||bag<=0n||cropPlantCost===null?null:bag<cropPlantCost?'seed_bag':bag>cropPlantCost?'crop':'equal',
-    note:'Seed bag is a mutable on-chain quote. The comparison excludes operation gas and does not assign an acquisition cost to CROP already owned. Re-read before acting.'};
+    sprout_eth_wei:portfolio.sprout_price_wei==null?null:BigInt(portfolio.sprout_price_wei),
+    plots:portfolio.wallets.flatMap(w=>w.plots.filter(p=>!p.is_active).map(p=>({token_id:p.token_id,wallet_id:w.id,seed_bag_available:p.seed_bag_available??null,sprouts_available:p.sprouts_available??null}))),
+    note:'Seed bags cost 0.001 ETH for first plantings only. Sprouts use a fresh quote for replanting. Per-plot eligibility and treasury funding must be checked. Prices exclude gas.'};
   const advice=[];
-  if(plantingOptions.cheaper_before_gas&&plantingOptions.cheaper_before_gas!=='equal')advice.push({priority:'opportunity',title:'Compare both planting payment methods',detail:`${plantingOptions.cheaper_before_gas==='seed_bag'?'The native ETH seed bag':'Buying the required CROP'} costs less before gas at these quotes. Check the current bag price and transaction costs before deciding.`});
+  if(plantingOptions.cheaper_before_gas&&plantingOptions.cheaper_before_gas!=='equal'&&(plantingOptions.cheaper_before_gas==='crop'||plantingOptions.plots.some(p=>p.seed_bag_available===true)))advice.push({priority:'opportunity',title:'Compare both planting payment methods',detail:`${plantingOptions.cheaper_before_gas==='seed_bag'?'An eligible first-planting ETH seed bag':'Buying the required CROP'} costs less before gas at these quotes. Check the current bag price and transaction costs before deciding.`});
   const dormantCount=plots.filter(({plot:p})=>!p.is_active).length;
   if(dormantCount)advice.push({priority:'action',title:`${dormantCount} dormant plot${dormantCount===1?'':'s'}`,detail:`Dormant plots earn zero. Activation costs ${rules.planting.cost_crop} CROP each; compare planting income with its cost before upgrading.`});
   if(best)advice.push({priority:'opportunity',title:`Compare plot #${best.plot_id} first`,detail:`Its next level has the strongest marginal CROP return per token among evaluated profitable next steps over ${days} days. Upgrade alternatives are independent, so rebuild the ranking after each change.`});

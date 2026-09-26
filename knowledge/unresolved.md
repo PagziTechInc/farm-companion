@@ -1,5 +1,7 @@
 # Research answers and remaining dependencies
 
+**Current update: September 26.** [Planting V3, fixed first-use bags, sprouts, finalized reveal and Orchard](game-update-2026-09-26.md) supersede the older deployment, repricing and weather-owner descriptions below. Core CROP economics are unchanged.
+
 Reviewed September 11, 2026. The [Almanac](https://rh.farm/almanac/) controls published gameplay; the [current contract review](contract-review.md) records source behavior and conflicts. Earlier answers remain under [September 7 history](history/2026-09-07/unresolved.md).
 
 September 15 follow-up: reveal is observed, but earning-tier finalization remains pending at block 64,012,808. See [pending rarity and forecast previews](pending-rarity-2026-09-15.md). Refresh chain state before treating any manifest-derived tier as a finalized earning multiplier.

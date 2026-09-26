@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { decodeFunctionData, encodeFunctionResult, encodeEventTopics, encodeAbiParameters, parseAbi, toHex, toEventSelector } from 'viem';
+import { decodeFunctionData, encodeFunctionResult, encodeEventTopics, encodeAbiParameters, parseAbi, toHex, toEventSelector, keccak256 } from 'viem';
 import { readWeatherSchedule, validateWeatherSchedule } from '../src/weather-schedule.js';
 import { GENESIS } from '../src/model.js';
 import integrations from '../knowledge/integrations.json' with { type: 'json' };
@@ -38,7 +38,7 @@ function fixture({ timestamp = GENESIS - 2 * DAY, logs = [log(0, 1)], actual = n
     } else throw Error('Unexpected fixture getter');
     return encodeFunctionResult({ abi, functionName: call.functionName, result });
   };
-  return { calls, block, read: () => readWeatherSchedule(rpc, block) };
+  return { rpc, calls, block, read: () => readWeatherSchedule(rpc, block) };
 }
 
 test('a reviewed runtime and pinned event establish only the explicitly announced future week', async () => {
@@ -103,5 +103,27 @@ test('removed, foreign and out-of-range logs cannot enter the pinned schedule', 
   for (const invalid of [{ ...log(0, 1), removed: true }, { ...log(0, 1), address: '0x' + '2'.repeat(40) },
     log(0, 1, { height: launch.block_number + 1 }), { ...log(0, 1), topics: ['0x' + '0'.repeat(64)] }]) {
     assert.equal((await fixture({ logs: [invalid] }).read()).status, 'unavailable');
+  }
+});
+
+
+test('blocked log history uses pinned slot-2 entries without promoting inherited future weather',async()=>{
+  const f=fixture();
+  const slot=epoch=>keccak256(encodeAbiParameters([{type:'uint256'},{type:'uint256'}],[BigInt(epoch),2n]));
+  const reads=[];
+  const rpc=async(method,params)=>{
+    if(method==='eth_getLogs')throw Error('HTTP 403');
+    if(method==='eth_getStorageAt'){
+      reads.push(params);return toHex(params[1]===slot(0)?2:0,{size:32});
+    }
+    return f.rpc(method,params);
+  };
+  const result=await readWeatherSchedule(rpc,f.block);
+  assert.equal(result.status,'ok');
+  assert.deepEqual(result.weeks.map(w=>[w.epoch,w.multiplier_bps,w.announced]),[[0,12000,true]]);
+  assert.equal(reads.length,12);assert.ok(reads.every(p=>p[2]===f.block.number));
+  for(const invalid of ['0x','0x02',toHex(6,{size:32})]){
+    const bad=await readWeatherSchedule((m,p)=>m==='eth_getStorageAt'?Promise.resolve(invalid):rpc(m,p),f.block);
+    assert.equal(bad.status,'unavailable');assert.deepEqual(bad.weeks,[]);
   }
 });

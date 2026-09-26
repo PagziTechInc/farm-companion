@@ -8,7 +8,7 @@ import { emptyPortfolio, UNIT, rules, weight } from '../src/model.js';
 const A = '0x0000000000000000000000000000000000000001', B = '0x0000000000000000000000000000000000000002';
 const HASH = `0x${'a'.repeat(64)}`, BLOCK_HASH = `0x${'b'.repeat(64)}`, ZERO = `0x${'0'.repeat(40)}`;
 const deployment = key => EXECUTION_DEPLOYMENTS[key].address;
-const fixtures = Object.fromEntries(Object.keys(EXECUTION_DEPLOYMENTS).map(key => [key, JSON.parse(readFileSync(new URL(`../knowledge/snapshots/verified-contracts-2026-09-11/${key}.json`, import.meta.url), 'utf8'))]));
+const fixtures = Object.fromEntries(Object.keys(EXECUTION_DEPLOYMENTS).map(key => [key, JSON.parse(readFileSync(new URL(`../knowledge/snapshots/${['activation','activation_previous'].includes(key) ? 'review-2026-09-26' : 'verified-contracts-2026-09-11'}/${key}.json`, import.meta.url), 'utf8'))]));
 const hex = value => `0x${BigInt(value).toString(16)}`;
 
 test('forecast preview markers reject every transaction intent before public or wallet reads',async()=>{
@@ -53,7 +53,7 @@ function setup(options = {}) {
     const tx = params[0], key = Object.keys(EXECUTION_DEPLOYMENTS).find(key => deployment(key) === tx.to.toLowerCase()), abi = fixtures[key].abi;
     const { functionName: name, args } = decodeFunctionData({ abi, data: tx.data });
     let result;
-    if (['plant', 'plantWithBag', 'upgrade', 'claim', 'claimMany', 'approve'].includes(name)) {
+    if (['plant', 'plantWithBag', 'plantWithSprouts', 'upgrade', 'claim', 'claimMany', 'approve'].includes(name)) {
       if (state.simulationError) throw new Error('execution reverted');
       result = name === 'approve' ? true : name.startsWith('claim') ? state.pendingCrop : undefined;
     } else if (name === 'activation') result = state.activation;
@@ -68,6 +68,11 @@ function setup(options = {}) {
     else if (name === 'BURN_BPS') result = 6000n;
     else if (name === 'paused') result = key === 'levels' ? state.levelsPaused : state.paused;
     else if (name === 'bagPrice') result = state.bagPrice ?? 10n**15n;
+    else if (name === 'previous') result = deployment('activation_previous');
+    else if (name === 'plantingOpen') result = true;
+    else if (name === 'bagAvailable') result = state.bagAvailable ?? (state.bagOpen ?? true);
+    else if (name === 'sproutsAvailable') result = state.sproutsAvailable ?? true;
+    else if (name === 'sproutPrice') result = state.sproutPrice ?? 2n*10n**15n;
     else if (name === 'bagOpen') result = state.bagOpen ?? true;
     else if (name === 'BAG_BURN') result = 1500n*UNIT;
     else if (name === 'balanceOf') result = state.balance;
@@ -289,7 +294,7 @@ test('seed bags require a separate exact-value review, no CROP allowance, and ma
 
 test('seed bags stop on repricing, closure, inadequate ETH or invalid persisted value',async()=>{
   const c=setup();await c.connect();const draft=await c.executor.prepare({...c.intent,type:'plant_bag'},c.portfolio);
-  c.state.bagPrice=2n*10n**15n;await assert.rejects(c.executor.submit(draft.id),/changed/);assert.equal(c.sent().length,0);
+  c.state.bagPrice=2n*10n**15n;await assert.rejects(c.executor.submit(draft.id),/changed|differs/);assert.equal(c.sent().length,0);
   for(const options of [{bagOpen:false},{bagPrice:0n},{bagPrice:2n*10n**16n},{native:10n**15n}]) {
     const x=setup(options);await assert.rejects(x.executor.prepare({...x.intent,type:'plant_bag'},x.portfolio));assert.equal(x.sent().length,0);
   }
@@ -301,4 +306,44 @@ test('configured accounts can contain one or many public wallets but never dupli
   const c=setup();await c.executor.connect([A]);assert.equal(c.executor.status().account,A);
   await c.executor.connect([A,B,'0x0000000000000000000000000000000000000003']);
   await assert.rejects(c.executor.connect([A,A]),/distinct|duplicate/);
+});
+
+test('V3 per-plot bag eligibility and previous-registry runtime are mandatory', async()=>{
+  for(const options of [{bagAvailable:false},{codeChanged:'activation_previous'}]) {
+    const c=setup(options);
+    await assert.rejects(c.executor.prepare({...c.intent,type:'plant_bag'},c.portfolio),/unavailable|runtime/);
+    assert.equal(c.sent().length,0);
+  }
+});
+
+test('sprouts use a separate reviewed ETH payment, reprice invalidation and durable receipt recovery',async()=>{
+  const c=setup();await c.connect();
+  const intent={...c.intent,type:'plant_sprouts'};
+  let draft=await c.executor.prepare(intent,c.portfolio);
+  assert.equal(draft.value_wei,(2n*10n**15n).toString());
+  assert.equal(draft.approval_amount_wei,'0');
+  assert.equal(decodeFunctionData({abi:fixtures.activation.abi,data:draft.data}).functionName,'plantWithSprouts');
+  c.state.sproutPrice=3n*10n**15n;
+  await assert.rejects(c.executor.submit(draft.id),/changed/);assert.equal(c.sent().length,0);
+  c.state.sproutsAvailable=false;
+  await assert.rejects(c.executor.prepare(intent,c.portfolio),/unavailable/);
+  c.state.sproutsAvailable=true;
+  draft=await c.executor.prepare(intent,c.portfolio);await c.executor.submit(draft.id);
+  const pending=c.executor.status().pending;
+  assert.deepEqual(validatePendingRecord(pending),pending);
+  const restored=c.makeExecutor();restored.resumePending(pending);c.state.mined=true;
+  assert.equal((await restored.receipt()).status,'confirmed');assert.equal(c.sent().length,1);
+});
+
+test('legacy planting broadcasts recover without making the old registry a new draft target',async()=>{
+  const c=setup({allowance:2500n*UNIT});await c.connect();
+  const draft=await c.executor.prepare(c.intent,c.portfolio);await c.executor.submit(draft.id);
+  const old='0xc7455c9dc27b3b5ceecbb3941e50185f17625431';
+  const pending={...c.executor.status().pending,to:old};
+  assert.equal(validatePendingRecord(pending).to,old);
+  const restored=c.makeExecutor();restored.resumePending(pending);
+  c.state.transaction.to=old;c.state.mined=true;
+  assert.equal((await restored.receipt()).status,'confirmed');
+  const fresh=await restored.prepare(c.intent,c.portfolio);
+  assert.equal(fresh.to,deployment('activation'));assert.notEqual(fresh.to,old);
 });

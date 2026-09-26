@@ -1,6 +1,6 @@
 # Farm Companion
 
-A fan-made field journal for Yield Farm: track your plots, forecast the harvest and plan your next upgrade. Version 2.10.0 fills estimates automatically: connect a wallet, see its harvest, and compare upgrade paths. Custom settings live behind an optional control, with the same experience on the website and browser plugins. Anyone can model **1–20 wallets and up to 100 plots**, with no account required.
+A fan-made field journal for Yield Farm: track your plots, forecast the harvest and plan your next upgrade. Version 2.11.0 supports the current planting V3 registry, first-use seed bags, ETH sprouts and the Orchard guide. It fills estimates automatically: connect a wallet, see its harvest, and compare upgrade paths. Custom settings live behind an optional control, with the same experience on the website and browser plugins. Anyone can model **1–20 wallets and up to 100 plots**, with no account required.
 
 Open [farm.pagzi.tech](https://farm.pagzi.tech/) for the hosted companion. Validated workspace changes publish automatically to the Hostinger VPS; see [deployment operations](deployment/README.md).
 
@@ -24,7 +24,7 @@ Calculations follow the [Almanac](https://rh.farm/almanac/#weight), rechecked Se
 
 ## Install the Chrome / Edge extension
 
-Extract **farm-companion-chrome-2.10.0.zip**, open **chrome://extensions** (or **edge://extensions**), enable **Developer mode**, and **Load unpacked** from the extracted folder containing **manifest.json**. Reload **https://rh.farm/** to open the companion. The native extension needs no Tampermonkey or local server.
+Extract **farm-companion-chrome-2.11.0.zip**, open **chrome://extensions** (or **edge://extensions**), enable **Developer mode**, and **Load unpacked** from the extracted folder containing **manifest.json**. Reload **https://rh.farm/** to open the companion. The native extension needs no Tampermonkey or local server.
 
 For source builds, `npm run build` generates the directly loadable **dist-extension/** directory and **dist/farm-companion-chrome.zip**. Use either the native extension or the userscript, with the other disabled. Website, userscript and extension saves are separate; farm JSON and action-journal exports move them between interfaces.
 
@@ -46,7 +46,7 @@ npm run check
 
 Upload **only `dist/`** to any static HTTPS host. It includes the website, downloadable native-extension ZIP, installable `yield-farm-companion.user.js`, metadata and optional host security headers. The calculator needs no backend; the hosted reveal watcher runs separately on the companion VPS. Builds never embed the owner's local portfolio, and can reject locally configured private wallet identifiers in browser bundles. Do not publish the workspace or `portfolio/` directory as site content.
 
-**farm-companion-website-2.10.0.zip** is the website package for static hosting. **farm-companion-chrome-2.10.0.zip** is the native extension package for **Load unpacked**.
+**farm-companion-website-2.11.0.zip** is the website package for static hosting. **farm-companion-chrome-2.11.0.zip** is the native extension package for **Load unpacked**.
 
 The **public website ZIP / dist directory is not an unpacked Chrome extension**. Its `_headers` file is for website hosts. For **Load unpacked**, use the separate Chrome extension ZIP or `dist-extension/`; for Tampermonkey, install the `.user.js` file through Tampermonkey.
 

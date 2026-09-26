@@ -1,0 +1,155 @@
+{
+  "observed_at_utc": "2026-09-26T01:36:21.876383+00:00",
+  "records": [
+    {
+      "url": "https://rh.farm/almanac/",
+      "path": "knowledge/snapshots/review-2026-09-26/almanac.html",
+      "sha256": "b91b47ed2ed5e92badeff42eb397a9a9855bba3d645688593ceffc107f47e7a6"
+    },
+    {
+      "url": "https://rh.farm/_next/static/chunks/32-7mbx5ewy8o.js",
+      "path": "knowledge/snapshots/review-2026-09-26/32-7mbx5ewy8o.js",
+      "sha256": "9a929bc9f38c91e07ffaf84bbe49d9411960127102db8677830ec2c59290986e"
+    },
+    {
+      "url": "https://rh.farm/_next/static/chunks/0e5p1jl_jo27r.js",
+      "path": "knowledge/snapshots/review-2026-09-26/0e5p1jl_jo27r.js",
+      "sha256": "a72f1a5f616fa11b0172b4c942483bbc7f05781400da2a8ae20a3de008912c23"
+    },
+    {
+      "url": "https://rh.farm/_next/static/chunks/0cz1d0mv5g_q7.js",
+      "path": "knowledge/snapshots/review-2026-09-26/0cz1d0mv5g_q7.js",
+      "sha256": "0973c1d64c88adc8e3c950410cb58b288f72118d5965b78049438deb8f2f9683"
+    },
+    {
+      "url": "https://rh.farm/_next/static/chunks/2mixev075y2jf.js",
+      "path": "knowledge/snapshots/review-2026-09-26/2mixev075y2jf.js",
+      "sha256": "3472e9fb5546c47e958c8ca3ec856b50dbe8287df27e5d47efc229528a8f63f8"
+    },
+    {
+      "url": "https://rh.farm/_next/static/chunks/3zlqyxidubwm6.js",
+      "path": "knowledge/snapshots/review-2026-09-26/3zlqyxidubwm6.js",
+      "sha256": "d389f1697dde54541d33f98ef2841eb52450149a4cf5e7511f0265d66fbd0a31"
+    },
+    {
+      "url": "https://rh.farm/_next/static/chunks/1w8ku_yh-5df1.js",
+      "path": "knowledge/snapshots/review-2026-09-26/1w8ku_yh-5df1.js",
+      "sha256": "65f80252dc3e5b3514f6ab3c2806e4b541ad1b3a276c99b8d203434036aa47ce"
+    },
+    {
+      "url": "https://rh.farm/_next/static/chunks/40g7prjkx48wy.js",
+      "path": "knowledge/snapshots/review-2026-09-26/40g7prjkx48wy.js",
+      "sha256": "72473cd37ac937dcc9d298491b08cec4546da043fbfded7b17b7cd236607b3ae"
+    },
+    {
+      "url": "https://rh.farm/_next/static/chunks/turbopack-3j8-nuydn5ko1.js",
+      "path": "knowledge/snapshots/review-2026-09-26/turbopack-3j8-nuydn5ko1.js",
+      "sha256": "2ba04e78f6aa746e9a63d28656be26ba2359228c3ca0a270ab1db4f681551660"
+    },
+    {
+      "url": "https://rh.farm/_next/static/chunks/14oy_fsfix4ih.js",
+      "path": "knowledge/snapshots/review-2026-09-26/14oy_fsfix4ih.js",
+      "sha256": "4a97988e94c91443980412f7a80a21a92696a0c670b32398c5465b1b29d55636"
+    },
+    {
+      "url": "https://rh.farm/_next/static/chunks/31mwb79l_uw2-.js",
+      "path": "knowledge/snapshots/review-2026-09-26/31mwb79l_uw2-.js",
+      "sha256": "f00faa0d30fc17940a03615691890adf511396c5d0adbc262d11ea26e2affb6d"
+    },
+    {
+      "url": "https://rh.farm/_next/static/chunks/2ae78yubyoara.js",
+      "path": "knowledge/snapshots/review-2026-09-26/2ae78yubyoara.js",
+      "sha256": "6d10be7709e47e84bbfc522c758228c5b9221416a258d15f56c5b5c7d3186dc6"
+    },
+    {
+      "url": "https://rh.farm/_next/static/chunks/1bcpprlfq676v.js",
+      "path": "knowledge/snapshots/review-2026-09-26/1bcpprlfq676v.js",
+      "sha256": "21c6a31f82be8a6f18d3d374e27249dc90c85be33c6a33e21bac430e961d4c1e"
+    },
+    {
+      "url": "https://rh.farm/_next/static/chunks/2o-s-ngi794di.js",
+      "path": "knowledge/snapshots/review-2026-09-26/2o-s-ngi794di.js",
+      "sha256": "626e1ab8683f261baf09a9f4732e59998a60c2c201320f74bae31770e2a2df23"
+    },
+    {
+      "url": "https://rh.farm/_next/static/chunks/0hmcxe5frknj0.js",
+      "path": "knowledge/snapshots/review-2026-09-26/0hmcxe5frknj0.js",
+      "sha256": "7417e9418e67b87a26f42305b28507ef5f81eb19339627bc6cc0dd9c35d8db40"
+    },
+    {
+      "url": "https://rh.farm/_next/static/chunks/3qzxqf1r7w-sy.js",
+      "path": "knowledge/snapshots/review-2026-09-26/3qzxqf1r7w-sy.js",
+      "sha256": "f21dcd3ec22931f8e21bd6e08fbb16b72f5b937a013af98084e4f3f7f464679e"
+    },
+    {
+      "url": "https://rh.farm/_next/static/chunks/2qgi72px12h5t.js",
+      "path": "knowledge/snapshots/review-2026-09-26/2qgi72px12h5t.js",
+      "sha256": "f7c4ca2b3933f4d155b958b51bb45b28d15dc403a59e820b0a112ae4c855f017"
+    },
+    {
+      "url": "https://rh.farm/_next/static/chunks/3tj7wtixhw1ic.js",
+      "path": "knowledge/snapshots/review-2026-09-26/3tj7wtixhw1ic.js",
+      "sha256": "650879083f3ae605671c1b827f940a5f7595f4085a4acfdeae6cef1100b86211"
+    },
+    {
+      "url": "https://rh.farm/_next/static/chunks/2vg8moeeio7au.js",
+      "path": "knowledge/snapshots/review-2026-09-26/2vg8moeeio7au.js",
+      "sha256": "cf1b93c07980fd25c1d2763ab84917e477b17257a0bf4bd2e2d2a8e8dfe093bc"
+    },
+    {
+      "url": "https://rh.farm/_next/static/chunks/1bpn6osrwh2e3.js",
+      "path": "knowledge/snapshots/review-2026-09-26/1bpn6osrwh2e3.js",
+      "sha256": "a48fcab188440d130dc81b51645610ee270f5ef411297c3be9315418e8ea35a9"
+    },
+    {
+      "url": "https://rh.farm/farm/",
+      "path": "knowledge/snapshots/review-2026-09-26/farm.html",
+      "sha256": "07939c650d3b5a99c575d56b9b93662e4bfb37251f30611eb8ad62d4c50adcb5"
+    },
+    {
+      "url": "https://rh.farm/_next/static/chunks/32wtw20l4jsc2.js",
+      "path": "knowledge/snapshots/review-2026-09-26/32wtw20l4jsc2.js",
+      "sha256": "650cc5fe4582e9f64de26dff505f977ea08aba2f366c3f714a8fcc330fade45d"
+    },
+    {
+      "url": "https://rh.farm/_next/static/chunks/1fw9fm69cq1ax.js",
+      "path": "knowledge/snapshots/review-2026-09-26/1fw9fm69cq1ax.js",
+      "sha256": "23d1cbe78d2cbc9d86307551d31cbe074285f2ce4fa3705330ce747d4ef9b005"
+    },
+    {
+      "url": "https://rh.farm/_next/static/chunks/1_dv7eoi3n1td.js",
+      "path": "knowledge/snapshots/review-2026-09-26/1_dv7eoi3n1td.js",
+      "sha256": "d79c8bdb0a02c46c899eb237236da9617972305136efb83fc2ec6765899c7907"
+    },
+    {
+      "url": "https://rh.farm/_next/static/chunks/30r_v9m8irosi.js",
+      "path": "knowledge/snapshots/review-2026-09-26/30r_v9m8irosi.js",
+      "sha256": "6548f72796305d85b584aa18b4181b818523aba74261ecabe1d49df456a8829e"
+    },
+    {
+      "url": "https://rh.farm/_next/static/chunks/04ixz5a9fuscf.js",
+      "path": "knowledge/snapshots/review-2026-09-26/04ixz5a9fuscf.js",
+      "sha256": "9536d1a793b4d9f6720d19dbae37f76eecdbdd11ffab6d8672df86b01c20677f"
+    },
+    {
+      "url": "https://rh.farm/orchard/",
+      "path": "knowledge/snapshots/review-2026-09-26/orchard.html",
+      "sha256": "f62ece990e45970e257dfe3e2f06e2adc8d4ffe94656f6641d4ffcef61ab9d11"
+    },
+    {
+      "url": "https://rh.farm/_next/static/chunks/0mikm5t0xlxey.js",
+      "path": "knowledge/snapshots/review-2026-09-26/0mikm5t0xlxey.js",
+      "sha256": "9b3e90dcf5dee5661dafce21d4b0ee512f503499443150dedbbead25a0fc678a"
+    },
+    {
+      "url": "https://rh.farm/townhall/",
+      "path": "knowledge/snapshots/review-2026-09-26/townhall.html",
+      "sha256": "c0b4b55255039e79225224d659e75bc442d3da8b73570809cbce6a722582557b"
+    },
+    {
+      "url": "https://rh.farm/_next/static/chunks/39gayu-on762f.js",
+      "path": "knowledge/snapshots/review-2026-09-26/39gayu-on762f.js",
+      "sha256": "3bdf45968d975ef29255bc3fc5cc2e26861b7eb6b13187d1885ec77cfc616e19"
+    }
+  ]
+}

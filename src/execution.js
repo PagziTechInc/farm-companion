@@ -3,34 +3,11 @@ import integrations from '../knowledge/integrations.json' with { type: 'json' };
 import { rules, UNIT, validatePortfolio, weight } from './model.js';
 import { isForecastPreview } from './forecast-portfolio.js';
 
-// Source and runtime independently matched at block 60,592,342, September 11, 2026.
-export const EXECUTION_DEPLOYMENTS = Object.freeze({
-  "emissions": {
-    "address": "0x8ed784b4772ae3fdefafaa746fe405eb0410cdf3",
-    "hash": "0x010e25777f65ea0e83d2c39cee3b969951ffc86de0461ef23680ad01ddcea8b2"
-  },
-  "levels": {
-    "address": "0x4804043472416241d2334ecb3684fa179791bf8c",
-    "hash": "0x6b1005360575356eeaa099a08aeadbf9a0a525dcfc28e58d73e809920ad09eb4"
-  },
-  "nft": {
-    "address": "0x481ba120a6632714d8c872d1f4b6b57c8769dc21",
-    "hash": "0xa8bebed3f9ea474e01f95396bbb92b406005293d274b96ecd8ce646b4d17e493"
-  },
-  "weather": {
-    "address": "0xd45919b30bdac5f810a18434b3aac9c2d7093c67",
-    "hash": "0x715eeaafd15d174f204a6a71db458404e57b92b103c12f1af9a03538043118e1"
-  },
-  "crop": {
-    "address": "0x6cfaf2f60f47182f0c9f5d199db92ab261a9d487",
-    "hash": "0x1be44955cd2dae7359a6bd961da2ad9a8cb55041962d5b60fb2190488297e37d"
-  },
-  "activation": {
-    "address": "0xc7455c9dc27b3b5ceecbb3941e50185f17625431",
-    "hash": "0xbb1c60f4aa1cbf0814d8f0b3c5cab929e5d7d08fe57389f71eb9f75b54941a0a"
-  }
-});
-Object.values(EXECUTION_DEPLOYMENTS).forEach(Object.freeze);
+import reviewed from '../knowledge/reviewed-deployment.json' with { type: 'json' };
+// Current source/runtime review includes the immutable V2 read-through dependency.
+export const EXECUTION_DEPLOYMENTS = Object.freeze(Object.fromEntries(Object.entries(reviewed.contracts).map(([key, value]) => [key, Object.freeze({address:value.address, hash:value.runtime_keccak256})])));
+// Receipt recovery only: old approvals and broadcasts must keep their durable locks.
+const LEGACY_ACTIVATION = '0xc7455c9dc27b3b5ceecbb3941e50185f17625431';
 const ABI = parseAbi([
   'function ownerOf(uint256) view returns (address)', 'function activation() view returns (address)',
   'function crop() view returns (address)', 'function nft() view returns (address)', 'function emissions() view returns (address)',
@@ -44,6 +21,8 @@ const ABI = parseAbi([
   'function isActive(uint256) view returns (bool)', 'function pending(uint256) view returns (uint256)',
   'function balanceOf(address) view returns (uint256)', 'function allowance(address,address) view returns (uint256)',
   'function decimals() view returns (uint8)', 'function approve(address,uint256) returns (bool)',
+  'function previous() view returns(address)', 'function plantingOpen() view returns(bool)', 'function bagAvailable(uint256) view returns(bool)',
+  'function sproutsAvailable(uint256) view returns(bool)', 'function sproutPrice() view returns(uint256)', 'function plantWithSprouts(uint256) payable',
   'function plant(uint256)', 'function plantWithBag(uint256) payable', 'function upgrade(uint256)',
   'function bagPrice() view returns (uint256)', 'function bagOpen() view returns (bool)', 'function BAG_BURN() view returns (uint256)',
   'function claim(uint256) returns (uint256)', 'function claimMany(uint256[]) returns (uint256)',
@@ -69,7 +48,7 @@ function normalizeIntent(intent, portfolio) {
   if (errors.length) throw new Error(errors.join(' '));
   if (portfolio.is_demo !== false || portfolio.is_template === true) throw new Error('Execution requires your real holdings; demo/template transactions are disabled.');
   configuredAddresses(portfolio.wallets.map(w => w.address).filter(Boolean));
-  if (!intent || !['plant', 'plant_bag', 'upgrade', 'claim'].includes(intent.type)) throw new Error('Only planting, one-level upgrades and claims are supported.');
+  if (!intent || !['plant', 'plant_bag', 'plant_sprouts', 'upgrade', 'claim'].includes(intent.type)) throw new Error('Only planting, one-level upgrades and claims are supported.');
   // Claims synchronize stale weights in the reviewed contract. Keep investment
   // recommendations blocked, while allowing a freshly verified claim to repair state.
   if (intent.type !== 'claim' && portfolio.rule_conflicts?.length) throw new Error('Resolve the portfolio rule conflicts before executing.');
@@ -90,13 +69,13 @@ export function validatePendingRecord(record) {
   if (!record || typeof record !== 'object' || record.chain_id !== CHAIN || !address(record.from) || !address(record.to)
     || (record.hash != null && !hash(record.hash)) || !uint(record.nonce) || !uint(record.gas_limit) || !uint(record.gas_price_wei)
     || !Number.isSafeInteger(record.created_at) || record.created_at < 0 || !['pending', 'broadcast_unknown'].includes(record.phase) || (record.phase === 'pending' && !hash(record.hash))
-    || !['approve', 'plant', 'plant_bag', 'upgrade', 'claim'].includes(record.type) || !['plant', 'plant_bag', 'upgrade', 'claim'].includes(record.requested_type)
+    || !['approve', 'plant', 'plant_bag', 'plant_sprouts', 'upgrade', 'claim'].includes(record.type) || !['plant', 'plant_bag', 'plant_sprouts', 'upgrade', 'claim'].includes(record.requested_type)
     || typeof record.wallet_id !== 'string' || !/^[\w-]{1,64}$/.test(record.wallet_id)
     || !Array.isArray(record.plot_ids) || !record.plot_ids.length || record.plot_ids.length > 100
     || record.plot_ids.some(id => !Number.isInteger(id) || id < 1 || id > 3333) || new Set(record.plot_ids).size !== record.plot_ids.length) throw new Error('Invalid pending transaction record.');
-  const expectedTarget = record.type === 'approve' ? target('crop') : ['plant','plant_bag'].includes(record.type) ? target('activation') : record.type === 'upgrade' ? target('levels') : target('emissions');
-  if (record.type !== 'plant_bag' && record.value_wei != null && record.value_wei !== '0') throw new Error('Unexpected ETH value in pending action.');
-  if (!same(record.to, expectedTarget)) throw new Error('Pending transaction target is not an approved game contract.');
+  const expectedTarget = record.type === 'approve' ? target('crop') : ['plant','plant_bag','plant_sprouts'].includes(record.type) ? target('activation') : record.type === 'upgrade' ? target('levels') : target('emissions');
+  if (!['plant_bag','plant_sprouts'].includes(record.type) && record.value_wei != null && record.value_wei !== '0') throw new Error('Unexpected ETH value in pending action.');
+  if (!same(record.to, expectedTarget) && !(['plant','plant_bag'].includes(record.type) && same(record.to, LEGACY_ACTIVATION))) throw new Error('Pending transaction target is not an approved game contract.');
   let decoded;
   try { decoded = decodeFunctionData({ abi: ABI, data: record.data }); } catch { throw new Error('Invalid pending transaction calldata.'); }
   const ids = record.plot_ids.map(BigInt);
@@ -105,12 +84,14 @@ export function validatePendingRecord(record) {
     if (!['plant', 'upgrade'].includes(record.requested_type) || ids.length !== 1 || !uint(record.approval_amount_wei)) throw new Error('Invalid pending token approval.');
     const legalCosts = record.requested_type === 'plant' ? [rules.planting.cost_crop] : rules.levels.entries.slice(1).map(level => level.incremental_upgrade_cost_crop);
     if (!legalCosts.some(cost => BigInt(cost) * UNIT === BigInt(record.approval_amount_wei))) throw new Error('Only exact published CROP approvals can be restored.');
-    expectedData = dataFor('approve', [target(record.requested_type === 'plant' ? 'activation' : 'levels'), BigInt(record.approval_amount_wei)]);
+    const spender = record.requested_type === 'plant' && same(decoded.args?.[0], LEGACY_ACTIVATION) ? LEGACY_ACTIVATION : target(record.requested_type === 'plant' ? 'activation' : 'levels');
+    expectedData = dataFor('approve', [spender, BigInt(record.approval_amount_wei)]);
   } else {
     if (record.requested_type !== record.type || (record.type !== 'claim' && ids.length !== 1)) throw new Error('Pending action does not match its intent.');
-    if (record.type === 'plant_bag' && (!uint(record.value_wei) || BigInt(record.value_wei) <= 0n || BigInt(record.value_wei) > 10n**16n)) throw new Error('Invalid pending seed-bag price.');
-    if (record.type !== 'plant_bag' && record.value_wei != null && record.value_wei !== '0') throw new Error('Unexpected ETH value in pending action.');
-    expectedData = dataFor(record.type === 'plant_bag' ? 'plantWithBag' : record.type === 'claim' && ids.length > 1 ? 'claimMany' : record.type, record.type === 'claim' && ids.length > 1 ? [ids] : ids);
+    if (record.type === 'plant_bag' && (!uint(record.value_wei) || BigInt(record.value_wei) <= 0n || BigInt(record.value_wei) > 10n**16n || (same(record.to,target('activation')) && BigInt(record.value_wei)!==10n**15n))) throw new Error('Invalid pending seed-bag price.');
+    if (!['plant_bag','plant_sprouts'].includes(record.type) && record.value_wei != null && record.value_wei !== '0') throw new Error('Unexpected ETH value in pending action.');
+    if (record.type === 'plant_sprouts' && (!uint(record.value_wei) || BigInt(record.value_wei) < 10n**15n)) throw new Error('Invalid pending sprouts price.');
+    expectedData = dataFor(record.type === 'plant_sprouts' ? 'plantWithSprouts' : record.type === 'plant_bag' ? 'plantWithBag' : record.type === 'claim' && ids.length > 1 ? 'claimMany' : record.type, record.type === 'claim' && ids.length > 1 ? [ids] : ids);
   }
   if (!decoded || !same(record.data, expectedData)) throw new Error('Pending calldata does not match the recorded action.');
   return clone(record);
@@ -167,7 +148,7 @@ export function createExecutor({ rpc, getProvider, now = Date.now, onPending = (
       const code = await rpc('eth_getCode', [expected.address, tag]);
       if (typeof code !== 'string' || !/^0x(?:[\da-f]{2})+$/i.test(code) || keccak256(code) !== expected.hash) throw new Error(`${key} runtime differs from the source-reviewed deployment.`);
     }));
-    const links = [['activation', 'crop', 'crop'], ['activation', 'nft', 'nft'], ['activation', 'emissions', 'emissions'],
+    const links = [['activation', 'previous', 'activation_previous'], ['activation', 'crop', 'crop'], ['activation', 'nft', 'nft'], ['activation', 'emissions', 'emissions'],
       ['levels', 'crop', 'crop'], ['levels', 'nft', 'nft'], ['levels', 'emissions', 'emissions'],
       ['emissions', 'crop', 'crop'], ['emissions', 'nft', 'nft'], ['emissions', 'levels', 'levels'], ['emissions', 'weather', 'weather'],
       ['emissions', 'rarity', 'nft'], ['nft', 'transferHook', 'activation']];
@@ -203,16 +184,18 @@ export function createExecutor({ rpc, getProvider, now = Date.now, onPending = (
     if (type === 'claim') {
       if (plots.reduce((sum, plot) => sum + plot.pending, 0n) <= 0n) throw new Error('These plots have no claimable CROP at the checked block.');
       if (args.length > 1) { functionName = 'claimMany'; args = [args]; }
-    } else if (type === 'plant_bag') {
+    } else if (type === 'plant_bag' || type === 'plant_sprouts') {
       if (plots[0].active) throw new Error('This plot is already planted.');
-      const [bagOpen, bagPrice, bagBurn, treasuryBalance, treasuryAllowance] = await Promise.all([
-        read('activation','bagOpen'), read('activation','bagPrice'), read('activation','BAG_BURN'),
-        read('crop','balanceOf',[treasury]), read('crop','allowance',[treasury,target('activation')])
+      const [plantingOpen, bagPrice, bagBurn, treasuryBalance, treasuryAllowance, available] = await Promise.all([
+        read('activation','plantingOpen'), read('activation',type === 'plant_sprouts' ? 'sproutPrice' : 'bagPrice'), read('activation','BAG_BURN'),
+        read('crop','balanceOf',[treasury]), read('crop','allowance',[treasury,target('activation')]), read('activation',type === 'plant_sprouts' ? 'sproutsAvailable' : 'bagAvailable',[BigInt(plots[0].id)])
       ]);
-      if (!bagOpen || bagPrice <= 0n || bagPrice > 10n**16n) throw new Error('Seed bags are closed or their price is outside the reviewed limit.');
-      if (bagBurn !== 1500n*UNIT || treasuryBalance < bagBurn || treasuryAllowance < bagBurn) throw new Error('The treasury cannot fund this seed bag burn at the checked block.');
-      nativeCost = bagPrice; to = target('activation'); functionName = 'plantWithBag';
+      if (!plantingOpen || !available) throw new Error(type === 'plant_sprouts' ? 'Sprouts are unavailable: this plot must be dormant and previously planted, with treasury funding.' : 'Seed bag unavailable: first planting only, while funded bags remain.');
+      if (type === 'plant_bag' ? bagPrice !== 10n**15n : bagPrice < 10n**15n) throw new Error('Planting price differs from the reviewed rules.');
+      if (bagBurn !== 1500n*UNIT || treasuryBalance < bagBurn || treasuryAllowance < bagBurn) throw new Error('The treasury cannot fund this planting burn at the checked block.');
+      nativeCost = bagPrice; to = target('activation'); functionName = type === 'plant_sprouts' ? 'plantWithSprouts' : 'plantWithBag';
     } else {
+      if (type === 'plant' && !(await read('activation','plantingOpen'))) throw new Error('Planting is currently closed.');
       if (type === 'plant' && plots[0].active) throw new Error('This plot is already planted.');
       if (type === 'upgrade' && plots[0].level >= 5) throw new Error('This plot is already at maximum level.');
       cost = type === 'plant' ? fee : await read('levels', 'costToReach', [plots[0].level + 1]);

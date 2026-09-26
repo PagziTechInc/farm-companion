@@ -64,7 +64,8 @@ export function validatePortfolio(p, complete = true) {
   for (const key of ['observed_at_utc','reward_observed_at_utc']) if(p[key]!=null&&(typeof p[key]!=='string'||!Number.isFinite(Date.parse(p[key])))) errors.push(`${key} must be a valid timestamp.`);
   const ids = new Set(), walletIds = new Set(), addresses = new Set();
   const integerAmount = v => typeof v === 'string' && v.length <= 78 && /^\d+$/.test(v) && BigInt(v) < 2n ** 256n;
-  for (const key of ['carry_crop_wei','granary_crop_wei','emitted_crop_wei','emitted_base_crop_wei','paid_out_crop_wei','seed_bag_price_wei']) if(p[key]!=null&&!integerAmount(p[key])) errors.push(`${key} must be a base-unit integer string.`);
+  for (const key of ['carry_crop_wei','granary_crop_wei','emitted_crop_wei','emitted_base_crop_wei','paid_out_crop_wei','seed_bag_price_wei','sprout_price_wei']) if(p[key]!=null&&!integerAmount(p[key])) errors.push(`${key} must be a base-unit integer string.`);
+  if(p.seed_bags_left!=null&&(!Number.isInteger(p.seed_bags_left)||p.seed_bags_left<0||p.seed_bags_left>3333))errors.push('Invalid funded seed-bag count.');
   if (complete && Array.isArray(p.rule_conflicts)) errors.push(...p.rule_conflicts);
   if (complete && Array.isArray(p.read_errors)) errors.push(...p.read_errors.map(error=>`Incomplete wallet read: ${error}`));
   for (const w of p.wallets) {
@@ -87,6 +88,7 @@ export function validatePortfolio(p, complete = true) {
       if (plot.rarity_tier != null && (!Number.isInteger(plot.rarity_tier) || plot.rarity_tier < 0 || plot.rarity_tier > 3)) errors.push(`Plot ${plot.token_id}: invalid rarity.`);
       if (plot.level != null && (!Number.isInteger(plot.level) || plot.level < 1 || plot.level > 5)) errors.push(`Plot ${plot.token_id}: invalid level.`);
       if (plot.pending_crop_wei != null && !integerAmount(plot.pending_crop_wei)) errors.push(`Plot ${plot.token_id}: pending amount must be an integer string.`);
+      for (const key of ['seed_bag_available','sprouts_available']) if(plot[key]!=null && typeof plot[key]!=='boolean') errors.push(`Plot ${plot.token_id}: ${key} must be boolean or unknown.`);
       if (plot.is_active != null && typeof plot.is_active !== 'boolean') errors.push(`Plot ${plot.token_id}: activation must be boolean or unknown.`);
       if (plot.effective_weight_bps != null && (!Number.isInteger(plot.effective_weight_bps) || plot.effective_weight_bps < 0)) errors.push(`Plot ${plot.token_id}: invalid effective weight.`);
       if (!complete) continue;

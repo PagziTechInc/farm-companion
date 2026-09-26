@@ -12,7 +12,7 @@ const sourceReads = {
   emissions: ['function desiredWeight(uint256 tokenId) view returns (uint256)'],
 };
 const abi = Object.fromEntries(Object.entries(integrations.contracts).filter(([, c]) => c.read_signatures).map(([k, c]) => [k, parseAbi([...new Set([...c.read_signatures, ...(sourceReads[k] ?? [])])])]));
-const READ_METHODS = new Set(['eth_chainId', 'eth_getBlockByNumber', 'eth_getBalance', 'eth_call', 'eth_getLogs', 'eth_getTransactionReceipt', 'eth_estimateGas', 'eth_gasPrice', 'eth_getCode', 'eth_getTransactionByHash', 'eth_getTransactionCount']);
+const READ_METHODS = new Set(['eth_chainId', 'eth_getBlockByNumber', 'eth_getBalance', 'eth_call', 'eth_getLogs', 'eth_getStorageAt', 'eth_getTransactionReceipt', 'eth_estimateGas', 'eth_gasPrice', 'eth_getCode', 'eth_getTransactionByHash', 'eth_getTransactionCount']);
 
 const RPC_CONCURRENCY = 2;
 const RPC_START_SPACING_MS = 100;
@@ -327,6 +327,12 @@ export function createReader(transport = fetchJSON, manifestTiers = typeof __MAN
     if (weeklyRate != null && weeklyRate !== 2000n*10n**18n) result.rule_conflicts.push('Weekly target rate differs from the current Almanac rules.');
     const [bagPrice,bagOpen] = activation ? await Promise.all([safe('seed bag price',()=>call('activation','bagPrice',[],tag,activation)),safe('seed bag availability',()=>call('activation','bagOpen',[],tag,activation))]) : [null,null];
     result.seed_bag_price_wei=bagPrice?.toString()??null; result.seed_bag_open=bagOpen;
+    const [sproutPrice, bagsLeft] = activation ? await Promise.all([
+      safe('sprouts quote',()=>call('activation','sproutPrice',[],tag,activation),readWarnings),
+      safe('funded seed bags',()=>call('activation','bagsLeft',[],tag,activation),readWarnings),
+    ]) : [null,null];
+    result.sprout_price_wei=sproutPrice?.toString()??null; result.seed_bags_left=bagsLeft==null?null:Number(bagsLeft);
+    if (activation && activation.toLowerCase()!==integrations.contracts.activation.address) result.rule_conflicts.push('Planting registry changed; review its source before planning investments.');
     if (fee != null && fee !== 2500n * 10n ** 18n) result.rule_conflicts.push('Planting cost differs from cached rules.');
     if (genesis != null && Number(genesis) !== rules.schedule.genesis_timestamp) result.rule_conflicts.push('Genesis differs from cached rules.');
     const costs = await Promise.all([2, 3, 4, 5].map(level => safe(`level ${level} cost`, () => call('levels', 'costToReach', [level], tag))));
@@ -350,7 +356,7 @@ export function createReader(transport = fetchJSON, manifestTiers = typeof __MAN
         w.plots = old.plots.map(p => {
           const { forecast_preview: _forecastPreview, ...withoutPreview } = p;
           return { ...withoutPreview, owner_address: w.address, rarity_tier: null, chain_rarity_tier: null, manifest_rarity_tier: null, rarity_verified: false, rarity_status: 'unavailable', tiers_finalized: null,
-          level: null, is_active: null, effective_weight_bps: null, desired_weight_bps: null, weight_synchronized: null, pending_crop_wei: null,
+          level: null, is_active: null, seed_bag_available:null, sprouts_available:null, effective_weight_bps: null, desired_weight_bps: null, weight_synchronized: null, pending_crop_wei: null,
           reveal_status: 'unknown', metadata_reveal_status: 'unknown', traits: {}, modifiers: null,
           block_number: null, observed_at_utc: null, evidence_source: null };
         });
@@ -364,13 +370,15 @@ export function createReader(transport = fetchJSON, manifestTiers = typeof __MAN
         const group = await Promise.all(ids.slice(offset, offset + 10).map(async token => {
           const tokenId = Number(token), previousPlot = old.plots.find(p => p.token_id === tokenId) ?? {};
           const { forecast_preview: _forecastPreview, ...oldPlot } = previousPlot;
-          const [level, pending, effectiveWeight, active, chainTier, desiredWeight] = await Promise.all([
+          const [level, pending, effectiveWeight, active, chainTier, desiredWeight, bagAvailable, sproutsAvailable] = await Promise.all([
             safe(`Plot ${token} level`, () => call('levels', 'levelOf', [token], tag)),
             safe(`Plot ${token} pending`, () => call('emissions', 'pending', [token], tag)),
             safe(`Plot ${token} weight`, () => call('emissions', 'weightOf', [token], tag)),
             activation ? safe(`Plot ${token} activation`, () => call('activation', 'isActive', [token], tag, activation)) : null,
             safe(`Plot ${token} chain rarity`, () => call('nft', 'rarityTier', [token], tag)),
             safe(`Plot ${token} desired weight`, () => call('emissions', 'desiredWeight', [token], tag)),
+            activation ? safe(`Plot ${token} seed bag`,()=>call('activation','bagAvailable',[token],tag,activation),readWarnings) : null,
+            activation ? safe(`Plot ${token} sprouts`,()=>call('activation','sproutsAvailable',[token],tag,activation),readWarnings) : null,
           ]);
           // __MANIFEST_TIERS__ is generated from the verified local raw manifest at build time.
           const mapped = mappingReady ? manifestTiers[(tokenId - 1 + Number(startingIndex)) % 3333] ?? null : null;
@@ -388,7 +396,7 @@ export function createReader(transport = fetchJSON, manifestTiers = typeof __MAN
           const rarityStatus = rarityVerified ? 'verified' : tiersFinalized === false && revealed && mappingReady ? 'pending_finalization' : !revealed ? 'unrevealed' : 'unavailable';
           const plot = { ...oldPlot, token_id: tokenId, owner_address: w.address, rarity_tier: tier, level: level == null ? null : Number(level), is_active: active,
             chain_rarity_tier: observedTier, manifest_rarity_tier: manifestTier, rarity_verified: rarityVerified, tiers_finalized: tiersFinalized,
-            rarity_status: rarityStatus,
+            rarity_status: rarityStatus, seed_bag_available:bagAvailable, sprouts_available:sproutsAvailable,
             effective_weight_bps: effectiveWeight == null ? null : Number(effectiveWeight), pending_crop_wei: pending?.toString() ?? null,
             desired_weight_bps: desiredWeight == null ? null : Number(desiredWeight), weight_synchronized: synchronized,
             reveal_status: revealed ? 'revealed' : 'unknown', metadata_reveal_status: 'unknown', traits: {}, modifiers: null,

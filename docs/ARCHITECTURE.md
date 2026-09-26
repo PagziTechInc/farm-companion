@@ -175,3 +175,7 @@ Version 2.9 exposes a shared own-weight rate at the forecast start and segment-d
 The public form places additional valley weight, weight growth and full-supply/observed presets inside Harvest limits. Missing outside weight is a zero-additional-weight scenario; it is not a verified participation forecast. Explicit imports remain scenarios and valid observed post-Genesis context still supports constrained projections. The active plan’s first stress case now starts with an empty Granary and reruns the selected policy.
 
 The collector status adapter may expose a bounded mint count only from a verified chain observation. Minting and canonical animation URLs do not bypass positive-offset, revealed-state or real-metadata gates. The September 15 review and archived evidence are in `knowledge/harvest-rate-2026-09-15.md`.
+
+## September 26 compatibility
+
+Execution deployments now derive from reviewed-deployment.json, including the immutable V2 dependency of NativeActivationV3. Legacy V1 targets are accepted only for receipt recovery, never new submissions. Public reads collect per-plot bag/sprouts eligibility as optional planning metadata; missing eligibility cannot authorize a planting. Oracle event-history failures fall back to reviewed slot-2 storage at the original pinned block and cross-check weather getters; inherited future getters never become announcements.

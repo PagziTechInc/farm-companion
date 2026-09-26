@@ -1,20 +1,22 @@
 {
   "schema_version": 1,
-  "reviewed_on_utc": "2026-09-15",
+  "reviewed_on_utc": "2026-09-26",
   "authority": "Almanac is the source of truth for gameplay planning, per user. Supporting pages cannot override it. Unspecified or internally inconsistent details remain explicit.",
   "questions": [
     {
       "id": "U01",
       "title": "Weather and First Soil",
-      "status": "Source verified; commitment conflict",
-      "answer": "Weekly weather and overlapping Flood/Moon effects cap at 2\u00d7. First Soil then multiplies that result by 2\u00d7 for the first week and 1.5\u00d7 for the following three weeks. Available Granary limits the combined surplus. Accrual splits at weather, event and soil boundaries. September 14 block 62434395 establishes only launch epoch 0 Sunny, 12000 BPS: nominal combined First Soil multiplier 2.40 from Sep 21 through Sep 28 00:00 UTC. Epochs 1\u201311 are unset; inherited weatherOf getters do not reveal them. Full dated evidence and fetched bytes are archived.",
-      "remaining": "Weather remains replaceable before its 24-hour cutoff without commitment verification. Future weather, events and funding are unknown; early scheduled values are observations, not immutable forecasts. Town Hall says at least 24h advance publication; Almanac still describes revelation at the boundary. The contract permits overwrites through the exact cutoff second and does not check the commitment.",
+      "status": "Owner changed to published Weather Seal; unchanged oracle runtime",
+      "answer": "Weather/events and First Soil arithmetic are unchanged. Current weather owner is the published seal; old direct-owner replacement findings are historical.",
+      "remaining": "Seal source and keeper/admin wiring need separate review before claiming immutable forecasts.",
       "sources": [
         "almanac",
         "townhall",
         "verified-contracts-2026-09-11",
-        "launch-weather-2026-09-14"
-      ]
+        "launch-weather-2026-09-14",
+        "game-review-2026-09-26"
+      ],
+      "historical_answer": "Weekly weather and overlapping Flood/Moon effects cap at 2\u00d7. First Soil then multiplies that result by 2\u00d7 for the first week and 1.5\u00d7 for the following three weeks. Available Granary limits the combined surplus. Accrual splits at weather, event and soil boundaries. September 14 block 62434395 establishes only launch epoch 0 Sunny, 12000 BPS: nominal combined First Soil multiplier 2.40 from Sep 21 through Sep 28 00:00 UTC. Epochs 1\u201311 are unset; inherited weatherOf getters do not reveal them. Full dated evidence and fetched bytes are archived."
     },
     {
       "id": "U02",
@@ -41,15 +43,17 @@
     {
       "id": "U04",
       "title": "Reveal timing",
-      "status": "Published and source deadline agree",
-      "answer": "The current Almanac says sellout or September 18 at 18:00 UTC; the current NFT revealDeadline remains 1789754400. Mint opens September 15 at 17:00 UTC. Reveal and tier finalization require transactions.",
-      "remaining": "At September 15 block 63958680, 2290 plots were minted, startingIndex was 0 and tiersFinalized false. These are dated observations, not current counts. Sellout or deadline only makes a reveal transaction eligible; actual positive offset and finalized tiers still need fresh reads. API animation links already exist on explicitly unrevealed metadata.",
+      "status": "Reveal and tiers finalized",
+      "answer": "At block 72697223 supply is 3333, offset 1827 and tiersFinalized true.",
+      "remaining": "Refresh ownership and economic state; historical observations do not identify a visitor\u2019s plots.",
       "sources": [
         "almanac",
         "townhall",
         "verified-contracts-2026-09-11",
-        "rate-review-2026-09-15"
-      ]
+        "rate-review-2026-09-15",
+        "game-review-2026-09-26"
+      ],
+      "historical_answer": "The current Almanac says sellout or September 18 at 18:00 UTC; the current NFT revealDeadline remains 1789754400. Mint opens September 15 at 17:00 UTC. Reveal and tier finalization require transactions."
     },
     {
       "id": "U05",
@@ -101,12 +105,14 @@
     {
       "id": "U09",
       "title": "Deployment and human-approved actions",
-      "status": "Current six core contracts reviewed",
-      "answer": "NFT, CROP, activation, levels and emissions addresses changed; weather did not. Six current Sourcify exact-match sources matched pinned RPC runtime bytes at block 60592342. CROP plant, upgrade and claim interfaces persist with new costs. Seed bags add payable plantWithBag(uint256), exact current bagPrice and a town-funded burn.",
-      "remaining": "No compiler reproduction, full security audit or live transaction was performed. Minting, swaps, store, vesting and drawing execution remain outside this review. Exact allowance is not follow-on spend permission. Changed code or wiring must block drafts.",
+      "status": "V3 source and runtime reviewed",
+      "answer": "NativeActivationV3 replaces the old registry and reads through immutable V2. New drafts check both runtime hashes and current wiring; legacy pending transactions remain recoverable.",
+      "remaining": "No real transaction was sent. Orchard and batch execution remain official-site actions.",
       "sources": [
-        "verified-contracts-2026-09-11"
-      ]
+        "verified-contracts-2026-09-11",
+        "game-review-2026-09-26"
+      ],
+      "historical_answer": "NFT, CROP, activation, levels and emissions addresses changed; weather did not. Six current Sourcify exact-match sources matched pinned RPC runtime bytes at block 60592342. CROP plant, upgrade and claim interfaces persist with new costs. Seed bags add payable plantWithBag(uint256), exact current bagPrice and a town-funded burn."
     },
     {
       "id": "U10",
@@ -121,13 +127,15 @@
     {
       "id": "U11",
       "title": "Seed bag and fee revision",
-      "status": "Published and source verified",
-      "answer": "The optional ETH seed bag opens at 0.001 ETH and burns 1,500 treasury CROP. Its current contract price is capped at 0.01 ETH and sales can be closed by the owner. CROP planting remains 2,500. Upgrade steps are 5,000/10,000/20,000/50,000. Current Almanac lists a 1% pool fee to liquidity providers and no site swap fee.",
-      "remaining": "Daily market repricing is an operational promise: there is no enforced price oracle or daily update interval. Read bagOpen, bagPrice, treasury CROP balance and allowance freshly. Compare an executable CROP quote plus fees with the bag total, without treating opening price as permanent.",
+      "status": "Fixed first-use bags and mutable sprouts",
+      "answer": "Seed bags are fixed at 0.001 ETH, first planting only and capped at 3333 across V2/V3. Replanting uses CROP or a fresh ETH sprouts quote, burning 1500 treasury CROP.",
+      "remaining": "Eligibility, funded stock and sprouts quotes require fresh pinned reads.",
       "sources": [
         "almanac",
-        "verified-contracts-2026-09-11"
-      ]
+        "verified-contracts-2026-09-11",
+        "game-review-2026-09-26"
+      ],
+      "historical_answer": "The optional ETH seed bag opens at 0.001 ETH and burns 1,500 treasury CROP. Its current contract price is capped at 0.01 ETH and sales can be closed by the owner. CROP planting remains 2,500. Upgrade steps are 5,000/10,000/20,000/50,000. Current Almanac lists a 1% pool fee to liquidity providers and no site swap fee."
     }
   ],
   "source_review": {

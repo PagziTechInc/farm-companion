@@ -1,5 +1,7 @@
 # Yield Farm local rulebook
 
+**Current update: September 26.** [Planting V3, fixed first-use bags, sprouts, finalized reveal and Orchard](game-update-2026-09-26.md) supersede the older deployment, repricing and weather-owner descriptions below. Core CROP economics are unchanged.
+
 Reviewed September 11, 2026; the own-weight formula and reveal state were rechecked September 15. The user designates the [Almanac](https://rh.farm/almanac/) as the published gameplay authority. [Current constants](rules.json), [integration addresses](integrations.json), [research answers](questions.json), and the [source review](contract-review.md) support offline decisions. Older rules are retained under [September 7 history](history/2026-09-07/rulebook.md); they must not drive current advice.
 
 ## Economy v2 changes
@@ -8,7 +10,7 @@ The game replaced its original shared annual emission stream with a nominal **2,
 
 First Soil multiplies every planted plot from Genesis: **2× September 21–28**, **1.5× September 28–October 19**, then **1×**. Boundaries are 00:00 UTC. The weather/event cap is applied before First Soil, so 2× weather during the founding week can give a combined 4× while the Granary can pay. Upgrade burns are now **5,000 / 10,000 / 20,000 / 50,000 CROP**; all four steps total **85,000**, plus 2,500 planting.
 
-An alternative ETH seed bag plants through `plantWithBag`: opening price 0.001 ETH, with published daily repricing. Fresh price and availability come from the activation contract. Its owner may set any price up to 0.01 ETH or close sales; daily pool-following repricing is an operational promise, not enforced price-oracle logic. Standard planting still spends 2,500 CROP, 60% burned and 40% treasury. A seed bag burns 1,500 CROP from treasury and sends the buyer's ETH to treasury.
+Seed bags now cost a fixed 0.001 ETH and apply only to a plot’s first planting. Previously planted dormant plots can use 2,500 CROP or a freshly quoted ETH sprouts payment. Both ETH routes need current per-plot eligibility and funded treasury burns. See the September 26 source review.
 
 The current Almanac lists a **1% Uniswap pool fee paid to liquidity providers and no site swap fee**. This replaces the prior 0.5% site-fee statement. Store opening is now “later this year”; November supplies remain provisional. Reveal is explicitly due at sellout or September 18, 18:00 UTC. The treasury no-market-selling policy now explicitly excepts its published pool ceiling ranges.
 
@@ -57,7 +59,7 @@ Public addresses can be read without connecting a wallet. Standard plant and upg
 
 Every supported submission requires separate review and wallet confirmation. Prepare with fresh ownership, tier finalization, live code and links, cost, balance, allowance and simulation checks. Preserve durable pending locks until matching receipts or a proven cancellation are reconciled. Never ask for seed phrases or private keys. Minting, swaps and asset transfers remain manual unless separately implemented and reviewed.
 
-An NFT transfer preserves level, rarity and unclaimed rewards but clears activation. Moving active plots needs another 2,500 CROP per plot or a currently available ETH seed bag to earn again. Internal transfers have no documented exemption. Harvest before selling if the seller wants to retain pending rewards. Inspect recorded and desired weight after transfer; caught hook failures can leave stale recorded weight until a successful synchronization.
+An NFT transfer preserves level, rarity and unclaimed rewards but clears activation. Moving active plots needs another 2,500 CROP per plot or currently available ETH sprouts to earn again. Internal transfers have no documented exemption. Harvest before selling if the seller wants to retain pending rewards. Inspect recorded and desired weight after transfer; caught hook failures can leave stale recorded weight until a successful synchronization.
 
 ## Published promises versus source behavior
 

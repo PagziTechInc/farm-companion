@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
   "chain_id": 4663,
-  "reviewed_on_utc": "2026-09-11",
-  "block_number": 60592342,
-  "source_evidence": "snapshots/verified-contracts-2026-09-11/review.json",
+  "reviewed_on_utc": "2026-09-26",
+  "block_number": 72697223,
+  "source_evidence": "snapshots/review-2026-09-26/chain-review.json",
   "contracts": {
     "emissions": {
       "address": "0x8ed784b4772ae3fdefafaa746fe405eb0410cdf3",
@@ -26,8 +26,12 @@
       "runtime_keccak256": "0x1be44955cd2dae7359a6bd961da2ad9a8cb55041962d5b60fb2190488297e37d"
     },
     "activation": {
-      "address": "0xc7455c9dc27b3b5ceecbb3941e50185f17625431",
-      "runtime_keccak256": "0xbb1c60f4aa1cbf0814d8f0b3c5cab929e5d7d08fe57389f71eb9f75b54941a0a"
+      "address": "0x75bb7544c07353f500e531bc89f9518b4d2bd32a",
+      "runtime_keccak256": "0x52e23282cafac84108dc9b23b7d81d8a935491658e474a47cd91ee9875cb0637"
+    },
+    "activation_previous": {
+      "address": "0xd87fb27b292e48fafbafb860ba24583acb50404b",
+      "runtime_keccak256": "0xfc1c3f1321270612815dcdc9791d3ebf0d436c85b32d2c24459b44581e652e1a"
     }
   }
 }

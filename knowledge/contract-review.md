@@ -1,5 +1,7 @@
 # Current contract review — September 11, 2026
 
+**Current update: September 26.** [Planting V3, fixed first-use bags, sprouts, finalized reveal and Orchard](game-update-2026-09-26.md) supersede the older deployment, repricing and weather-owner descriptions below. Core CROP economics are unchanged.
+
 The [Almanac](https://rh.farm/almanac/) remains published gameplay authority. This targeted source review explains economy v2 and records implementation conflicts. It supersedes the current-deployment conclusions in the [September 7 review](history/2026-09-07/contract-review.md), which remains historical evidence. No real transaction, signature or wallet approval was submitted. This is not a security audit or a locally reproduced compiler build.
 
 ## Evidence and deployment

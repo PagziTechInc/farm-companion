@@ -46,6 +46,8 @@ def main():
     integrations = load('knowledge/integrations.json')
     review = load('knowledge/snapshots/verified-contracts-2026-09-11/review.json')
     deployment = load('knowledge/reviewed-deployment.json')
+    historical_deployment = load('knowledge/snapshots/review-2026-09-26/previous-reviewed-deployment.json')
+    current_review = load('knowledge/snapshots/review-2026-09-26/chain-review.json')
     source_ids = {s['id'] for s in sources['source_records']}
     check('Unique source IDs', len(source_ids) == len(sources['source_records']))
 
@@ -79,15 +81,15 @@ def main():
             check('Manifest tier counts', Counter(r['tier'] for r in manifest) == {t['tier']: t['count'] for t in rules['plots']['rarities']})
     check('Current NFT matches cached manifest commitment', review['manifest']['matches'] and review['manifest']['cached_keccak256'] == review['reads']['nft.manifestHash'])
 
-    check('Current knowledge date and economy revision', rules['reviewed_on_utc'] == '2026-09-11' and rules['emissions']['economy_version'] == 2)
+    check('Current knowledge date and economy revision', rules['reviewed_on_utc'] == '2026-09-26' and rules['emissions']['economy_version'] == 2)
     check('Historical economy retained', load('knowledge/history/2026-09-07/rules.json')['levels']['entries'][-1]['incremental_upgrade_cost_crop'] == '150000')
     check('Chain and pinned review agree', review['chain_id'] == rules['network']['chain_id'] == integrations['network']['chain_id'] == deployment['chain_id'] == 4663)
-    check('Current review has block hash and UTC time', review['block_number'] == deployment['block_number'] == 60592342 and re.fullmatch(r'0x[0-9a-f]{64}', review['block_hash']) and review['block_time'].endswith('Z'))
+    check('Current review has block hash and UTC time', review['block_number'] == historical_deployment['block_number'] == 60592342 and re.fullmatch(r'0x[0-9a-f]{64}', review['block_hash']) and review['block_time'].endswith('Z'))
     for name, record in review['contracts'].items():
         address = record['address'].lower()
         source = load(f'knowledge/snapshots/verified-contracts-2026-09-11/{name}.json')
-        check('Address provenance: ' + name, address == integrations['contracts'][name]['address'] == deployment['contracts'][name]['address'] == source['address'].lower())
-        check('Exact source/runtime evidence: ' + name, source['creationMatch'] == source['runtimeMatch'] == 'exact_match' and record['matches'] and record['runtime_keccak256'] == record['runtime_source_keccak256'] == deployment['contracts'][name]['runtime_keccak256'])
+        check('Address provenance: ' + name, address == historical_deployment['contracts'][name]['address'] == source['address'].lower())
+        check('Exact source/runtime evidence: ' + name, source['creationMatch'] == source['runtimeMatch'] == 'exact_match' and record['matches'] and record['runtime_keccak256'] == record['runtime_source_keccak256'] == historical_deployment['contracts'][name]['runtime_keccak256'])
         for key, value in source['sources'].items():
             local = ROOT / 'knowledge/snapshots/verified-contracts-2026-09-11/source' / name / key
             if key.startswith('src/'):
@@ -95,7 +97,21 @@ def main():
     for name in ['activation', 'levels']:
         for linked in ['crop', 'nft', 'emissions']:
             check('Current link: ' + name + '.' + linked, review['reads'][name + '.' + linked].lower() == integrations['contracts'][linked]['address'])
-    check('Current NFT transfer hook', review['reads']['nft.transferHook'].lower() == integrations['contracts']['activation']['address'])
+    check('Current NFT transfer hook', current_review['reads']['nft.transferHook'].lower() == integrations['contracts']['activation']['address'])
+
+    check('Current pinned review identity', current_review['chain_id'] == 4663 and current_review['block_number'] == deployment['block_number'] and bool(re.fullmatch(r'0x[0-9a-f]{64}', current_review['block_hash'])))
+    for name, record in deployment['contracts'].items():
+        observed = current_review['contracts'][name]
+        check('Current address and runtime: ' + name, observed['address'].lower() == record['address'] == integrations['contracts'][name]['address'] and observed['runtime_keccak256'] == record['runtime_keccak256'])
+    for name in ['activation','activation_previous']:
+        source = load('knowledge/snapshots/review-2026-09-26/' + name + '.json')
+        check('New exact source verification: ' + name, source['creationMatch'] == source['runtimeMatch'] == 'exact_match' and source['address'].lower() == deployment['contracts'][name]['address'])
+    check('V3 bytecode independently matched', current_review['contracts']['activation']['sourcify_runtime_matches'])
+    check('V3 previous link', current_review['reads']['activation.previous'].lower() == deployment['contracts']['activation_previous']['address'])
+    for linked in ['crop','nft','emissions','treasury']:
+        check('V3 current link: ' + linked, current_review['reads']['activation.'+linked].lower() == integrations['contracts'][linked]['address'].lower())
+    for item in load('knowledge/snapshots/review-2026-09-26/index.json')['records']:
+        check('Latest site source SHA256: '+item['path'], hashlib.sha256((ROOT/item['path']).read_bytes()).hexdigest() == item['sha256'])
 
     levels = rules['levels']['entries']
     tiers = rules['plots']['rarities']

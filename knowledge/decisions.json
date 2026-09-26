@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "recorded_on_utc": "2026-09-15",
+  "recorded_on_utc": "2026-09-26",
   "authority": "User instructions and answers in this conversation",
   "portfolio": {
     "expected_plot_count": null,
@@ -247,5 +247,6 @@
     "fees": "Active-plan fees are explicitly estimated from assumed gas budgets at a 0.1 gwei fallback with 2x margin and a 0.000001 ETH floor; no transaction is declared free. Execution still freshly simulates and separately reviews actual transactions. Extra-purchase budgets and execution intent are never auto-filled.",
     "custom": "Keep saved manual scenarios. Automatic defaults may be restored explicitly; no action review is remounted or silently rewritten.",
     "schedule": "Fresh September 16 Almanac and pinned chain review confirms Genesis September 21 00:00 UTC, reveal finalized and supply3333. September18 is the published reveal deadline, not the harvest start."
-  }
+  },
+  "latest_review": "knowledge/game-update-2026-09-26.md"
 }

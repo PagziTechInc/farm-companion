@@ -10,7 +10,7 @@ const A='0x0000000000000000000000000000000000000001';
 const HASH=`0x${'a'.repeat(64)}`, BLOCK=`0x${'b'.repeat(64)}`, ZERO=`0x${'0'.repeat(40)}`;
 const hex=value=>`0x${BigInt(value).toString(16)}`;
 const target=key=>EXECUTION_DEPLOYMENTS[key].address;
-const contracts=Object.fromEntries(Object.keys(EXECUTION_DEPLOYMENTS).map(key=>[key,JSON.parse(readFileSync(new URL(`../knowledge/snapshots/verified-contracts-2026-09-11/${key}.json`,import.meta.url),'utf8'))]));
+const contracts=Object.fromEntries(Object.keys(EXECUTION_DEPLOYMENTS).map(key=>[key,JSON.parse(readFileSync(new URL(`../knowledge/snapshots/${['activation','activation_previous'].includes(key) ? 'review-2026-09-26' : 'verified-contracts-2026-09-11'}/${key}.json`,import.meta.url),'utf8'))]));
 
 function fakeContainer() {
   let version=0, html='';
@@ -57,6 +57,7 @@ function setup({storageValue=null,onActivity=()=>{},onConfirmed=()=>{},onRefresh
     const {functionName:name}=decodeFunctionData({abi,data:tx.data});
     let result;
     if(name==='activation'||name==='transferHook') result=target('activation');
+    else if(name==='previous') result=target('activation_previous');
     else if(name==='activationClearer') result=ZERO;
     else if(name==='rarity') result=target('nft');
     else if(['crop','nft','emissions','levels','weather'].includes(name)) result=target(name);

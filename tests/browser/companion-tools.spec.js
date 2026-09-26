@@ -233,3 +233,16 @@ test('valley reads share one block and remain separate from wallet ownership and
   await expect(valley.getByRole('heading',{name:'Sunny',exact:true})).toBeVisible();
   expect(calls.length).toBe(count);
 });
+
+
+test('Orchard guidance links to official weekly records without requesting a wallet',async({page})=>{
+  await page.route('https://**/*',route=>route.abort());
+  await openFarm(page);
+  await openUtility(page,'valley');
+  const orchard=page.getByRole('region',{name:'Orchard rewards'});
+  await expect(orchard).toBeVisible();
+  await expect(orchard.getByRole('link',{name:'View Orchard ↗'})).toHaveAttribute('href','https://rh.farm/orchard/');
+  await orchard.getByText('How rewards count').click();
+  await expect(orchard.getByText(/Buying CROP or claiming older harvest does not count/)).toBeVisible();
+  await expect(orchard.getByText(/these estimates do not include it/)).toBeVisible();
+});

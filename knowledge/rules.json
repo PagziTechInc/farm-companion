@@ -89,21 +89,34 @@
     "dormant_weight_bps": 0,
     "ownership_effect": "NFT stays in the wallet. Activation is tied to ownership and clears on transfer.",
     "fee_status": "verified_read",
-    "fee_evidence": "snapshots/verified-contracts-2026-09-11/review.json",
+    "fee_evidence": "snapshots/review-2026-09-26/activation.json",
     "allocation_status": "published_rule",
     "sources": [
       "almanac",
-      "verified-contracts-2026-09-11"
+      "verified-contracts-2026-09-11",
+      "game-review-2026-09-26"
     ],
     "approval_spender": "Freshly resolved, reviewed NativeActivation deployment.",
-    "eligibility_note": "Source has no Genesis or reveal gate. The companion follows the Almanac opening at Genesis as application policy, not a claimed contract restriction.",
+    "eligibility_note": "V3 requires plantingOpen and both live farm links. Sprouts additionally require Genesis. All companion actions are individually reviewed.",
     "seed_bag": {
       "opening_price_eth": "0.001",
-      "repricing": "Published daily repricing to pool value of 2500 CROP; exact current bagPrice() must be read.",
+      "repricing": "Fixed 0.001 ETH, enforced by BAG_PRICE.",
       "town_burn_crop": "1500",
-      "eligibility": "Owned dormant plot, seed bag open, exact ETH payment, sufficient town CROP balance and allowance.",
+      "eligibility": "Owned dormant plot that has never been planted in V2 or V3; planting open, bag open, funded bag available. One per plot lifetime.",
       "execution_policy": "Separate payable method; never substitute for a CROP approval/plant without explicit user review.",
-      "repricing_enforcement": "Owner-set price capped at0.01ETH; daily market repricing is published operational policy, not an enforced oracle or time schedule."
+      "repricing_enforcement": "No bag repricing setter in V3.",
+      "max_bags": 3333
+    },
+    "sprouts": {
+      "minimum_price_eth": "0.001",
+      "town_burn_crop": "1500",
+      "eligibility": "Owned dormant previously planted plot, after Genesis, sprouts open and funded treasury burn.",
+      "pricing": "Fresh sproutPrice getter; owner can reprice above minimum, keeper has configurable band, step and cooldown.",
+      "payment": "Contract accepts at least current price and refunds excess. Companion submits the exact reviewed quote and rechecks it before submission.",
+      "sources": [
+        "almanac",
+        "game-review-2026-09-26"
+      ]
     }
   },
   "levels": {
@@ -285,7 +298,7 @@
     "effective_multiplier_cap_bps": 20000,
     "event_combination_status": "almanac_planning_rule",
     "event_combination_issue": "U01",
-    "forecast_policy": "Treat commitments and early scheduled values as observations, not immutable forecasts; the verified deployment can replace a scheduled epoch before its cutoff. Unscheduled epochs carry a prior scheduled value within 52 preceding epochs, otherwise Fair.",
+    "forecast_policy": "Use verified explicit schedules only for announced future weeks; a getter may inherit prior weather. On log-history failure, read reviewed slot-2 schedule entries at the same block.",
     "sources": [
       "almanac",
       "townhall",
@@ -294,7 +307,7 @@
     "status": "published_rule",
     "event_planning_model": "Double weekly BPS once for a covering Flood and once for a covering Moon, then cap at 20000. Source confirms simultaneous Flood and Moon stacking. Same-kind overlapping input windows are rejected as ambiguous duplicates.",
     "verified_event_behavior": "multiplierAt applies each covering event independently before the total 2x cap; nominal multiplier remains subject to emissions Granary availability.",
-    "verified_schedule_conflict": "Almanac describes sealed commitments. Deployed setNext permits owner/keeper replacement before the 24-hour cutoff, without enforcing commitHash or a reveal preimage. Read-only replacement simulation succeeded; actual state was unchanged.",
+    "verified_schedule_conflict": "Historical direct-owner replacement finding is not current ownership evidence. Oracle runtime is unchanged, but owner is now the published Weather Seal. Seal source and keeper permissions need a separate verification before claiming immutable outcomes.",
     "first_soil_cap_note": "Founding Week and a 2x capped weather/event multiplier combine to 4x while Granary can pay."
   },
   "harvest": {
@@ -505,7 +518,7 @@
       "Spend treasury",
       "Set royalty up to its cap"
     ],
-    "owner_control": "Current six core owners share0xe55a30526df5cc0fc4e812e6d95d8cba5c8e5ea9 at reviewblock. Its key/multisig custody was not established by address equality.",
+    "owner_control": "Refresh owner/keeper wiring. Weather owner is the published seal at the September 26 review; historical shared owner wording is obsolete.",
     "audit_claims": "Historical site audit claims retained in history/2026-09-07; not independently reproduced. Current security URL is a moved-page pointing to Provenance.",
     "source_verification": "Six current core Sourcify exact-match source records independently matched pinned runtime bytecode at block 60592342. Targeted review, not compiler reproduction or a full audit.",
     "sources": [
@@ -514,10 +527,9 @@
     ],
     "status": "published_rule",
     "verified_conflicts": [
-      "Weather reseeding promise: setNext does not enforce commitments and permits replacement until the scheduling cutoff.",
-      "Uniform cyclic offset assumption: reveal remaps residue zero to one.",
-      "Rarity assignment: owner-written tiers remain mutable until finalization; setters do not validate manifest or synchronize emissions.",
-      "Seed-bag daily market repricing is an owner-operation promise; source only caps owner-set price at0.01ETH and permits closing the bag."
+      "Historical direct-owner replacement finding is not current ownership evidence. Oracle runtime is unchanged, but owner is now the published Weather Seal. Seal source and keeper permissions need a separate verification before claiming immutable outcomes.",
+      "Reveal still remaps residue zero to one. Tiers are now finalized at the reviewed block.",
+      "Sprouts price is mutable; seed-bag price is fixed and eligibility is lifetime first planting only."
     ]
   },
   "onboarding": {
@@ -560,6 +572,22 @@
     "common_l1_founding_fair_plant_payback_days": "4.375",
     "historical_personal_count_examples": "Fields mentioning 11/22 are arithmetic examples only, not public defaults or ownership."
   },
-  "reviewed_on_utc": "2026-09-11",
-  "revision": "economy-v2-2026-09-11"
+  "reviewed_on_utc": "2026-09-26",
+  "revision": "activation-v3-orchard-2026-09-26",
+  "orchard": {
+    "status": "published_rule",
+    "asset": "AAPL stock token",
+    "first_basket": "2",
+    "earning_start_utc": "2026-09-28T00:00:00Z",
+    "earning_end_utc": "2026-10-05T00:00:00Z",
+    "formula": "Funded weekly basket \u00d7 wallet actual weekly CROP production / valley actual weekly CROP production.",
+    "accounting": "Production belongs to the earning wallet even after a plot sale. Buying CROP or claiming old harvest does not count.",
+    "claims": "Only after week close and verified allocations; no CROP cost or approval, ETH gas required. Verified unclaimed rewards do not expire.",
+    "funding": "Future pots are discretionary; an unfunded week pays zero.",
+    "implementation": "Official Orchard link; do not estimate AAPL from current balances, pending CROP or instantaneous weight. No companion Orchard claim executor.",
+    "sources": [
+      "almanac",
+      "game-review-2026-09-26"
+    ]
+  }
 }
